@@ -12,8 +12,6 @@ public class DungeonManager : MonoBehaviour
     public IntRange corridorLength = new IntRange(3, 10);     // The range of lengths corridors between rooms can have.
     public float minDistStartEnd = 50f;
 
-    public const int MIN_SIZE_BOSS_ROOM = 60;
-    public const int MINIBOSS_INTERVAL = 5;
     public const float TREASURE_ROOM_AMOUNT = 20f;
     public const float MONSTER_ROOM_AMOUNT = 75f;
 
@@ -63,10 +61,7 @@ public class DungeonManager : MonoBehaviour
     {
         // TO DO: Set parameters to match the players level. 
 
-        // What type of dungeon do we want?
-        Dungeon.DungeonType dungeonType = floor % MINIBOSS_INTERVAL == 0 ? Dungeon.DungeonType.MiniBoss : Dungeon.DungeonType.Normal;
-
-        GetDungeon(dungeonType);
+        GetDungeon();
 
         ActiveDungeon = CurrentDungeon;
 
@@ -77,44 +72,20 @@ public class DungeonManager : MonoBehaviour
         Debug.Log("Stored miniboss dungeons: " +dungeonPool.NumMiniBossDungeons + " --- Stored normal dungeons: "+ dungeonPool.NumNormalDungeons);
     }
 
-    private void GetDungeon(Dungeon.DungeonType type)
+    private void GetDungeon()
     {
         CurrentDungeon = null;
 
         // Does the pool has a dungeon we can use?
-        if (type == Dungeon.DungeonType.Normal)
-        {
-            if (dungeonPool.HasNormalDungeons) CurrentDungeon = dungeonPool.GetNormalDungeon();
-        }
-        else if (type == Dungeon.DungeonType.Normal)
-        {
-            if (dungeonPool.HasMiniBossDungeons) CurrentDungeon = dungeonPool.GetMiniBossDungeon();
-        }
+        if (dungeonPool.HasNormalDungeons) CurrentDungeon = dungeonPool.GetNormalDungeon();
 
         // If the pool didn't have a dungeon for us..
         if(CurrentDungeon == null)
         {
             Debug.Log("No dungeon in pools found");
+
             // Generate a dungeon.
             GenerateDungeon();
-
-            // TO DO: replace with 'while the pool wants to store our dungeon. aka he doens't have enough dungeons yet.'
-            // While the dungeon doesn't fit the floor requirments.
-            while (dungeonPool.CanStore(CurrentDungeon.Type) && CurrentDungeon.Type != type)
-            {
-                // Store the old dungeon.
-                if(CurrentDungeon.Type == Dungeon.DungeonType.MiniBoss)
-                {
-                    dungeonPool.AddMiniBossDungeon(CurrentDungeon);
-                }
-                else
-                {
-                    dungeonPool.AddNormalDungeon(CurrentDungeon);
-                }
-
-                // Generate a new dungeon.
-                GenerateDungeon();
-            }
         }
     }
 
@@ -151,22 +122,15 @@ public class DungeonManager : MonoBehaviour
         return returnVector;
     }
 
-    /// <summary>
-    /// Returns false if no mini boss room is possible in this dungeon. 
-    /// </summary>
-    /// <returns></returns>
-    private bool DetermineMinibossRoom()
-    {
-        return true;
-    }
-
     public void FinishDungeon()
     {
-        // Determine score. 
-
         // Increase floor. 
         floor++;
 
+        // Clear current dungeon.
+
+        // Start next.
+        StartNewDungeon();
     }
 
     public static Room SmallestRoomInList(List<Room> rooms)

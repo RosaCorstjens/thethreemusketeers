@@ -8,10 +8,10 @@ public class PortalScript : MonoBehaviour
 
     public void Initialze()
     {
-        //trigger = GetComponentInChildren<TriggerArea>();
+        trigger = GetComponent<TriggerArea>();
 
-        //trigger.onTriggerAction = PlayerInRange;
-        //trigger.offTriggerAction = PlayerOutOfRange;
+        trigger.onTriggerAction = PlayerInRange;
+        trigger.offTriggerAction = PlayerOutOfRange;
     }
 
     public void PlayerInRange()

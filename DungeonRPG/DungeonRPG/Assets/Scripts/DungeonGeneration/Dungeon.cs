@@ -115,7 +115,6 @@ public class Dungeon
                 baseCorridors[i].SetupCorridor(baseRooms[i], dm.corridorLength, dm.roomWidth, dm.roomHeight, columns, rows, false);
             }
         }
-
     }
 
     void SetTilesValuesForRooms()
@@ -451,8 +450,8 @@ public class Dungeon
         PortalScript portalScript = portal.GetComponent<PortalScript>();
         portalScript.Initialze();
 
-        StartRoom.Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.red));
-        EndRoom.Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.blue));
+        //StartRoom.Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.red));
+        //EndRoom.Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.blue));
     }
 
     private void DetermineRoomTypes()
@@ -472,7 +471,7 @@ public class Dungeon
         {
             treasureRooms.Add(DungeonManager.SmallestRoomInList(availableRooms));
             availableRooms.Remove(treasureRooms.Last());
-            treasureRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.yellow));
+            //treasureRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.yellow));
         }
 
         // Do the same for monster rooms.
@@ -484,7 +483,7 @@ public class Dungeon
         {
             monsterRooms.Add(DungeonManager.BiggestRoomInList(availableRooms));
             availableRooms.Remove(monsterRooms.Last());
-            monsterRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.green));
+            //monsterRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.green));
         }
 
     }
@@ -494,16 +493,7 @@ public class Dungeon
         // Check for being a possible miniboss dungeon. 
         Room biggestRoom = DungeonManager.BiggestRoomInList(rooms);
 
-        if(biggestRoom.Floors.Count > DungeonManager.MIN_SIZE_BOSS_ROOM)
-        {
-            bossRoom = biggestRoom;
-            bossRoom.Type = Room.RoomType.Miniboss;
-            type = DungeonType.MiniBoss;
-        }
-        else
-        {
-            type = DungeonType.Normal;
-        }
+        type = DungeonType.Normal;
     }
 
     public Floor GetFloor(int xPos, int yPos)

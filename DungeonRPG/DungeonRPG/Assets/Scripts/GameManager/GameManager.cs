@@ -114,9 +114,9 @@ public class GameManager : MonoBehaviour
         cameraManager.Initialize();
 
         InstantiateCharacterPrefabs();
-        //RenderSettings.fog = true;
-        //RenderSettings.ambientLight = new Color(73, 200, 90);
-        //RenderSettings.ambientIntensity = 0.004f;
+        RenderSettings.fog = true;
+        RenderSettings.ambientLight = new Color(255, 255, 255);
+        RenderSettings.ambientIntensity = 0.001f;
         StartState(gameState);
     }
 
