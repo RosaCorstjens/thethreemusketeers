@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: QuestDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 217.25574, y: -67.84781, z: 291.80365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f227c5762409740a3d62414d54258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 100000, guid: b9bb10c534dcad040993b37c24f9eb23, type: 2}
+  questData:
+  - questName: 
+    icon: {fileID: 0}
+    description: 
+    finishProgress: 0
+    rewardCash: 0
+    rewardExp: 0
+    rewardItemID: 
+    rewardEquipmentID: 
+  - questName: 4b696c6c203520416e67727920536c696d6573
+    icon: {fileID: 0}
+    description: 416e67727920536c696d65204b696c6c
+    finishProgress: 5
+    rewardCash: 200
+    rewardExp: 100
+    rewardItemID: 0100000002000000
+    rewardEquipmentID: 
+  - questName: 4b696c6c2035204669656c6420476f626c696e73
+    icon: {fileID: 0}
+    description: 4669656c6420476f626c696e204b696c6c
+    finishProgress: 5
+    rewardCash: 300
+    rewardExp: 150
+    rewardItemID: 0100000001000000
+    rewardEquipmentID: 
+  - questName: 4b696c6c2031302053706964657273
+    icon: {fileID: 0}
+    description: 537069646572204b696c6c
+    finishProgress: 10
+    rewardCash: 500
+    rewardExp: 200
+    rewardItemID: 
+    rewardEquipmentID: 
+  - questName: 436f6c6c6563742035205370696465722045676773
+    icon: {fileID: 0}
+    description: 5370696465722045676773
+    finishProgress: 5
+    rewardCash: 100
+    rewardExp: 100
+    rewardItemID: 
+    rewardEquipmentID: 
+  - questName: 4b696c6c20313020506f69736f6e2053706964657273
+    icon: {fileID: 0}
+    description: 506f69736f6e20537069646572204b696c6c
+    finishProgress: 10
+    rewardCash: 500
+    rewardExp: 200
+    rewardItemID: 
+    rewardEquipmentID: 
+  - questName: 44656665617420746865204769616e7420476f626c696e
+    icon: {fileID: 0}
+    description: 4769616e7420476f626c696e204b696c6c
+    finishProgress: 1
+    rewardCash: 400
+    rewardExp: 250
+    rewardItemID: 
+    rewardEquipmentID: 06000000
+  - questName: 4b696c6c203720476f626c696e204d616765
+    icon: {fileID: 0}
+    description: 476f626c696e204d616765204b696c6c
+    finishProgress: 7
+    rewardCash: 750
+    rewardExp: 400
+    rewardItemID: 
+    rewardEquipmentID: 03000000
+  - questName: 436f6c6c6563742035204d797374657279204f726273
+    icon: {fileID: 0}
+    description: 4d797374657279204f7262
+    finishProgress: 5
+    rewardCash: 500
+    rewardExp: 500
+    rewardItemID: 
+    rewardEquipmentID: 
+  - questName: 
+    icon: {fileID: 0}
+    description: 
+    finishProgress: 5
+    rewardCash: 100
+    rewardExp: 100
+    rewardItemID: 
+    rewardEquipmentID: 
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1

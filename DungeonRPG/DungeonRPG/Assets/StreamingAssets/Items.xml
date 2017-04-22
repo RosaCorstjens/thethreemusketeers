@@ -1,0 +1,1318 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ItemContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Potions>
+    <BasePotion>
+      <Name>Health Potion</Name>
+      <SpriteName>hp</SpriteName>
+      <ItemType>Potion</ItemType>
+      <Tier>1</Tier>
+      <PotionType>Health</PotionType>
+      <RestoreAmount>
+        <min>100</min>
+        <max>500</max>
+      </RestoreAmount>
+    </BasePotion>
+    <BasePotion>
+      <Name>Mana Potion</Name>
+      <SpriteName>hp</SpriteName>
+      <ItemType>Potion</ItemType>
+      <Tier>1</Tier>
+      <PotionType>Health</PotionType>
+      <RestoreAmount>
+        <min>100</min>
+        <max>500</max>
+      </RestoreAmount>
+    </BasePotion>
+  </Potions>
+  
+  <Weapons>
+  <BaseWeapon>
+      <Name>Short Bow</Name>
+      <SpriteName>bow_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>1</min>
+              <max>20</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.3</min>
+              <max>1.4</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Bow</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Bows/Bow04</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Hunting Bow</Name>
+      <SpriteName>bow_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>10</min>
+              <max>28</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.3</min>
+              <max>1.4</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Bow</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Bows/Bow02</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Long Bow</Name>
+      <SpriteName>bow_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>12</min>
+              <max>34</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.3</min>
+              <max>1.5</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Bow</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Bows/Bow03</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Sniper Bow</Name>
+      <SpriteName>bow_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>25</min>
+              <max>55</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.4</min>
+              <max>1.5</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Bow</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Bows/Bow04</PrefabPath>
+    </BaseWeapon>
+  
+	<BaseWeapon>
+      <Name>Wooden Staff</Name>
+      <SpriteName>staff_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>5</min>
+              <max>22</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>0.9</min>
+              <max>1.0</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Staff</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Staves/Staff01</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Bone Staff</Name>
+      <SpriteName>staff_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>14</min>
+              <max>34</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>0.9</min>
+              <max>1.0</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Staff</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Staves/Staff02</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Elder Staff</Name>
+      <SpriteName>staff_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>27</min>
+              <max>41</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1</min>
+              <max>1.1</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Staff</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Staves/Staff03</PrefabPath>
+    </BaseWeapon>
+  
+	<BaseWeapon>
+      <Name>Shamantic Staff</Name>
+      <SpriteName>staff_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>36</min>
+              <max>73</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1</min>
+              <max>1.1</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Staff</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/Staves/Staff04</PrefabPath>
+    </BaseWeapon>
+  
+  
+	<BaseWeapon>
+      <Name>Dagger</Name>
+      <SpriteName>onehanded_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>2</min>
+              <max>18</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.3</min>
+              <max>1.4</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>OneHanded</Handed>
+	  <PrefabPath>Prefabs/Items/OneHanded/OneHanded01</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Gladius</Name>
+      <SpriteName>onehanded_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>10</min>
+              <max>26</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.3</min>
+              <max>1.4</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>OneHanded</Handed>
+	  <PrefabPath>Prefabs/Items/OneHanded/OneHanded02</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>War Sword</Name>
+      <SpriteName>onehanded_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>12</min>
+              <max>34</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.3</min>
+              <max>1.5</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>OneHanded</Handed>
+	  <PrefabPath>Prefabs/Items/OneHanded/OneHanded03</PrefabPath>	  
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Ancient Sword</Name>
+      <SpriteName>onehanded_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>25</min>
+              <max>55</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.3</min>
+              <max>1.5</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>OneHanded</Handed>
+	  <PrefabPath>Prefabs/Items/OneHanded/OneHanded04</PrefabPath>	  
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Two-Handed Sword</Name>
+      <SpriteName>twohanded_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>8</min>
+              <max>19</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1</min>
+              <max>1.1</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/TwoHanded/TwoHanded01</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Warlord Sword</Name>
+      <SpriteName>twohanded_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>17</min>
+              <max>32</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1</min>
+              <max>1.1</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/TwoHanded/TwoHanded02</PrefabPath>
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Reaver</Name>
+      <SpriteName>twohanded_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>25</min>
+              <max>59</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.1</min>
+              <max>1.2</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/TwoHanded/TwoHanded03</PrefabPath>	  
+    </BaseWeapon>
+	
+	<BaseWeapon>
+      <Name>Colossus Blade</Name>
+      <SpriteName>twohanded_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Weapon</EquipmentType>
+      <MainStat>WeaponDamage</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Damage</StatType>
+            <Range>
+              <min>46</min>
+              <max>101</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>AttackSpeed</StatType>
+            <Range>
+              <min>1.1</min>
+              <max>1.2</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <WeaponType>Sword</WeaponType>
+	  <Handed>TwoHanded</Handed>
+	  <PrefabPath>Prefabs/Items/TwoHanded/TwoHanded04</PrefabPath>	  
+    </BaseWeapon>
+	
+  </Weapons>
+  
+  <Armor>
+
+	<BaseArmor>
+      <Name>Hide Belt</Name>
+      <SpriteName>belt_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>6</min>
+              <max>27</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Belt</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Leather Belt</Name>
+      <SpriteName>belt_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>28</min>
+              <max>53</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Belt</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Chain Belt</Name>
+      <SpriteName>belt_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>54</min>
+              <max>87</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Belt</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Silk Sash</Name>
+      <SpriteName>belt_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>88</min>
+              <max>127</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Belt</ArmorType>
+    </BaseArmor>
+	
+
+
+	<BaseArmor>
+      <Name>Shoes</Name>
+      <SpriteName>boots_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>7</min>
+              <max>34</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Boots</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Heavy Boots</Name>
+      <SpriteName>boots_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>35</min>
+              <max>57</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Boots</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Chain Boots</Name>
+      <SpriteName>boots_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>58</min>
+              <max>83</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Boots</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Sabatons</Name>
+      <SpriteName>boots_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>84</min>
+              <max>129</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Boots</ArmorType>
+    </BaseArmor>
+	
+
+	
+  	<BaseArmor>
+      <Name>Bracers</Name>
+      <SpriteName>bracer_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>8</min>
+              <max>19</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Bracers</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Leather Cuffs</Name>
+      <SpriteName>bracer_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>20</min>
+              <max>40</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Bracers</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Bracelets</Name>
+      <SpriteName>bracer_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>41</min>
+              <max>62</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Bracers</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+	  <Name>Wristguards</Name>
+	  <SpriteName>bracer_04</SpriteName>
+	  <ItemType>Equipment</ItemType>
+	  <Tier>4</Tier>
+	  <EquipmentType>Armor</EquipmentType>
+	  <MainStat>Armor</MainStat>
+	  <BaseStats>
+			<StatRange>
+				<StatType>Armor</StatType>
+				<Range>
+					<min>63</min>
+					<max>89</max>
+				</Range>
+			</StatRange>
+      </BaseStats>
+      <ArmorType>Bracers</ArmorType>
+    </BaseArmor>
+
+
+
+    <BaseArmor>
+      <Name>Cloth Tunic</Name>
+      <SpriteName>chest_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>3</min>
+              <max>37</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Chest</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Chain Mail</Name>
+      <SpriteName>chest_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>38</min>
+              <max>68</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Chest</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Plate Mail</Name>
+      <SpriteName>chest_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>69</min>
+              <max>107</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Chest</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+	  <Name>Battle Armor</Name>
+	  <SpriteName>chest_04</SpriteName>
+	  <ItemType>Equipment</ItemType>
+	  <Tier>4</Tier>
+	  <EquipmentType>Armor</EquipmentType>
+	  <MainStat>Armor</MainStat>
+	  <BaseStats>
+			<StatRange>
+				<StatType>Armor</StatType>
+				<Range>
+					<min>108</min>
+					<max>167</max>
+				</Range>
+			</StatRange>
+      </BaseStats>
+      <ArmorType>Chest</ArmorType>
+    </BaseArmor>
+	
+
+	
+	<BaseArmor>
+      <Name>Helmet</Name>
+      <SpriteName>helmet_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>21</min>
+              <max>41</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Helmet</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Plated Helm</Name>
+      <SpriteName>helmet_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>42</min>
+              <max>113</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Helmet</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Casque</Name>
+      <SpriteName>helmet_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>114</min>
+              <max>161</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Helmet</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Great Helm</Name>
+      <SpriteName>helmet_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>162</min>
+              <max>185</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Helmet</ArmorType>
+    </BaseArmor>
+	
+
+	<BaseArmor>
+      <Name>Cloth Pants</Name>
+      <SpriteName>pants_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>6</min>
+              <max>37</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Pants</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Leather Pants</Name>
+      <SpriteName>pants_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>38</min>
+              <max>77</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Pants</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Legwraps</Name>
+      <SpriteName>pants_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>78</min>
+              <max>131</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Pants</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Leg Guards</Name>
+      <SpriteName>pants_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>132</min>
+              <max>191</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Pants</ArmorType>
+    </BaseArmor>
+
+
+	
+	<BaseArmor>
+      <Name>Warm Gloves</Name>
+      <SpriteName>gloves_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>4</min>
+              <max>32</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Gloves</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Hide Gloves</Name>
+      <SpriteName>gloves_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>33</min>
+              <max>56</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Gloves</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Gauntlets</Name>
+      <SpriteName>gloves_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>57</min>
+              <max>87</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Gloves</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Bone Fists</Name>
+      <SpriteName>gloves_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>88</min>
+              <max>125</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Gloves</ArmorType>
+    </BaseArmor>
+
+	
+	
+	<BaseArmor>
+      <Name>Shoulder Guards</Name>
+      <SpriteName>shoulders_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>16</min>
+              <max>47</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Shoulders</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Spaulders</Name>
+      <SpriteName>shoulders_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>48</min>
+              <max>69</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Shoulders</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Shoulder Plates</Name>
+      <SpriteName>shoulders_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>70</min>
+              <max>100</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Shoulders</ArmorType>
+    </BaseArmor>
+	
+	<BaseArmor>
+      <Name>Epaulets</Name>
+      <SpriteName>shoulders_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Armor</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>101</min>
+              <max>164</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+      <ArmorType>Shoulders</ArmorType>
+    </BaseArmor>
+	
+
+	</Armor>
+  
+  <Shields>
+  
+    <BaseShield>
+      <Name>Buckler</Name>
+      <SpriteName>shield_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Shield</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>8</min>
+              <max>101</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>BlockChance</StatType>
+            <Range>
+              <min>10</min>
+              <max>20</max>
+            </Range>
+          </StatRange>          
+		  <StatRange>
+            <StatType>BlockAmount</StatType>
+            <Range>
+              <min>7</min>
+              <max>31</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <PrefabPath>Prefabs/Items/Shields/Shield01</PrefabPath>	  
+    </BaseShield>
+	
+	<BaseShield>
+      <Name>Kite Shield</Name>
+      <SpriteName>shield_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Shield</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>112</min>
+              <max>198</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>BlockChance</StatType>
+            <Range>
+              <min>10</min>
+              <max>20</max>
+            </Range>
+          </StatRange>          
+		  <StatRange>
+            <StatType>BlockAmount</StatType>
+            <Range>
+              <min>32</min>
+              <max>83</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <PrefabPath>Prefabs/Items/Shields/Shield02</PrefabPath>	  
+    </BaseShield>
+	
+	<BaseShield>
+      <Name>Knight Shield</Name>
+      <SpriteName>shield_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Shield</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>200</min>
+              <max>319</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>BlockChance</StatType>
+            <Range>
+              <min>15</min>
+              <max>25</max>
+            </Range>
+          </StatRange>          
+		  <StatRange>
+            <StatType>BlockAmount</StatType>
+            <Range>
+              <min>84</min>
+              <max>176</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <PrefabPath>Prefabs/Items/Shields/Shield03</PrefabPath>	  
+    </BaseShield>
+	
+	<BaseShield>
+      <Name>Savior</Name>
+      <SpriteName>shield_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Shield</EquipmentType>
+      <MainStat>Armor</MainStat>
+      <BaseStats>
+          <StatRange>
+            <StatType>Armor</StatType>
+            <Range>
+              <min>320</min>
+              <max>511</max>
+            </Range>
+          </StatRange>
+		  <StatRange>
+            <StatType>BlockChance</StatType>
+            <Range>
+              <min>15</min>
+              <max>25</max>
+            </Range>
+          </StatRange>          
+		  <StatRange>
+            <StatType>BlockAmount</StatType>
+            <Range>
+              <min>177</min>
+              <max>543</max>
+            </Range>
+          </StatRange>
+      </BaseStats>
+	  <PrefabPath>Prefabs/Items/Shields/Shield04</PrefabPath>	  
+    </BaseShield>
+  
+  </Shields>
+  
+  <Jewelry>
+  
+	<BaseJewelry>
+      <Name>Simple Ring</Name>
+      <SpriteName>ring_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Ring</JewelryType>
+    </BaseJewelry>
+  
+	<BaseJewelry>
+      <Name>Shiny Ring</Name>
+      <SpriteName>ring_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Ring</JewelryType>
+    </BaseJewelry>
+	
+	<BaseJewelry>
+      <Name>Presious Ring</Name>
+      <SpriteName>ring_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Ring</JewelryType>
+    </BaseJewelry>
+	
+	<BaseJewelry>
+      <Name>Brilliant Ring</Name>
+      <SpriteName>ring_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Ring</JewelryType>
+    </BaseJewelry>
+  
+    <BaseJewelry>
+      <Name>Simple Amulet</Name>
+      <SpriteName>amulet_01</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>1</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Amulet</JewelryType>
+    </BaseJewelry>
+  
+	<BaseJewelry>
+      <Name>Shiny Amulet</Name>
+      <SpriteName>amulet_02</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>2</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Amulet</JewelryType>
+    </BaseJewelry>
+	
+	<BaseJewelry>
+      <Name>Presious Amulet</Name>
+      <SpriteName>amulet_03</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>3</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Amulet</JewelryType>
+    </BaseJewelry>
+	
+	<BaseJewelry>
+      <Name>Brilliant Amulet</Name>
+      <SpriteName>amulet_04</SpriteName>
+      <ItemType>Equipment</ItemType>
+      <Tier>4</Tier>
+      <EquipmentType>Jewelry</EquipmentType>
+	  <JewelryType>Amulet</JewelryType>
+    </BaseJewelry>
+	
+  </Jewelry>
+  
+</ItemContainer>
