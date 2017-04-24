@@ -60,7 +60,7 @@ public class ItemGenerator
         for (int i = 0; i < amount; i++)
         {
             // Get a random item type. (Either: equipment, potion, gold)
-            int itemType = 0;//UnityEngine.Random.Range(0, Enum.GetValues(typeof(ItemType)).Length);
+            int itemType = UnityEngine.Random.Range(0, Enum.GetValues(typeof(ItemType)).Length-1);
 
             int randomObject;
             GameObject toAdd = GameObject.Instantiate(DropPrefab);
@@ -98,7 +98,7 @@ public class ItemGenerator
                     BaseJewelry baseJewerly = new BaseJewelry();
 
                     // First choose random: weapon, armor, shield, jewerly.
-                    int r = 0;//UnityEngine.Random.Range(0, 4);
+                    int r = UnityEngine.Random.Range(0, 4);
                     switch (r)
                     {
                         case 0:
@@ -156,9 +156,7 @@ public class ItemGenerator
                             randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Jewelry.Count);
                             baseJewerly = GameManager.Instance.ItemManager.ItemContainer.Jewelry[randomObject];
 
-                            int rand = UnityEngine.Random.Range(0, 2);
-
-                            equipment = rand == 0 ? Equipment.Amulet : Equipment.Ring;
+                            equipment = baseJewerly.JewelryType == JewelryType.Amulet ? Equipment.Amulet : Equipment.Ring;
                             generatedName = baseJewerly.Name;
 
                             level *= baseJewerly.Tier;

@@ -6,8 +6,8 @@ public class LootChest : MonoBehaviour
 {
     TriggerArea trigger;
 
-    int minItems = 50;
-    int maxItems = 60;
+    int minItems = 100;
+    int maxItems = 120;
     int amount;
 
     List<GameObject> items;

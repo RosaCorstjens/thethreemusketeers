@@ -117,7 +117,7 @@ public class CharacterPanel : MonoBehaviour
         if (type == EquipmentSlotType.MainHand && item.GetComponent<WeaponInstance>().BaseWeapon.Handed == Handed.TwoHanded && equippedItems[EquipmentSlotType.OffHand].CurrentItem != null) equippedItems[EquipmentSlotType.OffHand].Use();
 
         // Equip the item.
-        EquippedItems[type].AddItem(item);
+        equippedItems[type].AddItem(item);
 
         return true;
     }

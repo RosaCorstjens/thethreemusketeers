@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
-        gameState = GameStates.MainMenu;
+        gameState = GameStates.InGame;
 
         saveInformation = new SaveInformation();
         saveInformation.Initialize();

@@ -311,9 +311,15 @@ public class InventoryManager
         {
             itemsType = EquipmentSlotType.MainHand;
         }
-        else
+        else if(item.BaseEquipment.EquipmentType == EquipmentType.Armor)
         {
             itemsType = (EquipmentSlotType)(int)item.GetComponent<ArmorInstance>().BaseArmor.ArmorType;
+        }
+        else 
+        {
+            itemsType = (EquipmentSlotType)(int)(item.GetComponent<JewerlyInstance>().BaseJewelry.JewelryType);
+            Debug.Log("equiping a jewelry of type " + item.GetComponent<JewerlyInstance>().BaseJewelry.JewelryType);
+
         }
 
         if(!characterPanel.Equip(item, itemsType)) return false;
