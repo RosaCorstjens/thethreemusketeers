@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="b8366936-e7f6-4a06-b43c-0380d29185bf"
+  name="NGUIContextMenu‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="48ccb091-2666-47c3-aed9-defba32e0f55"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Namespace%3DNGUIContextMenu Type%3D(Name%3DAddFunc ParentType%3DNGUIContextMenu)"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="a3517818-fe36-41a0-b360-5e305ce0e864"
+        name="AddFunc"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="61bc3c14-6192-456c-8b5d-34d615a95dba"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3D(Name%3DAddFunc ParentType%3DNGUIContextMenu)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ea524a87-7c49-4194-ad5f-96bfbecfb45f"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b00d4441-641e-4dca-851a-07cc11b4d0e6">
+                <propertyInstance
+                  Id="e1b80721-e70f-4af4-ac26-dc08c03102fd"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c2c4e535-f52a-45d0-aad0-4600eb224938">
+                <propertyInstance
+                  Id="cde29e15-7b6e-4935-975f-9816c180b5c1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a7801cb8-93d0-4e9a-a1b1-dc0690ca69e5">
+                <propertyInstance
+                  Id="fa19b3db-7d7d-46c6-9038-a99f7182d541"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6a8e6752-a369-4be9-83d1-0c681b271610"
+            name="Invoke"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ca5f744b-74eb-4ae4-9b88-d30da4b76071"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3D(Name%3DAddFunc ParentType%3DNGUIContextMenu) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGameObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="381ed2cf-909a-4c1a-9f4e-ed12a916e5eb"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ae2d90f-57e2-4da9-bf77-ba70ac162047">
+                    <propertyInstance
+                      Id="823b9682-1a49-429a-9bd1-47e2f114f651"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03e734ca-a708-4a48-95dc-18215402395e">
+                    <propertyInstance
+                      Id="8b7d71ef-cc48-48d9-a880-a3ccefcc8559"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="713e72cf-fdae-46c5-a7f2-47d4c55466a6">
+                    <propertyInstance
+                      Id="1a8b96fc-5df8-4d68-8a4b-cd267c0a837a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b21b827c-6417-46c0-99fa-808d779c9590">
+                    <propertyInstance
+                      Id="2e8d11fe-99a4-4b7d-85e8-32cc182c2f3e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="59c01aab-4958-4831-a728-f1e93d87880b">
+                    <propertyInstance
+                      Id="7283a469-445f-4192-8ea3-52810d79eb51"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa58510e-68cb-4b79-b409-e986bf12b00a">
+                    <propertyInstance
+                      Id="dbd29c14-618d-453d-abd7-47ad5e5dfb4d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="50b34b7a-bca2-4989-ab6f-607302182e79"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="8a399a4b-c85e-47fc-b4a5-d78a83ed7039"
+                      LastKnownName="UIWidget"
+                      LastKnownLocation="UML-modeling-project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="72864c53-ceeb-46b3-b689-647f27f8217f"
+                  name="go"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1ee0d771-4df4-40bd-a5a9-09ceb0d202d3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3D(Name%3DAddFunc ParentType%3DNGUIContextMenu) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGameObject)]) ParameterIdentifier%3Dgo"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="cfd6d794-da48-4d25-aff9-fcd6a75ae62b"
+                      LastKnownName="GameObject"
+                      LastKnownLocation="Package2_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

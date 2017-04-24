@@ -1,0 +1,2026 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="59752347-a89f-4af4-a0a8-e475d755624d"
+  name="ParticleSystemCurveEditor‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="b341880a-eba8-4625-b628-3ecf8b021345"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Namespace%3DParticleSystemCurveEditor Type%3DParticleSystemCurveEditor.Styles"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="93d2b53f-bc41-4709-be9b-9c03c8c7bc2f"
+        name="CurveData"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="87e8ba2c-0f56-4a46-b13f-942ad76beb7b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bf22be03-9346-4e8c-a001-1ed420e17e6b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="afda53a1-2216-4de3-917e-02807f9f72db">
+                <propertyInstance
+                  Id="41b3a424-a78e-4a0a-8be7-dd325e57b3e6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="15700d19-a129-4d2d-a97a-abc4d9ed5b65">
+                <propertyInstance
+                  Id="395d376e-13a3-4d56-8ca6-4c4363b326f4"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2c8f92ae-d09f-4992-b9c8-cda714c3ac80">
+                <propertyInstance
+                  Id="14d436a6-7de4-4b76-9ff9-71d5399c0403"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a2ea3efa-76e8-4ff1-b958-7b92dc014a50">
+                <propertyInstance
+                  Id="1ff2ec09-80bc-4521-bba2-45af366038fa"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e7a985ce-3833-4b47-b6aa-9cb98264dd6a">
+                <propertyInstance
+                  Id="fdc34a58-2c0f-437b-bbb6-20c149719ace"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="5302fabc-6288-4998-92fa-6383f23183fb"
+            name="m_Color"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c2bdc604-1f9d-4568-8482-f5050d6fc63a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_Color"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5228d58c-19b0-4eb6-ac47-c4b37f6c7421"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48dbe969-7f53-4bd3-885f-4bb90fa14a02">
+                    <propertyInstance
+                      Id="14b6ddce-6420-438a-8d06-2616774ea8b9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ffdfdc7-0f50-4fef-a0e5-d0066c867049">
+                    <propertyInstance
+                      Id="3d63bd40-0ad1-469c-83f9-8ec2104453c0"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed861b00-22c0-4178-a5e3-097ca6cb1f9b">
+                    <propertyInstance
+                      Id="0882eed0-f3f7-4e09-9513-4ca2c4dac5e8"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7fb235f-3675-40d3-8580-e9b4f5b37707">
+                    <propertyInstance
+                      Id="cee6e6d3-a6c1-47ac-bc3a-4e59a9905379"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="00e60519-68d6-434b-b6fb-0a8824496f46">
+                    <propertyInstance
+                      Id="fd14517a-3039-4d8a-9ca3-1033d38e6480"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="24e297d8-1711-466f-97b9-57b6a0b2fdfe"
+                LastKnownName="Color"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="28dca9f6-5dc3-49f1-a760-84a227195406"
+            name="m_DisplayName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="2b6f8cd9-07e4-4f67-a927-a682c799248c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_DisplayName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bf90a470-f93e-48db-ac6c-cdc91eb10624"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b967b4b6-3dc8-4056-aa8f-c6c77319b603">
+                    <propertyInstance
+                      Id="813e5822-0a06-4323-8d61-8ce8c2b29c39"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e6a7ba2-67a4-45e5-9428-122542bb7b39">
+                    <propertyInstance
+                      Id="babaa82d-462e-45a7-a8a5-e6fbf17c0987"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d905572f-9b4e-4f41-9e9e-de3a1413cd67">
+                    <propertyInstance
+                      Id="33838262-863a-43f8-8f38-a5630c6ec225"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4dc36426-22cb-466c-8eb8-a6623e549c26">
+                    <propertyInstance
+                      Id="48aed859-fd25-4a11-94d9-27f4678daeaa"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4531c007-03b6-4b21-889a-b2ded9e289e1">
+                    <propertyInstance
+                      Id="801b7129-a739-4645-b248-3c6b0c8337f9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f536149b-75a3-492e-8d05-d18ae42d5f80"
+                LastKnownName="GUIContent"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9a6fcb4c-8821-4cf6-82be-30d1189d0cce"
+            name="m_GetAxisScalarsCallback"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a27dc019-0d59-4ea4-9474-a7acbff80989"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_GetAxisScalarsCallback"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5df97474-2e56-423d-aa0e-f6497c843107"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2bd68c03-a8c5-408d-8ad5-06fff4c44eba">
+                    <propertyInstance
+                      Id="b7f4d598-dda8-412b-bbe1-44833c654d27"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4e3ea72-9859-4c6b-a3f5-d2c264c16711">
+                    <propertyInstance
+                      Id="66d00836-13e1-4bb2-9e68-09fb7a3db578"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="691ec256-cd2b-418f-a6bc-ee3c34d9b592">
+                    <propertyInstance
+                      Id="15abb674-881c-4fb1-9866-e8705337e2ed"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c4536a5-252c-451f-9ef5-ec1892805dfc">
+                    <propertyInstance
+                      Id="d699032f-565a-4d49-b599-54a88e9414ce"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e304f627-748d-41d6-8345-51822c967027">
+                    <propertyInstance
+                      Id="4979b782-8e4e-4a6b-b9b1-3dedc5f70f77"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="9f0635fc-a8d6-4270-9496-b876f9614774"
+                LastKnownName="UnityEditor.CurveWrapper.GetAxisScalarsCallback"
+                LastKnownLocation="Package56_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="61354e27-2883-4287-bcc4-a259e94731a7"
+            name="m_Max"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1c516df7-e436-4c1a-9651-3823903caeb9"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_Max"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c09bf8f0-422e-47c4-bf6d-cae007dd1f54"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a5dc26f-c01f-43e7-80c9-f8d4818a2fc8">
+                    <propertyInstance
+                      Id="1dd51777-c3f1-4873-a82a-352fa883c167"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cad6989c-1235-4687-bfbe-1501ef022627">
+                    <propertyInstance
+                      Id="747b6357-e674-4da2-9731-77e9f1891d88"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="658808a2-f032-44c8-845d-6bbe484706c6">
+                    <propertyInstance
+                      Id="6a0ba81a-a3f0-44bf-9441-3c7cc12bbb49"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd9b84e9-c078-431a-919e-bceedbf8e92b">
+                    <propertyInstance
+                      Id="68b66522-eb6b-4b3b-8e57-9e680c8ca2c4"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90325f78-4206-45eb-b7b3-4406a86676ca">
+                    <propertyInstance
+                      Id="cf6e4bc0-478e-41a5-9a71-b79eaafdbaf0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="65ce945b-3a90-454b-86a9-67eb9c1f6dab"
+                LastKnownName="SerializedProperty"
+                LastKnownLocation="Package53_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="80495a5d-89cf-4aaf-adbd-790c87c09a5d"
+            name="m_MaxId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="df3c92a8-94b2-466a-ae6b-be55d339c46d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_MaxId"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6cf6bbaa-cff9-4d3b-b8bf-aeb5e9e4b07b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47836bf8-47b9-42da-acc9-71f8f26b313c">
+                    <propertyInstance
+                      Id="c88f2227-2e2a-4e74-8d59-d5779f6fb77c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e8333ae-e6ce-435a-a84c-7b117a675cad">
+                    <propertyInstance
+                      Id="82eaa98d-e592-4520-922d-6deaa158808e"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0eebca03-af6c-4221-ad44-7173a4b6d3db">
+                    <propertyInstance
+                      Id="f0c8d43c-4cc3-4c4c-8092-fc4ffe8e19b9"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b11b52f9-b344-4bf3-a99b-fd0ba3dc18bd">
+                    <propertyInstance
+                      Id="b5bc9d58-3548-4cc1-a4ff-0343780b54b0"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02dcdde0-5f62-499d-bcca-12a44507f7cf">
+                    <propertyInstance
+                      Id="4a7d65af-bb95-4874-98d7-23b28b409c5e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d5a4a88c-1921-4c80-bab8-86baf7c8aa4a"
+            name="m_Min"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9e382668-fd93-4a82-8219-2e0289c13560"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_Min"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="91432c2e-5bef-40d7-90b6-63365bb5241e"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e35f49a7-ba64-43fe-9e56-4548e125bbe0">
+                    <propertyInstance
+                      Id="e3f4c528-9b9f-4b86-bc65-8885655f70c0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc4cb05c-65fa-492d-a8ff-802d9940ac27">
+                    <propertyInstance
+                      Id="5168ada3-0bf9-48a8-a049-ec2a618bb41c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1fcb4af8-e64f-4b73-9ff1-26dfd6681b6c">
+                    <propertyInstance
+                      Id="9ae1d2e5-ab40-4325-9fa0-a3d150469350"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7dc08fdc-a383-48d5-a825-2d9c68d955d5">
+                    <propertyInstance
+                      Id="f732885e-f325-401f-892c-58ab7bfd1f44"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3327e1f-c56c-4abd-84a0-4cea132f46b3">
+                    <propertyInstance
+                      Id="2466940f-0564-459c-808c-217553478eb2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="65ce945b-3a90-454b-86a9-67eb9c1f6dab"
+                LastKnownName="SerializedProperty"
+                LastKnownLocation="Package53_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9739ffcd-22a0-4cb0-8454-053b47ea74fd"
+            name="m_MinId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8c93f5c7-e7f9-4bba-b3dc-9bbfa70395f1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_MinId"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="41379abe-dd70-4f34-b3c1-61e8b83430ae"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be76f4fa-1284-4502-8ead-cff37100e0cf">
+                    <propertyInstance
+                      Id="5559641a-d175-4d91-8c09-dfa737d5bc45"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5991a6a1-9be3-463f-829e-78ce920d0c2d">
+                    <propertyInstance
+                      Id="cdb47b28-7ca5-45a3-893f-595bd7c426e0"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e5290e6-8eaa-4ce8-b18e-df127d1eea7a">
+                    <propertyInstance
+                      Id="93ca8e4f-3f79-45b7-a540-7c568697ace0"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bae37a83-dce5-46d6-adb3-dcf673060278">
+                    <propertyInstance
+                      Id="a499bef3-17a7-4813-afcd-0294f54f40e6"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e96ce40-408b-4fb6-94ce-481a0d6c7bca">
+                    <propertyInstance
+                      Id="f6a1a98b-42ea-4f45-b9d8-f3c715b1b9d0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="273b5977-5da7-4afc-aac1-e30049f250b1"
+            name="m_SetAxisScalarsCallback"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="aed3f552-f987-487f-9bb0-fbab7129765d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_SetAxisScalarsCallback"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b72e4206-b47f-4121-b735-00a2bd0ebdda"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27414fa9-a236-49da-a467-dba96661ac73">
+                    <propertyInstance
+                      Id="869e506e-15eb-4e55-a925-f7ba8072b58e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95259b24-2bd9-4500-8926-2c8c138129fa">
+                    <propertyInstance
+                      Id="f900b84b-9363-411a-a19f-b1b513ba6573"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8677fef2-8c94-4d14-86cc-9cc312ef5a7d">
+                    <propertyInstance
+                      Id="c6b0ec27-3491-40b1-aca8-c795c8dddb7c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cda056bb-0910-4f01-b891-ccc0bb14f659">
+                    <propertyInstance
+                      Id="4c2b03fa-b102-4874-ab61-2188fb022d49"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e76a53a2-aa77-4941-8763-efc6968ab647">
+                    <propertyInstance
+                      Id="fb8b4f3f-bf5d-4608-b8e1-cf05a4e654fd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="c8f3afe0-d90e-442d-92c3-e5520e4b9723"
+                LastKnownName="UnityEditor.CurveWrapper.SetAxisScalarsCallback"
+                LastKnownLocation="Package56_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e02624fc-b79a-4d52-aec5-b39d84c566d3"
+            name="m_SignedRange"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="fd046e01-f5e9-445d-a37f-6f4ef9f3827a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_SignedRange"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="03620224-e1eb-4af4-801c-10fe0d8052df"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b8e442d-0032-4b95-bd56-d4b7a54758e9">
+                    <propertyInstance
+                      Id="91f6f221-5fe2-4704-9548-45c7c27d89be"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="50e92f6e-069b-4304-b6a7-13c56084a158">
+                    <propertyInstance
+                      Id="ea48104e-8be2-44e9-b3bb-b9e8d366a3c1"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6da7c9f-b0d9-4a8b-8112-5a620a6bad15">
+                    <propertyInstance
+                      Id="36345295-e9ca-4a03-abba-7c3ee27888b1"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d481d1b-42df-4829-9bea-9339a03d3f91">
+                    <propertyInstance
+                      Id="0e0a62b6-0b29-4373-85e9-fe43e9cbe0de"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="276f1f1f-e239-4419-b1df-045d51fb6dcc">
+                    <propertyInstance
+                      Id="c8b88abc-a095-406b-bcc6-db6f78231d1b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3daaf7e9-0707-47b1-b7b4-0b68979b0a98"
+            name="m_UniqueName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9effb7c2-080e-49b8-b84b-9f38f38a15a8"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_UniqueName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a4588609-4150-4c16-b7d0-45de68296b62"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6d1eb9c-12b2-4f20-8230-a792298f294f">
+                    <propertyInstance
+                      Id="9956026a-6f2d-4a29-8fb8-6d15beca0be3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a50f79b3-daab-48e7-b441-b38312311dc9">
+                    <propertyInstance
+                      Id="9499cfa3-e03b-45f5-8e83-41bd95c8d54c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0794ae2e-cd37-4cdf-a9cc-8c75763440a0">
+                    <propertyInstance
+                      Id="fc984ea7-999a-4651-a583-58f9d5c1413c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bee498ab-2a23-48cc-9433-44626e8fcb81">
+                    <propertyInstance
+                      Id="4cb1a5b7-e86c-4edf-97ce-de40cd110966"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99280eca-1251-4425-8f09-076a4bcfd57b">
+                    <propertyInstance
+                      Id="886da4be-ee31-4e21-abb8-1c843e77b87e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="759ad112-8d49-4bee-8f5b-657f885a5bc4"
+            name="m_Visible"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b8ac9b5c-004e-4906-a180-6014615becc1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3Dm_Visible"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2178ae8a-5db1-49ab-a6e3-d3434ddc3366"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="65d92b7f-9464-4792-90c8-823c0f820bde">
+                    <propertyInstance
+                      Id="762c61ee-a1a3-4bf2-a64e-4099340a0551"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe65d8cf-bb42-4a6b-81a8-af0b6e3c2f9f">
+                    <propertyInstance
+                      Id="038109bd-541f-47fe-b004-8a6790b7ea0b"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61b328ad-8820-491e-adcb-26aedb19853c">
+                    <propertyInstance
+                      Id="35d6b202-9e78-4938-bf6f-dc0ea0d1286a"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6d119a9-a5e6-4fc6-88b5-050479e0173e">
+                    <propertyInstance
+                      Id="9d4f9da2-268e-4f14-a6c9-a3eb34e7b20a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0084c8e3-95d1-4908-a454-71b5c50a4087">
+                    <propertyInstance
+                      Id="ce46d730-fec6-4728-a224-61ee38bb202b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a02d63db-8038-4c83-8337-c0ec0089d732"
+            name="CurveData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5d9b6fe2-a79c-4579-ad8b-37ad0bf82f12"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d4f3c077-ae2a-4ce1-99a6-a151e8b88faf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b600180-5f53-4013-88bd-ccd9f62e2514">
+                    <propertyInstance
+                      Id="4dcb5a1b-cc2c-4bee-878e-7246c199a321"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccad790b-cad5-4ba1-a8a7-7c54d9dbab7c">
+                    <propertyInstance
+                      Id="06ba925b-63c9-4b75-a0fe-95f770d0d209"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df6da6c4-e002-4e1f-9f35-6cd9aba0d286">
+                    <propertyInstance
+                      Id="d78f1b76-9fd9-4eb6-a6ac-df4e737ef141"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="15425f36-3222-4ec6-b88e-34d2b022815c">
+                    <propertyInstance
+                      Id="9bc54e55-1d92-485d-8ebd-63143c04b769"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2526922-8f97-4665-8721-202a9e8c015b">
+                    <propertyInstance
+                      Id="e7be8ac9-5b87-4904-919b-cb3101b7e242"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da88e8d1-66cd-43ec-a2f3-eb82f06f7b6d">
+                    <propertyInstance
+                      Id="ee522929-655f-4b59-9b2d-20abc7725881"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f3def860-262f-4cfb-8f38-b822d791ce2e"
+                  name="name"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="72a7afc9-0598-4c42-b955-2ab08516c815"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Dname"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UML-modeling-project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b25b1c22-f041-42ec-89ca-8af0891f94c3"
+                  name="displayName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f9f57cc3-cd0c-466e-a841-c4830f3c9ba5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DdisplayName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f536149b-75a3-492e-8d05-d18ae42d5f80"
+                      LastKnownName="GUIContent"
+                      LastKnownLocation="Package2_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4b4b30db-9331-493b-9294-d4a743d98e33"
+                  name="min"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="97d5f6fa-3713-43d4-a704-c479e1d18bac"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Dmin"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="65ce945b-3a90-454b-86a9-67eb9c1f6dab"
+                      LastKnownName="SerializedProperty"
+                      LastKnownLocation="Package53_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ee0b21fd-02b0-4a74-a1c6-57cda492ed0d"
+                  name="max"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="9b0850d2-0d04-4c61-a7da-0f4a0327b795"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Dmax"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="65ce945b-3a90-454b-86a9-67eb9c1f6dab"
+                      LastKnownName="SerializedProperty"
+                      LastKnownLocation="Package53_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="37077d8c-31af-49eb-a4ec-1373656fc4d0"
+                  name="color"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a9267b1d-fb90-44f0-88a3-96ff55b74ab1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Dcolor"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="24e297d8-1711-466f-97b9-57b6a0b2fdfe"
+                      LastKnownName="Color"
+                      LastKnownLocation="Package2_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6066379c-233f-43e0-945b-aff9aa0d9bf9"
+                  name="signedRange"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c012190c-a724-4673-a126-69e9a95f633d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DsignedRange"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="UML-modeling-project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3c7ec419-e0d1-4018-9b67-45e9fcc98744"
+                  name="getAxisScalars"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="555f8b6e-813b-4b9a-a117-347ce197f502"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DgetAxisScalars"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="9f0635fc-a8d6-4270-9496-b876f9614774"
+                      LastKnownName="UnityEditor.CurveWrapper.GetAxisScalarsCallback"
+                      LastKnownLocation="Package56_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fa4c9279-864e-4687-b02e-6e9f369db4ed"
+                  name="setAxisScalars"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5a8bbc66-d8b4-45c6-8b6d-c40977858074"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3DsetAxisScalars"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c8f3afe0-d90e-442d-92c3-e5520e4b9723"
+                      LastKnownName="UnityEditor.CurveWrapper.SetAxisScalarsCallback"
+                      LastKnownLocation="Package56_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1df6948b-9a77-48a4-a9e5-a3f46fbf13ae"
+                  name="visible"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="174fbf01-b8f0-4b92-9bb2-56df564406c5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DGUIContent)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DUnityEditor Type%3DSerializedProperty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DColor)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Dvisible"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="UML-modeling-project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8c444419-c09d-4f96-b7d3-9dd4fd9e540f"
+            name="IsRegion"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="07660f85-1726-41c9-ae14-b0e1e62ee200"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DCurveData ParentType%3DParticleSystemCurveEditor) Member%3DIsRegion"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2d2615c1-5727-4d80-bb51-3f7205833a56"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47cc2b95-fcb9-4142-9da8-445ab7adbc4e">
+                    <propertyInstance
+                      Id="78d3ab44-01eb-4f9f-b757-50894178431e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e8b8549-0087-4f24-ad5d-e1236524d2c1">
+                    <propertyInstance
+                      Id="584b0aa0-66f9-4b11-827c-ba7a4bb26585"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e5c109a-881a-4a46-a25a-953ebd01a121">
+                    <propertyInstance
+                      Id="9495a35b-709b-4d46-a845-34997e570520"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="242f0607-6d6d-4027-bf3a-a125b28a829d">
+                    <propertyInstance
+                      Id="61a2eec8-c347-4aac-8b9e-0a88da0cdf35"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09e439d5-7fcd-47e8-9cf4-559961d3bbce">
+                    <propertyInstance
+                      Id="d421ecdf-0107-4813-b9e6-625d908258d9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dca01e2a-80bd-4094-ae9c-88eb300acb55">
+                    <propertyInstance
+                      Id="c075a583-73e7-40a5-9c9e-7ba8198a01a4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f05e75c2-e3ba-415f-b3ba-fe9f3b53f2d8"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="UML-modeling-project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9ccf756d-cf16-4c28-a341-84e366587d3b"
+        name="Styles"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3adc1cb1-155d-4326-8f9e-eda19e319a9b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5f9b409d-3163-4f05-a311-a91f2a7eac7f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="94be1651-3705-4cc0-9029-27fe843a2363">
+                <propertyInstance
+                  Id="9a514507-154b-468b-be1d-6442eb54de1b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ce8d4d04-3136-49ca-88eb-703f1bb96605">
+                <propertyInstance
+                  Id="c8077486-3ddd-43c3-b725-75d0dc3d3963"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="44ce5836-8eb3-42eb-923d-1fa8c87ff590">
+                <propertyInstance
+                  Id="9622f11d-b6bf-4aa4-9fd8-ea6215df94f0"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b703ebae-8e31-4023-81fd-d2a414d4f783">
+                <propertyInstance
+                  Id="e6768e53-91ed-480e-ade5-97de69f48ff3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9ea8aef0-9b0b-41db-b0d0-bd53ca22e7b2">
+                <propertyInstance
+                  Id="da33ac14-612c-417f-a77a-3b91644a562f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="56febe1c-aa38-44f7-9c81-62deae4606a5"
+            name="curveEditorBackground"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a623b9fc-a3a8-474f-af21-dd7f678f62fd"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DcurveEditorBackground"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8fd156de-9b47-4724-9f1d-523f2056ecd7"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2741f939-129c-42e5-9f99-bcf2f22c25a5">
+                    <propertyInstance
+                      Id="275cbb43-1c5f-455c-9919-a1be74df1f3d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c993bd92-f070-43b7-98f9-1e88f387beea">
+                    <propertyInstance
+                      Id="7bda4a7c-d0b9-4d9a-87fe-bbcfad2531a3"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5b9ee1e-41f6-446d-bb5a-6a33f23a09c2">
+                    <propertyInstance
+                      Id="4bd8f3a2-8a0d-45bc-a6a8-e1c1a99ddd46"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44a8aa43-9ca8-4d39-8e20-5318f2344d1e">
+                    <propertyInstance
+                      Id="8a898f87-75b8-4ed3-a5ab-c0802d33d955"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ed916db-142b-411f-b87b-612e158367b7">
+                    <propertyInstance
+                      Id="2f8b9357-69c1-44e7-a3c4-bac7bd74a858"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="75368c25-830d-4a1d-8ea2-58de225c6856"
+                LastKnownName="GUIStyle"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e8c3f2f8-ae48-4a21-acb0-aa5a018750df"
+            name="curveLibraryPopup"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ecf472fe-ec29-4113-98ab-0da0adecc973"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DcurveLibraryPopup"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="48c18357-b4cd-4d67-a2b2-9c08ac319f8e"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb0e4a5a-95cc-428d-8178-8963eaffa0a7">
+                    <propertyInstance
+                      Id="712337f9-811e-48cc-b819-76f0b82a5d46"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14154d13-3100-43ae-b220-d9896ea6e041">
+                    <propertyInstance
+                      Id="5826074f-b437-4294-828f-af2ffab17e40"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae6589d1-efdf-4bbd-95d2-c1a3cb8030fd">
+                    <propertyInstance
+                      Id="99c8fe9b-8373-4014-8458-fd76bb50d204"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f20a315b-0913-4bcc-b7a7-ac3e7098a37f">
+                    <propertyInstance
+                      Id="b344999a-1b1f-41d3-ad27-b4846a4f658b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7f31b50-e541-49e5-9f1a-7f62fdb45c4e">
+                    <propertyInstance
+                      Id="a10d4321-2eff-4c05-b3c9-b7a6a10a1854"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f536149b-75a3-492e-8d05-d18ae42d5f80"
+                LastKnownName="GUIContent"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a78d787c-f04c-4175-8ca7-be7e7214af9a"
+            name="curveSwatch"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8064602d-0b49-4971-9023-55f6c59d6632"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DcurveSwatch"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2a2ed752-2737-41ed-bb75-a54edc941d51"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="edc62bb5-f1b8-4ca7-89e7-7bd787228ed5">
+                    <propertyInstance
+                      Id="e8d0a5ba-1461-4cc0-9cdc-27b8b213c6cc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="486119b1-8da5-4746-ae9c-5a0c6a37dd83">
+                    <propertyInstance
+                      Id="27cdb3bd-6865-4442-8ea3-da648826c7bf"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc36abdc-de1b-40cd-af8f-be7e2fa93245">
+                    <propertyInstance
+                      Id="2c2e5b4b-d879-4b82-ae6e-69866de4ffb2"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="00c908e0-31c3-4a23-844a-ff1880cb1f25">
+                    <propertyInstance
+                      Id="78fabd8c-b1d6-4d82-a09d-6fc2ce419ce8"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c2c62c7a-01c2-45a9-a020-e51347546557">
+                    <propertyInstance
+                      Id="98e88362-eff5-4021-8fcd-ed0da268dd1b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="75368c25-830d-4a1d-8ea2-58de225c6856"
+                LastKnownName="GUIStyle"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d736de74-e589-4663-b82e-c031923a6b4c"
+            name="curveSwatchArea"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="dcc2e5e4-4a99-464a-b673-a3da0f26d18a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DcurveSwatchArea"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b5d24d3b-d85c-4f50-b8db-3d32581115c0"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e49b6b91-106d-4b2a-9228-cc6a402ce3b7">
+                    <propertyInstance
+                      Id="8bcb55a1-d380-40e9-be17-ce646cf9e160"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc5c18bc-c5a1-4498-af0d-6ac5e8679b5d">
+                    <propertyInstance
+                      Id="2442b8ae-4bf6-4394-bb33-88307313d5e3"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35c25c1e-78db-4248-987c-70551e93eed0">
+                    <propertyInstance
+                      Id="66306a6f-c81a-43bd-8b1f-351023f6a472"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2caaf54-3428-48ad-9f0a-5be4dde59807">
+                    <propertyInstance
+                      Id="e21537f1-d047-40ed-98a3-cb3f11f70027"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="403987b5-81cd-4883-aeff-3452f69557c6">
+                    <propertyInstance
+                      Id="af100396-3543-40cc-9c1d-3b91c74b8c6c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="75368c25-830d-4a1d-8ea2-58de225c6856"
+                LastKnownName="GUIStyle"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="531d1ec8-1fd2-4370-a58b-f29bdc811ab7"
+            name="minus"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="840e431e-3a65-4945-8ece-54ec5b6b38c2"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3Dminus"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d5db92e1-6e8f-4ad4-8510-5ff2c4f14f85"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e015cd1-54bb-4bb9-b05e-dfb2d926f218">
+                    <propertyInstance
+                      Id="41056a3b-c1f6-4919-ab3d-3a3139bb5351"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df87b90f-ada2-44e4-9485-dafc6d280291">
+                    <propertyInstance
+                      Id="9413afb2-6e14-45b5-b05b-f83a12c88a37"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa6334c2-32ab-4cd2-ac82-87b2781fc0b5">
+                    <propertyInstance
+                      Id="c2b71255-803c-45ca-8f7a-0daf742e9dbe"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95bf942b-f2c2-4ced-a28d-c9c4a836a1bb">
+                    <propertyInstance
+                      Id="71a99229-210c-47f6-9884-8a356828b15b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e373bdb6-009f-4f49-b5d0-867cd6d65693">
+                    <propertyInstance
+                      Id="c03cbfad-0c34-4bb4-9494-404b515529c8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="75368c25-830d-4a1d-8ea2-58de225c6856"
+                LastKnownName="GUIStyle"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="feec8637-c347-4de1-973b-18b4234c903b"
+            name="optimizeCurveText"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8c465829-85ad-4f8c-8173-f10e60b86235"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DoptimizeCurveText"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="29a4f7a7-e8a1-442a-8dba-030bc4461372"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f263ed3-28f5-44cf-aadd-f1feecdbd87b">
+                    <propertyInstance
+                      Id="fbd88c3d-4e68-40c2-84f7-9d161159b57b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8eb86625-6ca8-401b-b658-639e9abb1908">
+                    <propertyInstance
+                      Id="c6699d4f-60c3-4c39-ab57-804dad54419a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1c7fd36-eeab-4a3e-9d4f-b324c72faad3">
+                    <propertyInstance
+                      Id="199e8b1e-6d77-404b-8c90-27f633524309"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ff58478-f4bc-44cb-8b44-4ca953198856">
+                    <propertyInstance
+                      Id="f248aa0a-73c0-4e35-a47a-fa7f2f4388e0"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba4e3d32-4761-4f46-bfed-d6e8be1e4c7d">
+                    <propertyInstance
+                      Id="55249ee0-c911-4e44-837c-465a2616e223"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f536149b-75a3-492e-8d05-d18ae42d5f80"
+                LastKnownName="GUIContent"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3f54d513-27bb-4446-962f-af7a43dbff40"
+            name="plus"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="2e7c1e76-5e2b-40cd-ab68-bc68ca381d1d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3Dplus"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6ae9746c-936b-4167-a221-c095faadf16c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a30b1ba-d9a4-48b5-bebf-f0300cc0ab55">
+                    <propertyInstance
+                      Id="3d1726a0-4aab-4b8a-803a-82bde98afa36"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8efac25f-701c-473f-abc4-2c194f21b805">
+                    <propertyInstance
+                      Id="0ca96a4f-3163-48b3-a5ac-ce1bc9d25d3d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="422d75e4-6f1e-4da0-94d0-a9a6679db07f">
+                    <propertyInstance
+                      Id="a286ce20-7e20-4d3a-8c87-db8296e89dff"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ded4c10-c82f-4580-978f-4bcdcda14663">
+                    <propertyInstance
+                      Id="3e69b812-ba72-4493-be28-6e6bfec8148b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d2a551e-b020-4a53-8ca0-d1a998da5694">
+                    <propertyInstance
+                      Id="060f197c-6baf-4407-b3f6-d88aabe203b7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="75368c25-830d-4a1d-8ea2-58de225c6856"
+                LastKnownName="GUIStyle"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4f3cb77b-079f-4252-a419-dc913249ccba"
+            name="presetTooltip"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="163d4347-dc9b-498f-a83c-ebe22b276c39"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DpresetTooltip"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="99edc659-1ce1-46db-a797-949530db784d"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7e1934e-7328-4265-b78c-a4753e8af42f">
+                    <propertyInstance
+                      Id="cd89b702-5b87-49f9-9884-a3d6c964781a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="93a769c0-8444-4c72-bffe-2ed5717f8f11">
+                    <propertyInstance
+                      Id="c4a9ac88-d132-4f3e-a004-8e2eb5e3ded6"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29c80dab-9d57-402d-bbc5-a62be6878136">
+                    <propertyInstance
+                      Id="f5ded801-9ec8-4e16-a068-168f80997a35"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09c7e2d3-d608-4dff-95ce-85e88d506079">
+                    <propertyInstance
+                      Id="15e486a6-2416-4bd4-a783-aa60c6c155f2"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="18cf44e5-772e-4192-bf73-3bc351186f98">
+                    <propertyInstance
+                      Id="ca576870-34b6-4192-9eb4-4fb246199c94"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f536149b-75a3-492e-8d05-d18ae42d5f80"
+                LastKnownName="GUIContent"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4cb9d087-5dd6-4b41-a6e3-553feebac679"
+            name="removeCurveText"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="34bc981e-1a27-4563-af52-2c9f3cdba100"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DremoveCurveText"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cd158c46-c259-4711-b2cf-407e8ba1fabb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a53d0598-1001-41ed-bebb-5f771b1b67a4">
+                    <propertyInstance
+                      Id="c0f0aa0c-4256-4847-8f4b-c8e5582ca071"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="caf28b9a-9205-4022-94da-f00dd491dc3e">
+                    <propertyInstance
+                      Id="f718e444-ecfe-4e8f-9de9-2c322a2e0d01"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="835c9a88-93f9-4296-925f-2b2e8067b493">
+                    <propertyInstance
+                      Id="58f7d48d-003a-4ee0-a0c1-8084e4ef69dc"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1a56d2d5-c1ff-4918-b9e1-38150b3a338a">
+                    <propertyInstance
+                      Id="7d10dc3e-7faf-4eed-ad90-397edd3dcd8a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="537c308a-cc86-434a-9361-6baec6875426">
+                    <propertyInstance
+                      Id="98a7bd26-2482-446f-b8b4-2a541aa52107"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="f536149b-75a3-492e-8d05-d18ae42d5f80"
+                LastKnownName="GUIContent"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f4716813-2009-4352-875c-ffcd199996ff"
+            name="yAxisHeader"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="dbee4a36-5e62-4fce-9848-c5f1259ca863"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3DyAxisHeader"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="572f0b1a-d799-4cee-95fb-f264dee1d137"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="13cc61d1-3324-412a-9a15-6ccf5e53b467">
+                    <propertyInstance
+                      Id="d4391c68-c2fb-43a5-a3a9-e7d263cf582f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e142621-01d2-464a-9423-db5a9f879c82">
+                    <propertyInstance
+                      Id="7594f2ad-dc7c-47a0-8f35-59eaaf6c15fd"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="702b9e12-df94-4e15-98d1-6d33c8e4d5d0">
+                    <propertyInstance
+                      Id="76214acd-0730-4a21-a04d-d1c103b8d48f"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca8c2b7d-2c3c-4733-841d-46f4e5ca055d">
+                    <propertyInstance
+                      Id="ae9fb77f-5c0b-4c4e-8ef7-d101e489388b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26344f2b-573c-4737-9b9e-a91e62afae73">
+                    <propertyInstance
+                      Id="f4ce492a-e57f-4017-90e6-bf2507ee6ff1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="75368c25-830d-4a1d-8ea2-58de225c6856"
+                LastKnownName="GUIStyle"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="db1a3f77-16f5-4515-b05a-9fe3444ff295"
+            name="Styles"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="043b5092-1bcf-42b6-8d45-c2ab983a1b80"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DParticleSystemCurveEditor) Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="57ecb5cc-6860-4c30-9f76-b9b30a9438b4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22abac86-f045-4f65-874f-1e293678deb5">
+                    <propertyInstance
+                      Id="d93c8e3c-7dbd-4254-af18-336d9e806b64"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20043f74-2436-4a13-b2b7-cdfc42889140">
+                    <propertyInstance
+                      Id="1f034b4a-a0a3-495e-8876-2ccd634921c4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f2275b0-55b1-484d-9d76-5057c1b4b982">
+                    <propertyInstance
+                      Id="855fa979-de60-40da-a536-a937cd1bb172"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e7498c5-2929-4a9f-adea-107295b28d13">
+                    <propertyInstance
+                      Id="ea627975-dc25-47a2-ac30-5ab9b4d19e73"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="316d68d6-198e-4902-831d-66bf038aea1d">
+                    <propertyInstance
+                      Id="ed6a188c-69cf-4f7e-bd38-97eff7fecd31"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d065c0e-fde8-4abc-b4ce-4ce448231b17">
+                    <propertyInstance
+                      Id="a15c9d02-4574-4358-8895-dc78485ce75a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6bf3011f-2ed7-46de-86c6-3bb8f5de2841"
+        name="ParticleSystemCurveEditor.CurveData"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0dd8a537-2bf5-4bb1-aeef-64deb33ddc6f"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DParticleSystemCurveEditor.CurveData"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bbe21f26-a79b-4aae-837d-a6bf0ce0bfad"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ae93e0ec-1281-4961-b0a8-cdbaeebe6e73">
+                <propertyInstance
+                  Id="b4250bce-1905-4167-96b1-f9a7672a6ebb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0d8f6b15-f4a5-4b61-af04-0b368fda1729">
+                <propertyInstance
+                  Id="9fb671bc-7ddd-445e-889c-779809df2cdc"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f46e5a7c-963c-4dd8-94ab-69d981f37e2f">
+                <propertyInstance
+                  Id="8852d120-21de-41cd-873a-dbb340eaf77b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29150db9-665b-4789-860d-902941140aed">
+                <propertyInstance
+                  Id="b0f8e218-b70b-4aec-9583-24ae464b50e3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="36a9d4a2-7e9e-4666-8f99-457ebb641ae3">
+                <propertyInstance
+                  Id="c80883fb-fe74-41c0-b812-cadd1f6253d3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9d709b33-1e1a-4800-ad2c-4322c808e679"
+        name="ParticleSystemCurveEditor.Styles"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="888de1dd-8199-4706-ba5e-81031e362b2c"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DParticleSystemCurveEditor.Styles"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="93bacccd-5e56-4413-9334-fa19ded45a2e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="86cbf956-5ee3-4e1d-be82-753d1b7b5837">
+                <propertyInstance
+                  Id="0758ecd9-4cae-4c70-81ac-e40c5aea761a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b0d00c6a-39cc-4c2c-bdb3-36c48ecc7f95">
+                <propertyInstance
+                  Id="09a4c6c8-1bab-471a-8750-aafbdd0de834"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="615d02ff-9465-48d1-b94a-d1534db8eddd">
+                <propertyInstance
+                  Id="88efd0d0-1cb3-4b06-9b9f-542654cc3b47"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="70865f3a-a90c-47c3-8ba1-cf6be1f1533e">
+                <propertyInstance
+                  Id="afa09656-2ed6-43bb-8466-647670b5ddb7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b62405bf-9d2e-4780-8e86-a251c3aca425">
+                <propertyInstance
+                  Id="23720316-b352-4669-ad79-c6122c26c26b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

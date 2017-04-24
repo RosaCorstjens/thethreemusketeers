@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="94ac3fc3-5a9b-4b8a-97a1-94c312d791d9"
+  name="UIInput‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="941b4354-2753-4ce8-9859-23987d7892a6"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DUIInput Type%3D(Name%3DOnValidate ParentType%3DUIInput)"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="ad9d0694-dbc2-4444-963b-50a3ed6a9e44"
+        name="OnValidate"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="822cec92-1b3e-4b5c-af36-d24db66477de"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnValidate ParentType%3DUIInput)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b2d67eea-7e1d-4578-814a-0c30d11a0b07"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b30199c9-177f-4b76-8f2e-2aad4d81d555">
+                <propertyInstance
+                  Id="c614fbeb-e09e-4ca5-89b2-54798d2ddc49"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="517f737d-7da7-4dad-b805-c4591245a9ad">
+                <propertyInstance
+                  Id="febe696a-575d-436a-b93c-0c393a726ede"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c95f18b0-b9c8-42ea-8f18-f86e0da63dd9">
+                <propertyInstance
+                  Id="a56f45be-d4e1-4510-9ee6-a3a87b2a0b02"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6907e9b6-6ffe-4011-b814-31c208a7c363"
+            name="Invoke"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2a1a9b50-5c07-47b5-9300-6b926e2d179d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnValidate ParentType%3DUIInput) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DChar)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="319b1cb2-a0dd-4d40-8a88-1026b936da9a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="292e7d1e-d6f4-4284-a3b2-6738cf362ff1">
+                    <propertyInstance
+                      Id="2945346a-1999-469f-a501-47d34c777688"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5984a6d5-af1d-47e6-8f1a-863ad65e0402">
+                    <propertyInstance
+                      Id="1c152eb2-4b00-4b09-85bd-c81de400076b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e7d1717-8d26-40ca-8d73-5eb20c944c3f">
+                    <propertyInstance
+                      Id="406d9d72-6fad-40d6-8f8a-d2dc8f4903ce"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a44f8e7-d411-4350-a42f-25fc8d7a799d">
+                    <propertyInstance
+                      Id="c79faae7-694d-440a-a37e-cf8517f6f61a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6955f5b2-72b2-4517-803b-5a9d73c33a74">
+                    <propertyInstance
+                      Id="4cab2e4b-c864-48a4-bdc5-4ddca75e6f75"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b96aff5f-dcb0-4685-bbcc-fb1765183648">
+                    <propertyInstance
+                      Id="0367b526-a84d-4500-b64d-3cbccaeca072"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6705f9da-6afe-44b2-a7f2-f88ccedf4e32"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1af3c443-a30a-4fbe-bc53-0bb73fb943a9"
+                      LastKnownName="Char"
+                      LastKnownLocation="Package1_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ad2011ef-0227-4794-a88c-00737401710c"
+                  name="text"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c370a182-d91e-43fc-8dd7-0a2e0a3b614c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnValidate ParentType%3DUIInput) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DChar)]) ParameterIdentifier%3Dtext"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UML-modeling-project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="614f53ce-066a-491c-a9ff-8096a5d36f4a"
+                  name="charIndex"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="dbac4c08-7b98-4e28-9abe-8d353f16c22d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnValidate ParentType%3DUIInput) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DChar)]) ParameterIdentifier%3DcharIndex"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="UML-modeling-project.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7841175c-452f-49b8-a5ee-e3a1bec08520"
+                  name="addedChar"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="64198f07-68bc-43f3-bf3d-0bc3c8d32042"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnValidate ParentType%3DUIInput) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DInt32)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DChar)]) ParameterIdentifier%3DaddedChar"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1af3c443-a30a-4fbe-bc53-0bb73fb943a9"
+                      LastKnownName="Char"
+                      LastKnownLocation="Package1_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

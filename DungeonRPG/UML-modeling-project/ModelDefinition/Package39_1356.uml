@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a4b2160a-06b0-42af-9c05-56afb1939a25"
+  name="AnimationOrTween"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="394f86ec-a818-40aa-8a18-7e856c99d002"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DAnimationOrTween"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="f3d7e8cc-3c79-46ab-b7c9-0511635c9186"
+        name="Direction"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="821a5420-2f87-4963-8239-5ee7f5dda775"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DAnimationOrTween Type%3DDirection"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7f336543-92cb-4b03-a7ba-eae2fad67a4a"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="33ed4166-5da5-4806-9587-e37c94afa56b">
+                <propertyInstance
+                  Id="d32db491-abeb-44eb-9796-c801de88ece3"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f97d0b17-1eef-440c-8957-f78ddd24d60f">
+                <propertyInstance
+                  Id="e8d7ab75-0ccb-4ce1-bc04-9039def09a9d"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="caea4c17-c3cc-4094-a49b-7855c7237680">
+                <propertyInstance
+                  Id="7334ba36-2662-4571-a4cd-6c2a66c283cc"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="acedbf92-6a55-40a7-b441-f4bc601c92af"
+        name="EnableCondition"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="f9f189b9-1b87-40e6-a268-41329a8bc2c6"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DAnimationOrTween Type%3DEnableCondition"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6a8a4304-4a74-40b4-9615-c1f12f2adffb"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2df7ec75-8cd7-4247-a856-c8abdb45f3ad">
+                <propertyInstance
+                  Id="9816c955-a9e8-492e-9bf7-fac1faecb450"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9945048e-832e-45c7-8c4e-267d9f142b22">
+                <propertyInstance
+                  Id="0a323445-dd9f-44d7-9c38-7f158af6620f"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="746e2725-4816-48c8-8a1c-c2f5e99d5e90">
+                <propertyInstance
+                  Id="17a93ba4-53e4-45a3-9377-8c45df7e6576"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="6de7dc32-47db-4ffb-b401-e319b44485a1"
+        name="DisableCondition"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="c54a14d0-7ba4-42ee-a70e-d6f88b3238a7"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DAnimationOrTween Type%3DDisableCondition"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a7353cb8-a23e-4352-b526-0aa6cce58716"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5c4f04e4-539c-4b8b-a645-9c79d3d9cbae">
+                <propertyInstance
+                  Id="9bec9f4c-45ca-44e2-9bd4-b8e273f333e9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fba449f2-f9e8-4281-a049-0ff7bc948331">
+                <propertyInstance
+                  Id="931d2020-549b-43d3-b445-a3e38658276c"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2c1ed4b4-1919-4183-b4fc-d0f442c73985">
+                <propertyInstance
+                  Id="09aaa65c-bc82-488f-a145-22d7b8bebe9f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="06ab38eb-d596-4aa2-9a7b-06c670194d92"
+        name="Trigger"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="5330225d-4d75-4329-8088-c6f226166d48"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DAnimationOrTween Type%3DTrigger"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4f0d7ea7-2db9-4fe4-9557-744c6b8b5d7e"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2a2660e1-92dd-4283-9253-be5905f367e9">
+                <propertyInstance
+                  Id="2732770d-73e9-45e4-8405-2a9b54dafe68"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e7a19d9f-81fa-410a-8531-f81e156efde4">
+                <propertyInstance
+                  Id="50cfea74-47b5-4ec3-b6ec-e78d48459dad"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48a5d0a6-6d32-411a-bc6a-7eff58433907">
+                <propertyInstance
+                  Id="52768461-83ce-4bb8-8e15-fa012b851d1e"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

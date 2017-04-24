@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="86130226-5fa4-4d5c-a85f-00a6198000e2"
+  name="PreviewGUI‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="62570c09-c410-492a-a000-075305716833"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Namespace%3DPreviewGUI Type%3D(Name%3DStyles ParentType%3DPreviewGUI)"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="38c9486a-eb76-44c5-bd28-b876ee1c2387"
+        name="Styles"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b47b4235-df07-45e5-9fd7-c35be6b17504"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DPreviewGUI)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="14d2468d-e465-4b06-afb5-3657209ade22"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="def24f9b-41a5-4d77-b3ed-ff03d59cc1a3">
+                <propertyInstance
+                  Id="d06be0ec-6469-4ced-8a90-62364318cfd8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="91076b0a-53cc-4ee6-bce0-2d19ff8d4a55">
+                <propertyInstance
+                  Id="743fd0bc-8f4a-4168-8d40-38c72a7376c8"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="896b6417-f2d0-4c87-a2f2-53fbe2144095">
+                <propertyInstance
+                  Id="ca68ed3f-83d8-4881-9081-16312ba9821b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f518d300-7cb5-4aca-8c03-774e16e23160">
+                <propertyInstance
+                  Id="37ac86e1-0f23-40df-b78b-02af4f144d11"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0fccfb4f-a2a8-4643-ba54-ea8d383527ca">
+                <propertyInstance
+                  Id="4968a00a-596f-4ad4-b68c-9c4a3e316108"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="da8b2ab3-7286-4200-8bbc-cf5e09ca8ec9"
+            name="preButton"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8e561660-fded-42c2-8c1c-8190b69a9a08"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DPreviewGUI) Member%3DpreButton"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e2d6cfec-5da0-4e6b-91e8-1503a3e55745"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="784bd269-f44e-49fd-84a7-4a89b649923e">
+                    <propertyInstance
+                      Id="58440615-1d1c-485f-9f4f-df7861571bf8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4f6ec4a-8aab-4a48-90fb-a7bdc43140d2">
+                    <propertyInstance
+                      Id="c79a4f50-b55a-49cc-9761-253287b9ac0d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f766be94-9181-4627-9caf-e6b64ed8509b">
+                    <propertyInstance
+                      Id="5d9cfc18-ddcd-4e32-811c-7081ca966622"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="944f452e-590b-4e80-af3b-12ea2e9054f4">
+                    <propertyInstance
+                      Id="28cb43eb-4f34-48da-985d-2ae808c4ecbd"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="acec9701-49aa-48d8-8724-4dab51f7ee57">
+                    <propertyInstance
+                      Id="a9e98497-2d3d-4bc5-b192-649e3b440313"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="75368c25-830d-4a1d-8ea2-58de225c6856"
+                LastKnownName="GUIStyle"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c41bb51d-afae-470f-bfac-c4c77878e0ac"
+            name="Init"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a79b6b9a-df78-4ad5-80eb-665835208fd7"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DPreviewGUI) Member%3DInit"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="32ba257e-a958-4b34-a97d-25bd27446811"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef529d36-c198-4bc3-8021-747334b51f65">
+                    <propertyInstance
+                      Id="e590ec01-600b-40b2-a902-1213b617dd68"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4be2e6b5-58de-43ee-9943-1cee64a3a026">
+                    <propertyInstance
+                      Id="65ab882b-cfcf-4dce-9d1a-debbd431f856"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb857949-124f-4865-b846-ad4cd655d8ae">
+                    <propertyInstance
+                      Id="dfe689bf-d9d3-4eeb-b3a6-4b8d209f48e0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ab5294e-8639-4e09-9aab-e49301b6e064">
+                    <propertyInstance
+                      Id="71a6f87b-1941-4f43-9653-ef3e853ce97b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="560c1c92-6c1d-43c9-b1b6-2208f12d0086">
+                    <propertyInstance
+                      Id="20fb6ff9-ce57-4cd5-bcba-cd5c40655cb8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46e690b8-1d45-4b4e-8243-665c8dd35b12">
+                    <propertyInstance
+                      Id="220213b5-e966-4293-b950-629404f7af29"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="0728dfb0-3171-497f-89a4-d3550fda7c6f"
+            name="Styles"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="60594e89-2103-4cef-b789-b6e46c9c6e35"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEditor.dll&quot; Type%3D(Name%3DStyles ParentType%3DPreviewGUI) Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f2fb68a5-572e-45e6-a62a-8c43d0613df5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1dcd084f-6739-459c-8536-94cd3b1752a7">
+                    <propertyInstance
+                      Id="b84ac455-65b8-4b8c-8a68-fb61558118e2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae630cb3-5b76-49a6-9075-184f59e7d64a">
+                    <propertyInstance
+                      Id="6a04be1b-e007-47ab-8b51-4efaa114b829"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="611a8d1b-dc2b-417a-9616-fa446afe9f22">
+                    <propertyInstance
+                      Id="f33b84aa-35b3-40cd-bc34-108c9b4fd345"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="79e006d7-6dc6-44aa-9828-8d1149b8829b">
+                    <propertyInstance
+                      Id="bbb75450-a1d8-4b79-8c5c-66069e64ad92"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75b19a13-f866-4b13-8382-15213ca46ae9">
+                    <propertyInstance
+                      Id="efcf83b1-7aee-4fd0-8a3a-98be8d7bd5af"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="702b3708-842a-4744-ae74-e733ce5316a2">
+                    <propertyInstance
+                      Id="11865a9c-27fd-4fc9-be0b-6d2636bda7e8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7a556394-fa3a-4e33-89e5-fe8d440e01b5"
+  name="UITextList‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="55963549-768e-44d3-aa48-8515b747fe30"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DUITextList Type%3D(Name%3DParagraph ParentType%3DUITextList)"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="f8592c99-29f8-4072-a93e-db91f2fbf4bc"
+        name="Paragraph"
+        visibility="Protected"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8a008fa5-fabb-4d79-b950-cb7364d0c4c3"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DParagraph ParentType%3DUITextList)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b744bda2-b15f-495c-aeda-a81ee6a07fe3"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eed204d5-cffe-4ded-a1a0-93e05414c6ad">
+                <propertyInstance
+                  Id="190329c1-f373-45bc-bc71-977058c6a0c2"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84705fee-0819-468b-b885-4ac895431390">
+                <propertyInstance
+                  Id="bf15e19b-7480-4c74-a605-49c2515f24e1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bc74223b-7a1e-4bd3-aa83-f749928c56f0">
+                <propertyInstance
+                  Id="b1b53644-8c4f-4837-bd7f-1fe39de22907"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="da09032f-01a5-4e18-a648-09bae92a5ddb">
+                <propertyInstance
+                  Id="f8617c75-482d-4dcf-aaea-f8142bfea9fe"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7a44fc70-a38f-41ae-bc92-158c88f74d67">
+                <propertyInstance
+                  Id="b63303ba-62fd-4122-bd4f-464fbd5bff12"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="deb1eded-8f79-4864-89a5-fc6f2541bf95"
+            name="text"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="bccd92c8-0cc2-41cd-8698-3dcaedfd633c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DParagraph ParentType%3DUITextList) Member%3Dtext"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c0469e58-4693-4670-9070-886ce1ea2714"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b22906b-9e5c-45ef-adf5-ede1bb7b9be8">
+                    <propertyInstance
+                      Id="51b6860d-a8a0-4082-ae99-3cbff15f3eb4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa57199e-b95e-46e1-9f12-79b20a6eacea">
+                    <propertyInstance
+                      Id="a5b0e722-1a44-4f85-b05a-1ed6c1f1f096"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa5eb080-de73-4cb2-b013-62670d09e361">
+                    <propertyInstance
+                      Id="b259510e-99ae-44b8-81ce-d3d16dc0ba27"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ded901a2-cd69-47c0-818a-65de83cb9d8c">
+                    <propertyInstance
+                      Id="b32a8754-c2ff-4828-b961-fe856a86a91d"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1607644d-3364-49bb-9502-53c851c129da">
+                    <propertyInstance
+                      Id="d7424145-7605-42fa-9cd8-501f9999a600"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="298bf6a0-2f8d-4944-a8f6-0ff9a1e8e3b3"
+            name="lines"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isOrdered="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c0798506-88e0-46ab-931f-fa84c59f01f2"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DParagraph ParentType%3DUITextList) Member%3Dlines"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e344ecc3-2835-4d41-998b-e1ba2c8616d4"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46149e05-da50-42aa-aed7-51e4011e2076">
+                    <propertyInstance
+                      Id="6bcdda66-ff07-40b3-9850-fcfddefe8268"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e5f6538-0369-411a-99d6-2c50cc05796d">
+                    <propertyInstance
+                      Id="4b5f5acb-54c1-4f5d-8b58-fd1a22c40316"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f9de90e1-fc7c-4931-b2b6-d5da86e40cb4">
+                    <propertyInstance
+                      Id="69820b2d-2fa1-46f5-b188-be4a64f67963"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6e60663-ed65-4b03-982b-384bab3dd97d">
+                    <propertyInstance
+                      Id="6eb08814-0d23-424c-b9a4-8dc19a77316b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b15cf42d-b648-4c94-ae72-84ebf894bdb8">
+                    <propertyInstance
+                      Id="c11df5a7-1122-48ae-a2ab-7ab967b5a7be"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <lowerValueInternal>
+              <literalString
+                Id="939834a7-1d97-429d-82ac-9010d2220ac3"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="0f5414f5-f172-481e-9e2c-8c3bac1d1803"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1e49f0dc-c4cd-422a-a53e-1c1bb954ab50"
+            name="Paragraph"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3ee37f00-b3c7-4451-a1d5-25d87be0ff1b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DParagraph ParentType%3DUITextList) Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7245dbcf-efbd-4628-af49-b135bd85fcea"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89ebea86-ac14-4ab8-a199-7a33f27dac90">
+                    <propertyInstance
+                      Id="3e8636b9-86fc-4d0d-8db4-27aad309ab04"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2eb8cbb6-05da-49bc-8d6b-3639b8995799">
+                    <propertyInstance
+                      Id="4f9f8857-9aa4-4ccc-bf1d-91f227270514"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b262fb0-9584-4984-b1b0-be9cb947faab">
+                    <propertyInstance
+                      Id="9813835b-c4e8-4e95-947c-ab03f527f5df"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="237f53b9-95e4-4f24-80a5-2fd9d599d60c">
+                    <propertyInstance
+                      Id="2779ca65-3d33-4218-884e-fffb7d7df23f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7809745d-5419-49a8-940a-96aa3f8c97dc">
+                    <propertyInstance
+                      Id="c51b10e7-2f55-4c1d-a069-a3afaef81e45"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a32dde8-96a4-46dc-b4df-22fb1d60aea7">
+                    <propertyInstance
+                      Id="73dcd075-d1ff-4065-960b-12d2e8b531ec"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

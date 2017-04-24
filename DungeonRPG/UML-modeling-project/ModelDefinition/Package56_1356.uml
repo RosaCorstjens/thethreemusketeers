@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d266ccbd-e217-49b9-8dfe-bed9aa047dc4"
+  name="CurveWrapper‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="29697fd4-2739-495c-9c8e-45576d88de4e"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Namespace%3DUnityEditor.CurveWrapper Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="9f0635fc-a8d6-4270-9496-b876f9614774"
+        name="UnityEditor.CurveWrapper.GetAxisScalarsCallback"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c0005e48-c20b-4b3a-a180-f9fb5b760640"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.GetAxisScalarsCallback"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8a4d5a4e-4b24-4707-b780-143e9aee71b4"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9699e2c0-9c4f-41cf-aeff-d9e214710015">
+                <propertyInstance
+                  Id="cb76d577-6c9d-4611-be42-19f1f8cc6920"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="54a5e85c-591c-4e78-93d6-0cb4f55f56af">
+                <propertyInstance
+                  Id="f8d1b0c9-25aa-4042-a312-7a589d3def95"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e3341843-2752-478f-a144-a5b7b2302b19">
+                <propertyInstance
+                  Id="d8497c34-05f9-4c3f-aefe-b6d59e506fee"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="17a688b4-e9d7-4001-ad07-4dff80bd1758">
+                <propertyInstance
+                  Id="66d77342-e1f6-4368-8c81-0b0b23e8e0e1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9eb8d57d-bffb-4aab-bdb0-5add33f2c44e">
+                <propertyInstance
+                  Id="2717ae33-911b-49f3-b8c4-b0d1ab2adc0f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c8f3afe0-d90e-442d-92c3-e5520e4b9723"
+        name="UnityEditor.CurveWrapper.SetAxisScalarsCallback"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2cfa1e01-e31c-45a6-92eb-7f1e071db5eb"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.CurveWrapper.SetAxisScalarsCallback"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="64ec3dac-5ec2-45f7-a468-b9db07e29f82"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="45b23a95-4fc6-48d9-88bf-17e6c4b15ca4">
+                <propertyInstance
+                  Id="b1727f05-491c-47d8-a5b5-22d7e583d9b4"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1f5f884c-6799-46d4-900a-329354cd1ce4">
+                <propertyInstance
+                  Id="5d59774e-7d83-49b9-aceb-5a62c6b87d9f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b95b726b-d9da-4aa8-834e-33a5c856a291">
+                <propertyInstance
+                  Id="678c59ae-df6f-41cf-991c-254e80ba9f60"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="502ce1c9-33a1-4a9a-aa56-ed156f61976e">
+                <propertyInstance
+                  Id="aec1db36-ee95-4d38-b21b-a06e5635c0ce"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6ba4b1ee-dc77-4d22-bd18-c647dabb3ca6">
+                <propertyInstance
+                  Id="7a11feff-d7d1-4ae2-affd-53d66f714f83"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

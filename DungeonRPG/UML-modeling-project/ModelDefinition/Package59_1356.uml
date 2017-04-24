@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5bf37746-f3d8-420f-9d12-dd09c2a6c430"
+  name="Modules‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="ddfd46fd-4ff9-47d4-855c-b08236511dd8"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Namespace%3DUnityEditor.Modules Type%3DUnityEditor.Modules.BuildPostProcessArgs"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="4d7048d1-c04c-43ca-89d0-c33a4cfc596a"
+        name="UnityEditor.Modules.DefaultBuildWindowExtension"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b422128d-01d4-4226-a07b-910cf306b061"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.Modules.DefaultBuildWindowExtension"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="77787a19-a634-495a-8580-8a8dc7009ec8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b361dbcf-c119-45c2-8192-51f548514b98">
+                <propertyInstance
+                  Id="2409a835-9622-46a3-983f-430e56c9b01e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6360f1d4-aa23-43fe-9b27-0c2351bcee60">
+                <propertyInstance
+                  Id="3041167d-fc70-4de3-a5df-d3dad4ec6aed"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="19def509-3e18-4ad9-aa7e-19007c0880f3">
+                <propertyInstance
+                  Id="07a15c02-a9d0-4daf-a522-ff7d6f00e8d7"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="87fa043e-f3b0-4e53-9c8e-06adb1cbec45">
+                <propertyInstance
+                  Id="5636ef7c-1414-414c-a5fe-d8bc3cc038c8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bfa4f1a3-a318-4e4e-8079-a367c0ade506">
+                <propertyInstance
+                  Id="2d48d83a-603d-4ecd-85c0-9486e9492880"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ca5d67db-3bf3-4d85-8359-e94e88e45d2d"
+        name="UnityEditor.Modules.BuildPostProcessArgs"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="72562b0e-188f-4a66-ba30-470b82e86a4e"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp-Editor.dll Type%3DUnityEditor.Modules.BuildPostProcessArgs"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8d1be94c-e6cb-438f-8801-caa9436d7c1d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a8d618e6-221b-4ecd-99b0-3545f55997e4">
+                <propertyInstance
+                  Id="90460ef7-d5d6-452f-b4d7-e2bc2513afcf"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="89440fb1-364d-439f-b018-782a2b7ff4df">
+                <propertyInstance
+                  Id="b43ec43d-50de-4c84-813f-790406a2d497"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ce0ceb48-72dd-46d8-8908-208ad46e6776">
+                <propertyInstance
+                  Id="ac92a772-ebab-406d-9d42-354915f329b5"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4415b732-ab95-471f-b3a7-e4edf44345f9">
+                <propertyInstance
+                  Id="c35eb2fe-e9d0-4f23-a967-d9111c19a581"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="536fe252-0751-4a07-a803-6a136e6d6e63">
+                <propertyInstance
+                  Id="8ee2463e-b137-406f-9e36-8ee1c2d892b5"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

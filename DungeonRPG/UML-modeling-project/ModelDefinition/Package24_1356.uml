@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8152dfda-d99d-4924-921b-ea224768cb5f"
+  name="NGUITools‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a4711331-b27d-4ce4-b712-3fb4d1185846"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DNGUITools Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 GenericArguments%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DNGUITools Member%3D(Name%3DDraw GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 GenericArguments%3D[(ParameterIdentifier%3D0)] ParentType%3DNGUITools))]) ParameterIdentifier%3D0)] ParentType%3DNGUITools)"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="f37d78eb-2670-46f4-958f-dd6fe390de58"
+        name="OnInitFunc"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c549dff7-d867-435a-8d65-2cf31103c17c"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 ParentType%3DNGUITools)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ff3af468-d071-428c-b65e-9eafec0cbbe6"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="76a852a2-afe9-4d0b-ba11-2b7468e31c12">
+                <propertyInstance
+                  Id="9123f5ff-a200-4681-969d-db220d80ce2b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="25ee1c85-8b3d-4789-a123-267aee981ff2">
+                <propertyInstance
+                  Id="4453dd85-7171-4d7e-8b54-6d2d73fce97f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3837c4e0-429b-4a69-86c6-0e9d091c0776">
+                <propertyInstance
+                  Id="8d2a936e-4fc8-471d-8631-1231dcead2e9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="48fffebb-92aa-4b0f-ab61-804caa503f5a"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="16fcb552-e6be-4733-8089-ea37fc10dbbe">
+                <referencesInternal>
+                  <reference
+                    Id="efdbeb9e-8333-468c-9ecc-9396d8a1b644"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 ParentType%3DNGUITools) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="2681fb9d-a4b5-4923-b03d-3675447a6eba"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="541063e2-84a1-4312-8600-02c534f27de8"
+            name="Invoke"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bad7a6d3-ad91-4a24-a6bd-f32014b797de"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 ParentType%3DNGUITools) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 ParentType%3DNGUITools) ParameterIdentifier%3D0)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="344b9322-d797-439d-8032-d50cc62f6a78"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6de0f49b-260b-4432-a3f2-280ede67f81b">
+                    <propertyInstance
+                      Id="92376975-1768-401f-a5e1-566bb94a432f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a5872d8-c549-4b80-aa7d-52d21c37aa0b">
+                    <propertyInstance
+                      Id="9013f822-d107-40ac-8233-076ff9c8283c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f313984-9aa3-4430-9785-9b3f839a8041">
+                    <propertyInstance
+                      Id="508e9e78-7651-474e-acc6-ac8e10d77fdd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f38a43d7-7674-4240-9d0a-409d1fd870cf">
+                    <propertyInstance
+                      Id="70e9181b-0da4-46e4-92f5-f58d02986641"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4280850d-93b8-4af5-891c-23c2fb73c5e6">
+                    <propertyInstance
+                      Id="6ca68c72-16ec-4df3-b1d6-afba1e387684"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d22ce940-371b-4dda-a093-7ef31c74371b">
+                    <propertyInstance
+                      Id="25b50818-a374-4371-bea9-451d8867c726"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5d0a63d4-1035-4408-9ab2-7a4d62135188"
+                  name="w"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a8888066-5cfd-47bb-a6ee-44321b472ab1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 ParentType%3DNGUITools) Member%3D(Name%3DInvoke OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DOnInitFunc GenericParameterCount%3D1 ParentType%3DNGUITools) ParameterIdentifier%3D0)]) ParameterIdentifier%3Dw"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="2681fb9d-a4b5-4923-b03d-3675447a6eba"
+                      LastKnownName="T"
+                      LastKnownLocation="Package24_1356.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ded70bb8-7092-4e7f-bdcf-fe89eebf701a"
+        name="OnInitFunc"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0c05134c-4b48-461b-a39d-da3281928bc3"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3ef15078-7953-4979-a8a9-b6db0d0a6731">
+                <propertyInstance
+                  Id="e202ad63-8539-4afb-9c08-4fa97fb4d160"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ed96c1a0-740c-4723-bdaa-8a274b503ee5">
+                <propertyInstance
+                  Id="d9f1012d-c558-4696-b911-e8ecf6407a89"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fbf5a370-c71b-4b49-88f4-4eb30a3cd8b9">
+                <propertyInstance
+                  Id="bd6309fe-417f-4d92-9e51-64743457e812"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="c05863bd-5843-4a77-bd01-d0b447a8e68e">
+            <redefinableTemplateSignatureMoniker
+              Id="48fffebb-92aa-4b0f-ab61-804caa503f5a"
+              LastKnownLocation="Package24_1356.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="27c30948-5e16-4cf0-b33f-864249e1708e">
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="16fcb552-e6be-4733-8089-ea37fc10dbbe"
+                      LastKnownLocation="Package24_1356.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

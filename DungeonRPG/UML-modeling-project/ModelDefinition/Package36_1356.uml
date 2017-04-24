@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="05aa1ac5-29e5-440e-8593-c742843f8087"
+  name="UIAtlas‎"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="8d9e8167-1454-462f-a10b-ca098a51de31"
+      handle="viewcode://./CodeSchema_Namespace?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Namespace%3DUIAtlas Type%3D(Name%3DSprite ParentType%3DUIAtlas)"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="3073e8f4-0618-4310-8f35-43c427467c1b"
+        name="Sprite"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f6aa6d63-756c-4914-b8d8-702a8add97b4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f04c95ab-ef17-4107-818d-488712a15a20"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="205f6e28-b7d5-4b6d-90c2-eab5235a3887">
+                <propertyInstance
+                  Id="7d0f9a58-2d23-4dec-854f-2205b5e71278"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5f89f424-1ed5-4777-9b0d-3975bcdfc858">
+                <propertyInstance
+                  Id="f5d66d31-5359-4228-a607-c99eced56455"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="26a67da0-b285-49f0-8d59-15e08103c4c4">
+                <propertyInstance
+                  Id="63b6eed4-226d-46dd-be6f-1f1c3bfd224e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5292fec0-4f36-448f-b605-e8b72ac01b91">
+                <propertyInstance
+                  Id="d190b40e-1430-4a04-8d31-7955e89275ca"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b62e6120-c28c-4753-af44-db102dedfc46">
+                <propertyInstance
+                  Id="ae0463a6-86aa-4a86-8927-9269c0e0d312"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="95dd701a-6265-4039-95a1-b992d3d9b7d3"
+            name="hasPadding"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3c7f1134-2c0d-4524-8e63-cd6d87ad8fd4"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3DhasPadding"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="df8dbbb1-935a-498b-9fe0-3bdb43a72165"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77766564-5dee-4416-9401-4bdc910acd28">
+                    <propertyInstance
+                      Id="8fb82d5e-d3b9-4cad-8b2f-4a84303469d7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4aca3f09-aa66-4c14-ac51-40303423b9c1">
+                    <propertyInstance
+                      Id="1b0c1329-db46-4054-8d09-b436f4d6454a"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f3586e7-274e-4785-b291-203fd35c3b55">
+                    <propertyInstance
+                      Id="34f11fda-83f4-421a-bde1-b60e2f3629ed"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="edbd3672-5414-4e7e-84bf-404ea5761e3b">
+                    <propertyInstance
+                      Id="ec24a9ed-c3d2-4b93-a58e-384ad85bd584"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0438eb6-7b7c-43f4-b439-81a018f95b6e">
+                    <propertyInstance
+                      Id="8ee923c1-7e15-48a5-99d1-b800af0be2cd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ba05e45-5133-4454-959e-d03636afe240">
+                    <propertyInstance
+                      Id="7193d7a9-fda2-4b8b-baa5-638dacbb14e9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed13d561-2cef-4d84-8531-4ac69fbc217b">
+                    <propertyInstance
+                      Id="66ffca0f-0c6c-401c-ab6d-13e3d03266d7"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ebe09731-9491-4d49-ae2e-c7a4aca0dca4"
+            name="name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="cae60a8d-cea1-45be-8345-b640e4007944"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3Dname"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2e0a7ba7-1144-4caf-ac0b-754b9047c40b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95a6cfe2-5520-4c21-85af-ad73f11cf08b">
+                    <propertyInstance
+                      Id="27946f4b-49a6-4f1f-93f7-10969bc28feb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c1789e2-b3ff-44d1-9797-b71f7746ecb5">
+                    <propertyInstance
+                      Id="16fca08f-3015-4824-b367-d6d3d543cb92"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cdd0aa21-8051-4b88-ac4c-78dd142bbdb2">
+                    <propertyInstance
+                      Id="71cd092f-e4d3-4704-9d6e-e3bd0c651d1a"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb8e3c4e-c99e-4446-b54b-0551c5016a55">
+                    <propertyInstance
+                      Id="54ca4dfe-6146-45aa-9031-297441eefb94"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="06f82112-1bc7-4d10-be4e-cd1e61091fbf">
+                    <propertyInstance
+                      Id="4aa7b4bf-9ac7-43db-95c3-563b6d842c61"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9407a242-8290-4e8c-a60f-9e1ed4e3c7bf"
+            name="outer"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="35267572-4a23-4d02-90e7-ad5ff46ebe31"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3Douter"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c13b1da2-e795-4657-8013-0b04ceee503f"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47f31f6e-9fe7-4f52-ac30-b056442f4658">
+                    <propertyInstance
+                      Id="04486ee4-fcb1-4474-953e-e3acfbe3a27c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ad3de48-710d-49e9-8f96-2af03f8d4882">
+                    <propertyInstance
+                      Id="fe54ffe7-91c5-4305-97c2-b25f44ec18ec"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2da5bc6f-0239-4007-914b-56c61aa2c4fc">
+                    <propertyInstance
+                      Id="0a242394-72fb-461b-944f-c8283a586850"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62b9b683-6417-4348-8fa1-d062e60817d3">
+                    <propertyInstance
+                      Id="3ea97c8b-11d7-4a21-a17a-ba6dccd8b1a2"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ded74e02-c827-4efd-b41a-6b793007342a">
+                    <propertyInstance
+                      Id="9ac4659f-d2a1-4a6f-bfa5-c5ed3575f4b3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6240c426-5429-4f1f-a806-3d8d74e63a00"
+                LastKnownName="Rect"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4ef38286-3a9a-416e-a419-3f79f914e1a4"
+            name="inner"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7ddf4370-9c7f-4d55-aa3d-9936c0753311"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3Dinner"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="09ce697f-7ac6-4b0c-9174-f9e98b699730"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8beedfa7-c140-46bc-a3d1-6ae04bd64c93">
+                    <propertyInstance
+                      Id="b267eac1-906f-41a0-b8c2-de4022157bdb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="00c0bdeb-a4de-42fe-8bea-82fa4b2a48fc">
+                    <propertyInstance
+                      Id="290d5290-4a67-4a80-ab86-a8377c4f0da2"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9db08bd-a725-48ca-af01-f4a193b81f06">
+                    <propertyInstance
+                      Id="4e131faf-6e79-4462-b2eb-0c6c4e03544c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="456e15a7-43d3-4d91-84d7-3448d577a011">
+                    <propertyInstance
+                      Id="ad91a9f0-0243-468c-9f5b-30d2f8d5ed16"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a70f1b43-3ab4-4db3-a6bf-e7b45f56ec73">
+                    <propertyInstance
+                      Id="a3a08496-0aba-456b-8e9e-c32b89415c82"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6240c426-5429-4f1f-a806-3d8d74e63a00"
+                LastKnownName="Rect"
+                LastKnownLocation="Package2_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ed41b18d-1824-490a-a338-16378e956f67"
+            name="rotated"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9ae4638d-aadb-41fe-ab38-0710defc628c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3Drotated"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3eaec52c-a1b6-4854-a847-3d0d8a64e30c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c0a25280-ccd4-4020-832c-1f0e40bbac86">
+                    <propertyInstance
+                      Id="c1506ec0-d1cb-42cb-ab91-60480c676561"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="333808e3-fde6-4af4-98fc-ad35b550b0fd">
+                    <propertyInstance
+                      Id="63fe944b-9671-457f-a5ec-4f500274df4e"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f4d92eab-a4af-4932-a896-2c37b0c152f7">
+                    <propertyInstance
+                      Id="ccf4ff62-579b-4a0e-b8df-1cd7105afc8e"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87b23d8c-a0a8-498d-a79d-d8aa304e54ea">
+                    <propertyInstance
+                      Id="cb0fe4e1-c92a-44e3-8406-55c2909e1fa4"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="987a0fda-9a8a-49d8-aa87-a06f0bd6c64f">
+                    <propertyInstance
+                      Id="04f3bb7f-89b3-4bf2-a7b8-e5d914c6c495"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML-modeling-project.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="51714a55-900e-49dd-8d12-ee97ce2c67b4"
+            name="paddingLeft"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3ec96eb1-2b5a-4722-bc51-11691c903e84"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3DpaddingLeft"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="44ae4bae-2bf7-45b7-8051-d8b2639a58a4"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1041f0aa-d6d1-4177-b474-91990d44c3e3">
+                    <propertyInstance
+                      Id="2498a741-74bb-42e9-8fce-526ea60725e9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45b7ce82-70b0-41ef-9ae6-06d340e921c2">
+                    <propertyInstance
+                      Id="1ec7feb2-23bf-4726-a4a4-65f91bbc90ed"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="add3e54b-3447-42fc-a960-96731718973d">
+                    <propertyInstance
+                      Id="b336d9ae-0402-458a-ab0d-f608d1f56c0d"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da469290-f7df-49ae-845f-5fa2ce07e0cb">
+                    <propertyInstance
+                      Id="24cd88bc-bbaa-40b1-9f4d-ced863324dbd"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ff641a05-4fe9-4e5e-9204-6c3fbf4840a4">
+                    <propertyInstance
+                      Id="f3b7cf87-82da-45a9-8d38-fecfc185c632"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="cc44ddd7-f605-418c-8372-b451ffd628b1"
+                LastKnownName="Single"
+                LastKnownLocation="Package1_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d34de6c2-3732-44b5-b57c-f46cec29836a"
+            name="paddingRight"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="02e50be0-76af-40e1-a924-d7040332beaf"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3DpaddingRight"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dd9f09bb-2cc8-4159-8f5a-7f5fc4a9a919"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f84cc75-50f4-4fa3-a191-1e6931ad3bba">
+                    <propertyInstance
+                      Id="f6cf3007-cd93-40cb-bf97-7117e901eaa8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a5487bd-fdc8-47cd-980b-df3309e5613c">
+                    <propertyInstance
+                      Id="163db2ae-4cb6-4121-abb9-ab03031aae10"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a479604-f5d5-4b8b-a1bb-da8d01e1448a">
+                    <propertyInstance
+                      Id="cf2fb01c-65f9-406b-8863-95a0e119b7e5"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27809871-91b9-4c4a-9d63-0cb1f74cd8e0">
+                    <propertyInstance
+                      Id="5ad08654-68be-4044-b3d8-6dc81f9d75fa"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ef9b502-1514-432c-be0c-a2368104c515">
+                    <propertyInstance
+                      Id="670a1213-7c8f-43ad-b765-a7f5ebdf2cfb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="cc44ddd7-f605-418c-8372-b451ffd628b1"
+                LastKnownName="Single"
+                LastKnownLocation="Package1_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="356d383a-4d4e-4434-9483-2b8617fdbcce"
+            name="paddingTop"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="dfba271c-5865-44b2-a1bd-6c2ab2139299"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3DpaddingTop"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b7122661-c5f0-4179-a300-f9f19b2a6c49"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b55565c7-a516-44e4-ae25-9bb56e4b9ac9">
+                    <propertyInstance
+                      Id="2ff03860-ad17-4e43-9473-99ee1792782e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92fcd238-3e53-4e21-951f-4d03a2b52665">
+                    <propertyInstance
+                      Id="a0737be9-c8c5-4d69-84d2-efb67fb38578"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8a6ce6e-a7c1-4ebe-92ff-2a090e16fa7d">
+                    <propertyInstance
+                      Id="c61951c2-c3a3-48e0-9b01-c53813e7f01d"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e86ae3d-9a0c-44c1-b9f6-99653278266a">
+                    <propertyInstance
+                      Id="1bd5548b-b8fa-4300-bd38-218750c2e353"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c53a2cb-16a4-402c-8452-bfef898ee441">
+                    <propertyInstance
+                      Id="8dc34e63-be7d-4e51-8970-9c308e2b8c64"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="cc44ddd7-f605-418c-8372-b451ffd628b1"
+                LastKnownName="Single"
+                LastKnownLocation="Package1_1356.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="98f0e68c-e532-40f5-b308-cc2704489b11"
+            name="paddingBottom"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6e4496e2-3e1f-4c90-9351-1dbcaf855d84"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3DpaddingBottom"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="015124d8-f3a8-45a5-bc86-975aed840e87"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a457cfb-0356-48e8-a361-7bdef4182e42">
+                    <propertyInstance
+                      Id="0da0e0ac-4153-4ce1-a845-5119bc50084f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="505f8067-b421-41b9-a62e-a05a510a41b6">
+                    <propertyInstance
+                      Id="97817af3-1f0a-41cd-ab18-163702c4bb95"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ff0e63e-7cb0-49d0-a172-7c03c51a4fee">
+                    <propertyInstance
+                      Id="fb1d7cf0-3c13-47c5-ac60-f07c40263d01"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="871acea8-2f98-486d-9997-cafc1f970a6a">
+                    <propertyInstance
+                      Id="48c8c5e3-cd9f-4654-87dd-c04e6042bc99"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc9c80fd-f4a4-4daf-92b4-f84ac827a8a3">
+                    <propertyInstance
+                      Id="c3650f5a-5b61-439e-8bc8-975e99a9ce54"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="cc44ddd7-f605-418c-8372-b451ffd628b1"
+                LastKnownName="Single"
+                LastKnownLocation="Package1_1356.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="16d484bb-3d25-41fe-b9f0-779a8c0e6747"
+            name="Sprite"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c36b50a2-a6cc-46af-817f-0f22f74cb11e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3D(Name%3DSprite ParentType%3DUIAtlas) Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fddd472b-d37a-427f-881e-8bb101449b15"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8371de1-1c9b-4ea1-a13f-2d004bd9dc5c">
+                    <propertyInstance
+                      Id="c637fd46-7dc1-45af-bf55-268d01cdf3a2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b6fc42e-cd1a-4156-bda2-1526b5dbb93b">
+                    <propertyInstance
+                      Id="d4f7a36b-9673-4d45-8078-646fab9fac5d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f98cad5-6843-4d7d-aa60-832c4903e79b">
+                    <propertyInstance
+                      Id="34a1511c-3b66-4bbe-952b-909145b24a40"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b10302ce-8255-46bf-b076-32d52ae75015">
+                    <propertyInstance
+                      Id="62d72b65-8ff1-4c83-a666-aeebdeb87110"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b653b1e0-f539-48fe-bcfc-4330966be618">
+                    <propertyInstance
+                      Id="fa8ecef8-5984-40db-bbb1-360ae9eb3402"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76c5ce82-9f70-468a-a384-f81cc16f2739">
+                    <propertyInstance
+                      Id="9ec92738-0d7c-40fe-b9e5-2f2a5353a501"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

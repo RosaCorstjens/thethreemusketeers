@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CameraSystem_SD">
+  <logicalClassDesignerModelMoniker Id="2a3cb653-bdc6-41c4-bd9e-8b379aa3ce45" />
+  <nestedChildShapes>
+    <classShape Id="439396e8-2ff0-49cf-8c71-19e7e696efef" absoluteBounds="0.5, 0.5, 1.5, 2.1487730896472934" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="dca4295f-cfa6-4f45-bf7a-7df493f517cc" LastKnownName="CameraManager" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="712100ae-bafe-4b79-9a6c-77fba67d9de7" absoluteBounds="0.51500000000000012, 1.0153356393178306, 1.4700000000000002, 0.68164060264825832" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="1b5cc3f0-c6fc-47f5-96d8-100042f84756" absoluteBounds="0.51500000000000012, 1.706976241966089, 1.4700000000000002, 0.84179684768120455" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6f8eb4a-cc6c-443d-9711-c9ba2c96c2c7" absoluteBounds="0.5, 3.25, 1.5, 5.0315855002403254" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="57014130-4468-450a-9fa0-b87c5372f6a4" LastKnownName="CameraScript" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="cca5567c-e7b4-44c7-923d-978792b55ba8" absoluteBounds="0.515, 3.7653356393178306, 1.4700000000000002, 3.0839842781424522" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="63c88438-24d2-4f54-bbf4-ccd4200a50ae" absoluteBounds="0.515, 6.859319917460283, 1.4700000000000002, 1.3222655827800431" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.25 : 2.64877308964729); (1.25 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="*" targetMultiplicity="1">
+      <associationMoniker Id="b85bc8ba-59e0-4ed3-94d5-ec2f786d1ff7" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="439396e8-2ff0-49cf-8c71-19e7e696efef" />
+        <classShapeMoniker Id="e6f8eb4a-cc6c-443d-9711-c9ba2c96c2c7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

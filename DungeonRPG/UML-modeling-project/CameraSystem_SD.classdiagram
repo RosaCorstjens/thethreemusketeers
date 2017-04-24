@@ -1,0 +1,1883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2a3cb653-bdc6-41c4-bd9e-8b379aa3ce45" name="CameraSystem_SD" linkedPackageId="a8db10eb-8a5a-4d8c-bf12-59f9fbe07845" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="d3e3fb97-baf3-4e0b-854c-8d7cb45014b5">
+      <profileInstance Id="7efa47bb-f41f-4906-86da-f9d75f085c40" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1155c788-666e-4b3b-8ec7-1ddb6c90810a">
+      <profileInstance Id="d08d1497-c0d3-4a24-b315-c15897cac92f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="385fa0cc-a8c3-4090-983d-24921cd8590a">
+      <profileInstance Id="f091a845-ef28-4152-8681-907e765c96c9" name="CSharpProfile">
+        <elementDefinition Id="aa88bee9-be66-4033-9895-8643266389ee" />
+      </profileInstance>
+      <elementDefinition Id="33a85187-4307-4e0b-8d95-476d6d5ffff3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="62094174-c970-496a-b40f-eb28d1f4b96e" name="Camera" isAbstract="false" isLeaf="false" cachedFullName="UML-modeling-project::UnityEngine::Camera">
+        <elementDefinition Id="5e0d94e6-fbcf-4cab-a08d-9213e203ee05" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dca4295f-cfa6-4f45-bf7a-7df493f517cc" name="CameraManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="d2cd0a4e-6810-4011-8b8b-36e3fa00039e" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager" tag="ViewCode">
+            <elementDefinition Id="d07627e2-f723-4026-8a92-fc61441189ef" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="a8fdd258-dc73-480d-8c3c-fe746b1617de" name="class" profile="CSharpProfile">
+            <elementDefinition Id="d683cf83-abb7-4dff-95fb-cbae49f27fa3" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="35da7d67-5e6b-42fc-85b8-8d6606b38510">
+                <propertyInstance Id="12f8feb8-8d43-4e66-a3dc-df6a19d7f6ae" name="ClrAttributes">
+                  <elementDefinition Id="fa8cf4f0-9ada-4627-b39f-6bb2d1486122" />
+                </propertyInstance>
+                <elementDefinition Id="3a2132fb-bafa-4f01-a638-f3587ed7c925" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="ff8a03c1-0256-4300-b165-52a03f41dc5f">
+                <propertyInstance Id="54b35ee6-b67d-4db4-be7e-b04d1ab3a4de" name="IsPartial" value="false">
+                  <elementDefinition Id="89f08d62-3711-4be9-bbc0-4791e865d2c7" />
+                </propertyInstance>
+                <elementDefinition Id="6036e863-d9e9-4b01-9b2a-196cfc18c24a" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="f734a8af-443b-4620-8664-1e5bbd6d2b72">
+                <propertyInstance Id="e96f126e-b75f-4c8d-9710-09f758e374aa" name="IsStatic" value="False">
+                  <elementDefinition Id="7bdedb47-b896-49c0-8d60-0348e90b3007" />
+                </propertyInstance>
+                <elementDefinition Id="8f8c008f-85a5-496d-b297-9cba0bfddd78" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="5a532571-8d96-42d9-8b17-28e39175dc83">
+                <propertyInstance Id="687311a1-f23d-442b-9eee-4e3541a8c05c" name="IsUnsafe" value="false">
+                  <elementDefinition Id="dd637647-ce33-45f7-bdad-5b3118c7ef4e" />
+                </propertyInstance>
+                <elementDefinition Id="e830de8e-e192-447f-bbbc-7d6e328ecf11" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="e8b73663-2d8f-4a3c-8510-bc06856c2d8a">
+                <propertyInstance Id="820b9847-c1bf-41fa-8670-8de0930d7e51" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="94b1f483-7c66-43dc-a91e-0e86e491fa39" />
+                </propertyInstance>
+                <elementDefinition Id="f630aa6d-1654-4233-b963-391294a6e8a3" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="a3a0a582-0153-4eb5-a49d-ae4c6c26f2f7" />
+        <targetEnds>
+          <association Id="b85bc8ba-59e0-4ed3-94d5-ec2f786d1ff7" isDerived="false" sourceEndRoleName="CameraManager" targetEndRoleName="CameraScript" isLeaf="false" isAbstract="false">
+            <classMoniker Id="57014130-4468-450a-9fa0-b87c5372f6a4" LastKnownName="CameraScript" />
+            <description>Property CameraScript references type CameraScript.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9cf12707-965e-42f6-96b7-0496d7557cde" name="CameraManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="f8d3c72f-9ad5-4383-983b-3e6364646f32" name="Lower" value="*">
+                      <elementDefinition Id="819c8524-f507-44df-a5e7-403b76ed9b49" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="93dec10c-3d26-4ccc-8005-0c4d124ed23b" name="Upper" value="*">
+                      <elementDefinition Id="16189fa1-590e-4d39-b5cf-e8bc7881a6da" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="8d6b9265-a10b-46b3-844c-a1f9c5a938a0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="166993db-6e96-4770-a786-2228cbc63457" name="CameraScript" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="e622d85c-f104-4347-b7b5-9081f503379a" name="Lower" value="1">
+                      <elementDefinition Id="a2eb48a0-653b-4b19-bdb7-56f6b8ac5a84" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="7147008f-145e-4e53-93b3-341cb2b5a25e" name="Upper" value="1">
+                      <elementDefinition Id="b7a540b6-56f5-4c9b-bb6e-e5963283f142" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="fd7239f9-f1c5-40a1-8c8a-5396d1663d7d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d91a26c9-c5d1-43af-968a-794486f1bbe5" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="fe376916-07bd-45f0-bfab-f9e6b8ba5c7e" name="CameraScript" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="1c31dc35-f577-44e6-b9a5-f63178305720" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3DCameraScript" tag="ViewCode">
+                <elementDefinition Id="d61e71d7-6dc3-4845-8a4f-ef325d0dc0a0" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="b3840e72-21bc-418b-b72d-b64129ef139b" name="property" profile="CSharpProfile">
+                <elementDefinition Id="9776298c-1bdf-4c67-962a-d65b17f197be" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="49d01989-af06-421d-8153-a3f40e06c6b8">
+                    <propertyInstance Id="e1200665-5699-4f4c-a645-778d5e136f2f" name="ClrAttributes">
+                      <elementDefinition Id="c93340a8-5912-4863-adb8-92199cc9a425" />
+                    </propertyInstance>
+                    <elementDefinition Id="388092db-8c0a-46f5-a6a7-8915f1e9e674" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="15754977-2095-4262-9967-fea57068bdc4">
+                    <propertyInstance Id="ab8fd4ac-b048-4f29-997b-e53d3614da03" name="Get" value="public">
+                      <elementDefinition Id="c32894d4-c609-4e1a-9513-7948862d0f10" />
+                    </propertyInstance>
+                    <elementDefinition Id="56718c55-fbbb-46f8-bbb5-e8bcec029b6b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9e334018-d8ec-41d5-bf67-737c1b095dd7">
+                    <propertyInstance Id="da745c7e-5b67-4b5e-832c-e0f95943281e" name="HasBody" value="false">
+                      <elementDefinition Id="fe41893d-9a3c-4173-80d3-366a402e81f8" />
+                    </propertyInstance>
+                    <elementDefinition Id="fa7e61cb-0aea-4b60-85b7-57251ce80f06" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fba98d1d-135c-4ad8-85c0-bf5aa22db452">
+                    <propertyInstance Id="777b2cff-ded2-4008-90ea-b2aa3de1e314" name="IsUnsafe" value="false">
+                      <elementDefinition Id="3037f5e1-be8a-4430-955a-119f0e81f350" />
+                    </propertyInstance>
+                    <elementDefinition Id="db562323-763b-46a7-93f1-675c5f8f310b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8a97f638-a362-4fad-a7a8-4816b221d33c">
+                    <propertyInstance Id="1a617a37-6010-4926-887f-4002c5bc6dde" name="Inheritance" value="none">
+                      <elementDefinition Id="956e8c21-258e-4e68-a21c-e821c29c184c" />
+                    </propertyInstance>
+                    <elementDefinition Id="ef0a278e-71b1-4e9f-bc66-b07c99ba2c46" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f2e12699-6df8-45df-840f-440dbe7caf22">
+                    <propertyInstance Id="06bdbf8f-ae4a-4448-8c15-4f19e4fca289" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="5d83652d-9770-4473-98bf-c5ccad70b00b" />
+                    </propertyInstance>
+                    <elementDefinition Id="34054029-32b4-4898-952b-3c3ba4320d9b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1e9fa219-dd20-4b4e-8de2-7ab85ef1dff6">
+                    <propertyInstance Id="fd64e4e5-5003-4b86-8ad1-c3c7545e137a" name="Set" value="public">
+                      <elementDefinition Id="0797f3c4-17e4-45c3-a050-0514ce1e03ad" />
+                    </propertyInstance>
+                    <elementDefinition Id="91dd9c06-9707-4f0e-bad7-b1841048cae9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="7aa5bfc9-ff81-45ec-a26a-2426c439fcf6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8186dc25-7d27-4b2d-ad82-72c6f3b3938c" LastKnownName="CameraScript" />
+            </type_NamedElement>
+          </property>
+          <property Id="39fe656d-8dd1-4cea-b49f-48815d024bd3" name="mainCamera" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="a44b1d9d-7c6f-4b4b-9f52-5a9b1edbf0c4" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3DmainCamera" tag="ViewCode">
+                <elementDefinition Id="9ebdcc75-1a9a-4b30-be68-4a12bec44ed1" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="4b4d5f9b-0be2-45b2-a527-bc030ed8dc55" name="field" profile="CSharpProfile">
+                <elementDefinition Id="95916b80-5d41-4e22-a4f2-d1526cb6da14" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a41ae35f-8ab4-446b-a020-f95d3760493d">
+                    <propertyInstance Id="99f73e8c-af4f-41e4-86fd-0e2c7a61c949" name="ClrAttributes">
+                      <elementDefinition Id="8013c197-91de-42bd-874e-adf59a7b8d3c" />
+                    </propertyInstance>
+                    <elementDefinition Id="44cfc2f1-e6b6-460f-85a6-91494ff8ac8e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1734cf21-ec2e-4277-a5b1-5ef715a090b4">
+                    <propertyInstance Id="9553d79c-b630-4f81-9fc7-6d93b80426a4" name="IsConst" value="false">
+                      <elementDefinition Id="bd5edbe1-1b3c-4b07-a670-7cdc03fade19" />
+                    </propertyInstance>
+                    <elementDefinition Id="9dc187f4-3eed-4364-ac82-21e68ddaad4f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="40ebac78-eab8-4f2a-8b48-e22f000a0eb4">
+                    <propertyInstance Id="d55c000f-7a08-4769-9065-f9dde8441adc" name="IsNullable" value="false">
+                      <elementDefinition Id="d9146a9f-53e7-4648-80bb-05efda58b431" />
+                    </propertyInstance>
+                    <elementDefinition Id="e241c57f-5fb6-4f7f-948a-39b2fa2736f7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9ff2a2c3-f50c-4c99-aee2-8140744d3011">
+                    <propertyInstance Id="c7229c26-2634-4e23-845b-271d97730fcd" name="IsVolatile" value="false">
+                      <elementDefinition Id="e4f5166a-0f83-4231-83e8-51758d110b0f" />
+                    </propertyInstance>
+                    <elementDefinition Id="a5cc42b8-1193-4b34-9cc9-0aa074e2505f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e978dc3b-67fe-47c0-928c-566b860b30ba">
+                    <propertyInstance Id="f44a0e7d-3470-4687-ac0b-49891526720b" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="419c0371-4c4c-4b98-91e8-3450bc7b4502" />
+                    </propertyInstance>
+                    <elementDefinition Id="eef1ea09-336e-4204-9f0e-1fcb8c0372cb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="7708da91-09f6-47fd-adb5-35054063be15" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="62094174-c970-496a-b40f-eb28d1f4b96e" LastKnownName="Camera" />
+            </type_NamedElement>
+          </property>
+          <property Id="8e9cdabb-46d0-400e-a0ef-1fb470eaacb5" name="camScript" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="26c53d90-5002-4a1f-bc9c-28dbba1b801f" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3DcamScript" tag="ViewCode">
+                <elementDefinition Id="154ee1d7-f92c-42f4-b995-7b41a4ce30f1" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="f051a119-4fb9-47de-9668-7c95704dfb8b" name="field" profile="CSharpProfile">
+                <elementDefinition Id="980c1048-fb92-453a-87db-559d9c31c586" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4f16a3ab-c36f-404d-b3b6-5d41972fcd6f">
+                    <propertyInstance Id="e8f204de-221e-4bc9-b132-41d17e9a57b3" name="ClrAttributes">
+                      <elementDefinition Id="8d68e4c8-e6e9-4547-bfc7-38d2e24786cb" />
+                    </propertyInstance>
+                    <elementDefinition Id="8db69e79-7a31-4aea-9f71-df1891ed89cd" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="45b7a19d-1022-42db-807b-e77ecbf1786a">
+                    <propertyInstance Id="46430e7a-d622-4744-abaa-4950592366e2" name="IsConst" value="false">
+                      <elementDefinition Id="cd90f6ac-84b0-4a16-b009-4b97b1739978" />
+                    </propertyInstance>
+                    <elementDefinition Id="4e4135ea-9554-4a66-a8db-9e6d4e34e132" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3a542668-c714-4eb5-ae16-f86d83e2b062">
+                    <propertyInstance Id="c090eb65-b1b4-48a1-9de7-3a479c5a67fb" name="IsNullable" value="false">
+                      <elementDefinition Id="5fe17b49-0760-4b40-87ea-81a23320891b" />
+                    </propertyInstance>
+                    <elementDefinition Id="e9bbf51c-21fc-4209-bc8c-2fa5992c9b11" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c75be38a-d663-42ba-a978-f4d98a7efee2">
+                    <propertyInstance Id="0cf84117-d5af-44f7-b3ca-1f89b990582f" name="IsVolatile" value="false">
+                      <elementDefinition Id="a253d50c-661f-43d1-b675-edd21cb080f1" />
+                    </propertyInstance>
+                    <elementDefinition Id="70240955-b71d-46a8-9f15-f8b7b402c43d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="69ae9680-32ee-4bcc-884c-cac75452dadd">
+                    <propertyInstance Id="77f61a60-15ff-49ce-8238-48f429f85084" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="5f0f7724-61f9-4d5e-a985-537ea650870a" />
+                    </propertyInstance>
+                    <elementDefinition Id="b902fb88-5440-4fc5-88ea-dd41c477a337" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="6ef34a8d-befe-4c22-ab4d-1731a920d262" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8186dc25-7d27-4b2d-ad82-72c6f3b3938c" LastKnownName="CameraScript" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d2d13d27-dc3e-4328-a0ae-18054a5d5803" name="Initialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="0ef7b7a7-0b1f-47ec-ba3f-9b219830d7fb" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3DInitialize" tag="ViewCode">
+                <elementDefinition Id="7e1b04d7-5881-4d5c-bba0-713945b0228e" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="4d16cb3e-3493-4191-84e3-9f60738cb8a5" name="method" profile="CSharpProfile">
+                <elementDefinition Id="0444840b-b74e-4208-8b8f-103376a6c375" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8494a9f2-a451-44d4-8786-725b46b06218">
+                    <propertyInstance Id="26ca13be-046c-4dbf-b108-71308743e5ca" name="ClrAttributes">
+                      <elementDefinition Id="e7ced371-2c09-4a45-a206-0fd7f030a390" />
+                    </propertyInstance>
+                    <elementDefinition Id="8dd4fd21-1cd7-4773-9b4e-b17bf41ebce1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="460f8645-8f28-4f90-b157-00912e8c3cdc">
+                    <propertyInstance Id="613bb774-93c1-4aa6-b8b5-f2d8702dd5f7" name="IsPartial" value="false">
+                      <elementDefinition Id="ed80023a-c8e2-44fe-88a4-2993011199ce" />
+                    </propertyInstance>
+                    <elementDefinition Id="29e51290-4cde-441e-9963-c57fc5df8e71" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d9d11ebd-56e2-41ae-a380-98f92d178671">
+                    <propertyInstance Id="2e53c4b7-598f-4faa-a3eb-981348e77d3b" name="IsUnsafe" value="false">
+                      <elementDefinition Id="9be934ee-d4d0-4e97-a7b3-ae364c90f84e" />
+                    </propertyInstance>
+                    <elementDefinition Id="9124b4bc-5c46-4378-8d05-c5d357b947ce" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8a1cfee9-21b5-4be1-a5f6-dde6e2af556d">
+                    <propertyInstance Id="2ed25c79-039b-473c-8394-01d07edb0fab" name="Inheritance" value="none">
+                      <elementDefinition Id="5ecda3c6-1615-4ca8-907a-ea19fe0278c0" />
+                    </propertyInstance>
+                    <elementDefinition Id="d9a577b0-74e1-4b97-9948-2c7455b7e2f4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0c73f449-09af-41b6-9ee9-f1a8ce6e626d">
+                    <propertyInstance Id="1c717b55-3683-4e40-bb84-e0b91caf856e" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="187508af-73ac-4f47-b51d-af47b6130f91" />
+                    </propertyInstance>
+                    <elementDefinition Id="3ff9ad46-f1b2-4af1-9c97-b230c67ab8d4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ebbdba0f-acdd-455a-afed-f88be719aded">
+                    <propertyInstance Id="a66d3ed1-1900-4db5-8123-e4e528e548e3" name="params" value="false">
+                      <elementDefinition Id="ca71faf3-5c79-44c3-b3a7-039f7fed3e59" />
+                    </propertyInstance>
+                    <elementDefinition Id="de2a61b7-59c0-48b9-9411-5b9d2e850d73" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="11f78123-a3f7-4af7-bf2e-5a8987e974ee" />
+          </operation>
+          <operation Id="419295c7-2d72-49f0-aced-811d68dc8267" name="SetTarget" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="5c9ca832-dbc5-493c-b0f3-59501aa9c78a" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3D(Name%3DSetTarget OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DTransform)])" tag="ViewCode">
+                <elementDefinition Id="acb7e042-0796-4483-ae17-9ba0f2fc4eba" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="199858cd-e00f-4edd-9ca2-4c6e64026af5" name="method" profile="CSharpProfile">
+                <elementDefinition Id="62f5b3d9-c0c7-4329-be36-7e74101d294f" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a878a93e-7b0e-4d93-bc85-198a43f40f11">
+                    <propertyInstance Id="31c54f8a-8ab9-4abb-a2da-3445def544ee" name="ClrAttributes">
+                      <elementDefinition Id="82d82d98-a3a3-4b62-9537-e854b87436e0" />
+                    </propertyInstance>
+                    <elementDefinition Id="0771c95a-2c22-4e68-b6c5-90df775fdbe9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d08f3926-1e97-4b3c-83d6-3b5d7373c991">
+                    <propertyInstance Id="5c8bd35c-6aa9-45da-b980-bc860c9fd9cf" name="IsPartial" value="false">
+                      <elementDefinition Id="cb1e9558-c9bf-4490-9e15-af29d40b5608" />
+                    </propertyInstance>
+                    <elementDefinition Id="5d51d5b0-d2a7-4c35-af24-5c182739a5b8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4c280964-927c-4a59-8187-bc131bfc4246">
+                    <propertyInstance Id="c7823d8d-725f-4d5f-8ce9-f850bef4c906" name="IsUnsafe" value="false">
+                      <elementDefinition Id="93432e5c-4e9b-4538-a4f1-14a01bb6ffcc" />
+                    </propertyInstance>
+                    <elementDefinition Id="14c70d42-96c0-4ac1-99c6-53e4db65fce1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="57d9c7c5-5793-443f-a2d7-ea5aba42ba70">
+                    <propertyInstance Id="4294eb71-3f13-4fb5-b9eb-c06dbb791de2" name="Inheritance" value="none">
+                      <elementDefinition Id="d4ae0f9b-a35d-43d1-93e6-d3d9b081161c" />
+                    </propertyInstance>
+                    <elementDefinition Id="87c7e6bb-58f1-4af1-9aaf-c25442572c14" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1e95ce1d-4222-443c-ab62-9cb6c789eb58">
+                    <propertyInstance Id="3b642631-1e84-4fdc-8918-9cd73cc911c6" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="44ce372b-3edb-41e4-981e-2db751ced5df" />
+                    </propertyInstance>
+                    <elementDefinition Id="9e5cf2c3-79b9-4f1d-8d71-a68dd064d682" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="bfbd0223-614d-497c-97e9-9cff110ff5b4">
+                    <propertyInstance Id="531265d7-2635-48d4-9d54-3766ed83b7e4" name="params" value="false">
+                      <elementDefinition Id="9ceab389-cdcb-421f-9e10-eca16bfe0620" />
+                    </propertyInstance>
+                    <elementDefinition Id="e19d2910-22e2-4c2c-81e2-d9a96c4509df" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="4140bcab-e700-4069-9e00-2cfdeed5a5c5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7553e82e-ee1f-421a-8741-68008ac2ce03" name="target" direction="In">
+                  <referencesInternal>
+                    <reference Id="3df86adc-036f-419e-9074-6a469d2605d0" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3D(Name%3DSetTarget OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FUnity5-3%2FEditor%2FData%2FManaged%2FUnityEngine.dll&quot; Namespace%3DUnityEngine Type%3DTransform)]) ParameterIdentifier%3Dtarget" tag="ViewCode">
+                      <elementDefinition Id="dd729313-2e8b-4c01-bd89-80e24fcbe33b" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="81b993ea-5ebf-4373-8de7-f74b085c23a7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="de15741e-8e01-4e1b-8834-00a6d8403885" LastKnownName="Transform" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8c81b3cd-e477-46cb-835c-303ff004491b" name="FocusBack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="0a433587-d0c8-482e-aa32-15ad1c6befa6" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3D(Name%3DFocusBack OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)])" tag="ViewCode">
+                <elementDefinition Id="009ce431-ea44-44f0-9c54-7409323efd64" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="08019b70-77c9-4d33-993f-53aca9cc7cbe" name="method" profile="CSharpProfile">
+                <elementDefinition Id="0b931b24-2a6f-410a-9830-6a1192b2fce7" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="875ea07c-ff32-4b28-ae69-e6c0f6525631">
+                    <propertyInstance Id="6df3427e-f348-4c39-bfd0-2f04283f43ef" name="ClrAttributes">
+                      <elementDefinition Id="1aa0ad99-7432-47db-bc0d-9486fd552fe6" />
+                    </propertyInstance>
+                    <elementDefinition Id="0d028541-606e-449b-9f07-ed706944ccc6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d8e00bad-18df-4b75-a097-bb8160df14e2">
+                    <propertyInstance Id="8d76d324-7f44-4b0c-b75e-8e1dd40851e4" name="IsPartial" value="false">
+                      <elementDefinition Id="a124712f-1b5e-48e5-bcbd-23a9d9c717fe" />
+                    </propertyInstance>
+                    <elementDefinition Id="fd402d9d-2f09-49e7-9ff4-5ad58d4a2cd6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="95c0a56b-1e65-4c02-b16d-0128b8ea0e9a">
+                    <propertyInstance Id="cf2ff255-d5bc-4cea-8e6b-4d95f86cec72" name="IsUnsafe" value="false">
+                      <elementDefinition Id="696b128a-dce2-4b99-8bdf-c83c1d206dcc" />
+                    </propertyInstance>
+                    <elementDefinition Id="86eedfab-af18-405d-962b-0e286a06236c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0c69cb90-f00e-40c5-99ff-3b372d5c08d4">
+                    <propertyInstance Id="30dafa98-d799-4a23-9e95-d2116f6b600d" name="Inheritance" value="none">
+                      <elementDefinition Id="92487817-dd49-4ea8-ad0b-1958e02b4fa1" />
+                    </propertyInstance>
+                    <elementDefinition Id="76359082-daff-4fef-bbad-70363688187d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4c000a93-9fda-4b93-9051-f74b89e2575c">
+                    <propertyInstance Id="78079fa9-ba1d-4a35-9587-c2fb32c8a816" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="19dea85d-4646-4f10-a0bc-35c3baec2f50" />
+                    </propertyInstance>
+                    <elementDefinition Id="b8c007f6-373f-4651-a3cf-f16c581108fd" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="66901b1e-ff72-4762-b477-cc81e43a1f6c">
+                    <propertyInstance Id="fb765a43-ebcd-4c7f-9032-6f162ce28c6a" name="params" value="false">
+                      <elementDefinition Id="d84c7114-8a82-4d9b-a3e9-69d0a7fd9d5e" />
+                    </propertyInstance>
+                    <elementDefinition Id="039656cf-d7a0-4eac-afeb-dacd5fa514d0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="a5692f33-a465-43fd-863d-2f22c3100747" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="921c63d9-dd85-4b9c-8580-c214b2c7ae49" name="back" direction="In">
+                  <referencesInternal>
+                    <reference Id="e4155818-a5dc-4d80-8626-6e2a6f91008c" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3D(Name%3DFocusBack OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DBoolean)]) ParameterIdentifier%3Dback" tag="ViewCode">
+                      <elementDefinition Id="a4703374-13dc-4736-a4e9-7f61f25bbc8f" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="0926b2d0-d95b-4d7f-b3f7-0f80d2c2a2e8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="be019d56-6045-4de9-91cc-06708a730156" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ce5f83e0-5b1b-4397-a999-67ae0d6f921b" name="CameraManager" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="0d8b9ea8-2bfe-437a-b7a0-028b4d127a82" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraManager Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="cdfb587c-032f-4dd9-b413-a4ea926fa219" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="f7035130-90e6-434f-ba78-d2c8bf22074a" name="method" profile="CSharpProfile">
+                <elementDefinition Id="66b91b45-de43-42ec-8f23-d26abd95b6f8" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="557f19b2-5021-4407-9c7f-624796543afd">
+                    <propertyInstance Id="f7c40735-9d44-4f71-9cb1-0eea7c9145de" name="ClrAttributes">
+                      <elementDefinition Id="eade16a6-758c-44e3-a36c-6494ff2b870c" />
+                    </propertyInstance>
+                    <elementDefinition Id="01358b5d-9700-49ec-b09e-61e6f0091c48" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5c085949-155e-43d7-8c16-f3e584132ae1">
+                    <propertyInstance Id="dc4ae669-1828-4331-bbc9-664612da3aa5" name="IsPartial" value="false">
+                      <elementDefinition Id="c90e2ae3-cfbf-4549-a392-4f121ffac8d2" />
+                    </propertyInstance>
+                    <elementDefinition Id="af528c2a-9841-4a28-aad2-64ee8c3e7a18" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="789d44f9-28de-4a03-bfa3-7fb5ad3fa3d2">
+                    <propertyInstance Id="a7ba3cde-be01-4f11-b85b-1112df047fe6" name="IsUnsafe" value="false">
+                      <elementDefinition Id="052fc559-169a-497e-9d86-391ceef4db3b" />
+                    </propertyInstance>
+                    <elementDefinition Id="d7009e7f-72e9-464f-a9c5-7df68f8cea93" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="10c595ee-0687-4acd-9ad0-7c9abca9404c">
+                    <propertyInstance Id="2747be36-9e3d-49cb-9d02-13ba0dcd3ea8" name="Inheritance" value="none">
+                      <elementDefinition Id="51dacbc7-a1f6-4174-97f0-c56bfb8b017b" />
+                    </propertyInstance>
+                    <elementDefinition Id="10139c86-30ab-493f-95fa-cb71b9e1829c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2e9a2a5a-b9e9-491b-b31b-47b2439b7188">
+                    <propertyInstance Id="b7cd6b53-6190-4829-aeab-fab23120472a" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="648d3105-040d-4524-82ac-1e8b206ee391" />
+                    </propertyInstance>
+                    <elementDefinition Id="bd2ffc6c-0068-4145-bebd-4d374dddce0b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="25f4e2c3-51d3-496a-8871-522185c690bf">
+                    <propertyInstance Id="47d42d01-a7c3-491e-9ca7-5348f70eecf8" name="params" value="false">
+                      <elementDefinition Id="b08d1120-bb3a-43d6-a20c-c29a796027f8" />
+                    </propertyInstance>
+                    <elementDefinition Id="cc7f2d35-6060-45c4-994e-4e474d5f70de" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="5416892a-f074-44b1-8191-fd2bdc53957d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8186dc25-7d27-4b2d-ad82-72c6f3b3938c" name="CameraScript" isAbstract="false" isLeaf="false" cachedFullName="UML-modeling-project::CameraScript">
+        <elementDefinition Id="5eeabffb-7a01-40bc-816e-f9596df2edea" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="de15741e-8e01-4e1b-8834-00a6d8403885" name="Transform" isAbstract="false" isLeaf="false" cachedFullName="UML-modeling-project::UnityEngine::Transform">
+        <elementDefinition Id="5f0e319d-0d47-405e-8488-e1c783261c63" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="be019d56-6045-4de9-91cc-06708a730156" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="57014130-4468-450a-9fa0-b87c5372f6a4" name="CameraScript" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="906a6887-6f45-47af-861b-ccbf76d968b5" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript" tag="ViewCode">
+            <elementDefinition Id="8af61b8b-2642-4b9e-92ed-435d556b9899" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="6c391c8d-accd-4871-b80c-5fa8f698db93" name="class" profile="CSharpProfile">
+            <elementDefinition Id="f2b645ff-167d-442b-84cf-17fe8d33f2be" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="c1067bc3-5d02-4ff3-9ba7-33c2cfef3973">
+                <propertyInstance Id="59cdafa3-68cb-46c3-9e1a-9ebc920c083f" name="ClrAttributes">
+                  <elementDefinition Id="776cbf60-9de4-4329-b958-b0e3116be212" />
+                </propertyInstance>
+                <elementDefinition Id="812ad895-7c19-4ce9-ad42-699d3fefa488" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="4c87953a-cb00-459d-85b3-4ae5fce47fe0">
+                <propertyInstance Id="df842fda-de5c-4ab1-b30f-bab8cadf1f97" name="IsPartial" value="false">
+                  <elementDefinition Id="18980204-7749-4fba-b0ca-1e8f277c2e0b" />
+                </propertyInstance>
+                <elementDefinition Id="34b00612-4cd7-4b23-b1a5-ce8b483ef770" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="22e3eda2-e115-41b7-b8f6-19c0fec8ac2b">
+                <propertyInstance Id="48d4e0e4-4fec-4f75-9f79-12603ea23e2a" name="IsStatic" value="False">
+                  <elementDefinition Id="f0c4371a-b8a3-45f5-83a1-9f6aa0644086" />
+                </propertyInstance>
+                <elementDefinition Id="a466024f-127f-40c0-9c21-f33d5a9fdd81" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="a2f4e4b4-2895-4e62-81e9-1cbf22737a3f">
+                <propertyInstance Id="e5e0a947-1b56-40e5-9dfc-852e1a11a016" name="IsUnsafe" value="false">
+                  <elementDefinition Id="e0686b7f-854a-4e17-b5ca-bfe10d422822" />
+                </propertyInstance>
+                <elementDefinition Id="5f5c66a7-c007-4d4c-a974-9ff7f941c35d" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="0f3cd64e-67c2-4423-9dac-b021b2fdc57a">
+                <propertyInstance Id="518249e6-1592-4009-908a-546efa87ee13" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="4aae310f-416e-4c7a-b8cc-430d26169372" />
+                </propertyInstance>
+                <elementDefinition Id="e021ca16-2e61-45e8-b5da-14edde980ead" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="5eeabffb-7a01-40bc-816e-f9596df2edea" />
+        <ownedAttributesInternal>
+          <property Id="13dce908-b569-4575-9359-f23e922c31c2" name="FocusBack" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="d934127a-f5d5-465b-9d8f-a89bcfdc7e69" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DFocusBack" tag="ViewCode">
+                <elementDefinition Id="468e68e0-6c42-40ca-bdd7-2d5e8c433abe" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="4f07fc9f-2503-4d06-b439-3a4828a667a1" name="property" profile="CSharpProfile">
+                <elementDefinition Id="125e882c-cc4d-46fa-bd56-70d36a328b15" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="94508494-1d27-47a7-a3c5-d64925f2cbc1">
+                    <propertyInstance Id="f16593e4-c58f-4585-9ddb-543e5d3ed3dd" name="ClrAttributes">
+                      <elementDefinition Id="06d06845-9c32-4a16-b4d8-9dc732e8bd09" />
+                    </propertyInstance>
+                    <elementDefinition Id="4f5d7053-a8f4-40d1-be31-b8dcadbdf2be" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b10d4bc8-443b-434a-b7de-39e9a17b2f11">
+                    <propertyInstance Id="af49f85a-1dca-4ba7-8716-7ca74600faf5" name="Get" value="public">
+                      <elementDefinition Id="7961e090-6cb4-4f7a-8ce4-17564b229490" />
+                    </propertyInstance>
+                    <elementDefinition Id="90d29cc3-84ff-43d1-8386-987fedfee869" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="946fc460-2fd5-457c-b4e6-0f364b394ddb">
+                    <propertyInstance Id="3e25ad0e-4bf6-47b7-acb4-0c0e6d7093df" name="HasBody" value="false">
+                      <elementDefinition Id="6c90b7be-8467-48d8-9245-2a8322f98116" />
+                    </propertyInstance>
+                    <elementDefinition Id="0f5d22e6-17f5-4f9c-bbd3-6bac50e454d1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2fb5277a-7f15-445c-b188-6744a6206c31">
+                    <propertyInstance Id="b0a6da2a-032e-4e7d-b346-90cc71fa0e69" name="IsUnsafe" value="false">
+                      <elementDefinition Id="0cfdd4dc-66be-496b-9e5b-5ae07d263625" />
+                    </propertyInstance>
+                    <elementDefinition Id="a67f398d-7bc8-4a8a-b4d9-5f28bed60187" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="68b92fe9-f405-483a-85c3-b990f08455a3">
+                    <propertyInstance Id="1ca97524-503d-4c8e-b952-9a8ec5f99c94" name="Inheritance" value="none">
+                      <elementDefinition Id="dabf4405-ea59-4324-a18e-c3fc61e76884" />
+                    </propertyInstance>
+                    <elementDefinition Id="9e106187-46f6-4cc9-b91a-b28e9bf3d454" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4088692c-3559-4b80-9917-195254131067">
+                    <propertyInstance Id="aa275962-51d0-440c-8253-dee8cf1e4d6d" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="caf01938-c961-4c9e-9072-08d7fe52199e" />
+                    </propertyInstance>
+                    <elementDefinition Id="e2689c26-32f3-4ac0-bfa8-263aa77f4e7f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c1288eb8-92e4-4c8c-ab78-fb98024cf4cd">
+                    <propertyInstance Id="9b083c14-f3e6-4358-a850-25420eb22c01" name="Set" value="public">
+                      <elementDefinition Id="a63caf6a-3694-4734-ae98-fc6dc75c9e77" />
+                    </propertyInstance>
+                    <elementDefinition Id="4548d1af-3c57-45d6-aba7-b03871118152" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="3b298074-1fd8-4876-aea8-60826502c4de" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be019d56-6045-4de9-91cc-06708a730156" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="698baca0-a7eb-4e04-970e-816077d888a1" name="CanReceiveInput" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="ca5e3f2b-6eb3-443a-bbf7-03db996abea0" handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DCanReceiveInput" tag="ViewCode">
+                <elementDefinition Id="987682ca-42db-4b79-a275-1e569806daca" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="fb76b665-1278-425a-a64e-3bcb2776ce6e" name="property" profile="CSharpProfile">
+                <elementDefinition Id="8f18c028-8f0c-48c7-8616-4d3cb80503c7" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7e73898c-136e-4891-9612-3e4e47f496ec">
+                    <propertyInstance Id="7fe43708-6719-4e54-abec-9289e51c9d91" name="ClrAttributes">
+                      <elementDefinition Id="09a2600b-c7c4-4a1a-ba23-21146ba7e68e" />
+                    </propertyInstance>
+                    <elementDefinition Id="ff697ed4-4176-4594-8a41-7d3f525ad9af" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d30b6f2b-ca64-4377-a265-d9ec02b88b1a">
+                    <propertyInstance Id="f54d23d7-4bb9-4941-a142-caa4424923b8" name="Get" value="public">
+                      <elementDefinition Id="bb5a990e-6207-4487-a12c-513df3900ec0" />
+                    </propertyInstance>
+                    <elementDefinition Id="4bdd9bc0-46f5-4b41-b5ff-d76041d75960" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4dffd159-ec12-491c-911c-dab07744a49f">
+                    <propertyInstance Id="7f53b1df-edde-4fd8-9297-a4d2ccc8827a" name="HasBody" value="false">
+                      <elementDefinition Id="37e8b5b5-f31b-41f8-ad8d-72e8340ff3d8" />
+                    </propertyInstance>
+                    <elementDefinition Id="6616b7f6-9ea2-4583-95a4-0a75dd71de92" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a976b134-5e92-4ccf-8d46-100c184fb65c">
+                    <propertyInstance Id="adf3cf2c-7cbd-4366-9de9-5fedca0b4af9" name="IsUnsafe" value="false">
+                      <elementDefinition Id="8dbb1af4-71e4-485d-8f53-03df161de3dc" />
+                    </propertyInstance>
+                    <elementDefinition Id="6e418daa-a3f5-492c-95d4-8b924412bccf" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b279c1f1-345f-4cdb-92c5-15955d21d912">
+                    <propertyInstance Id="dd0f7da3-c2fa-4d69-ba6e-3f27a33fa53a" name="Inheritance" value="none">
+                      <elementDefinition Id="ece45ffe-fbad-4b46-8e20-f2fac903c031" />
+                    </propertyInstance>
+                    <elementDefinition Id="7aa47414-8ad7-44bf-9116-d29ac4c18690" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b49ecb63-5064-4a53-938d-afb25154dcfe">
+                    <propertyInstance Id="27fb1bba-ff11-4e9d-8784-1d0f06ea4fc2" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="468c885f-0d6b-4219-bbf2-875734a63d8f" />
+                    </propertyInstance>
+                    <elementDefinition Id="a2a83bf6-5199-46c7-abb0-6e7aaf90b52c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d4148160-f1f1-4b3f-bfc1-4a6316bcc8d4">
+                    <propertyInstance Id="8d3c2b4c-81c0-474f-b5e1-af0eefd04653" name="Set" value="public">
+                      <elementDefinition Id="27df6e14-24fa-4997-a1f6-4ae835e6f62d" />
+                    </propertyInstance>
+                    <elementDefinition Id="1db5cb37-6958-4614-89e6-45537829500d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="f17a0c16-424e-4bd7-bb8f-482255391585" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be019d56-6045-4de9-91cc-06708a730156" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+          <property Id="fa2baa97-5eb4-4ddf-bb34-7a66b64fd6ce" name="target" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="aeb3308d-a3ad-4b07-91bc-2e0a684a3fb9" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3Dtarget" tag="ViewCode">
+                <elementDefinition Id="d2f1ca39-f4a2-428c-8acd-3c19297e1fcb" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="576c0525-abd6-4aa5-b0a9-27570c27e05a" name="field" profile="CSharpProfile">
+                <elementDefinition Id="0568cd0b-4b7e-44b1-9b90-bc5380aafb23" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9a42e93a-732f-4d7f-b1d5-cc5e0a2c6012">
+                    <propertyInstance Id="db3ab7a9-da39-4717-a1f8-cd4573d86c04" name="ClrAttributes">
+                      <elementDefinition Id="0f5bd9e6-76da-44d7-a93a-ee08878aadce" />
+                    </propertyInstance>
+                    <elementDefinition Id="77b212be-9bb2-4e68-a091-6497dabf3705" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0bfcee53-395f-443b-ae6f-27ee966ecf0c">
+                    <propertyInstance Id="ecf7c973-33ce-4fbf-9b70-e5dcad94a32a" name="IsConst" value="false">
+                      <elementDefinition Id="a66fb490-c6cb-4dc3-9e8a-de574b7c81e5" />
+                    </propertyInstance>
+                    <elementDefinition Id="46017b7f-9fb8-4526-ace4-179203c0c741" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="af767261-01ff-4518-8529-261d4e6a056d">
+                    <propertyInstance Id="c3a6adea-b579-41b2-a5de-e52c5ffe4dfe" name="IsNullable" value="false">
+                      <elementDefinition Id="d268fecb-73b7-41b8-b8f9-d15b36ad31b6" />
+                    </propertyInstance>
+                    <elementDefinition Id="14dc188b-9107-444b-b5a9-4fc5273c3227" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5c8bc2fc-a067-409c-b557-1b248feca8f6">
+                    <propertyInstance Id="aa96c038-b099-4c1e-8fad-b38091e2ea83" name="IsVolatile" value="false">
+                      <elementDefinition Id="2b568e7a-b7ad-4365-99d3-d508d76080cb" />
+                    </propertyInstance>
+                    <elementDefinition Id="8b126b27-3a8f-42f8-bb2d-bb8bdda15266" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7048a2ab-ab13-472c-968c-4425470539dd">
+                    <propertyInstance Id="c8fc8608-c907-4c29-86a5-764684b5b21e" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="cca72395-4d7b-4e7d-b0cd-23f231999fb7" />
+                    </propertyInstance>
+                    <elementDefinition Id="267525f7-8339-4477-9331-0883e7ffc18e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="c1d1d898-ca8e-4fa8-84d7-2dfabaa323c6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="de15741e-8e01-4e1b-8834-00a6d8403885" LastKnownName="Transform" />
+            </type_NamedElement>
+          </property>
+          <property Id="cb51687d-869c-4508-a927-fe23e3774ef5" name="walkDistance" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="70c52d09-339a-4f7c-a3f8-f4b48222b810" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DwalkDistance" tag="ViewCode">
+                <elementDefinition Id="632bff80-db56-4e50-8609-29a27365640f" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="015eaec0-9905-40cc-b78d-1d5166237e5b" name="field" profile="CSharpProfile">
+                <elementDefinition Id="31c5c141-18be-4448-8959-79d573b30dfe" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3121b3bf-7b7d-45cf-9925-63313520643e">
+                    <propertyInstance Id="e69835d3-67da-4ee2-abb3-ea3f9d5b93b6" name="ClrAttributes">
+                      <elementDefinition Id="bda35b3c-2f54-403e-915a-10b7c65b598f" />
+                    </propertyInstance>
+                    <elementDefinition Id="95923a65-1fec-4472-b23c-1df7720cb120" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="73ea3c7e-3764-4dc2-b119-f7ac32668f79">
+                    <propertyInstance Id="cb0d10d2-1482-4d0e-8cae-70d184871ef8" name="IsConst" value="false">
+                      <elementDefinition Id="bdae08e1-4580-4e51-b5be-9cb722728a43" />
+                    </propertyInstance>
+                    <elementDefinition Id="55e0c647-a2d5-4851-9ece-cc342c2018ae" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e61ad011-04f1-46dd-b6b2-cefbfc791890">
+                    <propertyInstance Id="ff36e6c9-354d-448d-9d0f-b4bc96071416" name="IsNullable" value="false">
+                      <elementDefinition Id="a60606af-d008-4136-b990-3dcd17164f89" />
+                    </propertyInstance>
+                    <elementDefinition Id="7459abdc-19d5-413f-b297-4bb60dcc9347" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="458ea05e-651d-4b35-9b4a-d967b9191081">
+                    <propertyInstance Id="43919948-6079-416f-8d40-0f25f5e81380" name="IsVolatile" value="false">
+                      <elementDefinition Id="338bd85e-9099-49e9-9409-64c313503544" />
+                    </propertyInstance>
+                    <elementDefinition Id="6e67ba85-ecce-4944-9ae8-dec78e6235df" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b9c5fc5b-a8c3-4af6-bc91-3688642d6f53">
+                    <propertyInstance Id="0306b3cd-2b9f-4608-bcf6-3e4fbaf7c063" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="c256f877-b9f8-488d-8b64-08c8a5edceea" />
+                    </propertyInstance>
+                    <elementDefinition Id="160ce4e3-c929-4682-b311-cb2bcafdace8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="60aa2b97-d871-4da6-a19e-e29bb384a18c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="0330b4c2-f596-42c2-b26b-7aaec8834fc4" name="runDistance" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="68775e14-2fec-46a6-88a4-2eda25f51370" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DrunDistance" tag="ViewCode">
+                <elementDefinition Id="505aad5c-3e12-45c6-93eb-5b4da07b1372" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="4c5d9096-f458-4363-bd14-23fdccaf3d20" name="field" profile="CSharpProfile">
+                <elementDefinition Id="763e5c63-3f6f-4443-bb9b-5d2d0bc74912" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c5a893f0-8ecb-414c-9712-c332ba0a082d">
+                    <propertyInstance Id="79b90f31-0e37-4309-a8a8-d47f59223383" name="ClrAttributes">
+                      <elementDefinition Id="eac3f166-9346-4747-bb0d-a302088d8b90" />
+                    </propertyInstance>
+                    <elementDefinition Id="f94ff98b-c1da-4688-a559-bccba03ecf1b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1e10ae57-9a4b-4952-81be-e7854b33a036">
+                    <propertyInstance Id="a65333f4-6d46-4a0c-b824-9e4fd456d5ff" name="IsConst" value="false">
+                      <elementDefinition Id="b00ec55a-b26c-4c22-bd30-71e058fd56eb" />
+                    </propertyInstance>
+                    <elementDefinition Id="1527e685-92b5-415f-a476-b4913e3b04c1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1906563f-5d65-4b29-b160-fe8301d60916">
+                    <propertyInstance Id="a2454213-c480-4014-afb6-b8ad4e897f1e" name="IsNullable" value="false">
+                      <elementDefinition Id="4ff1e186-1085-426a-a06f-5a8890aeb3f0" />
+                    </propertyInstance>
+                    <elementDefinition Id="a62af7a6-b772-4721-9114-78ba54612148" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="14025d3b-d704-4b01-abd3-e87d34f86573">
+                    <propertyInstance Id="c3a559a8-d3cd-4213-b18f-dabf71d01a34" name="IsVolatile" value="false">
+                      <elementDefinition Id="86567013-1462-4560-9beb-761bf634a190" />
+                    </propertyInstance>
+                    <elementDefinition Id="ef8f7db4-6790-464d-8435-0c934fcac640" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d23676cf-3827-4cf2-ac5f-94382a550b1d">
+                    <propertyInstance Id="a07c03b2-c975-4af0-bbad-3b898fa81fc3" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="e09ed88a-a6af-4eba-8b2e-336faca09b33" />
+                    </propertyInstance>
+                    <elementDefinition Id="4107645f-1faa-4ad5-b8c5-b2a900c7457d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="ba39675d-8ef5-441b-87a6-cfd682dd1ca8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="dfb106df-8cf9-46de-9598-3296f0bc24fb" name="height" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="cae9262b-9caa-4656-aff6-b65a61230844" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3Dheight" tag="ViewCode">
+                <elementDefinition Id="2e1017cb-4176-42b5-a327-a397f8590976" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="f1798509-719f-4e3f-9387-aa0f09c2118c" name="field" profile="CSharpProfile">
+                <elementDefinition Id="68dd9cca-1d44-414b-989a-b06cb17d72e1" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1287e5b4-2b6e-40a5-b98d-0576eba8eaf6">
+                    <propertyInstance Id="8872dc32-e3b5-4473-93c5-36063fd733d5" name="ClrAttributes">
+                      <elementDefinition Id="565904c8-0202-45ea-b2ca-1faa46c03500" />
+                    </propertyInstance>
+                    <elementDefinition Id="72e3049c-1492-4196-b16c-bbfb4c1ec1eb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a9330581-de52-496f-b28b-511ebbe54cdd">
+                    <propertyInstance Id="230f431f-618a-40ae-914a-d4c445600f74" name="IsConst" value="false">
+                      <elementDefinition Id="3e5ba14a-e6ee-4056-87a1-7c638ca54114" />
+                    </propertyInstance>
+                    <elementDefinition Id="5941f03d-d2e9-4a00-9efd-541375810796" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="aa0ab0b9-36ea-4daa-b7e1-aacb06b7069a">
+                    <propertyInstance Id="51045b27-f966-4462-990a-2f86777c21ba" name="IsNullable" value="false">
+                      <elementDefinition Id="5c868927-c1af-4144-9422-8a57177a265f" />
+                    </propertyInstance>
+                    <elementDefinition Id="76c68543-a1e1-4279-987e-53306fddd7a7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7f45534c-78ac-4b0d-a21e-d9d192d7cac2">
+                    <propertyInstance Id="2740a27a-91e5-4b93-8e0f-b389f4dd7850" name="IsVolatile" value="false">
+                      <elementDefinition Id="a9c45efb-11b9-4e38-9552-e9ff1d3e2084" />
+                    </propertyInstance>
+                    <elementDefinition Id="abadd099-123f-4afa-8eb0-c65119f682ce" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ba390ba1-4510-44c3-b909-9769e67c6638">
+                    <propertyInstance Id="9c1f2129-315f-4141-a61b-d816b82a6fba" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="e1c4bd3f-d7c0-47a4-8ff7-8bf3433d2471" />
+                    </propertyInstance>
+                    <elementDefinition Id="7e92a33a-50e2-454e-a10a-d9bad05204fc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="4d2779e1-b5b5-43c9-8f6e-cdb241bc5bb3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="504f0ca1-1aff-4d8e-adbd-b8ca52f0520a" name="xSpeed" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="2052b298-71a1-4eb0-af78-8adfc31fd224" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DxSpeed" tag="ViewCode">
+                <elementDefinition Id="75969ea4-de35-49b4-aa69-346c76ddacd0" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="2e6e874f-4746-4d1f-8ce1-249c6bfa3cb1" name="field" profile="CSharpProfile">
+                <elementDefinition Id="af1cd276-3710-441d-a15b-46bdb2328fb5" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b86eb17f-7a7c-4678-9e46-d7d4d17102e9">
+                    <propertyInstance Id="31ab8d72-5b43-47ea-aafa-808499eeb6cc" name="ClrAttributes">
+                      <elementDefinition Id="2a2a8a54-e2fc-40f1-bd8e-cbe28d4c8fa5" />
+                    </propertyInstance>
+                    <elementDefinition Id="b56820cc-7933-47eb-a585-3d71ac3a2b93" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0a4b832e-4d98-4b16-962b-100b0b411844">
+                    <propertyInstance Id="15c5fee1-249c-451d-b76d-bc83b53fe9c2" name="IsConst" value="false">
+                      <elementDefinition Id="27e0ba14-a6f6-4cac-8d31-39b7e03d2b0b" />
+                    </propertyInstance>
+                    <elementDefinition Id="cc29ec89-fa53-49b7-abca-8bd5b605faa2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6a2f55ef-1c8e-4ad1-ae4c-74305e07de20">
+                    <propertyInstance Id="d0a9bbc3-38dd-47e9-98e6-c07f14725830" name="IsNullable" value="false">
+                      <elementDefinition Id="5f543e44-2659-4e8d-acb9-dc3aaeebfa71" />
+                    </propertyInstance>
+                    <elementDefinition Id="e231cae4-3a10-4fbc-8436-dec594243b9e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="99353a1a-4657-4c59-8ca9-524a74d1e13f">
+                    <propertyInstance Id="1bd98226-34c6-4a6f-98ff-f442db0c87d1" name="IsVolatile" value="false">
+                      <elementDefinition Id="542b34f8-41e2-40a0-8d74-56fb9034c128" />
+                    </propertyInstance>
+                    <elementDefinition Id="c1f6a4dd-bd99-41b7-bb5b-6df80eeeef7c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="871704cb-6c1c-4b08-8a4e-b7a8b9f47a8c">
+                    <propertyInstance Id="0afe8645-17a5-425c-8d2a-61db0085cc4d" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="452001e7-e79a-473a-9d40-0abcfa4d8e6f" />
+                    </propertyInstance>
+                    <elementDefinition Id="42b42ffc-2c3e-490c-a5ab-fb6a1bcbe35a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="477c60ae-4a0d-4637-9c76-f53887cddc74" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="f4b3fd6e-ed35-4662-a544-4279e14273de" name="ySpeed" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="ee9f6c75-3130-4611-8c86-5b1482e30b12" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DySpeed" tag="ViewCode">
+                <elementDefinition Id="c97b3ffc-54a5-41a8-a9f2-38a65f2d2838" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="6fc16554-a31e-49b8-a4f8-b6dce9319369" name="field" profile="CSharpProfile">
+                <elementDefinition Id="412905b5-1181-46da-9525-ac8d677ed423" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="065e0627-3b3c-4467-a0a3-a38d9e28f50b">
+                    <propertyInstance Id="ad595127-78d3-4e8a-9eae-0340f09fee16" name="ClrAttributes">
+                      <elementDefinition Id="f7a5563b-f610-4eb9-a797-c897f01a4004" />
+                    </propertyInstance>
+                    <elementDefinition Id="b294bb28-af2e-4772-8c45-5512886b7a1e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a23f1136-f37f-4a2a-81fa-378d779d8d83">
+                    <propertyInstance Id="b7d19652-bbe3-49f0-b4ed-2bb5d212eeb0" name="IsConst" value="false">
+                      <elementDefinition Id="fffc6ef7-d1f2-48f9-a260-58eb4765dfb4" />
+                    </propertyInstance>
+                    <elementDefinition Id="20774d53-045f-4890-8b93-e7a2af4a4bd8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="376ddb0d-d61e-4357-b821-6e4f3ed07d7a">
+                    <propertyInstance Id="cab9b0f5-2dd3-4dbe-be08-08c59414ff0c" name="IsNullable" value="false">
+                      <elementDefinition Id="5c799a54-8c26-4410-968e-ac07f6800d0b" />
+                    </propertyInstance>
+                    <elementDefinition Id="f34d3126-29c2-4c46-8777-1b40c729e964" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4a2d0301-c956-41cb-a0bf-7b2677e33771">
+                    <propertyInstance Id="c4900384-3f7c-44cd-b337-21e1838fd3ec" name="IsVolatile" value="false">
+                      <elementDefinition Id="9d96ad16-c628-4ead-81a5-a4af7ed87a5f" />
+                    </propertyInstance>
+                    <elementDefinition Id="578f5447-6045-40a0-8850-0f3e64dfb8b7" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9ed9527b-c772-449e-8933-bd4ea599e5f5">
+                    <propertyInstance Id="89274707-a77c-4f37-ae4c-685e107aaa8d" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="f849d230-2e77-4131-9887-af9b719fc4a6" />
+                    </propertyInstance>
+                    <elementDefinition Id="fa2da5ca-01b0-4166-834d-6e91afdf0c7c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="1c16d401-910a-4537-b3ca-f5f0cd00d530" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="fd01eccf-489a-47b5-b80b-c9707c48601e" name="heightDamping" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="4cb09d85-6b00-4ec9-9d99-8c81238c2bf6" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DheightDamping" tag="ViewCode">
+                <elementDefinition Id="2c4cbe5c-8a9a-4624-ad62-310ad0e6ec43" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="f12b3830-e7e8-4e8e-8ab2-57265b174e1d" name="field" profile="CSharpProfile">
+                <elementDefinition Id="1a05b88e-2e60-4202-abdc-8acafa31fc28" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e4be1a4f-377a-4e20-ba84-156866075836">
+                    <propertyInstance Id="9f427ca3-af7f-4a3b-aab8-17b7f6c11969" name="ClrAttributes">
+                      <elementDefinition Id="3e44f90b-16ad-42d6-934e-038e2e316fd4" />
+                    </propertyInstance>
+                    <elementDefinition Id="7174acec-65da-41af-bfc6-d609694fd5fa" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f95cbe01-9c72-4f2d-8983-fce40758ec2f">
+                    <propertyInstance Id="05bf0a86-7d14-48e9-ade9-629c3c4b3ee5" name="IsConst" value="false">
+                      <elementDefinition Id="5e159867-1496-4615-b46b-c0a651740ddc" />
+                    </propertyInstance>
+                    <elementDefinition Id="6ec3f733-502e-4285-b1d2-8f650745645d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d9b45e73-4f63-4d16-bb8b-0266c7ccdccb">
+                    <propertyInstance Id="39edc8b4-35ec-49a1-bd05-dbf8e3fc2572" name="IsNullable" value="false">
+                      <elementDefinition Id="107de1b5-a5cc-4956-969f-1a3a631dd9dd" />
+                    </propertyInstance>
+                    <elementDefinition Id="11fc28d0-645d-44f9-9c5c-9f4a997848ec" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6856b644-c116-4841-bc54-0b65c5b06669">
+                    <propertyInstance Id="c56b43aa-9167-4812-803b-f874a65b5847" name="IsVolatile" value="false">
+                      <elementDefinition Id="6d32d370-306e-4166-8380-4f4cfb15a98e" />
+                    </propertyInstance>
+                    <elementDefinition Id="254cded5-025e-45cf-8eea-6429f359b494" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="74d43687-9f66-4669-be8c-a2e881088480">
+                    <propertyInstance Id="e83ef555-2e39-4241-9d33-a8173d60c590" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="9a79214b-968d-4b86-8514-fc4f5c898ba0" />
+                    </propertyInstance>
+                    <elementDefinition Id="b5edbe84-8a75-407b-896d-87cf74832152" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="b25604ca-7432-41c1-8c9e-145764452e64" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="2d035cbd-df53-47fe-bab4-55a59d500e63" name="rotationDamping" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="58a7ade8-a74b-423c-88f5-9d4aa5fb6ce6" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DrotationDamping" tag="ViewCode">
+                <elementDefinition Id="9e6e290a-47a2-49cc-9249-3a21e5df609d" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="fca34961-af7e-49c0-aa24-3e968edc0003" name="field" profile="CSharpProfile">
+                <elementDefinition Id="dd9e3636-2220-4cf1-afa8-e8e853ce31db" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1e58549d-e72f-4687-b8d4-69df866ee075">
+                    <propertyInstance Id="8f056660-a578-4dad-a399-cea9bde59580" name="ClrAttributes">
+                      <elementDefinition Id="f9e6cde1-fe28-4a2d-aed3-ee77bb079960" />
+                    </propertyInstance>
+                    <elementDefinition Id="fabc09b9-ba80-4c28-a042-4e638c4a9157" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6f5af856-e3a1-48ee-bc94-15e1b96c086d">
+                    <propertyInstance Id="a2c3fd04-63ee-413c-bd14-c1982198e0fa" name="IsConst" value="false">
+                      <elementDefinition Id="42654e89-999c-45e5-94d1-1c7c971296f4" />
+                    </propertyInstance>
+                    <elementDefinition Id="b99e29e1-402b-4147-bdff-1837eea26579" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6b2fbb51-05f9-43bb-86d2-31582e4c891f">
+                    <propertyInstance Id="998f173c-f9bc-44fb-b539-cb06ebc12d77" name="IsNullable" value="false">
+                      <elementDefinition Id="323fe46d-21eb-47c2-ae80-f4c1870bac3c" />
+                    </propertyInstance>
+                    <elementDefinition Id="4fec7899-3964-4a75-9543-c2f10bf87040" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6aea94cf-77df-414a-b42f-7806553af9fe">
+                    <propertyInstance Id="d83d8d2a-9d35-4ba9-b220-1b02e2b0e6d5" name="IsVolatile" value="false">
+                      <elementDefinition Id="a2c8c4eb-b641-41f6-9055-755f814ae57d" />
+                    </propertyInstance>
+                    <elementDefinition Id="506cb262-32df-4fd3-b45f-ff406a7a9d51" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="90cd62d4-009b-47c4-9f22-3212b6bf2d86">
+                    <propertyInstance Id="5d198346-b781-4c3a-90ba-fcd97357d91a" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="0e4271aa-7484-4982-997a-ed6061f2c983" />
+                    </propertyInstance>
+                    <elementDefinition Id="3ebfcf0e-f542-406a-a638-048e76b40c1c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="207cb0ca-d595-4ada-9fb0-64b2badc336f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="24e5ed6d-3b6d-4888-a41a-c81434ac9998" name="rotationAngle" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="bd37be2a-7b25-47d3-8ef7-bd5321019111" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DrotationAngle" tag="ViewCode">
+                <elementDefinition Id="063fb14a-756c-479b-bda8-f77aa5aae019" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="fc50560f-8e5b-4161-92fa-07d3566445c3" name="field" profile="CSharpProfile">
+                <elementDefinition Id="093ec9ce-cdbd-40a4-a14f-61f0246afc3f" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f9f40123-2879-4eac-ac19-71da779a32f1">
+                    <propertyInstance Id="5e009bc5-43fb-40b7-8a61-424c61200a07" name="ClrAttributes">
+                      <elementDefinition Id="6ec76fef-0b85-4b20-95fe-74482178bfc5" />
+                    </propertyInstance>
+                    <elementDefinition Id="038b2451-e014-4e51-9e88-ab5197bd1f67" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0a3cc0b9-8b47-47c7-bdc7-083b4810bd51">
+                    <propertyInstance Id="7336cb79-6c1d-4190-b860-a569d755e5b4" name="IsConst" value="false">
+                      <elementDefinition Id="7456cfbc-d411-49c7-bffd-615248d8f65d" />
+                    </propertyInstance>
+                    <elementDefinition Id="d8a6edcf-fe0e-4d91-bcd7-f49250dced84" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8457b566-f374-484b-a95d-da9bd0d052c9">
+                    <propertyInstance Id="21ec736f-cc73-4f39-b1a2-cc51e0ddc5db" name="IsNullable" value="false">
+                      <elementDefinition Id="5a8b65fb-7a63-4c5e-babf-7914e17bbf26" />
+                    </propertyInstance>
+                    <elementDefinition Id="abd448b7-acd4-473d-b6bb-f1ae543bdd01" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5ef32f76-8bb7-4987-b8bb-15886923c744">
+                    <propertyInstance Id="38d87e67-24d8-4dad-b37b-47a69b956149" name="IsVolatile" value="false">
+                      <elementDefinition Id="d096c4ff-c1bd-416f-b24d-4e74491a557d" />
+                    </propertyInstance>
+                    <elementDefinition Id="860d84ac-f664-4ba2-bf87-8b7cffa6f438" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="82f66ece-b1a5-482c-b8a7-98ab3c682841">
+                    <propertyInstance Id="7d33ada2-b2e5-40c1-a56c-73b958cb389f" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="3a7e7d12-9a31-4bc7-9dff-7a2947ff0c52" />
+                    </propertyInstance>
+                    <elementDefinition Id="5daaca84-1e16-4fc8-875e-693c6b1e7ed4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="f056d35d-3763-4e66-a1e1-87cd0344bbc2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="2c330ec3-3d69-4128-9cfc-15431653ca2d" name="myTransform" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="4b200f58-4070-4259-8977-26aaeef5b223" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DmyTransform" tag="ViewCode">
+                <elementDefinition Id="8f7c38d6-0e67-4728-843c-da308d5d2d31" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="5bb3dbc5-c1a8-490a-87d3-8e452ee7ceb5" name="field" profile="CSharpProfile">
+                <elementDefinition Id="8923e0cd-4a1f-4e27-949b-e6ebca9969ca" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="115dc353-88d3-4392-8d12-565d1034331b">
+                    <propertyInstance Id="8ba13aa7-fc51-4901-908b-4c2cb52c5933" name="ClrAttributes">
+                      <elementDefinition Id="443b004d-607e-40f7-9715-a0cd818deb35" />
+                    </propertyInstance>
+                    <elementDefinition Id="8dc6e787-13f5-4ae9-a0b7-d4abc6e92ff6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a115f518-e3c7-4ec4-975e-dce0270a3291">
+                    <propertyInstance Id="ac019d22-dfb3-4430-ad56-9b6a92ac8576" name="IsConst" value="false">
+                      <elementDefinition Id="7603defd-0496-42dc-bf47-de9530fdf92b" />
+                    </propertyInstance>
+                    <elementDefinition Id="3cce5006-835a-42c7-9664-45804fb37a9b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4bce4263-4167-4b39-b0b7-44487e7ec129">
+                    <propertyInstance Id="ed56bdf7-3a89-49dd-80b3-e2a20f7bb75e" name="IsNullable" value="false">
+                      <elementDefinition Id="ec3f48d2-7263-4987-902e-49fdf65f9ad3" />
+                    </propertyInstance>
+                    <elementDefinition Id="6d513a4c-84df-440f-b004-6dc369b91011" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="56e0d538-6535-4385-b55f-0fce03ea4b14">
+                    <propertyInstance Id="03c19612-e667-48ef-9e47-8d2c8822973a" name="IsVolatile" value="false">
+                      <elementDefinition Id="5aec620d-6f72-450d-82b2-f370d5191d42" />
+                    </propertyInstance>
+                    <elementDefinition Id="86d7d85d-7e15-462f-b8cc-158df588fcc4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c1c40fce-3fcf-4352-8edb-e13b0cd90f87">
+                    <propertyInstance Id="55bb0b26-9e48-4032-a83c-da78a87f6151" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="9664378f-5baf-452e-bf4b-efec85218996" />
+                    </propertyInstance>
+                    <elementDefinition Id="9c4326ba-1fc6-439a-a386-daa23b80e019" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="04ee9468-0c66-4f0a-a725-2e59d23e8003" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="de15741e-8e01-4e1b-8834-00a6d8403885" LastKnownName="Transform" />
+            </type_NamedElement>
+          </property>
+          <property Id="753270be-db79-480e-82a6-12d0785b7177" name="x" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="f93dc09f-8496-478a-bfb7-7ec57d85f349" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3Dx" tag="ViewCode">
+                <elementDefinition Id="5368c025-add1-4402-a4d4-99b1dbfc5c65" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="1a1b9b78-c5a7-4e45-ad78-b9c3a92bbc3e" name="field" profile="CSharpProfile">
+                <elementDefinition Id="bb9421fa-d4b2-47eb-9e14-09146e1ea679" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="72322f8b-feb2-4cb9-8964-e1fe3cd7b7d2">
+                    <propertyInstance Id="0a71a930-f048-43ad-9392-d0a09cc92446" name="ClrAttributes">
+                      <elementDefinition Id="22ea84d5-02f3-4fd6-95ef-f1271a9540d2" />
+                    </propertyInstance>
+                    <elementDefinition Id="2c4c3a99-7351-440d-aeed-9bca7f375b94" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="564bb8ef-1272-4443-8b6e-f9e2482d21bc">
+                    <propertyInstance Id="92e27537-9ce3-4d03-af89-d5c707bd6aa3" name="IsConst" value="false">
+                      <elementDefinition Id="7681a0c5-c19b-4cfe-801b-31d8cf4d7c81" />
+                    </propertyInstance>
+                    <elementDefinition Id="7e499c74-bd25-4387-9437-3bf1909cd253" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="578ac5dd-4e7a-4226-bef8-5013114dfc91">
+                    <propertyInstance Id="adf79553-b116-41cb-9250-e6ab3ac732da" name="IsNullable" value="false">
+                      <elementDefinition Id="4657cfc4-d499-44fe-af6b-d253fdb6a7af" />
+                    </propertyInstance>
+                    <elementDefinition Id="80061a02-dd14-44a9-b079-24398ace56ec" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7304a866-35c8-4322-9b76-81ba0881e6e8">
+                    <propertyInstance Id="8175e05f-d2f5-4834-a6d5-b4cbb7a27b3d" name="IsVolatile" value="false">
+                      <elementDefinition Id="5111432a-aaaf-4d99-8846-ded6ab9eb97c" />
+                    </propertyInstance>
+                    <elementDefinition Id="1e3d6d8a-9a6d-4cdc-8e75-a713a1856459" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="44da77c6-a0f5-4df1-a65d-feb494d87fe4">
+                    <propertyInstance Id="b12687f7-fcff-4fc4-89c1-2425ebb036d0" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="5b55fcc6-18e4-42a2-8c0a-47c0477cfd95" />
+                    </propertyInstance>
+                    <elementDefinition Id="3a12140a-3f70-45e1-a3fe-548880fc3c7c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="82777507-0f24-4b6a-b3cb-c3c22f3354e5" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="e618f0be-bd18-4220-a418-84584544de5c" name="y" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="e67efdf6-a9a1-449c-a58a-214270ece6cd" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3Dy" tag="ViewCode">
+                <elementDefinition Id="3af14be0-a470-49e2-b5de-2ad412c4554e" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="e472e85d-a84f-403a-a7e1-3ea994e24264" name="field" profile="CSharpProfile">
+                <elementDefinition Id="61d93e88-5bb4-4e96-9807-bf0974be0686" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2e590680-36a6-4cc4-878f-6fd8a0fbfdb9">
+                    <propertyInstance Id="385cb0b1-1418-4b71-901e-62a83d0be017" name="ClrAttributes">
+                      <elementDefinition Id="1149aac7-230c-4cc9-90fe-fb7243061aca" />
+                    </propertyInstance>
+                    <elementDefinition Id="b74aa163-8217-4953-bcd4-7712073cdcbc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ad51d578-b93d-4263-b723-8f17e89e602d">
+                    <propertyInstance Id="5621bc54-7efe-467d-bf3f-167946674487" name="IsConst" value="false">
+                      <elementDefinition Id="f569da5e-ed67-47ae-b748-379a3f0866dc" />
+                    </propertyInstance>
+                    <elementDefinition Id="53686e80-1a1b-42b5-bd0b-0229cb1869e1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="69100b7a-2351-4d36-8c5e-d1adeda2f7d7">
+                    <propertyInstance Id="1a38d369-2ef0-4957-b4d6-052d8cdf1909" name="IsNullable" value="false">
+                      <elementDefinition Id="44a1f375-d1be-4f24-907a-2b487977b5dd" />
+                    </propertyInstance>
+                    <elementDefinition Id="adae9144-6723-4d88-8061-a3a57b4b6a0b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1453d79a-d941-4d2d-b455-d9f005a22ef8">
+                    <propertyInstance Id="9abb59ea-6ca7-480f-87bc-2ae067caf0b3" name="IsVolatile" value="false">
+                      <elementDefinition Id="d755f327-132e-4b78-89b1-8badfe83e634" />
+                    </propertyInstance>
+                    <elementDefinition Id="07c82fdf-edb5-4244-ab26-47fdd603afc5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7e33a3fe-42d5-46bb-aa2e-b2c355feb12e">
+                    <propertyInstance Id="d99d0463-3b70-4fe3-9a48-6c646d1b9630" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="dbd3478d-2447-42ff-8b45-a89be7e34c81" />
+                    </propertyInstance>
+                    <elementDefinition Id="d4d28126-b34a-443b-9608-3799fb43774b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="5ea7d74a-4d43-4183-912a-9019b5b86f7b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+            </type_NamedElement>
+          </property>
+          <property Id="480b68c2-0343-420b-8773-bc89c4a382ee" name="currentMousePos" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="c43a52c2-437a-4c2e-b6bc-87ce1eb9bd51" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DcurrentMousePos" tag="ViewCode">
+                <elementDefinition Id="d50631c9-77ad-43ca-a04f-fb2bc8086932" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="2c01064a-699f-4b85-b1d3-b9fc3ba341f8" name="field" profile="CSharpProfile">
+                <elementDefinition Id="698f7b39-a931-4ce4-8076-06774e2ef7a0" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f0fbcfec-1bf5-4962-9020-b1b407bcc9d1">
+                    <propertyInstance Id="b0d52395-e5ee-4277-9034-9a1befe01d8d" name="ClrAttributes">
+                      <elementDefinition Id="39ab5e66-1868-4350-9af0-2b6ed56d2cbd" />
+                    </propertyInstance>
+                    <elementDefinition Id="a3187551-49ff-4690-b9b3-eabafa269f80" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="53489a52-1919-4278-bd67-dac8876d3a84">
+                    <propertyInstance Id="035200fd-ac0c-486c-9b62-2707af6d67e4" name="IsConst" value="false">
+                      <elementDefinition Id="9317bbfc-9005-4031-a078-9328ca3ad070" />
+                    </propertyInstance>
+                    <elementDefinition Id="f76b86e9-d75d-4a7a-a3dc-59cdfd82a1b0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d50b6949-e889-4409-9b43-0d19860c478d">
+                    <propertyInstance Id="a51f7ce5-f0c9-4260-98c4-8006bd084bc3" name="IsNullable" value="false">
+                      <elementDefinition Id="4d89e4d4-46b2-4064-b303-47d723e2c1e2" />
+                    </propertyInstance>
+                    <elementDefinition Id="6bfb903b-ccf8-4023-96ed-6ffdee0d67fb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8cfb6c0e-f2b8-48c9-a5ff-a9159ed6461a">
+                    <propertyInstance Id="98e2aff2-0c91-4bbf-8f18-1f0560cd5b65" name="IsVolatile" value="false">
+                      <elementDefinition Id="bbb52ee3-c9f1-4d85-9458-7107dd2f78ac" />
+                    </propertyInstance>
+                    <elementDefinition Id="d087e3f1-b0bd-4dc7-be0f-5a50b17cc675" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5fb27cd2-403c-4886-93f2-73d84974d6cd">
+                    <propertyInstance Id="d6436c11-31ac-45ce-8480-779fe883c9dd" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="8b7922ff-fc13-457c-9984-4f12f53bbe00" />
+                    </propertyInstance>
+                    <elementDefinition Id="925d962f-50fb-4b96-a71f-abd9b807e223" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="e3b70c16-484a-4349-af69-a2d7bb1a5c45" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="444aae51-b4bc-414d-9ab0-bfef68159f8a" LastKnownName="Vector2" />
+            </type_NamedElement>
+          </property>
+          <property Id="1771cfad-7ed4-46db-b14e-17f8525ce7ed" name="lastMousePos" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="749557c0-e35b-4978-8b71-1fc990a3f8a8" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DlastMousePos" tag="ViewCode">
+                <elementDefinition Id="dfdde753-8888-4a06-ad3d-f9a8ff67fd7a" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="5a7e27e7-1bd8-40e4-97b4-403d0db0ee06" name="field" profile="CSharpProfile">
+                <elementDefinition Id="38c098b1-3ea2-4b04-a2ee-344c8e9ddee5" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3b216fd8-7636-4d82-b715-9e41fb1d121f">
+                    <propertyInstance Id="67154550-d12a-4ffe-bfbb-5146a726bedb" name="ClrAttributes">
+                      <elementDefinition Id="722555ed-0e63-4f1a-9e8d-1ad04f1c5223" />
+                    </propertyInstance>
+                    <elementDefinition Id="07676c1e-fe9e-4c97-9586-54c3a4050f81" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7dfac7f8-edd7-40ac-aa61-a7adfed4265d">
+                    <propertyInstance Id="986930b7-12a9-43b3-93aa-0d580cab2ed5" name="IsConst" value="false">
+                      <elementDefinition Id="61fdf3a9-8c66-48c1-8279-b8325cd91c2a" />
+                    </propertyInstance>
+                    <elementDefinition Id="b340f0fc-89a1-4ff7-bd8f-eb66250668cb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="dd49d50b-8d84-4f29-8eb2-6e0280a4a714">
+                    <propertyInstance Id="183a6d89-d1d8-4957-b2d6-cb7e3609d422" name="IsNullable" value="false">
+                      <elementDefinition Id="f787462d-8377-4b76-8260-7db5028b38d7" />
+                    </propertyInstance>
+                    <elementDefinition Id="4eeeb5b8-377d-48f6-bbbe-d619b33da82c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="64d0a022-d9d0-4b21-8bcd-f243d43af9d6">
+                    <propertyInstance Id="dc1f5d68-ee07-4a83-b64c-a01db56a1353" name="IsVolatile" value="false">
+                      <elementDefinition Id="889fceeb-e72d-4083-a280-10cfa8782963" />
+                    </propertyInstance>
+                    <elementDefinition Id="6ce4bbd4-bb83-4d4f-9456-9e393d046140" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="41b2b318-fadf-4341-83da-f3026b65c1a8">
+                    <propertyInstance Id="f5e8a0d9-880b-4d48-b9cd-0f635c287465" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="d20b5aef-28f7-4844-981f-1bf122fab801" />
+                    </propertyInstance>
+                    <elementDefinition Id="38a738f3-5dab-4bc1-84cc-4aa9356c95ee" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="61444f97-75ce-459e-8c62-1584b61da4b0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="444aae51-b4bc-414d-9ab0-bfef68159f8a" LastKnownName="Vector2" />
+            </type_NamedElement>
+          </property>
+          <property Id="7064f9af-c1ee-4601-a8e9-10a13ddac42f" name="deltaMousePos" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="5152ac32-f9d5-49c1-9877-d4fcd41b0133" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DdeltaMousePos" tag="ViewCode">
+                <elementDefinition Id="efead153-0130-41a2-a7a5-632a435bb7e6" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="6de8ca0c-996a-4179-995e-4c8c152bd140" name="field" profile="CSharpProfile">
+                <elementDefinition Id="0c67406e-ea98-4891-986b-d0f0a90e281a" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9a09aa6f-bf36-4691-8ac4-cc7e1e3c6668">
+                    <propertyInstance Id="75a080e9-f4ae-4795-8f1a-88dd3d885e6e" name="ClrAttributes">
+                      <elementDefinition Id="f61641dd-9b67-4b44-a379-678627c70db9" />
+                    </propertyInstance>
+                    <elementDefinition Id="44a103f3-f546-45fc-8a87-507fee5e013d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3723524c-af5e-48a7-be8b-3a3517ef5ebd">
+                    <propertyInstance Id="af532b81-9926-4700-9c99-9f1d18c72a13" name="IsConst" value="false">
+                      <elementDefinition Id="a7f658af-da72-448a-9d60-0e2250cdb4c8" />
+                    </propertyInstance>
+                    <elementDefinition Id="6a07d1c1-23d6-4542-97ab-094440a25c15" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="35b7909a-5c17-46ae-830a-cee6fb507f62">
+                    <propertyInstance Id="c1cc17ca-d3a5-4054-8c03-e0744ebdcb18" name="IsNullable" value="false">
+                      <elementDefinition Id="25e96eb6-b3c7-40f6-a7d0-97091a57184e" />
+                    </propertyInstance>
+                    <elementDefinition Id="1c4131b7-aef7-46d3-bfb0-d220f814328d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c6c74ebb-e6ec-4ca7-8796-ce9fdd7d6b34">
+                    <propertyInstance Id="79635d79-0e01-44da-9923-5dedd7ce531b" name="IsVolatile" value="false">
+                      <elementDefinition Id="f3c691ec-b537-4147-8b99-6f5d4f69c7cd" />
+                    </propertyInstance>
+                    <elementDefinition Id="50dcd375-c512-40f5-b108-12705b491ba6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a633525c-a8d9-43ef-840e-a1fb16fa3214">
+                    <propertyInstance Id="77ca2a24-cfae-4e5e-bb96-b8a25c1db1d1" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="6fc213b9-704b-4e46-9ccf-7b12d4b13d7e" />
+                    </propertyInstance>
+                    <elementDefinition Id="6aeb771e-86e1-4421-8d1c-a87f5c09874d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="4f5b894d-fb9e-4eaf-9c8a-0d3ca09afe8a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="444aae51-b4bc-414d-9ab0-bfef68159f8a" LastKnownName="Vector2" />
+            </type_NamedElement>
+          </property>
+          <property Id="6a6ac66a-3a52-483e-b452-2dcbd1bdb190" name="camButtonDown" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <referencesInternal>
+              <reference Id="82c89f48-c16a-4ac1-afe3-0b92de459604" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DcamButtonDown" tag="ViewCode">
+                <elementDefinition Id="b5308888-79dd-4588-bc4a-154eb46422c2" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="372ec026-eef7-4c4d-a187-3cc88f365755" name="field" profile="CSharpProfile">
+                <elementDefinition Id="c128d089-a54f-4483-bdd9-57f07fdfeab0" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="51c1426c-e2a2-4f95-8b08-e71bc87daba3">
+                    <propertyInstance Id="97c83ff0-f032-4050-b74c-f8c87dcc74e5" name="ClrAttributes">
+                      <elementDefinition Id="42a692eb-f8eb-4825-9172-fa6069ade76d" />
+                    </propertyInstance>
+                    <elementDefinition Id="b1614b59-fe20-4204-ad98-bcb53ee5f161" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fb01c7f6-0473-4910-af58-85e5c04acbc4">
+                    <propertyInstance Id="fafbb270-9b70-4c7e-8194-a663294e4e4d" name="IsConst" value="false">
+                      <elementDefinition Id="e807dbb2-d066-4554-86e0-e7efda71e4f3" />
+                    </propertyInstance>
+                    <elementDefinition Id="b471b45d-f43b-45bf-880d-7986b0607013" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="84347618-ea23-45c9-9020-2b74a6c0f5f4">
+                    <propertyInstance Id="f55b1005-8aa8-4538-8406-1f01dedd0e13" name="IsNullable" value="false">
+                      <elementDefinition Id="c5776fe1-17d2-420c-8b30-bf852fcae2af" />
+                    </propertyInstance>
+                    <elementDefinition Id="b613cbf6-9ec8-4c7f-aa1b-1c17c6b40389" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="81efe7dc-a8aa-4e24-9ba4-3a66cfdc0904">
+                    <propertyInstance Id="6ecaa9a6-8715-4cc0-b431-083c42e3eac1" name="IsVolatile" value="false">
+                      <elementDefinition Id="94af5b78-c89d-4260-bc58-db8e54161c11" />
+                    </propertyInstance>
+                    <elementDefinition Id="9c1890fd-3c57-4731-9a9e-876930486468" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b99212ed-043b-4055-90f3-ee97b7e7e0cf">
+                    <propertyInstance Id="2b1d066c-7887-40bb-a190-42e07e69b51f" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="ac060e1f-3c48-47cb-95ca-1c2de6184a10" />
+                    </propertyInstance>
+                    <elementDefinition Id="988bc135-59a0-48f2-95b3-cf3082bad787" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="c32a7fcb-0723-4285-8ff8-8c7f4b2bf5cc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="be019d56-6045-4de9-91cc-06708a730156" LastKnownName="Boolean" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="23239510-c717-4ea9-852c-c870a32a4260" name="Start" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="ad0b569b-f8d8-449c-a2f7-a28393aea3c3" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DStart" tag="ViewCode">
+                <elementDefinition Id="30f0e3d8-6849-460f-a339-8df97bb4b401" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="e82837c0-509f-4052-ba88-c3ec6eb04d60" name="method" profile="CSharpProfile">
+                <elementDefinition Id="c9c8fdbe-3afd-4852-a86f-8014e55706cc" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4bfa001e-c693-4fc7-80df-05a7eb5868c2">
+                    <propertyInstance Id="dba76fa2-261c-4599-b2e7-0ec5f9b37df6" name="ClrAttributes">
+                      <elementDefinition Id="752a7a34-6dfc-40d8-a965-17eb4a275690" />
+                    </propertyInstance>
+                    <elementDefinition Id="2f94a52e-734c-4efe-b5b8-b5a04cbfa1d4" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b7c50784-00c0-43a0-b078-16f24f314077">
+                    <propertyInstance Id="4323c52e-47e9-44e7-80af-26aae2c89a5a" name="IsPartial" value="false">
+                      <elementDefinition Id="d85fd60a-1be4-442b-a272-115603106bb3" />
+                    </propertyInstance>
+                    <elementDefinition Id="2ad35f0b-4b10-4593-ba32-d1408ba855b9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6d9198cd-5c84-446c-9418-78f0a40b357e">
+                    <propertyInstance Id="a36b2820-d49d-4f85-b604-7680755a4951" name="IsUnsafe" value="false">
+                      <elementDefinition Id="d7061851-b02a-474a-a8e6-76da55926906" />
+                    </propertyInstance>
+                    <elementDefinition Id="865bebad-7be0-4562-92dd-db1bbab33a60" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9327b31e-3124-4d0d-8614-bd8af0011450">
+                    <propertyInstance Id="c122a02d-3343-480b-8a69-c4ae56631611" name="Inheritance" value="none">
+                      <elementDefinition Id="ba284cef-7e69-4d8c-8060-60a8e31676b8" />
+                    </propertyInstance>
+                    <elementDefinition Id="c0d187b6-ef79-4f8c-bb8b-99ffae3d29d8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2d66b38b-989d-451e-abea-b872ca8fc245">
+                    <propertyInstance Id="ca37ca9b-7c63-4e45-84dd-34833b3ec081" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="197b9f01-422a-48b8-8c4a-e3f1c7b7782d" />
+                    </propertyInstance>
+                    <elementDefinition Id="3ce80391-1b12-495b-b5c7-6a88e1e92f5e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="52e9924b-2677-4b54-8648-8de8aeb05efe">
+                    <propertyInstance Id="68a96d72-8702-440e-8c5f-a673d23393a4" name="params" value="false">
+                      <elementDefinition Id="4ffc939e-6ea7-4203-a5cc-1d3f4128a6a9" />
+                    </propertyInstance>
+                    <elementDefinition Id="f724397a-06b6-4d20-b17d-1290745be734" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="0efa2f8a-1ac0-4351-b77c-ab6f6df369ee" />
+          </operation>
+          <operation Id="6884a57a-e713-4eb2-93e2-600e0bea6512" name="Update" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="fc2fd0fb-a7e5-4f3a-bb3c-f2decfec26f3" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DUpdate" tag="ViewCode">
+                <elementDefinition Id="3009d1fc-2cc8-4f2c-89b1-4f2af169ea67" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="23fb530d-6c6b-47cf-9af5-9528fc6bc24d" name="method" profile="CSharpProfile">
+                <elementDefinition Id="c2f31561-3688-4894-a98a-ef4a27f17c5a" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="42fb0d82-d6fb-47ff-93c5-231667c6c4d1">
+                    <propertyInstance Id="2c7ed29f-a215-41c7-a1bc-2a476af988f8" name="ClrAttributes">
+                      <elementDefinition Id="a11876bb-03cf-42cd-9c9e-a84425534f44" />
+                    </propertyInstance>
+                    <elementDefinition Id="0557f603-ce85-47a8-b41f-2dcfc353b5f5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d546e32c-f023-4b4c-8f5c-8e87bca33fb0">
+                    <propertyInstance Id="21ef60af-00b9-4686-8357-876131a0aeab" name="IsPartial" value="false">
+                      <elementDefinition Id="972f5201-2dc6-42dd-92e7-6a7802ed3e33" />
+                    </propertyInstance>
+                    <elementDefinition Id="5e399e45-cae9-4790-9c77-cd86ac059483" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="10d866ae-4883-4a09-b9c7-dc842420a5cd">
+                    <propertyInstance Id="dae4a1dd-1180-4786-a2b9-c56d3be28b14" name="IsUnsafe" value="false">
+                      <elementDefinition Id="a451ba93-6fb1-4314-a22b-d58e62187507" />
+                    </propertyInstance>
+                    <elementDefinition Id="1450a875-f972-4ba5-9302-e5b02b7f531d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d349196d-d581-465d-9eeb-0edba63be5e9">
+                    <propertyInstance Id="3c25b4db-7f49-45e2-9cd0-97c67a55de56" name="Inheritance" value="none">
+                      <elementDefinition Id="e35ebe50-13a3-4218-a56d-b10271652819" />
+                    </propertyInstance>
+                    <elementDefinition Id="924b1431-cd4f-407e-86b3-2bd0c7e082c0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f88ec8c0-7d88-44ca-895e-a8aaad887fb3">
+                    <propertyInstance Id="045ac0ed-65a4-4d7e-94aa-1e2d585922e9" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="97c34ac2-6eaa-4cba-bc56-bd6295c92053" />
+                    </propertyInstance>
+                    <elementDefinition Id="8f277c74-6bab-4fe1-b1bf-d9993a8ff10f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b33a5a3a-05f5-4193-b03a-052fd671951e">
+                    <propertyInstance Id="18741c10-924c-43d5-b466-88a7d50fefaf" name="params" value="false">
+                      <elementDefinition Id="0497cc27-ce66-49ec-8a63-a250dfe0b364" />
+                    </propertyInstance>
+                    <elementDefinition Id="4c183de2-04b0-450a-a36a-1a3e3b085a64" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="78e89bf5-b72d-4c8e-b359-e9ecbd448409" />
+          </operation>
+          <operation Id="b944036e-37cb-456c-92dd-3526f22ab5d5" name="LateUpdate" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="40d6c8ed-3d91-43b5-b621-c0fd08e81823" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DLateUpdate" tag="ViewCode">
+                <elementDefinition Id="7e283f83-3d1a-43d1-88f7-24df66492132" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="1c07ae90-17de-4720-a02c-01f088278103" name="method" profile="CSharpProfile">
+                <elementDefinition Id="d90e729e-c01e-47b2-b15b-ab22fb91ff52" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="02379081-5fac-4e65-ba33-e2374deb02f4">
+                    <propertyInstance Id="d1b3c75b-c296-4bad-9586-111555f8f32a" name="ClrAttributes">
+                      <elementDefinition Id="edaa2cf2-4841-4d6c-8cf8-c8774c1b786d" />
+                    </propertyInstance>
+                    <elementDefinition Id="33541a7f-c321-49d6-9243-f91cb8014090" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="eabff16c-284b-4e87-8b6f-ad6c9bc40b8b">
+                    <propertyInstance Id="750fb07b-4f90-4bcc-8f3f-cafd5384dd8a" name="IsPartial" value="false">
+                      <elementDefinition Id="34e1f8d5-006d-4663-aeeb-9df675d41394" />
+                    </propertyInstance>
+                    <elementDefinition Id="011feb09-ce9b-42b8-920c-c2e3832883e3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7e0d8e8a-999b-4a0b-ad8f-1265ef4dde4a">
+                    <propertyInstance Id="3b2c4de9-0484-4761-a51c-8d1fe23efaab" name="IsUnsafe" value="false">
+                      <elementDefinition Id="d2d6f0b0-b893-427b-93bf-3a725510f422" />
+                    </propertyInstance>
+                    <elementDefinition Id="f73874f2-467b-4b0c-aabf-12202a394710" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5ebaaec0-21e8-444f-9d6e-66068938769e">
+                    <propertyInstance Id="7e01f6ad-3d0d-4dfd-b225-78a5c2997539" name="Inheritance" value="none">
+                      <elementDefinition Id="05c7f55b-57f3-4ebd-a306-1d6427eff8a6" />
+                    </propertyInstance>
+                    <elementDefinition Id="8f9976fd-67cf-41c1-b0e8-fdf51bea40c6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a8acbd96-92f4-475e-be2f-59d3a5db48a6">
+                    <propertyInstance Id="c4cdd9a8-0ac0-4bff-a470-f0025c8a97a8" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="dc137fef-781d-4724-9950-cda93473f7e8" />
+                    </propertyInstance>
+                    <elementDefinition Id="184006c0-7060-49f0-b1a3-e003608fe9a9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d6b17465-cb5b-4645-a76d-9ea85b6fd122">
+                    <propertyInstance Id="870a23a4-d78c-4b3c-b22f-98e7bd043b84" name="params" value="false">
+                      <elementDefinition Id="a3ca98c6-5a43-485a-b542-d455c7c1e4fb" />
+                    </propertyInstance>
+                    <elementDefinition Id="88586d74-9b5b-443c-9b0b-aca15b02911f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="ff456455-e07f-4b11-81b6-6221f246d6a2" />
+          </operation>
+          <operation Id="ccd790f2-5dd7-441a-a508-2689425abe21" name="CameraSetUp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="6c09c4be-90e2-4433-b23f-2ca7173dfb8b" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DCameraSetUp" tag="ViewCode">
+                <elementDefinition Id="f9e5d39b-6ded-400c-9699-34cfbda9410f" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="c07bfdab-69a3-4e59-bdef-b584e80db540" name="method" profile="CSharpProfile">
+                <elementDefinition Id="856990b4-7e50-4e2b-9597-f1dbc6d9e38b" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cc0b59f1-315e-4460-b95c-37f66b130568">
+                    <propertyInstance Id="aa39e678-6363-4c4e-8d50-e384b4acc906" name="ClrAttributes">
+                      <elementDefinition Id="bcbb60b8-0215-4dd6-a583-c4d7d8db9269" />
+                    </propertyInstance>
+                    <elementDefinition Id="86444ee3-a844-4ab1-add1-f5de80e7a2ec" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b71cd551-7922-4e18-b62a-a205c01bd3a0">
+                    <propertyInstance Id="1a6d7a6f-f72a-44ea-84f0-573a4455f626" name="IsPartial" value="false">
+                      <elementDefinition Id="3c51f2c5-4c7e-49ab-9cfb-ae1d1c9a9a5e" />
+                    </propertyInstance>
+                    <elementDefinition Id="376dd88d-5566-42e3-aeb5-67a41eea5dbc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="05c423e4-154c-43e4-955d-29f872f94db8">
+                    <propertyInstance Id="81cb6471-8f2f-4d4c-a83f-1bd3d8db0d0e" name="IsUnsafe" value="false">
+                      <elementDefinition Id="7f095318-3e6b-4c70-bc4f-3713e8d86357" />
+                    </propertyInstance>
+                    <elementDefinition Id="59f97eca-a6a6-4764-bf6d-f21c7ab5ad67" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2d904b28-b9b8-4d69-bedd-1eaff2f755fc">
+                    <propertyInstance Id="c51f35a0-009d-4ab2-8682-0c3064bd2d28" name="Inheritance" value="none">
+                      <elementDefinition Id="b8f35836-1d10-406b-88b4-a77176e2f7b4" />
+                    </propertyInstance>
+                    <elementDefinition Id="6f319cf2-636d-4d25-976a-a54d28f711b2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d99eb4f8-2675-4da1-8985-b28df0c7d13e">
+                    <propertyInstance Id="f9b46cf8-ed60-43be-8a9d-c5df0ecb6cc0" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="c74e51e6-3bd8-4005-9fd2-b195bf6d351a" />
+                    </propertyInstance>
+                    <elementDefinition Id="855e51f4-a225-4b28-adce-01e1b94f6a88" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e05aff1e-c8dc-4474-8560-8810cbe19dd9">
+                    <propertyInstance Id="662e0d2e-38dc-4815-9cc5-fb543237ba87" name="params" value="false">
+                      <elementDefinition Id="cfa08773-ee40-49b5-8eef-aa8cb84b1bb5" />
+                    </propertyInstance>
+                    <elementDefinition Id="4d13ce97-8eb0-4965-a46e-a1709d0c478a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="f039f985-2611-448b-8d66-ba7268ef457b" />
+          </operation>
+          <operation Id="bd41b09a-d1a5-4ddd-9003-0c6e0b40c335" name="ClampAngle" visibility="Private" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="41558e24-196d-4afb-8696-6189d341aa28" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3D(Name%3DClampAngle OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)])" tag="ViewCode">
+                <elementDefinition Id="d6a64949-2a47-4b1c-b7d2-86354e8381ae" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="07eaab95-f2a1-4163-a31b-6ae1996c888c" name="method" profile="CSharpProfile">
+                <elementDefinition Id="e06db024-f478-4911-a14d-a23e5b471d05" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a170955a-5290-44f7-b4f8-d482b631b5bd">
+                    <propertyInstance Id="d77e9ffe-671e-4f35-a115-b4d2258e941a" name="ClrAttributes">
+                      <elementDefinition Id="8808f7c6-216d-49ed-a06d-45c5b8097d04" />
+                    </propertyInstance>
+                    <elementDefinition Id="685950a4-a753-4134-abfb-c329c8bd574d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="460fd444-7060-4882-b8fb-3e92574975bd">
+                    <propertyInstance Id="846fd0fb-3932-4c87-9024-41edb4d6adb8" name="IsPartial" value="false">
+                      <elementDefinition Id="585fbfd4-6152-4f38-abaa-5cededb07f75" />
+                    </propertyInstance>
+                    <elementDefinition Id="adeb5421-108e-41b6-af7c-fa23b5c89c19" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="126c9c4d-d470-4af5-9c4c-f03a72fe981e">
+                    <propertyInstance Id="8afb8cfb-45a0-42d0-a2c0-05efcebee370" name="IsUnsafe" value="false">
+                      <elementDefinition Id="062f1ca7-8b7f-4395-9f7c-22be0bf01be2" />
+                    </propertyInstance>
+                    <elementDefinition Id="152c6ddc-cb53-48c5-a129-fac32c83788d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="bc4471f1-1a0b-4d19-89b1-49d5357de3ee">
+                    <propertyInstance Id="56a3507d-5f21-4e9c-8258-61e57b108bb8" name="Inheritance" value="none">
+                      <elementDefinition Id="09f9829c-1a4b-4e7b-ad7a-ffa015425b32" />
+                    </propertyInstance>
+                    <elementDefinition Id="3c4eae27-c983-45a0-b668-195c4c1edb69" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7692a2df-835f-4acd-a120-214cf9040fd8">
+                    <propertyInstance Id="62882bc3-452e-4f8e-8441-a0bb810c8e35" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="e9faa34f-e45c-49f3-8973-21d376ff6ac3" />
+                    </propertyInstance>
+                    <elementDefinition Id="bfd8c1f9-6970-4f2f-a531-264c9aee276e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e675128e-9ed1-4a82-acef-02ba62992be1">
+                    <propertyInstance Id="6465eafc-7aba-422b-9b40-45a0675a4f3d" name="params" value="false">
+                      <elementDefinition Id="d3daec60-b93a-4893-b959-f3a07622c72f" />
+                    </propertyInstance>
+                    <elementDefinition Id="40831440-6187-4c90-969e-4067e60db3cd" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="79a0d29f-b625-49a1-a9fe-ffa9c5ae1f94" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="32094971-56b6-4f31-9a5b-ec9cc9904762" direction="Return">
+                  <elementDefinition Id="126d04e2-51e6-4934-af17-959e155c1a23" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c7c00f2b-d251-469b-b344-6261f3eb7c40" name="angle" direction="In">
+                  <referencesInternal>
+                    <reference Id="40d74fe2-7c1b-4a5e-913a-6c996bb66533" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3D(Name%3DClampAngle OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)]) ParameterIdentifier%3Dangle" tag="ViewCode">
+                      <elementDefinition Id="f90eabad-63fa-43c3-9654-44befe9b246a" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="32963fc3-406c-4760-9f23-b3a77d0d0368" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2540e0e6-6b16-478d-a5ba-a0ed215f9eac" name="min" direction="In">
+                  <referencesInternal>
+                    <reference Id="7b35c58b-d98b-4aa2-9134-71f6f64d3476" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3D(Name%3DClampAngle OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)]) ParameterIdentifier%3Dmin" tag="ViewCode">
+                      <elementDefinition Id="46ce8aed-c099-4a9c-a35a-3cf003c60f11" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="33e944ca-43b7-40bd-96ea-a3117e25b946" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2a92a694-c874-4302-9ee4-1e1d036d583c" name="max" direction="In">
+                  <referencesInternal>
+                    <reference Id="f202b3a3-b181-4bfa-8381-272162a76007" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3D(Name%3DClampAngle OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2Fmscorlib.dll Namespace%3DSystem Type%3DSingle)]) ParameterIdentifier%3Dmax" tag="ViewCode">
+                      <elementDefinition Id="48c9ae7f-fe96-4c67-a537-51c50554f0be" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="67405eb9-b77c-4f10-94c3-8dbda2158f5f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9a7b057e-3508-4800-a495-3f480fd9d671" LastKnownName="Single" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0801de38-60ac-4529-9c0d-d71715a500fb" name="GetDeltaMousePosition" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="0cc5ca9f-cf7e-480e-b5cf-903e99de56a1" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3DGetDeltaMousePosition" tag="ViewCode">
+                <elementDefinition Id="63da70b6-5ef6-4021-b987-feee850bd81b" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="adc94653-b784-496e-815e-42698acfa35a" name="method" profile="CSharpProfile">
+                <elementDefinition Id="ae83712c-23f7-4db0-8f5a-50d9046ece59" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cc4e0311-1fd7-41c2-86f0-fe9361899cbf">
+                    <propertyInstance Id="329711ad-6017-4c47-a0d6-68b7b2365f25" name="ClrAttributes">
+                      <elementDefinition Id="3f946953-3473-49ab-9847-ef709b2829a9" />
+                    </propertyInstance>
+                    <elementDefinition Id="e38ac560-1712-4ec3-b50c-3d4ac71ffa62" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3c60d2c5-f9fd-4371-9fb8-e0aac0f9f768">
+                    <propertyInstance Id="169926fe-9fbf-4ca7-b53c-e9d56a8edd0a" name="IsPartial" value="false">
+                      <elementDefinition Id="9e0bb70a-e6b8-4fc0-a028-70c78bbc05ff" />
+                    </propertyInstance>
+                    <elementDefinition Id="e6876bf2-6aa1-4ee6-b7ee-0bb0e796b1c3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b0714410-ea5a-4843-ac00-0a72b48dba8e">
+                    <propertyInstance Id="16e7464c-6e35-4115-a2d3-c413874de0d3" name="IsUnsafe" value="false">
+                      <elementDefinition Id="b17b818d-8865-4845-aa30-e917a0b19147" />
+                    </propertyInstance>
+                    <elementDefinition Id="6dbeba5f-741d-4977-a400-56e76c30fe75" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="472eb2af-e28e-4246-b35a-8c6e82da8ed0">
+                    <propertyInstance Id="2adc7994-55b6-4ad2-977c-1269b76a2cb2" name="Inheritance" value="none">
+                      <elementDefinition Id="53ee1729-613b-4653-aada-008fd77c0088" />
+                    </propertyInstance>
+                    <elementDefinition Id="27048f4c-d207-447e-a8d8-cc6696d8cd47" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="48d1ac7f-3fd4-4775-8673-a8b0ea06da35">
+                    <propertyInstance Id="d71fc7c5-9883-4e47-9680-e0c2c239bff5" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="bc186360-5239-4d0d-aacb-16477583d356" />
+                    </propertyInstance>
+                    <elementDefinition Id="afdeb91c-4634-4c21-94a1-b8b2b16c6c38" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4ec9ce0c-0798-4dcd-8e2c-5dbc4641570f">
+                    <propertyInstance Id="816d6426-ce0e-4cdf-bcff-685c16c2750d" name="params" value="false">
+                      <elementDefinition Id="7631f173-db71-4182-ba26-5acd4b8ff095" />
+                    </propertyInstance>
+                    <elementDefinition Id="7e13706f-b282-401f-a026-ac33d39913c9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="d04d632e-cf14-4f43-97e3-be69fef03d08" />
+          </operation>
+          <operation Id="2846f0f3-77ee-49a5-9e3c-6732426c396f" name="CameraScript" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="e710e142-a87e-4eba-9a0a-7418361b5e97" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJapser%2FDocuments%2Fthethreemusketeers%2FDungeonRPG%2FDungeonRPG%2FTemp%2Fbin%2FDebug%2FAssembly-CSharp.dll Type%3DCameraScript Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="76315a45-2940-4bfd-a308-110037666bea" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="189a87a7-5cbb-4fbb-9d32-63de1e2fdfa3" name="method" profile="CSharpProfile">
+                <elementDefinition Id="755ba85a-8242-4d9f-9193-01f11b1756f1" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="040b7d04-35b3-41a8-9da6-16f44c37375b">
+                    <propertyInstance Id="6ae9fcf6-d862-4939-8c94-dcb5688695cc" name="ClrAttributes">
+                      <elementDefinition Id="00626339-230c-460f-aabe-94c23d8bbcda" />
+                    </propertyInstance>
+                    <elementDefinition Id="94211504-c89d-4144-81e4-122db72a213c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3e4d513e-d5be-4d69-9616-8d5bfc8d0a53">
+                    <propertyInstance Id="2b5acf21-fabe-4f97-a2a8-6ecad84f762b" name="IsPartial" value="false">
+                      <elementDefinition Id="9ca5bf50-20b3-445c-a709-4d79284b792f" />
+                    </propertyInstance>
+                    <elementDefinition Id="56595fec-0694-4174-a992-4064d528e9f1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c7e6216f-ccd1-46d4-a9db-8a6c6f77114b">
+                    <propertyInstance Id="cf1a237f-eeae-4a12-b093-f4f6728df256" name="IsUnsafe" value="false">
+                      <elementDefinition Id="a96b892f-f6ab-49d3-a6ee-eaf3b7bd5120" />
+                    </propertyInstance>
+                    <elementDefinition Id="d96765c2-5091-4cf2-8bd3-1d4e2be6b9cd" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="44590bae-bc36-4567-bd1a-7193397624b9">
+                    <propertyInstance Id="66d2183f-25d3-4aa4-825a-75dcc6f4d516" name="Inheritance" value="none">
+                      <elementDefinition Id="80e6a745-6122-4bb4-812c-e29f7a73c7da" />
+                    </propertyInstance>
+                    <elementDefinition Id="c53faf49-0ec1-4f40-9ffb-217bad204237" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="403b9d52-3d4e-4bb8-bfac-bf4f0fc44315">
+                    <propertyInstance Id="cce0885c-ef54-408a-a111-02711671eb87" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="fe8506d7-ccc3-4e28-b99e-b27ed3f91dba" />
+                    </propertyInstance>
+                    <elementDefinition Id="913a446b-5047-4796-843e-5e46bbd29f34" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e796b4c1-3c3b-452e-b358-c93db6335923">
+                    <propertyInstance Id="122b567b-8efa-4467-8925-d1143e06f02e" name="params" value="false">
+                      <elementDefinition Id="bff96d1e-ad07-4191-863d-3467e3e00a29" />
+                    </propertyInstance>
+                    <elementDefinition Id="e3839263-6644-4d3b-9a5c-044f2c367f23" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="6f1692ab-de00-42c0-a8a5-b9ebed13f69d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9a7b057e-3508-4800-a495-3f480fd9d671" name="Single" isAbstract="false" isLeaf="false" cachedFullName="UML-modeling-project::System::Single">
+        <elementDefinition Id="cc44ddd7-f605-418c-8372-b451ffd628b1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="444aae51-b4bc-414d-9ab0-bfef68159f8a" name="Vector2" isAbstract="false" isLeaf="false" cachedFullName="UML-modeling-project::UnityEngine::Vector2">
+        <elementDefinition Id="71cdfa6d-7c45-4258-bdb8-8380efe6f130" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="a8db10eb-8a5a-4d8c-bf12-59f9fbe07845" name="UML-modeling-project">
+    <elementDefinition Id="df05e75d-4651-4913-bfaf-f845bee86431" />
+  </package>
+</logicalClassDesignerModel>
