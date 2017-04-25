@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -25,10 +26,8 @@ public class InventoryManager
     private int amountOfSlots = 30;                                     // The amount of slots.                         
     private List<InventorySlot> slots;                                  // List of all slots. 
 
-    private UILabel coinLabel;
     private UILabel healthPotionsLabel;
     private UILabel energyPotionsLabel;
-    private List<GoldInstance> coins;
     private List<PotionInstance> healthPotions;
     private List<PotionInstance> energyPotions;
 
@@ -185,7 +184,6 @@ public class InventoryManager
     private void SetupStandardItems()
     {
         // Find the labels for coins and potions to get a reference. 
-        coinLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/Gold/Label").GetComponent<UILabel>();
         healthPotionsLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/HealthPotions/Label").GetComponent<UILabel>();
         energyPotionsLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/EnergyPotions/Label").GetComponent<UILabel>();
 
@@ -193,7 +191,6 @@ public class InventoryManager
         energyPotions = new List<PotionInstance>();
 
         // Set the text labels to the correct amount (0). 
-        coinLabel.text = coins + "";
         healthPotionsLabel.text = healthPotions.Count + "";
         energyPotionsLabel.text = energyPotions.Count + "";
     }
@@ -317,9 +314,7 @@ public class InventoryManager
         }
         else 
         {
-            itemsType = (EquipmentSlotType)(int)(item.GetComponent<JewerlyInstance>().BaseJewelry.JewelryType);
-            Debug.Log("equiping a jewelry of type " + item.GetComponent<JewerlyInstance>().BaseJewelry.JewelryType);
-
+            itemsType = (EquipmentSlotType)(int)(item.GetComponent<JewerlyInstance>().BaseJewelry.JewelryType) + Enum.GetValues(typeof(ArmorType)).Length;
         }
 
         if(!characterPanel.Equip(item, itemsType)) return false;

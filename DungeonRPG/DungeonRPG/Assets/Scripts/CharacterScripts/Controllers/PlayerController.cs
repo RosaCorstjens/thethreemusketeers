@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private WeaponInstance inHand;
     private ShieldInstance inOffHand;
 
+    private bool inMenu = false;
+    public bool InMenu { set { inMenu = value; } }
     private bool inBattle;
     private EnemyController targetToAttack;
     private bool onCooldown;
@@ -56,6 +58,8 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput()
     {
+        if (inMenu) return;
+
         SendMessage("MoveMeForward", Input.GetAxis("Forward"));
         //SendMessage("TurnMe", Input.GetAxis("Turn"));
         SendMessage("MoveMeSideways", Input.GetAxis("Strafe"));

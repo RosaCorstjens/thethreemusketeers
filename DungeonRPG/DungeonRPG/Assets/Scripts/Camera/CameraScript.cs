@@ -21,11 +21,11 @@ public class CameraScript : MonoBehaviour
     private Vector2 currentMousePos, lastMousePos, deltaMousePos;
     private bool camButtonDown = false;
 
-	void Start ()
-    { 
+    void Start()
+    {
         myTransform = transform;
         if (target == null) CameraSetUp();
-	}
+    }
 
     void Update()
     {
@@ -45,13 +45,13 @@ public class CameraScript : MonoBehaviour
 
         if (camButtonDown)
         {
-            x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-            y += Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+            y += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
+            x += Input.GetAxis("Mouse Y") * ySpeed * 0.002f;
 
-            y = ClampAngle(y, 25, 90);
+            x = ClampAngle(x, 25, 90);
 
-            Quaternion rotation = Quaternion.Euler(y, x, 0);
-            Vector3 position = rotation * new Vector3(0f, 0f, -walkDistance) + target.position ;
+            Quaternion rotation = Quaternion.Euler(x, y, 0);
+            Vector3 position = rotation * new Vector3(0f, 0f, -walkDistance) + target.position;
 
             myTransform.rotation = rotation;
             myTransform.position = position;
@@ -85,8 +85,8 @@ public class CameraScript : MonoBehaviour
             // Always look at the target
             myTransform.LookAt(target);
 
-            x = 0;
-            y = 0;
+            y = myTransform.rotation.eulerAngles.y;
+            Debug.Log(y);
         }
     }
 
@@ -112,7 +112,7 @@ public class CameraScript : MonoBehaviour
     {
         // Store the old value. 
         lastMousePos = currentMousePos;
-        
+
         // Get the new value.
         currentMousePos = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 

@@ -32,7 +32,7 @@ public class ItemManager
 
         TextReader textReader = new StreamReader(Application.streamingAssetsPath + "/Items.xml");
 
-        itemContainer = (ItemContainer)serializer.Deserialize(textReader);
+        itemContainer = (ItemContainer) serializer.Deserialize(textReader);
 
         textReader.Close();
     }

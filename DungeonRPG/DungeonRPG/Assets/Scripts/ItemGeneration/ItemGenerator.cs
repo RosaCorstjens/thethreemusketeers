@@ -59,8 +59,8 @@ public class ItemGenerator
         // Create as many items as 'amount'.
         for (int i = 0; i < amount; i++)
         {
-            // Get a random item type. (Either: equipment, potion, gold)
-            int itemType = UnityEngine.Random.Range(0, Enum.GetValues(typeof(ItemType)).Length-1);
+            // Get a random item type. (Either: equipment, potion)
+            int itemType = UnityEngine.Random.Range(0, Enum.GetValues(typeof(ItemType)).Length);
 
             int randomObject;
             GameObject toAdd = GameObject.Instantiate(DropPrefab);
@@ -288,17 +288,7 @@ public class ItemGenerator
                     BasePotion basePotion = GameManager.Instance.ItemManager.ItemContainer.Potions[randomObject];
 
                     toAdd.AddComponent<PotionInstance>().Initialize(basePotion, quality);
-
-                    break;
-
-                // Gold
-                case 2:
-                    // No random object for gold.
-                    BaseGold baseGold = new BaseGold();
-
-                    int value = UnityEngine.Random.Range(0, 100);
-
-                    toAdd.AddComponent<GoldInstance>().Initialize(baseGold, quality, value);
+               //     Debug.Log(basePotion.PotionType);
 
                     break;
             }

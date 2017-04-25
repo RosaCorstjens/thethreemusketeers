@@ -9,7 +9,7 @@ public enum JewelryType { Ring, Amulet }
 public class BaseJewelry : BaseEquipment
 {
     private JewelryType jewelryType;
-    public JewelryType JewelryType { get { return jewelryType; } }
+    public JewelryType JewelryType { get { return jewelryType; } set { jewelryType = value; } }
 
     public BaseJewelry() { }
 

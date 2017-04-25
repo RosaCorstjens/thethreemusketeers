@@ -17,7 +17,7 @@
       <SpriteName>hp</SpriteName>
       <ItemType>Potion</ItemType>
       <Tier>1</Tier>
-      <PotionType>Health</PotionType>
+      <PotionType>Mana</PotionType>
       <RestoreAmount>
         <min>100</min>
         <max>500</max>

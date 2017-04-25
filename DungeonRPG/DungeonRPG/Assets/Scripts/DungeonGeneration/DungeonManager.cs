@@ -34,7 +34,6 @@ public class DungeonManager : MonoBehaviour
     public Dungeon CurrentDungeon { get; private set; }
     // The dungeon that is active in game.
     public Dungeon ActiveDungeon { get; private set; }
-    private DungeonPool dungeonPool;
 
     private int floor;
     public int Floor { get { return floor; } }
@@ -46,9 +45,6 @@ public class DungeonManager : MonoBehaviour
         directionValues.Add(DungeonDirection.East, new Vector2(1,0));
         directionValues.Add(DungeonDirection.South, new Vector2(0,-1));
         directionValues.Add(DungeonDirection.West, new Vector2(-1,0));
-
-        dungeonPool = new DungeonPool();
-        dungeonPool.Initialize();
 
         GetPrefabs();
 
@@ -69,24 +65,13 @@ public class DungeonManager : MonoBehaviour
         ActiveDungeon.BuildDungeon();
 
         //CurrentDungeon.GenerateDungeon(GameManager.Instance.ActiveCharacterInformation.Level, columns, rows, numRooms.GetRandomInRange(), minDistStartEnd);//GenerateDungeon();//GetNewDungeon(dungeonType);
-        Debug.Log("Stored miniboss dungeons: " +dungeonPool.NumMiniBossDungeons + " --- Stored normal dungeons: "+ dungeonPool.NumNormalDungeons);
     }
 
     private void GetDungeon()
     {
         CurrentDungeon = null;
 
-        // Does the pool has a dungeon we can use?
-        if (dungeonPool.HasNormalDungeons) CurrentDungeon = dungeonPool.GetNormalDungeon();
-
-        // If the pool didn't have a dungeon for us..
-        if(CurrentDungeon == null)
-        {
-            Debug.Log("No dungeon in pools found");
-
-            // Generate a dungeon.
-            GenerateDungeon();
-        }
+        GenerateDungeon();
     }
 
     private void GenerateDungeon()

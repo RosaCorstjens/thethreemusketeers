@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public enum ItemType { Equipment, Potion, Gold }
+public enum ItemType { Equipment, Potion }
 
 [Serializable]
 public class BaseItem

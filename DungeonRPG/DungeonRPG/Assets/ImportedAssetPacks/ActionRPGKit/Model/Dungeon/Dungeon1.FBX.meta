@@ -3,10 +3,29 @@ guid: 8c771a325c7c2bc4e979802cf3949e83
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: Box02
+    100002: //RootNode
+    100004: Object01
+    100006: Object02
+    100008: Object03
+    400000: Box02
+    400002: //RootNode
+    400004: Object01
+    400006: Object02
+    400008: Object03
+    2300000: Box02
+    2300002: Object01
+    2300004: Object02
+    2300006: Object03
+    3300000: Box02
+    3300002: Object01
+    3300004: Object02
+    3300006: Object03
     4300000: Box02
     4300002: Object01
     4300004: Object02
     4300006: Object03
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -14,9 +33,11 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -53,6 +74,7 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -63,7 +85,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
   humanoidOversampling: 1

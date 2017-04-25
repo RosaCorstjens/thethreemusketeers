@@ -39,8 +39,8 @@ public enum StatTypes
     Thorns
 }
 
-public enum EquipmentSlotType { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders, Amulet, Ring, MainHand, OffHand }
-public enum Equipment { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders, Amulet, Ring, Weapon, Shield }
+public enum EquipmentSlotType { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders, Ring, Amulet, MainHand, OffHand }
+public enum Equipment { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders, Ring, Amulet, Weapon, Shield }
 
 public enum Quality { Common, Magic, Rare, Legendary }
 
@@ -274,6 +274,8 @@ public class GameManager : MonoBehaviour
             {
                 inventoryOpen = !inventoryOpen;
                 UIManager.InventoryManager.ToggleMenu(inventoryOpen);
+                activeCharacterInformation.PlayerController.InMenu = inventoryOpen;
+                cameraManager.CameraScript.CanReceiveInput = !inventoryOpen;
                 yield return new WaitForSeconds(0.2f);
             }
 

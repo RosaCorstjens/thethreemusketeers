@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
-public enum ArmorType { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders, Amulet, Ring }
+public enum ArmorType { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders }
 
 [Serializable]
 public class BaseArmor : BaseEquipment
