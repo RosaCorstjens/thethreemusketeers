@@ -12,6 +12,7 @@ public class PlayerInformation : BaseCharacterInformation
     public SaveData savedata; 
 
     private float xp;
+    private float xpTillNextLvl;
     public float XP { get { return xp; } }
 
     //private GameObject playerPrefab;
@@ -34,7 +35,6 @@ public class PlayerInformation : BaseCharacterInformation
         SetUpStats();
         //playerPrefab = Resources.Load<GameObject>("Prefabs/CharactersForSelection/" + characterClass.CharacterClassType.ToString() + "2");
 
-
         savedata = new SaveData(name, level, 0, characterClass.CharacterClassType, stats);
     }
 
@@ -45,33 +45,64 @@ public class PlayerInformation : BaseCharacterInformation
         name = savedata.Name;
         level = savedata.Level;
         xp = savedata.XP;
+        xpTillNextLvl = GetXPTillNextLevel(level);
 
-        BaseCharacterClass newCharacterClass;
-        switch (savedata.CharacterClass)
-        {
-            case global::CharacterClass.Warrior:
-                newCharacterClass = new BaseWarriorClass();
-                break;
+        characterClass = new BaseWarriorClass();
 
-            case global::CharacterClass.Hunter:
-                newCharacterClass = new BaseHunterClass();
-                break;
-
-            case global::CharacterClass.Mage:
-                newCharacterClass = new BaseMageClass();
-                break;
-            default:
-                newCharacterClass = new BaseWarriorClass();
-                break;
-        }
-
-        characterClass = newCharacterClass;
         stats = savedata.Stats;
     }
 
-    private void AddExperiencePoints(float amount)
+    public void AddExperiencePoints(float progress)
     {
-        xp += amount;
+        Debug.Log("progress: " + progress);
+        Debug.Log("xp till next: " + xpTillNextLvl);
+        float amount = progress * xpTillNextLvl;
+
+        xp += (int)amount;
+
+        if (xp > xpTillNextLvl)
+        {
+            LevelUp();
+        }
+    }
+
+    private void LevelUp()
+    {
+        level++;
+        xpTillNextLvl = GetXPTillNextLevel(level);
+        GameManager.Instance.UIManager.LevelUp();
+    }
+
+    private int GetXPTillNextLevel(int x)
+    {
+        if (x <= 7)
+        {
+            return ((150 * (int)Mathf.Pow(x, 2)) + (1050 * x));
+        }
+        else if (x <= 11)
+        {
+            return ((200 * (int)Mathf.Pow(x, 2)) + (1050 * x) - 2450);
+        }
+        else if (x <= 22)
+        {
+            return ((50 * (int)Mathf.Pow(x, 2)) + (1750 * x) + 9800);
+        }
+        else if (x <= 30)
+        {
+            return ((250 * (int)Mathf.Pow(x, 2)) - (1500 * x) - 22750);
+        }
+        else if (x <= 35)
+        {
+            return ((500 * (int)Mathf.Pow(x, 2)) - (13500 * x) + 88000);
+        }
+        else if (x <= 50)
+        {
+            return ((200 * (int)Mathf.Pow(x, 2)) + (1800 * x) - 80000);
+        }
+        else 
+        {
+            return ((2500 * (int)Mathf.Pow(x, 2)) - (145000 * x) + 2102500);
+        }
     }
 }
 

@@ -83,7 +83,12 @@ public class ItemGenerator
             }
 
             int level = (int)((int)(quality+1) * UnityEngine.Random.Range(1, 2.5f));
+            int maxTier = (Mathf.FloorToInt((float)(GameManager.Instance.ActiveCharacterInformation.Level + 3) / 10)) + 1;
+            if (maxTier > 4) maxTier = 4;
+             
+            int minTier = ((GameManager.Instance.ActiveCharacterInformation.Level - 5) < ((maxTier == 1 ? maxTier : maxTier - 1) * 10)) ? maxTier - 1 : maxTier;
 
+            Debug.Log(minTier + " " + maxTier);
             switch (itemType)
             {
                 // Equipment
@@ -102,13 +107,13 @@ public class ItemGenerator
                     switch (r)
                     {
                         case 0:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Weapons.Count);
-                            baseWeapon = GameManager.Instance.ItemManager.ItemContainer.Weapons[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Weapons.FindAll(w => w.Tier <= maxTier && w.Tier >= minTier).Count);
+                            baseWeapon = GameManager.Instance.ItemManager.ItemContainer.Weapons.FindAll(w => w.Tier <= maxTier && w.Tier >= minTier)[randomObject];
 
                             equipment = Equipment.Weapon;
                             generatedName = baseWeapon.Name;
 
-                            level *= baseWeapon.Tier;
+                            level += (baseWeapon.Tier - 1) * 10;
 
                             int damageValue = (int)baseWeapon.BaseStats.Find(s => s.StatType == StatTypes.Damage).Range.GetRandomInRange();
                             float attackSpeedValue = (float)Math.Round(baseWeapon.BaseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Range.GetRandomInRange(), 2);
@@ -119,13 +124,13 @@ public class ItemGenerator
 
                             break;
                         case 1:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Armor.Count);
-                            baseArmor = GameManager.Instance.ItemManager.ItemContainer.Armor[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier).Count);
+                            baseArmor = GameManager.Instance.ItemManager.ItemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier)[randomObject];
 
                             equipment = (Equipment)baseArmor.ArmorType;
                             generatedName = baseArmor.Name;
 
-                            level *= baseArmor.Tier;
+                            level += (baseArmor.Tier - 1) * 10;
 
                             int armorValue = (int)baseArmor.BaseStats.Find(s => s.StatType == StatTypes.Armor).Range.GetRandomInRange();
                             Stat armor = new Stat(StatTypes.Armor, armorValue);
@@ -133,13 +138,13 @@ public class ItemGenerator
 
                             break;
                         case 2:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Shields.Count);
-                            baseShield = GameManager.Instance.ItemManager.ItemContainer.Shields[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier).Count);
+                            baseShield = GameManager.Instance.ItemManager.ItemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier)[randomObject];
 
                             equipment = Equipment.Shield;
                             generatedName = baseShield.Name;
 
-                            level *= baseShield.Tier;
+                            level += (baseShield.Tier - 1) * 10;
 
                             int armorVal = (int)baseShield.BaseStats.Find(s => s.StatType == StatTypes.Armor).Range.GetRandomInRange();
                             int blockChanceVal = (int)baseShield.BaseStats.Find(s => s.StatType == StatTypes.BlockChance).Range.GetRandomInRange();
@@ -153,13 +158,13 @@ public class ItemGenerator
 
                             break;
                         case 3:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Jewelry.Count);
-                            baseJewerly = GameManager.Instance.ItemManager.ItemContainer.Jewelry[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier).Count);
+                            baseJewerly = GameManager.Instance.ItemManager.ItemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier)[randomObject];
 
                             equipment = baseJewerly.JewelryType == JewelryType.Amulet ? Equipment.Amulet : Equipment.Ring;
                             generatedName = baseJewerly.Name;
 
-                            level *= baseJewerly.Tier;
+                            level += (baseJewerly.Tier - 1) * 10;
 
                             break;
                     }

@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
     private CameraManager cameraManager;
     public CameraManager CameraManager { get { return cameraManager; } }
 
-    private LevelManager levelManager;
-    public LevelManager LevelManager { get { return levelManager; } }
+    private DungeonManager dungeonManager;
+    public DungeonManager DungeonManager { get { return dungeonManager; } }
 
     private CharacterCreation characterCreation;
     public CharacterCreation CharacterCreation { get { return characterCreation; } set { characterCreation = value; } }
@@ -215,9 +215,8 @@ public class GameManager : MonoBehaviour
 
         UIManager.InitializeGameUI();
 
-
-        levelManager = new LevelManager();
-        levelManager.Initialize();
+        dungeonManager = new DungeonManager();
+        dungeonManager.Initialize();
 
         CameraManager.SetTarget(activeCharacter.transform);
         CameraManager.FocusBack(true);

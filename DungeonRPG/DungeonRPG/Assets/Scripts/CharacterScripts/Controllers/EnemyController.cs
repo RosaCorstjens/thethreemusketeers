@@ -5,6 +5,8 @@ public class EnemyController : MonoBehaviour
 {
     public float currentHealth;
     private float maxHealth = 10f;
+    private bool isDead = false;
+
     private Transform targetTransform;
     private PlayerController targetScript;
     private bool onCooldown;
@@ -14,6 +16,7 @@ public class EnemyController : MonoBehaviour
     private int rotationSpeed = 3;
 
     private int damage = 5;
+    private float baseProgression = 0.5f;
 
     private float noticeDistance = 10f;
     private float attackDistance = 2f;
@@ -96,10 +99,13 @@ public class EnemyController : MonoBehaviour
 
     public void AdjustCurrentHealth(float adj)
     {
+        if (isDead) return;
+
         currentHealth -= adj;
 
         if (currentHealth <= 0)
         {
+            isDead = true;
             currentHealth = 0;
             Die();
         }
@@ -110,6 +116,8 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         anim.SetBool("Dead", true);
+        GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression);
+
         StartCoroutine(WaitForDestory());
     }
 

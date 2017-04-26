@@ -170,7 +170,13 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        // DEAD TO THE PLAAAYER
+        GameManager.Instance.UIManager.YouDiedWarning();
+
+        transform.position = GameManager.Instance.DungeonManager.CurrentDungeon.StartPosition;
+
+        // dungeon monsters respawn
+
+        currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;
     }
 
     public void SetHand(WeaponInstance item)

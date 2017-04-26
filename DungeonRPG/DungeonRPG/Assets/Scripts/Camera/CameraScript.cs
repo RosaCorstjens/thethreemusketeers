@@ -86,7 +86,6 @@ public class CameraScript : MonoBehaviour
             myTransform.LookAt(target);
 
             y = myTransform.rotation.eulerAngles.y;
-            Debug.Log(y);
         }
     }
 

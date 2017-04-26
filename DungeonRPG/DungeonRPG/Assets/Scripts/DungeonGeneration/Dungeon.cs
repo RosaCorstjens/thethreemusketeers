@@ -37,7 +37,7 @@ public class Dungeon
 
     public void GenerateDungeon(int dLevel, int columns, int rows, int numRooms, float minDistStartEnd)
     {
-        dm = GameManager.Instance.LevelManager.DungeonManager;
+        dm = GameManager.Instance.DungeonManager;
 
         this.dLevel = dLevel;
         this.columns = columns;
@@ -213,7 +213,7 @@ public class Dungeon
         GameObject tileInstance = GameObject.Instantiate(prefab, position, Quaternion.identity) as GameObject;
 
         // Set the tile's parent to the board holder.
-        tileInstance.transform.parent = GameManager.Instance.LevelManager.LevelParent.transform;
+        tileInstance.transform.parent = GameManager.Instance.DungeonManager.LevelParent.transform;
 
         return tileInstance;
     }
@@ -442,7 +442,7 @@ public class Dungeon
         List<Floor> edgeFloors = EndRoom.Floors.FindAll(f => f.placement == Floor.Placement.Edge);
         Floor endFloor = edgeFloors[Random.Range(0, edgeFloors.Count)];
         GameObject portal = GameObject.Instantiate(dm.PortalPrefab);
-        portal.transform.SetParent(GameManager.Instance.LevelManager.LevelParent.transform);
+        portal.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
         portal.transform.position = dm.GridToWorldPosition(new Vector2(endFloor.xPos, endFloor.yPos));
         portal.transform.position += new Vector3(0, 1.75f, 0);
         portal.transform.localEulerAngles = endFloor.ObjectRotation();

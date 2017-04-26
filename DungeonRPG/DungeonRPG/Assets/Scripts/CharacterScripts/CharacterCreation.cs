@@ -8,16 +8,8 @@ public class CharacterCreation : MonoBehaviour
 
     private BaseWarriorClass warriorClass;
     private GameObject warriorPrefab;
-    private BaseMageClass mageClass;
-    private GameObject magePrefab;
-    private BaseHunterClass hunterClass;
-    private GameObject hunterPrefab;
 
     private HooverButton warrior;
-    private HooverButton mage;
-    private HooverButton hunter;
-    private Color normalColor;
-    private Color selectedColor = Color.white;
 
     private UILabel description;
     private UIInput nameInput;
@@ -28,25 +20,14 @@ public class CharacterCreation : MonoBehaviour
         cylinderCreator.transform.localScale = new Vector3(2, 0.1f, 2);
 
         warriorClass = new BaseWarriorClass();
-        mageClass = new BaseMageClass();
-        hunterClass = new BaseHunterClass();
 
         warriorPrefab = GameManager.Instance.WarriorPrefab;
-        magePrefab = GameManager.Instance.MagePrefab;
-        hunterPrefab = GameManager.Instance.HunterPrefab;
 
         warriorPrefab.transform.localPosition = cylinderCreator.transform.FindChild("SpawnPoint").transform.position;
-        magePrefab.transform.localPosition = cylinderCreator.transform.FindChild("SpawnPoint").transform.position;
-        hunterPrefab.transform.localPosition = cylinderCreator.transform.FindChild("SpawnPoint").transform.position;
 
         warrior = transform.FindChild("Anchor_MidLeft/ClassSelection/Grid/Warrior").GetComponent<HooverButton>();
-        mage = transform.FindChild("Anchor_MidLeft/ClassSelection/Grid/Mage").GetComponent<HooverButton>();
-        hunter = transform.FindChild("Anchor_MidLeft/ClassSelection/Grid/Hunter").GetComponent<HooverButton>();
-        normalColor = warrior.GetComponent<UILabel>().color;
 
         warrior.Initlialize();
-        mage.Initlialize();
-        hunter.Initlialize();
 
         description = transform.FindChild("Anchor_MidRight/ClassExplenation/ClassDescription").GetComponent<UILabel>();
         nameInput = transform.FindChild("Anchor_Buttom/NameCreation/Input Field").GetComponent<UIInput>();
@@ -57,48 +38,15 @@ public class CharacterCreation : MonoBehaviour
         SelectWarriorClass();
     }
 
-    public void SelectMageClass()
-    {
-        this.selectedClass = mageClass;
-
-        warrior.Selected = false;
-        mage.Selected = true;
-        hunter.Selected = false;
-
-        magePrefab.SetActive(true);
-        warriorPrefab.SetActive(false);
-        hunterPrefab.SetActive(false);
-
-        description.text = this.selectedClass.ClassDescription;
-    }
-
     public void SelectWarriorClass()
     {
         this.selectedClass = warriorClass;
 
         warrior.Selected = true;
-        mage.Selected = false;
-        hunter.Selected = false;
 
         warriorPrefab.SetActive(true);
-        magePrefab.SetActive(false);
-        hunterPrefab.SetActive(false);
         description.text = this.selectedClass.ClassDescription;
 
-    }
-    public void SelectHunterClass()
-    {
-        this.selectedClass = hunterClass;
-
-        warrior.Selected = false;
-        mage.Selected = false;
-        hunter.Selected = true;
-
-        hunterPrefab.SetActive(true);
-        magePrefab.SetActive(false);
-        warriorPrefab.SetActive(false);
-
-        description.text = this.selectedClass.ClassDescription;
     }
 
     public void CreateCharacter()
@@ -128,12 +76,8 @@ public class CharacterCreation : MonoBehaviour
         cylinderCreator = null;
 
         warriorClass = null;
-        mageClass = null;
-        hunterClass = null;
 
         warriorPrefab = null;
-        hunterPrefab = null;
-        magePrefab = null;
 
         Destroy(this.gameObject);
     }

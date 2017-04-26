@@ -25,6 +25,9 @@ public class DungeonManager : MonoBehaviour
     public GameObject CeilingPrefab { get; private set; }
     public GameObject PortalPrefab { get; private set; }
 
+    private GameObject levelParent;
+    public GameObject LevelParent { get { return levelParent; } }
+
     public float WorldScaleX { get { return 3f; } }
     public float WorldScaleZ { get { return 3f; } }
 
@@ -39,18 +42,35 @@ public class DungeonManager : MonoBehaviour
     public int Floor { get { return floor; } }
 
     public void Initialize()
-    {       
+    {
+        levelParent = new GameObject("Level Parent");
+
         directionValues = new Dictionary<DungeonDirection, Vector2>();
-        directionValues.Add(DungeonDirection.North, new Vector2(0,1));
-        directionValues.Add(DungeonDirection.East, new Vector2(1,0));
-        directionValues.Add(DungeonDirection.South, new Vector2(0,-1));
-        directionValues.Add(DungeonDirection.West, new Vector2(-1,0));
+        directionValues.Add(DungeonDirection.North, new Vector2(0, 1));
+        directionValues.Add(DungeonDirection.East, new Vector2(1, 0));
+        directionValues.Add(DungeonDirection.South, new Vector2(0, -1));
+        directionValues.Add(DungeonDirection.West, new Vector2(-1, 0));
 
         GetPrefabs();
 
         floor = 1;
 
         StartNewDungeon();
+
+        GameObject monsterObject = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Monsters/Spider"), new Vector3(CurrentDungeon.StartPosition.x + 10, CurrentDungeon.StartPosition.y, CurrentDungeon.StartPosition.z), Quaternion.identity) as GameObject;
+        EnemyController monster = monsterObject.GetComponent<EnemyController>();
+        monster.Initialize();
+
+        GameObject monsterObject2 = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Monsters/Spider"), new Vector3(CurrentDungeon.StartPosition.x + 10, CurrentDungeon.StartPosition.y, CurrentDungeon.StartPosition.z), Quaternion.identity) as GameObject;
+        EnemyController monster2 = monsterObject2.GetComponent<EnemyController>();
+        monster2.Initialize();
+
+        Vector3 chestPosition = CurrentDungeon.Rooms[0].RandomPositionInRoom();
+        GameObject chestObject = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Props/LootChest"), new Vector3(CurrentDungeon.StartPosition.x, CurrentDungeon.StartPosition.y + 0.2f, CurrentDungeon.StartPosition.z + 10), Quaternion.identity) as GameObject;
+        LootChest chest = chestObject.GetComponent<LootChest>();
+        chest.Initialize();
+
+        GameManager.Instance.ActiveCharacterInformation.PlayerController.Initialize(CurrentDungeon.StartPosition);
     }
 
     public void StartNewDungeon()
@@ -83,7 +103,7 @@ public class DungeonManager : MonoBehaviour
     void GetPrefabs()
     {
         FloorPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Floor");
-        WallPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Wall");
+        WallPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/WallPlane");
         PillarPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Pillar");
         CeilingPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Ceiling");
         PortalPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Portal");

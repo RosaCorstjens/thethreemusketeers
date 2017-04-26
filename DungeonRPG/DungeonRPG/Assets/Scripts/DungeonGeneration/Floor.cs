@@ -38,7 +38,7 @@ public class Floor
         Neighbours = new List<Floor>();
         for (int i = 0; i < directions.Count; i++)
         {
-            Neighbours.Add(GameManager.Instance.LevelManager.DungeonManager.CurrentDungeon.GetFloor((int)(xPos + GameManager.Instance.LevelManager.DungeonManager.directionValues[directions[i]].x), (int)(yPos + GameManager.Instance.LevelManager.DungeonManager.directionValues[directions[i]].y)));
+            Neighbours.Add(GameManager.Instance.DungeonManager.CurrentDungeon.GetFloor((int)(xPos + GameManager.Instance.DungeonManager.directionValues[directions[i]].x), (int)(yPos + GameManager.Instance.DungeonManager.directionValues[directions[i]].y)));
         }
 
         // First check for being a corridorfloor, cuz of special case. 
@@ -60,37 +60,37 @@ public class Floor
 
     public void PlaceWalls()
     {
-        GameObject wallPrefab = GameManager.Instance.LevelManager.DungeonManager.WallPrefab;
+        GameObject wallPrefab = GameManager.Instance.DungeonManager.WallPrefab;
         wallPlaces = GetDirectionsWithOrWithoutNeighbour(false);
 
         for (int i = 0; i < wallPlaces.Count; i++)
         {
-            Vector3 position = GameManager.Instance.LevelManager.DungeonManager.GridToWorldPosition(new Vector2(xPos, yPos));
+            Vector3 position = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(xPos, yPos));
             position.y = 1.75f;
             float yRot = 0;
 
             switch (wallPlaces[i])
             {
                 case DungeonDirection.North:
-                    position.z += (GameManager.Instance.LevelManager.DungeonManager.WorldScaleZ / 2);
-                    yRot = 0;
+                    position.z += (GameManager.Instance.DungeonManager.WorldScaleZ / 2);
+                    yRot = 180;
                     break;
                 case DungeonDirection.East:
-                    position.x += (GameManager.Instance.LevelManager.DungeonManager.WorldScaleX / 2);
+                    position.x += (GameManager.Instance.DungeonManager.WorldScaleX / 2);
                     yRot = -90;
                     break;
                 case DungeonDirection.South:
-                    position.z -= (GameManager.Instance.LevelManager.DungeonManager.WorldScaleZ / 2);
+                    position.z -= (GameManager.Instance.DungeonManager.WorldScaleZ / 2);
                     yRot = 0;
                     break;
                 case DungeonDirection.West:
-                    position.x -= (GameManager.Instance.LevelManager.DungeonManager.WorldScaleX / 2);
+                    position.x -= (GameManager.Instance.DungeonManager.WorldScaleX / 2);
                     yRot = 90;
                     break;
             }
 
             GameObject go = GameObject.Instantiate(wallPrefab, position, Quaternion.Euler(0, yRot, 0)) as GameObject;
-            go.transform.SetParent(GameManager.Instance.LevelManager.LevelParent.transform);
+            go.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
         }
     }
 
@@ -111,22 +111,22 @@ public class Floor
 
     private bool CheckForNeighbourNorth()
     {
-        return GameManager.Instance.LevelManager.DungeonManager.CurrentDungeon.IsOccupied(xPos, yPos + 1);
+        return GameManager.Instance.DungeonManager.CurrentDungeon.IsOccupied(xPos, yPos + 1);
     }
 
     private bool CheckForNeighbourEast()
     {
-        return GameManager.Instance.LevelManager.DungeonManager.CurrentDungeon.IsOccupied(xPos + 1, yPos);
+        return GameManager.Instance.DungeonManager.CurrentDungeon.IsOccupied(xPos + 1, yPos);
     }
 
     private bool CheckForNeighbourSouth()
     {
-        return GameManager.Instance.LevelManager.DungeonManager.CurrentDungeon.IsOccupied(xPos, yPos - 1);
+        return GameManager.Instance.DungeonManager.CurrentDungeon.IsOccupied(xPos, yPos - 1);
     }
 
     private bool CheckForNeighbourWest()
     {
-        return GameManager.Instance.LevelManager.DungeonManager.CurrentDungeon.IsOccupied(xPos - 1, yPos);
+        return GameManager.Instance.DungeonManager.CurrentDungeon.IsOccupied(xPos - 1, yPos);
     }
 
     public Vector3 ObjectRotation()

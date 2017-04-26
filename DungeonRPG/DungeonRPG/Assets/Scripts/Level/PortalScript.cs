@@ -48,6 +48,6 @@ public class PortalScript : MonoBehaviour
 
     private void EnteredPortal()
     {
-        GameManager.Instance.LevelManager.DungeonManager.FinishDungeon();
+        GameManager.Instance.DungeonManager.FinishDungeon();
     }
 }

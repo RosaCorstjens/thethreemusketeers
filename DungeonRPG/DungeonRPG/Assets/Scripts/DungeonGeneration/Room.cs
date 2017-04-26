@@ -51,7 +51,7 @@ public class Room
 
         int randomFloor = Random.Range(0, floors.Count);
 
-        returnVector = GameManager.Instance.LevelManager.DungeonManager.GridToWorldPosition(new Vector2(floors[randomFloor].xPos, floors[randomFloor].yPos));
+        returnVector = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(floors[randomFloor].xPos, floors[randomFloor].yPos));
 
         return returnVector;
     }
@@ -69,7 +69,7 @@ public class Room
 
                 if ((otherPos - myPos).magnitude < shortestDistance)
                 {
-                    shortestDistance = (GameManager.Instance.LevelManager.DungeonManager.GridToWorldPosition(new Vector2(otherRoom.Floors[i].xPos, otherRoom.Floors[i].yPos)) - GameManager.Instance.LevelManager.DungeonManager.GridToWorldPosition(new Vector2(floors[j].xPos, floors[j].yPos))).magnitude;
+                    shortestDistance = (GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(otherRoom.Floors[i].xPos, otherRoom.Floors[i].yPos)) - GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(floors[j].xPos, floors[j].yPos))).magnitude;
                 }
             }
         }

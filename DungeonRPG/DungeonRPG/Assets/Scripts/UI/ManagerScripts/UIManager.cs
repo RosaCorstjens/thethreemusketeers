@@ -30,6 +30,8 @@ public class UIManager
     private UILabel warningMessage;
     private const string INVENTORY_FULL_WARNING = "Your inventory is full.";
     private const string EQUIP_WEAPON_WARNING = "Equip a weapon to attack.";
+    private const string YOU_DIED = "You died...";
+    private const string LEVEL_UP = "Level up!";
     private float showWarningTime = 1;
 
     public void Initialize()
@@ -74,6 +76,20 @@ public class UIManager
     public void EquipWeaponWarning()
     {
         warningMessage.text = EQUIP_WEAPON_WARNING;
+        warningMessage.gameObject.SetActive(true);
+        GameManager.Instance.StartCoroutine(ShowWarning());
+    }
+
+    public void YouDiedWarning()
+    {
+        warningMessage.text = YOU_DIED;
+        warningMessage.gameObject.SetActive(true);
+        GameManager.Instance.StartCoroutine(ShowWarning());
+    }
+
+    public void LevelUp()
+    {
+        warningMessage.text = LEVEL_UP;
         warningMessage.gameObject.SetActive(true);
         GameManager.Instance.StartCoroutine(ShowWarning());
     }
