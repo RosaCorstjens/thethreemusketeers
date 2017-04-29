@@ -49,13 +49,13 @@ public class PlayerInformation : BaseCharacterInformation
 
         characterClass = new BaseWarriorClass();
 
-        stats = savedata.Stats;
+        //stats = savedata.Stats;
+        SetUpStats();
     }
 
     public void AddExperiencePoints(float progress)
     {
         Debug.Log("progress: " + progress);
-        Debug.Log("xp till next: " + xpTillNextLvl);
         float amount = progress * xpTillNextLvl;
 
         xp += (int)amount;
@@ -66,10 +66,11 @@ public class PlayerInformation : BaseCharacterInformation
         }
     }
 
-    private void LevelUp()
+    protected override void LevelUp()
     {
-        level++;
+        base.LevelUp();
         xpTillNextLvl = GetXPTillNextLevel(level);
+        Debug.Log("xp till next: " + xpTillNextLvl);
         GameManager.Instance.UIManager.LevelUp();
     }
 

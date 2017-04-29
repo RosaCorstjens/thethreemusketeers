@@ -50,7 +50,8 @@ public class BaseCharacterInformation
         baseStats.Find(s => s.StatType == StatTypes.MaxHealth).Value = 40;
         baseStats.Find(s => s.StatType == StatTypes.MaxResource).Value = 125;
         baseStats.Find(s => s.StatType == StatTypes.ResourceRegen).Value = 4;
-        baseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Value = 0;
+        baseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Value = 1;
+        baseStats.Find(s => s.StatType == StatTypes.HealthPerSec).Value = 0.5f;
 
         stats = new CharacterStats(baseStats, new List<Modifier>(), characterClass.PrimaryStat);
     }
@@ -72,10 +73,12 @@ public class BaseCharacterInformation
     }
 
     // Although enemies can't really level up, this is usefull to generate their stats based on base stats and there level. 
-    protected void LevelUp()
+    protected virtual void LevelUp()
     {
         level++;
 
         // Some increase of stats stuff. 
+
+
     }
 }

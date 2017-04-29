@@ -88,7 +88,6 @@ public class ItemGenerator
              
             int minTier = ((GameManager.Instance.ActiveCharacterInformation.Level - 5) < ((maxTier == 1 ? maxTier : maxTier - 1) * 10)) ? maxTier - 1 : maxTier;
 
-            Debug.Log(minTier + " " + maxTier);
             switch (itemType)
             {
                 // Equipment

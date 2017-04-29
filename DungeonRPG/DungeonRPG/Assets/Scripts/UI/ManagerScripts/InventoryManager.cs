@@ -288,6 +288,30 @@ public class InventoryManager
         return false;
     }
 
+    public void UsePotion(PotionType type)
+    {
+        if (type == PotionType.Health)
+        {
+            if (healthPotions.Count != 0)
+            {
+                int heal = (int)(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MaxHealth) / 100) * healthPotions[0].BasePotion.RestoreAmount.GetRandomInRange() ;
+                GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(heal);
+                Debug.Log(heal);
+
+                healthPotions.Remove(healthPotions[0]);
+                healthPotionsLabel.text = healthPotions.Count + "";
+            }
+            else
+            {
+                GameManager.Instance.UIManager.NoHealthPotion();
+            }
+        }
+        else
+        {
+            //TODO: mana potion.
+        }
+    }
+
     // Adds the item at current action slot. 
     public bool EquipItem(EquipmentInstance item = null)
     {        

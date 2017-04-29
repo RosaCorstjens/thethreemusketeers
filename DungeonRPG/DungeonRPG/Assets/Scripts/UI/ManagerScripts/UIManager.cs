@@ -32,6 +32,8 @@ public class UIManager
     private const string EQUIP_WEAPON_WARNING = "Equip a weapon to attack.";
     private const string YOU_DIED = "You died...";
     private const string LEVEL_UP = "Level up!";
+    private const string NO_ENGERGY_POTIONS = "You have no energy potions.";
+    private const string NO_HEALTH_POTIONS = "You have no health potions.";
     private float showWarningTime = 1;
 
     public void Initialize()
@@ -93,6 +95,21 @@ public class UIManager
         warningMessage.gameObject.SetActive(true);
         GameManager.Instance.StartCoroutine(ShowWarning());
     }
+
+    public void NoHealthPotion()
+    {
+        warningMessage.text = NO_HEALTH_POTIONS;
+        warningMessage.gameObject.SetActive(true);
+        GameManager.Instance.StartCoroutine(ShowWarning());
+    }
+
+    public void NoEnergyPotion()
+    {
+        warningMessage.text = NO_ENGERGY_POTIONS;
+        warningMessage.gameObject.SetActive(true);
+        GameManager.Instance.StartCoroutine(ShowWarning());
+    }
+
 
     private IEnumerator ShowWarning()
     {

@@ -24,7 +24,14 @@ public class PlayerController : MonoBehaviour
     private bool onCooldown;
     private float basicAttackCooldown = 1f;
 
-    private float maxPassiveInBattle = 10f;
+    private bool potionOnCooldown;
+    private float healthPotionCooldown = 2f;
+
+    private bool regenOnCooldown = false;
+    private float regenCooldown = 5f;
+    private Coroutine regenCoroutine;
+
+    private float maxPassiveInBattle = 30f;
 
     private float turnInput, turnSpeed = 100f;
 
@@ -54,6 +61,13 @@ public class PlayerController : MonoBehaviour
         GetInput();
 
         Turn();
+
+        //regen
+        if (!regenOnCooldown)
+        {
+            float regen = ((GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MaxHealth) / 100) * GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerSec)) * Time.deltaTime;
+            AdjustCurrentHealth(regen);   
+        }
     }
 
     private void GetInput()
@@ -98,6 +112,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(WaitForCooldown(basicAttackCooldown));
             SendMessage("BasicAttack");
         }
+
+        if (!potionOnCooldown && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GameManager.Instance.UIManager.InventoryManager.UsePotion(PotionType.Health);
+        }
     }
 
     private void Turn()
@@ -139,7 +158,7 @@ public class PlayerController : MonoBehaviour
     private void Attack()
     {
         // TO DO: take crit dmg etc into account. 
-        targetToAttack.AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.DeterminedDamage);
+        targetToAttack.AdjustCurrentHealth(-GameManager.Instance.ActiveCharacterInformation.Stats.DeterminedDamage);
     }
 
     private IEnumerator WaitForCooldown(float cooldownTime)
@@ -153,9 +172,30 @@ public class PlayerController : MonoBehaviour
         yield break;
     }
 
+    private IEnumerator PauseRegen(float cooldownTime)
+    {
+        regenOnCooldown = true;
+
+        yield return new WaitForSeconds(cooldownTime);
+
+        regenOnCooldown = false;
+
+        regenCoroutine = null;
+        yield break;
+    }
+
     public void AdjustCurrentHealth(float adj)
     {
-        currentHealth -= adj;
+        if (adj < 0)
+        {
+            if (regenCoroutine != null)
+            {
+                StopCoroutine(regenCoroutine);
+            }
+            regenCoroutine = StartCoroutine(PauseRegen(regenCooldown));
+        }
+
+        currentHealth += adj;
 
         if (currentHealth < 0)
         {

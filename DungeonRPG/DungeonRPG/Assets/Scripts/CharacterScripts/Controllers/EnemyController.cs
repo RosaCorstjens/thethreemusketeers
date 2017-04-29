@@ -83,7 +83,7 @@ public class EnemyController : MonoBehaviour
     private void Attack()
     {
         anim.SetTrigger("Attack");
-        targetScript.AdjustCurrentHealth(damage);
+        targetScript.AdjustCurrentHealth(-damage);
     }
 
     private IEnumerator WaitForCooldown(float cooldownTime)
@@ -101,7 +101,7 @@ public class EnemyController : MonoBehaviour
     {
         if (isDead) return;
 
-        currentHealth -= adj;
+        currentHealth += adj;
 
         if (currentHealth <= 0)
         {
