@@ -10,7 +10,21 @@ public class EquipmentInstance: ItemInstance
     protected string statsText;
 
     private bool equipped;
-    public bool Equipped { get { return equipped; } set { equipped = value; if(equipped) GameManager.Instance.ActiveCharacterInformation.AddStats(this); else GameManager.Instance.ActiveCharacterInformation.RemoveStats(this); GameManager.Instance.UIManager.InventoryManager.CharacterPanel.SetPlayerInformation(); } }
+
+    public bool Equipped
+    {
+        get
+        {
+            return equipped;
+        }
+        set
+        {
+            equipped = value;
+            if (equipped) GameManager.Instance.ActiveCharacterInformation.AddStats(this);
+            else GameManager.Instance.ActiveCharacterInformation.RemoveStats(this);
+            GameManager.Instance.UIManager.InventoryManager.CharacterPanel.SetPlayerInformation();
+        }
+    }
 
     private BaseEquipment baseEquipment;
     public BaseEquipment BaseEquipment { get { return baseEquipment; } }
@@ -54,7 +68,6 @@ public class EquipmentInstance: ItemInstance
         for (int i = 0; i < baseStats.Count; i++)
         {
             ModifierType modifierType = ModifierType.add;
-            //if (baseStats[i].StatType == StatTypes.AttackSpeed) modifierType = ModifierType.mult;
 
             modifiers.Add(new Modifier(baseStats[i].StatType, modifierType, baseStats[i].Value));
         }

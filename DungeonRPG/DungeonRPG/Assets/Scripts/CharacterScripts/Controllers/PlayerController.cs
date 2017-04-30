@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool inBattle;
     private EnemyController targetToAttack;
     private bool onCooldown;
-    private float basicAttackCooldown = 1f;
+    private float basicAttackCooldown = 0;
 
     private bool potionOnCooldown;
     private float healthPotionCooldown = 2f;
@@ -74,10 +74,21 @@ public class PlayerController : MonoBehaviour
     {
         if (inMenu) return;
 
-        SendMessage("MoveMeForward", Input.GetAxis("Forward"));
-        //SendMessage("TurnMe", Input.GetAxis("Turn"));
-        SendMessage("MoveMeSideways", Input.GetAxis("Strafe"));
+        float forward = Input.GetAxis("Forward") * 4f;
+        float strafe = Input.GetAxis("Strafe") * 4f;
         turnInput = Input.GetAxis("Turn");
+
+        SendMessage("MoveMeForward", forward);
+        SendMessage("MoveMeSideways", strafe);
+
+        float speedMultiplier = (100f + (GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MovementSpeed) * 10)) / 100f;
+        Debug.Log(speedMultiplier);
+        Debug.Log(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MovementSpeed));
+        // move forward
+        transform.Translate(Vector3.forward * forward * speedMultiplier * Time.deltaTime, Space.Self);
+
+        // move strafe
+        transform.Translate(Vector3.right * strafe * speedMultiplier * Time.deltaTime, Space.Self);
 
         if (Input.GetKeyDown(KeyCode.LeftShift)) SendMessage("ToggleRun");
 
@@ -157,8 +168,17 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        // TO DO: take crit dmg etc into account. 
-        targetToAttack.AdjustCurrentHealth(-GameManager.Instance.ActiveCharacterInformation.Stats.DeterminedDamage);
+        float dmg = GameManager.Instance.ActiveCharacterInformation.Stats.DeterminedDamage;
+        float randomroll = Random.Range(0, 100);
+        if (randomroll < GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.CritRate))
+        {
+            dmg = (dmg / 100) * GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.CritDamage);
+        }
+
+        dmg += GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.WeaponDamage);
+
+        targetToAttack.AdjustCurrentHealth(-dmg);
+        AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerHit));
     }
 
     private IEnumerator WaitForCooldown(float cooldownTime)
@@ -240,6 +260,8 @@ public class PlayerController : MonoBehaviour
         }
 
         inHand = item;
+        basicAttackCooldown = GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.AttackSpeed);
+        Debug.Log(basicAttackCooldown);
 
         inHand.WeaponObject.transform.SetParent(hand);
         inHand.WeaponObject.transform.localRotation = hand.localRotation * Quaternion.Euler(0, 0, 45) * Quaternion.Euler(0, -180, 0);
@@ -267,6 +289,7 @@ public class PlayerController : MonoBehaviour
         inHand.WeaponObject.SetActive(false);
 
         inHand = null;
+        basicAttackCooldown = 0;
     }
 
     public void SetOffHand(ShieldInstance item)

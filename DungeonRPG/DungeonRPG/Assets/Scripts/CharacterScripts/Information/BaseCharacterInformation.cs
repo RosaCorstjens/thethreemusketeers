@@ -46,12 +46,27 @@ public class BaseCharacterInformation
 
         baseStats.Find(s => s.StatType == StatTypes.Armor).Value = 18;
         baseStats.Find(s => s.StatType == StatTypes.Damage).Value = 2;
+        baseStats.Find(s => s.StatType == StatTypes.WeaponDamage).Value = 0;
         baseStats.Find(s => s.StatType == StatTypes.Resistance).Value = 1;
+
         baseStats.Find(s => s.StatType == StatTypes.MaxHealth).Value = 40;
+        baseStats.Find(s => s.StatType == StatTypes.HealthPerSec).Value = 0.5f;
+        baseStats.Find(s => s.StatType == StatTypes.HealthPerHit).Value = 0f;
+        baseStats.Find(s => s.StatType == StatTypes.HealthPerKill).Value = 0f;
+
         baseStats.Find(s => s.StatType == StatTypes.MaxResource).Value = 125;
         baseStats.Find(s => s.StatType == StatTypes.ResourceRegen).Value = 4;
-        baseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Value = 1;
-        baseStats.Find(s => s.StatType == StatTypes.HealthPerSec).Value = 0.5f;
+
+        baseStats.Find(s => s.StatType == StatTypes.ExperienceBonus).Value = 0f;
+        baseStats.Find(s => s.StatType == StatTypes.MovementSpeed).Value = 1f;
+
+        baseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Value = 0;
+        baseStats.Find(s => s.StatType == StatTypes.CritRate).Value = 50;
+        baseStats.Find(s => s.StatType == StatTypes.CritDamage).Value = 100;
+
+        baseStats.Find(s => s.StatType == StatTypes.BlockAmount).Value = 0;
+        baseStats.Find(s => s.StatType == StatTypes.BlockChance).Value = 0;
+        baseStats.Find(s => s.StatType == StatTypes.Thorns).Value = 0;
 
         stats = new CharacterStats(baseStats, new List<Modifier>(), characterClass.PrimaryStat);
     }
@@ -60,7 +75,15 @@ public class BaseCharacterInformation
     {
         for (int i = 0; i < item.Modifiers.Count; i++)
         {
+            if (item.Modifiers[i].affected == StatTypes.HealthPerHit)
+            {
+                Debug.Log("item hph: "+ item.Modifiers[i].value);
+            }
             stats.AddModifier(item.Modifiers[i]);
+            if (item.Modifiers[i].affected == StatTypes.HealthPerHit)
+            {
+                Debug.Log("stat hph: " + stats.Get(StatTypes.HealthPerHit));
+            }
         }
     }
 
@@ -78,7 +101,5 @@ public class BaseCharacterInformation
         level++;
 
         // Some increase of stats stuff. 
-
-
     }
 }

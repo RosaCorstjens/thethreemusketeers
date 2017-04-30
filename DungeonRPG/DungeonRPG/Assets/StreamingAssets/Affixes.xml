@@ -1889,11 +1889,11 @@
       <Probability>2000</Probability>
       <Modifier>
         <affected>MovementSpeed</affected>
-        <modifierType>mult</modifierType>
+        <modifierType>add</modifierType>
       </Modifier>
       <PossibleValues>
-        <min>4</min>
-        <max>5</max>
+        <min>1</min>
+        <max>2</max>
       </PossibleValues>
       <EquipmentTypes>
 		<Equipment>Boots</Equipment>
@@ -1912,11 +1912,11 @@
       <Probability>2000</Probability>
       <Modifier>
         <affected>MovementSpeed</affected>
-        <modifierType>mult</modifierType>
+        <modifierType>add</modifierType>
       </Modifier>
       <PossibleValues>
-        <min>6</min>
-        <max>7</max>
+        <min>2</min>
+        <max>3</max>
       </PossibleValues>
       <EquipmentTypes>
 		<Equipment>Boots</Equipment>	  
@@ -1935,11 +1935,11 @@
       <Probability>2000</Probability>
       <Modifier>
         <affected>MovementSpeed</affected>
-        <modifierType>mult</modifierType>
+        <modifierType>add</modifierType>
       </Modifier>
       <PossibleValues>
-        <min>8</min>
-        <max>9</max>
+        <min>4</min>
+        <max>5</max>
       </PossibleValues>
       <EquipmentTypes>
 		<Equipment>Boots</Equipment>	  
@@ -1958,11 +1958,11 @@
       <Probability>2000</Probability>
       <Modifier>
         <affected>MovementSpeed</affected>
-        <modifierType>mult</modifierType>
+        <modifierType>add</modifierType>
       </Modifier>
       <PossibleValues>
-        <min>10</min>
-        <max>11</max>
+        <min>5</min>
+        <max>6</max>
       </PossibleValues>
       <EquipmentTypes>
 		<Equipment>Boots</Equipment>	  
@@ -1981,11 +1981,11 @@
       <Probability>2000</Probability>
       <Modifier>
         <affected>MovementSpeed</affected>
-        <modifierType>mult</modifierType>
+        <modifierType>add</modifierType>
       </Modifier>
       <PossibleValues>
-        <min>12</min>
-        <max>12</max>
+        <min>7</min>
+        <max>8</max>
       </PossibleValues>
       <EquipmentTypes>
 		<Equipment>Boots</Equipment>	  

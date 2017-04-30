@@ -197,7 +197,7 @@ public class DetailedItemInformation : MonoBehaviour
             // foreach to enble looping over a dictionary.
             for(int i = 0; i < item.AffixStats.Count; i++)
             {
-                extraStatLabels[i].text = "+ " + item.AffixStats[i].Value + (item.AffixStats[i].IsPercent ? "% " : " ") + statTypeStringsForUI[item.AffixStats[i].Modifier.affected];
+                extraStatLabels[i].text = "+ " + item.AffixStats[i].Modifier.value + (item.AffixStats[i].IsPercent ? "% " : " ") + statTypeStringsForUI[item.AffixStats[i].Modifier.affected];
                 extraStatObjects[i].transform.SetParent(extraStatGrid.transform);
                 extraStatObjects[i].SetActive(true);
             }

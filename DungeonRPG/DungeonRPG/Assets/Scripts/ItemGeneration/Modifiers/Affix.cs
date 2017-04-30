@@ -90,24 +90,21 @@ public class Affix
     private int tier;
     public int Tier { get { return tier; } set { tier = value; } }
 
+    [SerializeField]
     private Modifier modifier;
     public Modifier Modifier { get { return modifier; } set { modifier = value; } }
-
-    private float value;
-    public float Value { get { return value; } set { this.value = value; } }
 
     private bool isPercent;
     public bool IsPercent { get { return isPercent; } set { isPercent = value; } }
 
     public Affix() { }
 
-    public Affix(int id, string name, int tier, Modifier modifier, float value, bool isPercent)
+    public Affix(int id, string name, int tier, Modifier modifier, bool isPercent)
     {
         this.id = id;
         this.name = name;
         this.tier = tier;
         this.modifier = modifier;
-        this.value = value;
         this.isPercent = isPercent;
     }
 }

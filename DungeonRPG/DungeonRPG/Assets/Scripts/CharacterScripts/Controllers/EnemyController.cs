@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     private bool onCooldown;
     private float basicAttackCooldown = 2f;
 
-    private int moveSpeed = 1;
+    private float moveSpeed = 1.5f;
     private int rotationSpeed = 3;
 
     private int damage = 5;
@@ -84,6 +84,7 @@ public class EnemyController : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         targetScript.AdjustCurrentHealth(-damage);
+        AdjustCurrentHealth(-GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.Thorns));
     }
 
     private IEnumerator WaitForCooldown(float cooldownTime)
@@ -117,6 +118,8 @@ public class EnemyController : MonoBehaviour
     {
         anim.SetBool("Dead", true);
         GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression);
+
+        GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerKill));
 
         StartCoroutine(WaitForDestory());
     }

@@ -173,8 +173,16 @@ public class ItemGenerator
                     if (amountAffixes > 6) amountAffixes = 6;
                     List<AffixRange> possibleAffixes = new List<AffixRange>();
 
-                    possibleAffixes.AddRange(affixContainer.Affixes.FindAll(a => a.EquipmentTypes.Contains(equipment) && a.MinLevel <= level && a.MaxLevel >= level));
-                    List<AffixRange> choosenAffixes = new List<AffixRange>();
+                    List<AffixRange> copyAffixContainer = affixContainer.Affixes.FindAll(a => a.EquipmentTypes.Contains(equipment) && a.MinLevel <= level && a.MaxLevel >= level);
+
+                    for (int j = 0; j < copyAffixContainer.Count; j++)
+                    {
+                        AffixRange tempAffixRange = new AffixRange(copyAffixContainer[j].ID, copyAffixContainer[j].Name, copyAffixContainer[j].IsPrefix, copyAffixContainer[j].Rare, copyAffixContainer[j].Tier, copyAffixContainer[j].MinLevel, copyAffixContainer[j].MaxLevel, copyAffixContainer[j].Probability, copyAffixContainer[j].Modifier, copyAffixContainer[j].PossibleValues, copyAffixContainer[j].EquipmentTypes);
+                        possibleAffixes.Add(tempAffixRange);
+                    }
+
+                    //possibleAffixes.AddRange(affixContainer.Affixes.FindAll(a => a.EquipmentTypes.Contains(equipment) && a.MinLevel <= level && a.MaxLevel >= level));
+                    List<AffixRange> chosenAffixes = new List<AffixRange>();
 
                     bool hasPre = false;
                     bool hasSuff = false;
@@ -185,10 +193,10 @@ public class ItemGenerator
                         List<AffixRange> suffixPosibilities = possibleAffixes.FindAll(a => !a.IsPrefix);
 
                         AffixRange choosenPre = prefixPossibilities[UnityEngine.Random.Range(0, prefixPossibilities.Count)];
-                        choosenAffixes.Add(choosenPre);
+                        chosenAffixes.Add(choosenPre);
 
                         AffixRange choosenSuff = suffixPosibilities[UnityEngine.Random.Range(0, suffixPosibilities.Count)];
-                        choosenAffixes.Add(choosenSuff);
+                        chosenAffixes.Add(choosenSuff);
 
                         possibleAffixes.Remove(choosenPre);
                         possibleAffixes.Remove(choosenSuff);
@@ -210,7 +218,7 @@ public class ItemGenerator
 
                             if(roll < count)
                             {
-                                choosenAffixes.Add(possibleAffixes[k]);
+                                chosenAffixes.Add(possibleAffixes[k]);
 
                                 if (possibleAffixes[k].IsPrefix) hasPre = true;
                                 if (!possibleAffixes[k].IsPrefix) hasSuff = true;
@@ -226,12 +234,12 @@ public class ItemGenerator
                     string suffix = "";
                     if (hasPre)
                     {
-                        List<AffixRange> prefixes = choosenAffixes.FindAll(a => a.IsPrefix);
+                        List<AffixRange> prefixes = chosenAffixes.FindAll(a => a.IsPrefix);
                         prefix = prefixes[UnityEngine.Random.Range(0, prefixes.Count)].Name + " ";
                     }
                     if (hasSuff)
                     {
-                        List<AffixRange> suffixes = choosenAffixes.FindAll(a => !a.IsPrefix);
+                        List<AffixRange> suffixes = chosenAffixes.FindAll(a => !a.IsPrefix);
                         suffix = " " + suffixes[UnityEngine.Random.Range(0, suffixes.Count)].Name;
                     }
 
@@ -239,12 +247,13 @@ public class ItemGenerator
 
                     // Initialize all chosen affixes with determined values. 
                     List<Affix> affixStats = new List<Affix>();
-                    for (int j = 0; j < choosenAffixes.Count; j++)
+                    for (int j = 0; j < chosenAffixes.Count; j++)
                     {
-                        float rawVal = UnityEngine.Random.Range(choosenAffixes[j].PossibleValues.min, choosenAffixes[j].PossibleValues.max);
-                        float roundedVal = choosenAffixes[j].Modifier.affected == StatTypes.AttackSpeed ? (float)Math.Round(rawVal,2) : (int)rawVal;
-                        choosenAffixes[j].Modifier.value = roundedVal;
-                        affixStats.Add(new Affix(choosenAffixes[j].ID, choosenAffixes[j].Name, choosenAffixes[j].Tier, choosenAffixes[j].Modifier, roundedVal, choosenAffixes[j].IsPercent));
+                        float rawVal = UnityEngine.Random.Range(chosenAffixes[j].PossibleValues.min, chosenAffixes[j].PossibleValues.max);
+                        float roundedVal = chosenAffixes[j].Modifier.affected == StatTypes.AttackSpeed ? (float)Math.Round(rawVal,2) : (float)Math.Round(rawVal);
+
+                        Modifier tempModifier = new Modifier(chosenAffixes[j].Modifier.affected, chosenAffixes[j].Modifier.modifierType, roundedVal);
+                        affixStats.Add(new Affix(chosenAffixes[j].ID, chosenAffixes[j].Name, chosenAffixes[j].Tier, tempModifier, chosenAffixes[j].IsPercent));
                     }
 
                     // Now all the values for the affixes are choosen, add the affixes that are the same from a different tier. 
@@ -255,14 +264,12 @@ public class ItemGenerator
                             if (k == j) continue;
                             if(affixStats[j].Modifier.affected == affixStats[k].Modifier.affected && affixStats[j].Modifier.modifierType == affixStats[k].Modifier.modifierType)
                             {
-                                affixStats[j].Value += affixStats[k].Value;
-                                affixStats[j].Modifier.value = affixStats[j].Value;
+                                affixStats[j].Modifier.value += affixStats[k].Modifier.value;
                                 affixStats.RemoveAt(k);
                                 k--;
                             }
                         }
                     }
-
 
                     switch (r)
                     {
@@ -292,14 +299,13 @@ public class ItemGenerator
                     BasePotion basePotion = GameManager.Instance.ItemManager.ItemContainer.Potions[randomObject];
 
                     toAdd.AddComponent<PotionInstance>().Initialize(basePotion, quality);
-               //     Debug.Log(basePotion.PotionType);
 
                     break;
             }
 
             returnList.Add(toAdd.GetComponent<ItemInstance>());
 
-        }
+        } 
 
         return returnList;
     }

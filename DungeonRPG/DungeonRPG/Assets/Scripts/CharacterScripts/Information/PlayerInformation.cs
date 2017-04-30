@@ -43,7 +43,7 @@ public class PlayerInformation : BaseCharacterInformation
         this.savedata = savedata;
 
         name = savedata.Name;
-        level = savedata.Level;
+        level = 15;//savedata.Level;
         xp = savedata.XP;
         xpTillNextLvl = GetXPTillNextLevel(level);
 
