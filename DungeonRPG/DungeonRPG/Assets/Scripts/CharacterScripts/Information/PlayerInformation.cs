@@ -55,8 +55,11 @@ public class PlayerInformation : BaseCharacterInformation
 
     public void AddExperiencePoints(float progress)
     {
-        Debug.Log("progress: " + progress);
-        float amount = progress * xpTillNextLvl;
+        Debug.Log("progress without: " + progress);
+        Debug.Log("progress with: " + (progress / 100 * (100 + stats.Get(StatTypes.ExperienceBonus))));
+
+        float amount = (progress/100 * (100+stats.Get(StatTypes.ExperienceBonus))) * xpTillNextLvl;
+        Debug.Log("amount: " + amount);
 
         xp += (int)amount;
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngineInternal;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
@@ -23,6 +24,10 @@ public class PlayerController : MonoBehaviour
     private EnemyController targetToAttack;
     private bool onCooldown;
     private float basicAttackCooldown = 0;
+
+    private static float baseRunSpeed = 4f;
+    private static float baseWalkSpeed = 2f;
+    private bool isRunning = true;
 
     private bool potionOnCooldown;
     private float healthPotionCooldown = 2f;
@@ -60,8 +65,6 @@ public class PlayerController : MonoBehaviour
 
         GetInput();
 
-        Turn();
-
         //regen
         if (!regenOnCooldown)
         {
@@ -74,23 +77,33 @@ public class PlayerController : MonoBehaviour
     {
         if (inMenu) return;
 
-        float forward = Input.GetAxis("Forward") * 4f;
-        float strafe = Input.GetAxis("Strafe") * 4f;
-        turnInput = Input.GetAxis("Turn");
+        // movement code
+        if (!onCooldown && !inMenu)
+        {
+            float forward = Input.GetAxis("Forward") * (isRunning ? baseRunSpeed : baseWalkSpeed);
+            float strafe = Input.GetAxis("Strafe") * (isRunning ? baseRunSpeed : baseWalkSpeed);
+            turnInput = Input.GetAxis("Turn");
 
-        SendMessage("MoveMeForward", forward);
-        SendMessage("MoveMeSideways", strafe);
+            SendMessage("MoveMeForward", forward);
+            SendMessage("MoveMeSideways", strafe);
 
-        float speedMultiplier = (100f + (GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MovementSpeed) * 10)) / 100f;
-        Debug.Log(speedMultiplier);
-        Debug.Log(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MovementSpeed));
-        // move forward
-        transform.Translate(Vector3.forward * forward * speedMultiplier * Time.deltaTime, Space.Self);
+            float speedMultiplier = (100f + (GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MovementSpeed) * 10)) / 100f;
 
-        // move strafe
-        transform.Translate(Vector3.right * strafe * speedMultiplier * Time.deltaTime, Space.Self);
+            // move forward
+            transform.Translate(Vector3.forward * forward * speedMultiplier * Time.deltaTime, Space.Self);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) SendMessage("ToggleRun");
+            // move strafe
+            transform.Translate(Vector3.right * strafe * speedMultiplier * Time.deltaTime, Space.Self);
+
+            // turn
+            transform.Rotate(new Vector3(0, turnSpeed * turnInput * Time.deltaTime));
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isRunning = !isRunning;
+            SendMessage("ToggleRun");
+        }
 
         if (Input.GetMouseButtonDown(0) && !inBattle)
         {
@@ -128,11 +141,6 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.UIManager.InventoryManager.UsePotion(PotionType.Health);
         }
-    }
-
-    private void Turn()
-    {
-        transform.Rotate(new Vector3(0, turnSpeed * turnInput * Time.deltaTime));
     }
 
     private IEnumerator CheckForLeavingBattle()
@@ -204,23 +212,43 @@ public class PlayerController : MonoBehaviour
         yield break;
     }
 
-    public void AdjustCurrentHealth(float adj)
+    public void GotHit(float dmg, EnemyController enemy)
     {
-        if (adj < 0)
+        // adjust dmg based on armor
+        dmg -= GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.Armor) /
+              (50 * enemy.level + GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.Armor));
+        
+        // if shield, adjust dmg based on block chance and amount
+        if (inOffHand)
         {
-            if (regenCoroutine != null)
+            float randomroll = Random.Range(0, 100);
+            if (randomroll < GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.BlockChance))
             {
-                StopCoroutine(regenCoroutine);
+                dmg -= GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.BlockAmount);
             }
-            regenCoroutine = StartCoroutine(PauseRegen(regenCooldown));
         }
 
+        AdjustCurrentHealth(-dmg);
+
+        if (regenCoroutine != null)
+        {
+            StopCoroutine(regenCoroutine);
+        }
+        regenCoroutine = StartCoroutine(PauseRegen(regenCooldown));
+    }
+
+    public void AdjustCurrentHealth(float adj)
+    {
         currentHealth += adj;
 
         if (currentHealth < 0)
         {
             currentHealth = 0;
             Die();
+        }
+        else if(currentHealth > GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth)
+        {
+            currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;
         }
 
         if (currentHealth > GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth) currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;

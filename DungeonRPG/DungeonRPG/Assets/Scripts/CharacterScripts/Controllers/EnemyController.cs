@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
     private float maxHealth = 10f;
     private bool isDead = false;
 
+    public int level = 1;
+
     private Transform targetTransform;
     private PlayerController targetScript;
     private bool onCooldown;
@@ -15,7 +17,7 @@ public class EnemyController : MonoBehaviour
     private float moveSpeed = 1.5f;
     private int rotationSpeed = 3;
 
-    private int damage = 5;
+    private int damage = 10;
     private float baseProgression = 0.5f;
 
     private float noticeDistance = 10f;
@@ -83,7 +85,7 @@ public class EnemyController : MonoBehaviour
     private void Attack()
     {
         anim.SetTrigger("Attack");
-        targetScript.AdjustCurrentHealth(-damage);
+        targetScript.GotHit(damage, this);
         AdjustCurrentHealth(-GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.Thorns));
     }
 

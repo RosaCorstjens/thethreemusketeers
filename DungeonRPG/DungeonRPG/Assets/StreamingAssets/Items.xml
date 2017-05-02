@@ -8,8 +8,8 @@
       <Tier>1</Tier>
       <PotionType>Health</PotionType>
       <RestoreAmount>
-        <min>5</min>
-        <max>15</max>
+        <min>10</min>
+        <max>20</max>
       </RestoreAmount>
     </BasePotion>
     <BasePotion>

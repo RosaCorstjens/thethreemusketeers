@@ -1564,7 +1564,7 @@
       <Tier>1</Tier>
       <MinLevel>1</MinLevel>
       <MaxLevel>10</MaxLevel>
-      <Probability>500</Probability>
+      <Probability>500000000</Probability>
       <Modifier>
         <affected>ExperienceBonus</affected>
         <modifierType>add</modifierType>

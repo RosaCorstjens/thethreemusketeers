@@ -294,9 +294,8 @@ public class InventoryManager
         {
             if (healthPotions.Count != 0)
             {
-                int heal = (int)(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MaxHealth) / 100) * healthPotions[0].BasePotion.RestoreAmount.GetRandomInRange() ;
+                float heal = (float)(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MaxHealth) / 100) * healthPotions[0].BasePotion.RestoreAmount.GetRandomInRange() ;
                 GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(heal);
-                Debug.Log(heal);
 
                 healthPotions.Remove(healthPotions[0]);
                 healthPotionsLabel.text = healthPotions.Count + "";
