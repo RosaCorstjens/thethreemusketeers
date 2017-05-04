@@ -120,16 +120,24 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(0) && inBattle && !onCooldown)
         {
-            targetToAttack = FindObjectOfType<EnemyController>();
+            targetToAttack = null;
 
-            float distance = (targetToAttack.transform.position - transform.position).magnitude;
-            float direction = Vector3.Dot((targetToAttack.transform.position - transform.position).normalized, transform.forward);
-
-            if(distance < 2.5f)
+            foreach (EnemyController enemy in GameManager.Instance.DungeonManager.CurrentDungeon.Enemies)
             {
-                if(direction > 0)
+                if (enemy.gameObject.activeInHierarchy)
                 {
-                    Attack();
+                    // distance check
+                    float distance = (enemy.transform.position - transform.position).magnitude;
+                    if (distance < 2.5f)
+                    {
+                        float direction = Vector3.Dot((enemy.transform.position - transform.position).normalized, transform.forward);
+                        if (direction > 0)
+                        {
+                            targetToAttack = enemy;
+                            Attack();
+                            break;
+                        }
+                    }
                 }
             }
 
@@ -259,6 +267,8 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         GameManager.Instance.UIManager.YouDiedWarning();
+
+        GameManager.Instance.DungeonManager.CurrentDungeon.RestartDungeon();
 
         transform.position = GameManager.Instance.DungeonManager.CurrentDungeon.StartPosition;
 

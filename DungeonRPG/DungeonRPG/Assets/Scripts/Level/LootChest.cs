@@ -2,15 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class LootChest : MonoBehaviour 
+public class LootChest : MonoBehaviour
 {
+    private Loottable loottable;
+
     TriggerArea trigger;
-
-    int minItems = 100;
-    int maxItems = 120;
-    int amount;
-
-    List<GameObject> items;
 
     bool open;
 
@@ -27,12 +23,6 @@ public class LootChest : MonoBehaviour
         trigger.onTriggerAction = PlayerInRange;
         trigger.offTriggerAction = PlayerOutOfRange;
 
-        amount = Random.Range(minItems, maxItems + 1);
-
-        items = new List<GameObject>();
-
-        GameManager.Instance.ItemManager.ItemGenerator.GenerateRandomItem(amount).HandleAction(i => items.Add(i.gameObject));
-
         anim = GetComponentInChildren<Animator>();
 
         Renderer[] tempArrayRender = GetComponentsInChildren<Renderer>();
@@ -40,6 +30,9 @@ public class LootChest : MonoBehaviour
         materials = new List<Material>();
 
         tempListRender.HandleAction(r => materials.AddRange(r.materials));
+
+        loottable = new Loottable();
+        loottable.Initialize(10, 15);
     }
 
     public void PlayerInRange()
@@ -79,27 +72,8 @@ public class LootChest : MonoBehaviour
 
         materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Bumped Diffuse"));
 
-        Open();
+        loottable.DropItems(this.transform.position + new Vector3(5, 0, 0));
 
         yield break;
-    }
-
-    private void Open()
-    {
-        for (int i = 0; i < items.Count; i++)
-        {
-            items[i].gameObject.SetActive(true);
-            items[i].gameObject.transform.position = RandomDropPosition();
-            items[i].GetComponent<ItemInstance>().Drop();
-        }
-
-        items.HandleAction(i => i.gameObject.SetActive(true));
-
-        items.HandleAction(i => i.gameObject.transform.position = RandomDropPosition());
-    }
-
-    private Vector3 RandomDropPosition()
-    {
-        return new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), 0.3f, Random.Range(transform.position.z - 2, transform.position.z + 2));
     }
 }

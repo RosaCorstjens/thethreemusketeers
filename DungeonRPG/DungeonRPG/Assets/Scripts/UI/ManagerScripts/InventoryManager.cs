@@ -103,6 +103,26 @@ public class InventoryManager
 
         // Deactivate the inventory gameobject. 
         inventoryGameObject.SetActive(false);
+
+        // give the player his first item
+        List<Stat> baseStats = new List<Stat>();
+        Equipment equipment = Equipment.Weapon;
+        string generatedName = "";
+        GameObject toAdd = GameObject.Instantiate(GameManager.Instance.ItemManager.ItemGenerator.DropPrefab);
+
+        BaseWeapon baseItem = GameManager.Instance.ItemManager.ItemContainer.Weapons[0];
+
+        generatedName = baseItem.Name;
+
+        int damageValue = (int)baseItem.BaseStats.Find(s => s.StatType == StatTypes.Damage).Range.GetRandomInRange();
+        float attackSpeedValue = (float)Math.Round(baseItem.BaseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Range.GetRandomInRange(), 2);
+        Stat damage = new Stat(StatTypes.WeaponDamage, damageValue);
+        Stat attackSpeed = new Stat(StatTypes.AttackSpeed, attackSpeedValue);
+        baseStats.Add(damage);
+        baseStats.Add(attackSpeed);
+        toAdd.AddComponent<WeaponInstance>().Initialize(baseItem, 0, 1, generatedName, baseStats, new List<Affix>());
+
+        AddItem(toAdd.GetComponent<WeaponInstance>());
     }
 
     private void InstantiateInventory()
@@ -313,9 +333,12 @@ public class InventoryManager
 
     // Adds the item at current action slot. 
     public bool EquipItem(EquipmentInstance item = null)
-    {        
+    {
         // Get item at action slot. 
         if (item == null) item = currentActiveSlot.CurrentItem;
+
+        // not a sufficient level
+        if (item.Level > GameManager.Instance.ActiveCharacterInformation.Level) return false;
 
         if (actionMenuOn) HideActionMenu();
 

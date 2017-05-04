@@ -25,6 +25,9 @@ public class DungeonManager : MonoBehaviour
     public GameObject CeilingPrefab { get; private set; }
     public GameObject PortalPrefab { get; private set; }
 
+    public GameObject ChestPrefab { get; private set; }
+    public GameObject SpiderPrefab { get; private set; }
+
     private GameObject levelParent;
     public GameObject LevelParent { get { return levelParent; } }
 
@@ -56,19 +59,6 @@ public class DungeonManager : MonoBehaviour
         floor = 1;
 
         StartNewDungeon();
-
-        GameObject monsterObject = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Monsters/Spider"), new Vector3(CurrentDungeon.StartPosition.x + 10, CurrentDungeon.StartPosition.y, CurrentDungeon.StartPosition.z), Quaternion.identity) as GameObject;
-        EnemyController monster = monsterObject.GetComponent<EnemyController>();
-        monster.Initialize();
-
-        GameObject monsterObject2 = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Monsters/Spider"), new Vector3(CurrentDungeon.StartPosition.x + 10, CurrentDungeon.StartPosition.y, CurrentDungeon.StartPosition.z), Quaternion.identity) as GameObject;
-        EnemyController monster2 = monsterObject2.GetComponent<EnemyController>();
-        monster2.Initialize();
-
-        Vector3 chestPosition = CurrentDungeon.Rooms[0].RandomPositionInRoom();
-        GameObject chestObject = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Props/LootChest"), new Vector3(CurrentDungeon.StartPosition.x, CurrentDungeon.StartPosition.y + 0.2f, CurrentDungeon.StartPosition.z + 10), Quaternion.identity) as GameObject;
-        LootChest chest = chestObject.GetComponent<LootChest>();
-        chest.Initialize();
 
         GameManager.Instance.ActiveCharacterInformation.PlayerController.Initialize(CurrentDungeon.StartPosition);
     }
@@ -107,6 +97,8 @@ public class DungeonManager : MonoBehaviour
         PillarPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Pillar");
         CeilingPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Ceiling");
         PortalPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Portal");
+        SpiderPrefab = Resources.Load<GameObject>("Prefabs/Monsters/Spider"); 
+        ChestPrefab = Resources.Load<GameObject>("Prefabs/Props/LootChest"); 
     }
 
     public Vector2 WorldToGridPosition(Vector3 worldPosition)

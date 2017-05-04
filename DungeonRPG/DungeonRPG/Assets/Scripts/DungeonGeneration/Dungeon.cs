@@ -21,13 +21,15 @@ public class Dungeon
     public List<Room> Rooms { get { return rooms; } }
     private List<Corridor> corridors;
 
+    private List<EnemyController> enemies;
+    public List<EnemyController> Enemies { get { return enemies; } }
+
     private Vector3 startPosition;
     public Vector3 StartPosition { get { return startPosition; } }
     public Room StartRoom { get; private set; }
     public Room EndRoom { get; private set; }
     public List<Room> treasureRooms;
     public List<Room> monsterRooms;
-    public Room bossRoom;
 
     private int dLevel;
     private int columns;
@@ -64,6 +66,7 @@ public class Dungeon
         corridors.HandleAction(c => c.BuildCorridor());
 
         DetermineRoomTypes();
+        SpawnContent();
     }
 
     private void SetupTilesArray()
@@ -471,7 +474,7 @@ public class Dungeon
         {
             treasureRooms.Add(DungeonManager.SmallestRoomInList(availableRooms));
             availableRooms.Remove(treasureRooms.Last());
-            //treasureRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.yellow));
+            treasureRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.red));
         }
 
         // Do the same for monster rooms.
@@ -483,9 +486,60 @@ public class Dungeon
         {
             monsterRooms.Add(DungeonManager.BiggestRoomInList(availableRooms));
             availableRooms.Remove(monsterRooms.Last());
-            //monsterRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.green));
+            monsterRooms.Last().Floors.HandleAction(f => SetTestColor(f.xPos, f.yPos, Color.green));
+        }
+    }
+
+    private void SpawnContent()
+    {
+        // monster rooms
+        enemies = new List<EnemyController>();
+
+        for (int i = 0; i < monsterRooms.Count; i++)
+        {
+            int amount = Mathf.RoundToInt((float)monsterRooms[i].Floors.Count / 25);
+            if (amount <= 0) amount = 1;
+
+            for (int j = 0; j < amount; j++)
+            {
+                Floor randomFloor = monsterRooms[i].RandomFloorInRoom();
+                Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
+                Vector3 monsterPosition = spawnPos + new Vector3(0, 0.1f, 0);
+
+                GameObject monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + new Vector3(1, 0, 0), Quaternion.identity) as GameObject;
+                EnemyController monster1 = monsterObject.GetComponent<EnemyController>();
+                monster1.Initialize();
+
+                enemies.Add(monster1);
+
+                /*monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + new Vector3(-1, 0, 0), Quaternion.identity) as GameObject;
+                EnemyController monster2 = monsterObject.GetComponent<EnemyController>();
+                monster2.Initialize();
+                
+                enemies.Add(monster2);
+
+                monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + new Vector3(0, 0, 1), Quaternion.identity) as GameObject;
+                EnemyController monster3 = monsterObject.GetComponent<EnemyController>();
+                monster3.Initialize();
+
+                enemies.Add(monster3);*/
+            }
         }
 
+        // treasure rooms 
+        for (int i = 0; i < treasureRooms.Count; i++)
+        {
+            Floor randomFloor = treasureRooms[i].RandomFloorInRoom();
+            Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
+            Vector3 chestPosition = spawnPos + new Vector3(0, 0.2f, 0);
+            GameObject chestObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.ChestPrefab, chestPosition, Quaternion.identity) as GameObject;
+
+            int randomNeighbour = Random.Range(0, randomFloor.Neighbours.Count);
+            Vector3 lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(randomFloor.Neighbours[randomNeighbour].xPos, randomFloor.Neighbours[randomNeighbour].yPos));
+            chestObject.transform.LookAt(lookPos);
+            LootChest chest = chestObject.GetComponent<LootChest>();
+            chest.Initialize();
+        }
     }
 
     private void EvaluateDungeon()
@@ -513,5 +567,10 @@ public class Dungeon
         Vector3 worldPos = dm.GridToWorldPosition(new Vector2(xPos, yPos));
 
         floorGos.Find(go => go.transform.position.x == worldPos.x && go.transform.position.z == worldPos.z).GetComponent<Renderer>().material.color = color;
+    }
+
+    public void RestartDungeon()
+    {
+        enemies.HandleAction(e => e.Reset());
     }
 }

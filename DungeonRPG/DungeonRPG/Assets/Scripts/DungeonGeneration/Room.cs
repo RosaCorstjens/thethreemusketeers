@@ -45,15 +45,13 @@ public class Room
         return outerTiles;
     }
 
-    public Vector2 RandomPositionInRoom()
+    public Floor RandomFloorInRoom()
     {
-        Vector2 returnVector = new Vector2();
+        Vector3 returnVector = new Vector3();
 
         int randomFloor = Random.Range(0, floors.Count);
 
-        returnVector = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(floors[randomFloor].xPos, floors[randomFloor].yPos));
-
-        return returnVector;
+        return floors[randomFloor];
     }
 
     public float SmallestDistBetween(Room otherRoom)
@@ -77,3 +75,4 @@ public class Room
         return shortestDistance;
     }
 }
+

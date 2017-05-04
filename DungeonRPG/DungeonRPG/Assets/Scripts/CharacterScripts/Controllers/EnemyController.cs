@@ -3,6 +3,9 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
+    private Loottable loottable;
+    private Vector3 startPosition;
+
     public float currentHealth;
     private float maxHealth = 10f;
     private bool isDead = false;
@@ -17,7 +20,7 @@ public class EnemyController : MonoBehaviour
     private float moveSpeed = 1.5f;
     private int rotationSpeed = 3;
 
-    private int damage = 10;
+    private int damage = 8;
     private float baseProgression = 0.5f;
 
     private float noticeDistance = 10f;
@@ -29,6 +32,7 @@ public class EnemyController : MonoBehaviour
     public void Initialize()
     {
         myTransform = transform;
+        startPosition = transform.position;
 
         targetTransform = GameManager.Instance.ActiveCharacter.transform;
         targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
@@ -37,6 +41,28 @@ public class EnemyController : MonoBehaviour
 
         currentHealth = maxHealth;
 
+        loottable = new Loottable();
+        loottable.Initialize(2, 5);
+
+        StartCoroutine(HandleMovement());
+    }
+
+    public void Reset()
+    {
+        this.gameObject.SetActive(true);
+
+        anim.SetTrigger("Revive");
+        anim.SetBool("Dead", false);
+
+        loottable.Initialize(2,5);
+
+        transform.position = startPosition;
+        currentHealth = maxHealth;
+
+        targetTransform = GameManager.Instance.ActiveCharacter.transform;
+        targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
+
+        StopCoroutine(HandleMovement());
         StartCoroutine(HandleMovement());
     }
 
@@ -55,6 +81,7 @@ public class EnemyController : MonoBehaviour
             }
             else if (distance <= attackDistance && direction > 0 && !onCooldown)
             {
+                Debug.Log("hitting the player");
                 Attack();
                 StartCoroutine(WaitForCooldown(basicAttackCooldown));
             }
@@ -130,7 +157,13 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
 
-        Destroy(this.gameObject);
+        StopCoroutine(HandleMovement());
+
+        loottable.DropItems(this.transform.position);
+
+        this.gameObject.SetActive(false);
+        this.transform.position = startPosition;
+        //Destroy(this.gameObject);
 
         yield break;
     }
