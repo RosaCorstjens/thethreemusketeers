@@ -51,6 +51,9 @@ public class EnemyController : MonoBehaviour
     {
         this.gameObject.SetActive(true);
 
+        myTransform = transform;
+        onCooldown = false;
+
         anim.SetTrigger("Revive");
         anim.SetBool("Dead", false);
 

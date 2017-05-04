@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Dungeon
 {
@@ -498,6 +499,8 @@ public class Dungeon
         for (int i = 0; i < monsterRooms.Count; i++)
         {
             int amount = Mathf.RoundToInt((float)monsterRooms[i].Floors.Count / 25);
+            Debug.Log("Amount of groups this room: " + amount);
+
             if (amount <= 0) amount = 1;
 
             for (int j = 0; j < amount; j++)
@@ -506,11 +509,22 @@ public class Dungeon
                 Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
                 Vector3 monsterPosition = spawnPos + new Vector3(0, 0.1f, 0);
 
-                GameObject monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + new Vector3(1, 0, 0), Quaternion.identity) as GameObject;
-                EnemyController monster1 = monsterObject.GetComponent<EnemyController>();
-                monster1.Initialize();
+                int randomamount = Random.Range(1, 3);
+                Debug.Log("\tAmount of spiders this group: " + randomamount);
+                List<Vector3> positions = new List<Vector3>();
+                positions.Add(new Vector3(1, 0, 0));
+                positions.Add(new Vector3(-1, 0, 0));
+                positions.Add(new Vector3(0, 0, 1));
+                
+                for (int k = 0; k < randomamount; k++)
+                {
+                    GameObject monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + positions[k], Quaternion.identity) as GameObject;
+                    EnemyController monster = monsterObject.GetComponent<EnemyController>();
+                    monster.Initialize();
 
-                enemies.Add(monster1);
+                    enemies.Add(monster);
+                }
+
 
                 /*monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + new Vector3(-1, 0, 0), Quaternion.identity) as GameObject;
                 EnemyController monster2 = monsterObject.GetComponent<EnemyController>();
