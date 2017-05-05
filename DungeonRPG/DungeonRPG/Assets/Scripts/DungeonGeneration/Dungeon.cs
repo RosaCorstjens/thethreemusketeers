@@ -541,7 +541,7 @@ public class Dungeon
 
         for (int i = 0; i < monsterRooms.Count; i++)
         {
-            int amount = Mathf.RoundToInt((float)monsterRooms[i].Floors.Count / 25);
+            int amount = Mathf.RoundToInt((float)monsterRooms[i].Floors.Count / 15);
 
             if (amount <= 0) amount = 1;
 
@@ -553,7 +553,7 @@ public class Dungeon
 
                 int randomamount = Random.Range(1, 3);
                 List<Vector3> positions = new List<Vector3>();
-                positions.Add(new Vector3(1, 0, 0));
+                positions.Add(new Vector3(0, 0, 0));
                 positions.Add(new Vector3(-1, 0, 0));
                 positions.Add(new Vector3(0, 0, 1));
                 
@@ -610,7 +610,7 @@ public class Dungeon
     {
         Vector3 worldPos = dm.GridToWorldPosition(new Vector2(xPos, yPos));
 
-        //floorGos.Find(go => go.transform.position.x == worldPos.x && go.transform.position.z == worldPos.z).GetComponent<Renderer>().material.color = color;
+        floors.Find(f => f.myGO.transform.position.x == worldPos.x && f.myGO.transform.position.z == worldPos.z).myGO.GetComponent<Renderer>().material.color = color;
     }
 
     public void RestartDungeon()

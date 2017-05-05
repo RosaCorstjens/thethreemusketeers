@@ -35,10 +35,11 @@ public class PlayerController : MonoBehaviour
     private bool regenOnCooldown = false;
     private float regenCooldown = 5f;
     private Coroutine regenCoroutine;
+    private bool onHitCooldown = false;
 
     private float maxPassiveInBattle = 30f;
 
-    private float turnInput, turnSpeed = 100f;
+    private float turnInput, turnSpeed = 150f;
 
     public bool CanMove { get; set; }
     public bool IsInitialized { get; set; }
@@ -63,6 +64,13 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (!IsInitialized) return;
+
+        if (onHitCooldown)
+        {
+            SendMessage("MoveMeForward", 0f);
+            SendMessage("MoveMeSideways", 0f);
+            return;
+        }
 
         GetInput();
 
@@ -244,6 +252,19 @@ public class PlayerController : MonoBehaviour
             StopCoroutine(regenCoroutine);
         }
         regenCoroutine = StartCoroutine(PauseRegen(regenCooldown));
+
+        StartCoroutine(Hitted(1));
+    }
+
+    private IEnumerator Hitted(float cooldownTime)
+    {
+        onHitCooldown = true;
+
+        yield return new WaitForSeconds(cooldownTime);
+
+        onHitCooldown = false;
+
+        yield break;
     }
 
     public void AdjustCurrentHealth(float adj)

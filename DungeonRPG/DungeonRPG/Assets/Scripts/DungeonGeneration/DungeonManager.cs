@@ -12,8 +12,8 @@ public class DungeonManager : MonoBehaviour
     public IntRange corridorLength = new IntRange(3, 10);     // The range of lengths corridors between rooms can have.
     public float minDistStartEnd = 50f;
 
-    public const float TREASURE_ROOM_AMOUNT = 20f;
-    public const float MONSTER_ROOM_AMOUNT = 77f;
+    public const float TREASURE_ROOM_AMOUNT = 18f;
+    public const float MONSTER_ROOM_AMOUNT = 80f;
 
     public enum TileType { Wall, Floor, }
     Color[] colors = { Color.black, Color.blue, Color.cyan, Color.gray, Color.green, Color.magenta, Color.red };

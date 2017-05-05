@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 startPosition;
 
     public float currentHealth;
-    private float maxHealth = 10f;
+    private float maxHealth = 20f;
     private bool isDead = false;
 
     public int level = 1;
@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private Transform targetTransform;
     private PlayerController targetScript;
     private bool onCooldown;
+    private bool onHitCooldown = false;
     private float basicAttackCooldown = 2f;
 
     private float moveSpeed = 1.5f;
@@ -53,6 +54,7 @@ public class EnemyController : MonoBehaviour
 
         myTransform = transform;
         onCooldown = false;
+        isDead = false;
 
         anim.SetTrigger("Revive");
         anim.SetBool("Dead", false);
@@ -73,20 +75,27 @@ public class EnemyController : MonoBehaviour
     {
         while (true)
         {
-            float distance = (targetTransform.transform.position - transform.position).magnitude;
-            float direction = Vector3.Dot((targetTransform.position - transform.position).normalized, transform.forward);
-
-            if (distance < noticeDistance && distance > attackDistance)
+            if (!onHitCooldown)
             {
-                Rotate();
+                float distance = (targetTransform.transform.position - transform.position).magnitude;
+                float direction = Vector3.Dot((targetTransform.position - transform.position).normalized,
+                    transform.forward);
 
-                Move();
-            }
-            else if (distance <= attackDistance && direction > 0 && !onCooldown)
-            {
-                Debug.Log("hitting the player");
-                Attack();
-                StartCoroutine(WaitForCooldown(basicAttackCooldown));
+                if (distance < noticeDistance && distance > attackDistance)
+                {
+                    Rotate();
+
+                    Move();
+                }
+                else if (distance <= attackDistance && direction > 0 && !onCooldown)
+                {
+                    Attack();
+                    StartCoroutine(WaitForCooldown(basicAttackCooldown));
+                }
+                else
+                {
+                    anim.SetFloat("MoveZ", 0f);
+                }
             }
             else
             {
@@ -130,6 +139,23 @@ public class EnemyController : MonoBehaviour
         yield break;
     }
 
+    private IEnumerator Hitted(float cooldownTime)
+    {
+        onHitCooldown = true;
+
+        yield return new WaitForSeconds(cooldownTime);
+
+        onHitCooldown = false;
+
+        yield break;
+    }
+
+    public void GotHit(float dmg)
+    {
+        AdjustCurrentHealth(-dmg);
+        StartCoroutine(Hitted(2));
+    }
+
     public void AdjustCurrentHealth(float adj)
     {
         if (isDead) return;
@@ -141,6 +167,8 @@ public class EnemyController : MonoBehaviour
             isDead = true;
             currentHealth = 0;
             Die();
+
+            return;
         }
 
         if (currentHealth > maxHealth) currentHealth = maxHealth;
