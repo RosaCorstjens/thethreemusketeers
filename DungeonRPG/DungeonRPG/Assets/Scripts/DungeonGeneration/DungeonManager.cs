@@ -13,7 +13,7 @@ public class DungeonManager : MonoBehaviour
     public float minDistStartEnd = 50f;
 
     public const float TREASURE_ROOM_AMOUNT = 20f;
-    public const float MONSTER_ROOM_AMOUNT = 75f;
+    public const float MONSTER_ROOM_AMOUNT = 77f;
 
     public enum TileType { Wall, Floor, }
     Color[] colors = { Color.black, Color.blue, Color.cyan, Color.gray, Color.green, Color.magenta, Color.red };
@@ -90,6 +90,11 @@ public class DungeonManager : MonoBehaviour
         CurrentDungeon.GenerateDungeon(GameManager.Instance.ActiveCharacterInformation.Level, columns, rows, numRooms.GetRandomInRange(), minDistStartEnd);
     }
 
+    private void ClearDungeon()
+    {
+        CurrentDungeon.ClearDungeon();
+    }
+
     void GetPrefabs()
     {
         FloorPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Floor");
@@ -125,9 +130,14 @@ public class DungeonManager : MonoBehaviour
         floor++;
 
         // Clear current dungeon.
+        ClearDungeon();
 
         // Start next.
         StartNewDungeon();
+
+        // Respawn player.
+        GameManager.Instance.UIManager.NextDungeon();
+        GameManager.Instance.StartCoroutine(GameManager.Instance.ActiveCharacterInformation.PlayerController.Respawn(ActiveDungeon.StartPosition));
     }
 
     public static Room SmallestRoomInList(List<Room> rooms)

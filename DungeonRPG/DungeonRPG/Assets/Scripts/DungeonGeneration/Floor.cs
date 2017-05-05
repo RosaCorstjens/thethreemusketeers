@@ -16,6 +16,8 @@ public class Floor
 
     List<DungeonDirection> wallPlaces;
 
+    private List<GameObject> wallGOs;
+
     public bool visited = false;
 
     // TO DO: fix this. a floor can only belong to one of them, but you need to inherit them so you can ref here to a basic space class. 
@@ -30,6 +32,8 @@ public class Floor
     {
         this.xPos = xPos;
         this.yPos = yPos;
+
+        wallGOs = new List<GameObject>();
     }
 
     public void DetermineNeighbours()
@@ -91,6 +95,7 @@ public class Floor
 
             GameObject go = GameObject.Instantiate(wallPrefab, position, Quaternion.Euler(0, yRot, 0)) as GameObject;
             go.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+            wallGOs.Add(go);
         }
     }
 
@@ -155,5 +160,13 @@ public class Floor
         }
 
         return new Vector3(0, yRotation, 0);
+    }
+
+    public void Destroy()
+    {
+        wallGOs.HandleAction(w => GameObject.Destroy(w));
+        myRoom = null;
+        myCorridor = null;
+        GameObject.Destroy(myGO);
     }
 }

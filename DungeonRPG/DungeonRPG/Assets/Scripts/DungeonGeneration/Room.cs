@@ -28,13 +28,6 @@ public class Room
         FindOuterTiles().HandleAction(f => f.PlaceWalls());
     }
 
-    private void PlacePillars()
-    {
-        List<GameObject> pillars = new List<GameObject>();
-        
-        
-    }
-
     private List<Floor> FindOuterTiles()
     {
         List<Floor> outerTiles = new List<Floor>();
@@ -47,8 +40,6 @@ public class Room
 
     public Floor RandomFloorInRoom()
     {
-        Vector3 returnVector = new Vector3();
-
         int randomFloor = Random.Range(0, floors.Count);
 
         return floors[randomFloor];
@@ -73,6 +64,14 @@ public class Room
         }
 
         return shortestDistance;
+    }
+
+    public void Destroy()
+    {
+        floors.HandleAction(f => f.Destroy());
+        floors.Clear();
+
+        connectedCorridors.Clear();
     }
 }
 

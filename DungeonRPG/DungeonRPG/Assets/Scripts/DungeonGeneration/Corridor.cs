@@ -11,4 +11,10 @@ public class Corridor
     {
         floors.HandleAction(f => f.PlaceWalls());
     }
+
+    public void Destroy()
+    {
+        floors.HandleAction(f => f.Destroy());
+        floors.Clear();
+    }
 }

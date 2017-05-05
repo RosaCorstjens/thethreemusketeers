@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using System;
+using Random = UnityEngine.Random;
 
 public class Dungeon
 {
@@ -16,7 +18,6 @@ public class Dungeon
     private BaseRoom[] baseRooms;                                     // All the rooms that are created for this board.
     private BaseCorridor[] baseCorridors;                             // All the corridors that connect the rooms.
     private List<Floor> floors;
-    private List<GameObject> floorGos;
 
     private List<Room> rooms;
     public List<Room> Rooms { get { return rooms; } }
@@ -24,6 +25,7 @@ public class Dungeon
 
     private List<EnemyController> enemies;
     public List<EnemyController> Enemies { get { return enemies; } }
+    private List<LootChest> lootchests;
 
     private Vector3 startPosition;
     public Vector3 StartPosition { get { return startPosition; } }
@@ -37,6 +39,45 @@ public class Dungeon
     private int rows;
     private int numRooms;
     private float minDistStartEnd;
+
+
+    public void ClearDungeon()
+    {
+        // remove tiles array
+        Array.Clear(tiles, 0, tiles.Length);
+        Debug.Log("2D array with tiles cleared. " + tiles.Length);
+
+        // remove baseroom and corridor arrays
+        Array.Clear(baseRooms, 0, baseRooms.Length);
+        Array.Clear(baseCorridors, 0, baseCorridors.Length);
+        Debug.Log("array with rooms cleared. " + baseRooms.Length);
+        Debug.Log("array with corridors cleared. " + baseCorridors.Length);
+
+        // remove floor object 
+        floors.RemoveRange(0, floors.Count);
+        Debug.Log("floor removed. " + floors.Count);
+
+        // clear rooms and corridors
+        rooms.HandleAction(r => r.Destroy());
+        corridors.HandleAction(c => c.Destroy());
+        rooms.Clear();
+        corridors.Clear();
+        Debug.Log("rooms and corridors destroyed. " + rooms.Count + " " + corridors.Count);
+
+        // clear enemies
+        enemies.HandleAction(e => GameObject.Destroy(e.gameObject));
+        enemies.Clear();
+        Debug.Log("enemies destroyed. " + enemies.Count);
+
+        // clear chests
+        lootchests.HandleAction(l => GameObject.Destroy(l.gameObject));
+        lootchests.Clear();
+        Debug.Log("lootchests destroyed. " + lootchests.Count);
+
+        // remove other rooms
+        treasureRooms.Clear();
+        monsterRooms.Clear();
+    }
 
     public void GenerateDungeon(int dLevel, int columns, int rows, int numRooms, float minDistStartEnd)
     {
@@ -60,7 +101,6 @@ public class Dungeon
 
     public void BuildDungeon()
     {
-        floorGos = new List<GameObject>();
         InstantiateFloorGameobjects();
 
         rooms.HandleAction(r => r.BuildRoom());
@@ -205,10 +245,10 @@ public class Dungeon
 
     void InstantiateFloorGameobjects()
     {
-        floors.HandleAction(f => floorGos.Add(InstantiateFromArray(dm.FloorPrefab, f.xPos, f.yPos)));
+        floors.HandleAction(f => InstantiateFromArray(f, dm.FloorPrefab, f.xPos, f.yPos));
     }
 
-    GameObject InstantiateFromArray(GameObject prefab, float xCoord, float yCoord)
+    GameObject InstantiateFromArray(Floor floor, GameObject prefab, float xCoord, float yCoord)
     {
         // The position to be instantiated at is based on the coordinates.
         Vector3 position = dm.GridToWorldPosition(new Vector2(xCoord, yCoord));
@@ -218,6 +258,8 @@ public class Dungeon
 
         // Set the tile's parent to the board holder.
         tileInstance.transform.parent = GameManager.Instance.DungeonManager.LevelParent.transform;
+
+        floor.myGO = tileInstance;
 
         return tileInstance;
     }
@@ -495,11 +537,11 @@ public class Dungeon
     {
         // monster rooms
         enemies = new List<EnemyController>();
+        lootchests = new List<LootChest>();
 
         for (int i = 0; i < monsterRooms.Count; i++)
         {
             int amount = Mathf.RoundToInt((float)monsterRooms[i].Floors.Count / 25);
-            Debug.Log("Amount of groups this room: " + amount);
 
             if (amount <= 0) amount = 1;
 
@@ -510,7 +552,6 @@ public class Dungeon
                 Vector3 monsterPosition = spawnPos + new Vector3(0, 0.1f, 0);
 
                 int randomamount = Random.Range(1, 3);
-                Debug.Log("\tAmount of spiders this group: " + randomamount);
                 List<Vector3> positions = new List<Vector3>();
                 positions.Add(new Vector3(1, 0, 0));
                 positions.Add(new Vector3(-1, 0, 0));
@@ -524,19 +565,6 @@ public class Dungeon
 
                     enemies.Add(monster);
                 }
-
-
-                /*monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + new Vector3(-1, 0, 0), Quaternion.identity) as GameObject;
-                EnemyController monster2 = monsterObject.GetComponent<EnemyController>();
-                monster2.Initialize();
-                
-                enemies.Add(monster2);
-
-                monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + new Vector3(0, 0, 1), Quaternion.identity) as GameObject;
-                EnemyController monster3 = monsterObject.GetComponent<EnemyController>();
-                monster3.Initialize();
-
-                enemies.Add(monster3);*/
             }
         }
 
@@ -553,6 +581,8 @@ public class Dungeon
             chestObject.transform.LookAt(lookPos);
             LootChest chest = chestObject.GetComponent<LootChest>();
             chest.Initialize();
+
+            lootchests.Add(chest);
         }
     }
 
@@ -580,7 +610,7 @@ public class Dungeon
     {
         Vector3 worldPos = dm.GridToWorldPosition(new Vector2(xPos, yPos));
 
-        floorGos.Find(go => go.transform.position.x == worldPos.x && go.transform.position.z == worldPos.z).GetComponent<Renderer>().material.color = color;
+        //floorGos.Find(go => go.transform.position.x == worldPos.x && go.transform.position.z == worldPos.z).GetComponent<Renderer>().material.color = color;
     }
 
     public void RestartDungeon()

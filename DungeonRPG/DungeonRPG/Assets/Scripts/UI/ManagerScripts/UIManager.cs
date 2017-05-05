@@ -34,6 +34,7 @@ public class UIManager
     private const string LEVEL_UP = "Level up!";
     private const string NO_ENGERGY_POTIONS = "You have no energy potions.";
     private const string NO_HEALTH_POTIONS = "You have no health potions.";
+    private const string NEXT_DUNGEON = "Welcome in the next dungeon ...";
     private float showWarningTime = 1;
 
     public void Initialize()
@@ -110,6 +111,12 @@ public class UIManager
         GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
+    public void NextDungeon()
+    {
+        warningMessage.text = NEXT_DUNGEON;
+        warningMessage.gameObject.SetActive(true);
+        GameManager.Instance.StartCoroutine(ShowWarning());
+    }
 
     private IEnumerator ShowWarning()
     {

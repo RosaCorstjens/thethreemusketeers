@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private float turnInput, turnSpeed = 100f;
 
-    //public bool CanMove { get; set; }
+    public bool CanMove { get; set; }
     public bool IsInitialized { get; set; }
 
     // Use this for initialization
@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
         //offhand = transform.FindChild("PelvisRoot/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/OffHand");
         inOffHand = null;
+        CanMove = true;
 
         IsInitialized = true;
     }
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
         if (inMenu) return;
 
         // movement code
-        if (!onCooldown && !inMenu)
+        if (!onCooldown && !inMenu && CanMove)
         {
             float forward = Input.GetAxis("Forward") * (isRunning ? baseRunSpeed : baseWalkSpeed);
             float strafe = Input.GetAxis("Strafe") * (isRunning ? baseRunSpeed : baseWalkSpeed);
@@ -266,15 +267,28 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        GameManager.Instance.UIManager.YouDiedWarning();
+        // dungeon monsters respawn
+        StartCoroutine(Respawn(GameManager.Instance.DungeonManager.CurrentDungeon.StartPosition));
 
         GameManager.Instance.DungeonManager.CurrentDungeon.RestartDungeon();
 
-        transform.position = GameManager.Instance.DungeonManager.CurrentDungeon.StartPosition;
+        GameManager.Instance.UIManager.YouDiedWarning();
+    }
 
-        // dungeon monsters respawn
-
+    public IEnumerator Respawn(Vector3 pos)
+    {
+        onCooldown = true;
+        inBattle = false;
+        CanMove = false;
         currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;
+
+        transform.position = pos;
+
+        yield return new WaitForSeconds(3);
+
+        onCooldown = false;
+        inBattle = false;
+        CanMove = true;
     }
 
     public void SetHand(WeaponInstance item)
