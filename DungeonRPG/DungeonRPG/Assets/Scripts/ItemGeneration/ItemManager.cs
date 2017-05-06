@@ -10,8 +10,24 @@ public enum Equipment { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shou
 
 public enum Quality { Common, Magic, Rare, Legendary }
 
-public class ItemManager : Singleton<ItemManager>, ISingletonInstance
+public class ItemManager 
 {
+    private ItemManager() { }
+
+    private static ItemManager instance;
+    public static ItemManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new ItemManager();
+                instance.Initialize();
+            }
+            return instance;
+        }
+    }
+
     private ItemContainer itemContainer = new ItemContainer();
     public ItemContainer ItemContainer { get { return itemContainer; } }
 

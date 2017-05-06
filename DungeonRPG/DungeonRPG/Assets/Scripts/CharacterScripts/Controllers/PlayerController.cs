@@ -358,7 +358,7 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveFromHand()
     {
-        inHand.WeaponObject.transform.SetParent(Main.Instance.gameObject.transform);
+        inHand.WeaponObject.transform.SetParent(GameManager.Instance.gameObject.transform);
         inHand.WeaponObject.SetActive(false);
 
         inHand = null;
@@ -383,7 +383,7 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveFromOffHand()
     {
-        inOffHand.ShieldObject.transform.SetParent(Main.Instance.gameObject.transform);
+        inOffHand.ShieldObject.transform.SetParent(GameManager.Instance.gameObject.transform);
         inOffHand.ShieldObject.SetActive(false);
 
         inOffHand = null;

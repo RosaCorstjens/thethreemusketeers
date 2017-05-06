@@ -217,8 +217,8 @@ public class InventoryManager
 
     public void ToggleMenu(bool on)
     {
-        if (on) fadeIn = Main.Instance.StartCoroutine(FadeIn());
-        else fadeOut = Main.Instance.StartCoroutine(FadeOut());
+        if (on) fadeIn = GameManager.Instance.StartCoroutine(FadeIn());
+        else fadeOut = GameManager.Instance.StartCoroutine(FadeOut());
 
         grid.Reposition();
     }
@@ -232,7 +232,7 @@ public class InventoryManager
         {
             fadingOut = true;
             fadingIn = false;
-            if(fadeIn != null) Main.Instance.StopCoroutine(fadeIn);
+            if(fadeIn != null) GameManager.Instance.StopCoroutine(fadeIn);
 
             float startAlpha = inventoryPanel.alpha;
             float rate = 1 / fadeTime;
@@ -259,7 +259,7 @@ public class InventoryManager
         {
             fadingIn = true;
             fadingOut = false;
-            if(fadeOut != null) Main.Instance.StopCoroutine(fadeOut);
+            if(fadeOut != null) GameManager.Instance.StopCoroutine(fadeOut);
 
             float startAlpha = inventoryPanel.alpha;
             float rate = 1 / fadeTime;
@@ -445,9 +445,9 @@ public class InventoryManager
 
         tooltip.SetActive(true);
 
-        if (handlePositionToolTip != null) Main.Instance.StopCoroutine(handlePositionToolTip);
+        if (handlePositionToolTip != null) GameManager.Instance.StopCoroutine(handlePositionToolTip);
 
-        Main.Instance.StartCoroutine(handlePositionToolTip);
+        GameManager.Instance.StartCoroutine(handlePositionToolTip);
     }
 
     public void HideTooltip()
@@ -456,7 +456,7 @@ public class InventoryManager
 
         tooltip.SetActive(false);
 
-        Main.Instance.StopCoroutine(handlePositionToolTip);
+        GameManager.Instance.StopCoroutine(handlePositionToolTip);
     }
 
     private IEnumerator HandlePositionToolTip()

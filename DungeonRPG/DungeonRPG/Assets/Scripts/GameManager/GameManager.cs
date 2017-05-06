@@ -41,7 +41,7 @@ public enum StatTypes
 
 public enum GameStates { MainMenu, CharacterCreation, InGame }
 
-public class GameManager : Singleton<GameManager>, ISingletonInstance
+public class GameManager : MonoBehaviour
 {
     private GameStates gameState;
     public GameStates GameState { get { return gameState; } }
@@ -72,14 +72,29 @@ public class GameManager : Singleton<GameManager>, ISingletonInstance
 
     public bool Initialized { get; private set; }
 
-    public void Initialize()
+    private GameManager() { }
+
+    private static GameManager instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<GameManager>();
+            }
+            return instance;
+        }
+    }
+
+    public void Awake()
     {
         gameState = GameStates.InGame;
 
         saveInformation = new SaveInformation();
         saveInformation.Initialize();
 
-        UIManager.Instance.Initialize();
+        UIManager uiManager = UIManager.Instance;
 
         cameraManager = new CameraManager();
         cameraManager.Initialize();
@@ -176,7 +191,7 @@ public class GameManager : Singleton<GameManager>, ISingletonInstance
     {
         gameState = GameStates.InGame;
 
-        ItemManager.Instance.Initialize();
+        ItemManager itemManager = ItemManager.Instance;
 
         if(activeCharacterInformation == null) activeCharacterInformation = GameManager.Instance.SaveInformation.PlayerInformationList[0];
 
@@ -186,14 +201,14 @@ public class GameManager : Singleton<GameManager>, ISingletonInstance
 
         UIManager.Instance.InitializeGameUI();
 
-        DungeonManager.Instance.Initialize();
+        DungeonManager dungeonManager = DungeonManager.Instance;
 
         CameraManager.SetTarget(activeCharacter.transform);
         CameraManager.FocusBack(true);
         CameraManager.CameraScript.CanReceiveInput = true;
         CameraManager.CameraScript.height = 2;
 
-        Main.Instance.StartCoroutine(HandleInput());
+        StartCoroutine(HandleInput());
     }
 
     private void ClearMainMenu()

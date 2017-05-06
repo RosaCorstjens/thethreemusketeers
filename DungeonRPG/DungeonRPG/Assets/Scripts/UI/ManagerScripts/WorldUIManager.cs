@@ -40,19 +40,19 @@ public class WorldUIManager
     {
         label.text = PRESS_E_TO_OPEN;
         label.gameObject.SetActive(true);
-        labelCoroutine = Main.Instance.StartCoroutine(HandlePositioningLabel(go));
+        labelCoroutine = GameManager.Instance.StartCoroutine(HandlePositioningLabel(go));
     }
 
     public void ShowPressToEnter(GameObject go)
     {
         label.text = PRESS_E_TO_ENTER;
         label.gameObject.SetActive(true);
-        labelCoroutine = Main.Instance.StartCoroutine(HandlePositioningLabel(go));
+        labelCoroutine = GameManager.Instance.StartCoroutine(HandlePositioningLabel(go));
     }
 
     public void HideLabel()
     {
-        if (labelCoroutine != null) Main.Instance.StopCoroutine(labelCoroutine);
+        if (labelCoroutine != null) GameManager.Instance.StopCoroutine(labelCoroutine);
 
         label.gameObject.SetActive(false);
     }

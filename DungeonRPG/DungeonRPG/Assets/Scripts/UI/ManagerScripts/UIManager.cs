@@ -1,8 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIManager : Singleton<UIManager>, ISingletonInstance
+public class UIManager 
 {
+    private UIManager() { }
+
+    private static UIManager instance;
+    public static UIManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new UIManager();
+                instance.Initialize();
+            }
+            return instance;
+        }
+    }
+
     // Reference to root of all UI elements to parent them.
     private UIRoot uiRoot;                               
     public UIRoot UIRoot { get { return uiRoot; } }
@@ -73,49 +89,49 @@ public class UIManager : Singleton<UIManager>, ISingletonInstance
     {
         warningMessage.text = INVENTORY_FULL_WARNING;
         warningMessage.gameObject.SetActive(true);
-        Main.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
     public void EquipWeaponWarning()
     {
         warningMessage.text = EQUIP_WEAPON_WARNING;
         warningMessage.gameObject.SetActive(true);
-        Main.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
     public void YouDiedWarning()
     {
         warningMessage.text = YOU_DIED;
         warningMessage.gameObject.SetActive(true);
-        Main.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
     public void LevelUp()
     {
         warningMessage.text = LEVEL_UP;
         warningMessage.gameObject.SetActive(true);
-        Main.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
     public void NoHealthPotion()
     {
         warningMessage.text = NO_HEALTH_POTIONS;
         warningMessage.gameObject.SetActive(true);
-        Main.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
     public void NoEnergyPotion()
     {
         warningMessage.text = NO_ENGERGY_POTIONS;
         warningMessage.gameObject.SetActive(true);
-        Main.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
     public void NextDungeon()
     {
         warningMessage.text = NEXT_DUNGEON;
         warningMessage.gameObject.SetActive(true);
-        Main.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning());
     }
 
     private IEnumerator ShowWarning()
