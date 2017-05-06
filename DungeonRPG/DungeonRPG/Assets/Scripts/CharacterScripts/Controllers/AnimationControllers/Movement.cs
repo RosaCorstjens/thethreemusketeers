@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour {
 
     protected float forwardSpeed, turnSpeed, strafeSpeed;
 
-    protected bool isWalking;
+    protected bool isWalking = false;
 
     protected void Start()
     {

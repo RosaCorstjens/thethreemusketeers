@@ -29,6 +29,8 @@ public class CharacterStats
     public float ResistanceToughnessFactor { get { return (Get(StatTypes.Resistance) / (Get(StatTypes.Resistance) + (50 * GameManager.Instance.ActiveCharacterInformation.Level))); } }
     public float DogdeToughnessFactor { get { return 1 / (1 - Get(StatTypes.DodgeChance)); } }
 
+    public float DeterminedSpeedMultiplier { get { return (100f + Get(StatTypes.MovementSpeed) * 10) / 100f; } }
+
     // TO DO: Replace the 'player health' var by the average monster health at player level. 
     public float PotentialMonstersKilledPerSecond { get { return (PotentialDamagePerSec / Get(StatTypes.MaxHealth)); } }
 

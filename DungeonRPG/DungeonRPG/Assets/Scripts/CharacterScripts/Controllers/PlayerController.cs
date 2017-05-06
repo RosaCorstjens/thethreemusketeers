@@ -19,7 +19,12 @@ public class PlayerController : MonoBehaviour
     private ShieldInstance inOffHand;
 
     private bool inMenu = false;
-    public bool InMenu { set { inMenu = value; } }
+
+    public bool InMenu
+    {
+        get { return inMenu; }
+        set { inMenu = value; }
+    }
     private bool inBattle;
     private EnemyController targetToAttack;
     private bool onCooldown;
@@ -44,6 +49,8 @@ public class PlayerController : MonoBehaviour
     public bool CanMove { get; set; }
     public bool IsInitialized { get; set; }
 
+    private InputHandler inputHandler;
+
     // Use this for initialization
     public void Initialize(Vector3 spawnPosition)
     {
@@ -54,9 +61,10 @@ public class PlayerController : MonoBehaviour
         hand = transform.FindChild(GameManager.Instance.ActiveCharacterInformation.CharacterClass.CharacterClassType.ToString() + "/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4");
         inHand = null; // Start with nothing in hand. 
 
-        //offhand = transform.FindChild("PelvisRoot/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/OffHand");
         inOffHand = null;
         CanMove = true;
+
+        inputHandler = new InputHandler(this);
 
         IsInitialized = true;
     }
@@ -72,49 +80,39 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        GetInput();
-
         //regen
         if (!regenOnCooldown)
         {
             float regen = ((GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MaxHealth) / 100) * GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerSec)) * Time.deltaTime;
             AdjustCurrentHealth(regen);   
         }
+
+        inputHandler.HandleInput();
     }
 
-    private void GetInput()
+    public void Turn(float input)
     {
-        if (inMenu) return;
+        if (onCooldown || inMenu || !CanMove) return;
+        
+        transform.Rotate(new Vector3(0, turnSpeed * input * Time.deltaTime));
+    }
 
-        // movement code
-        if (!onCooldown && !inMenu && CanMove)
-        {
-            float forward = Input.GetAxis("Forward") * (isRunning ? baseRunSpeed : baseWalkSpeed);
-            float strafe = Input.GetAxis("Strafe") * (isRunning ? baseRunSpeed : baseWalkSpeed);
-            turnInput = Input.GetAxis("Turn");
+    public void Move(float input, string animation, Vector3 direction)
+    {
+        if (onCooldown || inMenu || !CanMove) return;
 
-            SendMessage("MoveMeForward", forward);
-            SendMessage("MoveMeSideways", strafe);
+        input *= isRunning ? baseRunSpeed : baseWalkSpeed;
 
-            float speedMultiplier = (100f + (GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MovementSpeed) * 10)) / 100f;
+        SendMessage(animation, input);
 
-            // move forward
-            transform.Translate(Vector3.forward * forward * speedMultiplier * Time.deltaTime, Space.Self);
+        transform.Translate(direction * input * 
+            GameManager.Instance.ActiveCharacterInformation.Stats.DeterminedSpeedMultiplier * 
+            Time.deltaTime, Space.Self);
+    }
 
-            // move strafe
-            transform.Translate(Vector3.right * strafe * speedMultiplier * Time.deltaTime, Space.Self);
-
-            // turn
-            transform.Rotate(new Vector3(0, turnSpeed * turnInput * Time.deltaTime));
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            isRunning = !isRunning;
-            SendMessage("ToggleRun");
-        }
-
-        if (Input.GetMouseButtonDown(0) && !inBattle)
+    public void Attack()
+    {
+        if (!inBattle)
         {
             if (inHand == null)
             {
@@ -127,37 +125,65 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(CheckForLeavingBattle());
             SendMessage("ToggleBattle", true);
         }
-        else if (Input.GetMouseButtonDown(0) && inBattle && !onCooldown)
+        else if(!onCooldown)
         {
-            targetToAttack = null;
+            targetToAttack = FindTarget();
 
-            foreach (EnemyController enemy in DungeonManager.Instance.CurrentDungeon.Enemies)
-            {
-                if (enemy.gameObject.activeInHierarchy)
-                {
-                    // distance check
-                    float distance = (enemy.transform.position - transform.position).magnitude;
-                    if (distance < 2.5f)
-                    {
-                        float direction = Vector3.Dot((enemy.transform.position - transform.position).normalized, transform.forward);
-                        if (direction > 0)
-                        {
-                            targetToAttack = enemy;
-                            Attack();
-                            break;
-                        }
-                    }
-                }
-            }
+            if(targetToAttack != null) DealDamage();
 
             StartCoroutine(WaitForCooldown(basicAttackCooldown));
             SendMessage("BasicAttack");
         }
+    }
 
-        if (!potionOnCooldown && Input.GetKeyDown(KeyCode.Alpha1))
+    private EnemyController FindTarget()
+    {
+        foreach (EnemyController enemy in DungeonManager.Instance.CurrentDungeon.Enemies)
         {
-            UIManager.Instance.InventoryManager.UsePotion(PotionType.Health);
+            if (enemy.gameObject.activeInHierarchy)
+            {
+                // distance check
+                float distance = (enemy.transform.position - transform.position).magnitude;
+                if (distance < 2.5f)
+                {
+                    float direction = Vector3.Dot((enemy.transform.position - transform.position).normalized, transform.forward);
+                    if (direction > 0)
+                    {
+                        return enemy;
+                    }
+                }
+            }
         }
+
+        return null;
+    }
+
+    private void DealDamage()
+    {
+        float dmg = GameManager.Instance.ActiveCharacterInformation.Stats.DeterminedDamage;
+        float randomroll = Random.Range(0, 100);
+        if (randomroll < GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.CritRate))
+        {
+            dmg = (dmg / 100) * GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.CritDamage);
+        }
+
+        dmg += GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.WeaponDamage);
+
+        targetToAttack.AdjustCurrentHealth(-dmg);
+        AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerHit));
+    }
+
+    public void SwitchRun()
+    {
+        isRunning = !isRunning;
+        SendMessage("ToggleRun");
+    }
+
+    public void UsePotion()
+    {
+        if (potionOnCooldown) return;
+
+        UIManager.Instance.InventoryManager.UsePotion(PotionType.Health);
     }
 
     private IEnumerator CheckForLeavingBattle()
@@ -182,28 +208,6 @@ public class PlayerController : MonoBehaviour
         SendMessage("ToggleBattle", false);
 
         yield break;
-    }
-
-    private void SeekTarget()
-    {
-        float distance = Vector3.Distance(targetToAttack.transform.position, transform.position);
-
-        if (distance < 10) Attack();
-    }
-
-    private void Attack()
-    {
-        float dmg = GameManager.Instance.ActiveCharacterInformation.Stats.DeterminedDamage;
-        float randomroll = Random.Range(0, 100);
-        if (randomroll < GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.CritRate))
-        {
-            dmg = (dmg / 100) * GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.CritDamage);
-        }
-
-        dmg += GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.WeaponDamage);
-
-        targetToAttack.AdjustCurrentHealth(-dmg);
-        AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerHit));
     }
 
     private IEnumerator WaitForCooldown(float cooldownTime)
