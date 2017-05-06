@@ -39,26 +39,10 @@ public enum StatTypes
     Thorns
 }
 
-public enum EquipmentSlotType { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders, Ring, Amulet, MainHand, OffHand }
-public enum Equipment { Belt, Boots, Bracers, Chest, Helmet, Pants, Gloves, Shoulders, Ring, Amulet, Weapon, Shield }
-
-public enum Quality { Common, Magic, Rare, Legendary }
-
 public enum GameStates { MainMenu, CharacterCreation, InGame }
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>, ISingletonInstance
 {
-    // Singleton to make the gamemanager easy to acces. 
-    private static GameManager instance;
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null) instance = FindObjectOfType<GameManager>();
-            return instance;
-        }
-    }
-
     private GameStates gameState;
     public GameStates GameState { get { return gameState; } }
 
@@ -74,20 +58,8 @@ public class GameManager : MonoBehaviour
     private PlayerInformation activeCharacterInformation;
     public PlayerInformation ActiveCharacterInformation { get { return activeCharacterInformation; } }
 
-    // Reference to inventory manager. 
-    private UIManager uiManager;
-    public UIManager UIManager { get { return uiManager; } }
-
-    // Reference to item manager. 
-    [SerializeField]
-    private ItemManager itemManager = new ItemManager();
-    public ItemManager ItemManager { get { return itemManager; } }
-
     private CameraManager cameraManager;
     public CameraManager CameraManager { get { return cameraManager; } }
-
-    private DungeonManager dungeonManager;
-    public DungeonManager DungeonManager { get { return dungeonManager; } }
 
     private CharacterCreation characterCreation;
     public CharacterCreation CharacterCreation { get { return characterCreation; } set { characterCreation = value; } }
@@ -100,15 +72,14 @@ public class GameManager : MonoBehaviour
 
     public bool Initialized { get; private set; }
 
-    public void Awake()
+    public void Initialize()
     {
         gameState = GameStates.InGame;
 
         saveInformation = new SaveInformation();
         saveInformation.Initialize();
 
-        uiManager = new UIManager();
-        uiManager.Initialize();
+        UIManager.Instance.Initialize();
 
         cameraManager = new CameraManager();
         cameraManager.Initialize();
@@ -178,7 +149,7 @@ public class GameManager : MonoBehaviour
         gameState = GameStates.MainMenu;
 
         mainMenu = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/UI/MainMenu/MainMenuPanel").GetComponent<MainMenu>());
-        mainMenu.transform.SetParent(UIManager.UIRoot.transform);
+        mainMenu.transform.SetParent(UIManager.Instance.UIRoot.transform);
         mainMenu.transform.localScale = Vector3.one;
         mainMenu.transform.localPosition = Vector3.zero;
 
@@ -192,7 +163,7 @@ public class GameManager : MonoBehaviour
         gameState = GameStates.CharacterCreation;
 
         characterCreation = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/UI/CharacterCreation/CharacterCreationPanel")).GetComponent<CharacterCreation>();
-        characterCreation.transform.SetParent(UIManager.UIRoot.transform);
+        characterCreation.transform.SetParent(UIManager.Instance.UIRoot.transform);
         characterCreation.transform.localScale = Vector3.one;
         characterCreation.transform.localPosition = Vector3.zero;
 
@@ -205,7 +176,7 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameStates.InGame;
 
-        itemManager.Initialize();
+        ItemManager.Instance.Initialize();
 
         if(activeCharacterInformation == null) activeCharacterInformation = GameManager.Instance.SaveInformation.PlayerInformationList[0];
 
@@ -213,17 +184,16 @@ public class GameManager : MonoBehaviour
         activeCharacter.SetActive(true);
         activeCharacterInformation.PlayerController = activeCharacter.GetComponent<PlayerController>();
 
-        UIManager.InitializeGameUI();
+        UIManager.Instance.InitializeGameUI();
 
-        dungeonManager = new DungeonManager();
-        dungeonManager.Initialize();
+        DungeonManager.Instance.Initialize();
 
         CameraManager.SetTarget(activeCharacter.transform);
         CameraManager.FocusBack(true);
         CameraManager.CameraScript.CanReceiveInput = true;
         CameraManager.CameraScript.height = 2;
 
-        StartCoroutine(HandleInput());
+        Main.Instance.StartCoroutine(HandleInput());
     }
 
     private void ClearMainMenu()
@@ -272,7 +242,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.I))
             {
                 inventoryOpen = !inventoryOpen;
-                UIManager.InventoryManager.ToggleMenu(inventoryOpen);
+                UIManager.Instance.InventoryManager.ToggleMenu(inventoryOpen);
                 activeCharacterInformation.PlayerController.InMenu = inventoryOpen;
                 cameraManager.CameraScript.CanReceiveInput = !inventoryOpen;
                 yield return new WaitForSeconds(0.2f);

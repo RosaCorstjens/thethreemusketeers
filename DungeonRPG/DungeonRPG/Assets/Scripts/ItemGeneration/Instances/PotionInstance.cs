@@ -16,7 +16,7 @@ public class PotionInstance : ItemInstance
 
         dropped = false;
 
-        gameObject.GetComponent<Renderer>().material = GameManager.Instance.ItemManager.QualityMaterials[0];
+        gameObject.GetComponent<Renderer>().material = ItemManager.Instance.QualityMaterials[0];
     }
 
     public override void Use()
@@ -26,7 +26,7 @@ public class PotionInstance : ItemInstance
 
     protected override bool AddToInventory()
     {
-        return GameManager.Instance.UIManager.InventoryManager.AddItem(this);
+        return UIManager.Instance.InventoryManager.AddItem(this);
     }
 
 }

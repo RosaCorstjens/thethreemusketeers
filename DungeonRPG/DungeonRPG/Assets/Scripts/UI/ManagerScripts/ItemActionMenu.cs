@@ -18,17 +18,17 @@ public class ItemActionMenu : MonoBehaviour
 
     public void Equip()
     {
-        GameManager.Instance.UIManager.InventoryManager.CurrentActiveSlot.Use();
+        UIManager.Instance.InventoryManager.CurrentActiveSlot.Use();
     }
 
     public void ShowDetails()
     {
-        GameManager.Instance.UIManager.InventoryManager.ShowDetailedInformation();
+        UIManager.Instance.InventoryManager.ShowDetailedInformation();
     }
 
     public void Drop()
     {
-        GameManager.Instance.UIManager.InventoryManager.CurrentActiveSlot.Drop();
+        UIManager.Instance.InventoryManager.CurrentActiveSlot.Drop();
     }
 
     public void Open(SlotBase slot)
@@ -44,14 +44,14 @@ public class ItemActionMenu : MonoBehaviour
         Vector3 position;
 
         position = Camera.main.WorldToNormalizedViewportPoint(Input.mousePosition);
-        position = GameManager.Instance.UIManager.UICamera.ScreenToViewportPoint(Input.mousePosition);
-        position = GameManager.Instance.UIManager.UICamera.NormalizedViewportToWorldPoint(position);
+        position = UIManager.Instance.UICamera.ScreenToViewportPoint(Input.mousePosition);
+        position = UIManager.Instance.UICamera.NormalizedViewportToWorldPoint(position);
         position.z = 0;
         transform.position = position;
     }
 
     public void Close()
     {
-        GameManager.Instance.UIManager.InventoryManager.HideActionMenu();
+        UIManager.Instance.InventoryManager.HideActionMenu();
     }
 }

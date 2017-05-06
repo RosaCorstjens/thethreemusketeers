@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             if (inHand == null)
             {
-                GameManager.Instance.UIManager.EquipWeaponWarning();
+                UIManager.Instance.EquipWeaponWarning();
                 return;
             }
 
@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
         {
             targetToAttack = null;
 
-            foreach (EnemyController enemy in GameManager.Instance.DungeonManager.CurrentDungeon.Enemies)
+            foreach (EnemyController enemy in DungeonManager.Instance.CurrentDungeon.Enemies)
             {
                 if (enemy.gameObject.activeInHierarchy)
                 {
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
         if (!potionOnCooldown && Input.GetKeyDown(KeyCode.Alpha1))
         {
-            GameManager.Instance.UIManager.InventoryManager.UsePotion(PotionType.Health);
+            UIManager.Instance.InventoryManager.UsePotion(PotionType.Health);
         }
     }
 
@@ -283,17 +283,17 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth > GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth) currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;
 
-        GameManager.Instance.UIManager.HudManager.HealthBar.SetBar(currentHealth, GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth);
+        UIManager.Instance.HudManager.HealthBar.SetBar(currentHealth, GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth);
     }
 
     private void Die()
     {
         // dungeon monsters respawn
-        StartCoroutine(Respawn(GameManager.Instance.DungeonManager.CurrentDungeon.StartPosition));
+        StartCoroutine(Respawn(DungeonManager.Instance.CurrentDungeon.StartPosition));
 
-        GameManager.Instance.DungeonManager.CurrentDungeon.RestartDungeon();
+        DungeonManager.Instance.CurrentDungeon.RestartDungeon();
 
-        GameManager.Instance.UIManager.YouDiedWarning();
+        UIManager.Instance.YouDiedWarning();
     }
 
     public IEnumerator Respawn(Vector3 pos)
@@ -358,7 +358,7 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveFromHand()
     {
-        inHand.WeaponObject.transform.SetParent(GameManager.Instance.gameObject.transform);
+        inHand.WeaponObject.transform.SetParent(Main.Instance.gameObject.transform);
         inHand.WeaponObject.SetActive(false);
 
         inHand = null;
@@ -383,7 +383,7 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveFromOffHand()
     {
-        inOffHand.ShieldObject.transform.SetParent(GameManager.Instance.gameObject.transform);
+        inOffHand.ShieldObject.transform.SetParent(Main.Instance.gameObject.transform);
         inOffHand.ShieldObject.SetActive(false);
 
         inOffHand = null;

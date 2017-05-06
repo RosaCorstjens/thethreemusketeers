@@ -16,14 +16,14 @@ public class PortalScript : MonoBehaviour
 
     public void PlayerInRange()
     {
-        GameManager.Instance.UIManager.WorldUIManager.ShowPressToEnter(this.gameObject);
+        UIManager.Instance.WorldUIManager.ShowPressToEnter(this.gameObject);
 
         checkForEnter = StartCoroutine(CheckForEnteringPortal());
     }
 
     public void PlayerOutOfRange()
     {
-        GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+        UIManager.Instance.WorldUIManager.HideLabel();
 
         if (checkForEnter != null) StopCoroutine(checkForEnter);
     }
@@ -39,7 +39,7 @@ public class PortalScript : MonoBehaviour
 
         trigger.gameObject.SetActive(false);
 
-        GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+        UIManager.Instance.WorldUIManager.HideLabel();
 
         EnteredPortal();
 
@@ -48,6 +48,6 @@ public class PortalScript : MonoBehaviour
 
     private void EnteredPortal()
     {
-        GameManager.Instance.DungeonManager.FinishDungeon();
+        DungeonManager.Instance.FinishDungeon();
     }
 }

@@ -108,9 +108,9 @@ public class InventoryManager
         List<Stat> baseStats = new List<Stat>();
         Equipment equipment = Equipment.Weapon;
         string generatedName = "";
-        GameObject toAdd = GameObject.Instantiate(GameManager.Instance.ItemManager.ItemGenerator.DropPrefab);
+        GameObject toAdd = GameObject.Instantiate(ItemManager.Instance.ItemGenerator.DropPrefab);
 
-        BaseWeapon baseItem = GameManager.Instance.ItemManager.ItemContainer.Weapons[0];
+        BaseWeapon baseItem = ItemManager.Instance.ItemContainer.Weapons[0];
 
         generatedName = baseItem.Name;
 
@@ -129,7 +129,7 @@ public class InventoryManager
     {
         // Get the inventory prefab and instantiate it. 
         inventoryGameObject = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/UI/InventoryPopup/InventoryPanel")) as GameObject;
-        inventoryGameObject.transform.SetParent(GameManager.Instance.UIManager.UIRoot.transform);
+        inventoryGameObject.transform.SetParent(UIManager.Instance.UIRoot.transform);
         inventoryGameObject.transform.localScale = Vector3.one;
 
         inventoryPanel = inventoryGameObject.GetComponent<UIPanel>();
@@ -175,7 +175,7 @@ public class InventoryManager
     private void SetupToolTip()
     {
         tooltip = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/UI/InventoryPopup/Tooltip")) as GameObject;
-        tooltip.transform.SetParent(GameManager.Instance.UIManager.UIRoot.transform);
+        tooltip.transform.SetParent(UIManager.Instance.UIRoot.transform);
         tooltip.transform.localScale =  Vector3.one;
         tooltip.transform.localPosition = Vector3.zero;
 
@@ -189,7 +189,7 @@ public class InventoryManager
     private void SetupActionMenu()
     {
         actionMenu = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/UI/InventoryPopup/InventoryActions/ItemActionMenu")).GetComponent<ItemActionMenu>();
-        actionMenu.transform.SetParent(GameManager.Instance.UIManager.UIRoot.transform);
+        actionMenu.transform.SetParent(UIManager.Instance.UIRoot.transform);
         actionMenu.transform.localScale =  Vector3.one;
         actionMenu.transform.localPosition = Vector3.zero;
 
@@ -217,8 +217,8 @@ public class InventoryManager
 
     public void ToggleMenu(bool on)
     {
-        if (on) fadeIn = GameManager.Instance.StartCoroutine(FadeIn());
-        else fadeOut = GameManager.Instance.StartCoroutine(FadeOut());
+        if (on) fadeIn = Main.Instance.StartCoroutine(FadeIn());
+        else fadeOut = Main.Instance.StartCoroutine(FadeOut());
 
         grid.Reposition();
     }
@@ -232,7 +232,7 @@ public class InventoryManager
         {
             fadingOut = true;
             fadingIn = false;
-            if(fadeIn != null) GameManager.Instance.StopCoroutine(fadeIn);
+            if(fadeIn != null) Main.Instance.StopCoroutine(fadeIn);
 
             float startAlpha = inventoryPanel.alpha;
             float rate = 1 / fadeTime;
@@ -259,7 +259,7 @@ public class InventoryManager
         {
             fadingIn = true;
             fadingOut = false;
-            if(fadeOut != null) GameManager.Instance.StopCoroutine(fadeOut);
+            if(fadeOut != null) Main.Instance.StopCoroutine(fadeOut);
 
             float startAlpha = inventoryPanel.alpha;
             float rate = 1 / fadeTime;
@@ -322,7 +322,7 @@ public class InventoryManager
             }
             else
             {
-                GameManager.Instance.UIManager.NoHealthPotion();
+                UIManager.Instance.NoHealthPotion();
             }
         }
         else
@@ -445,9 +445,9 @@ public class InventoryManager
 
         tooltip.SetActive(true);
 
-        if (handlePositionToolTip != null) GameManager.Instance.StopCoroutine(handlePositionToolTip);
+        if (handlePositionToolTip != null) Main.Instance.StopCoroutine(handlePositionToolTip);
 
-        GameManager.Instance.StartCoroutine(handlePositionToolTip);
+        Main.Instance.StartCoroutine(handlePositionToolTip);
     }
 
     public void HideTooltip()
@@ -456,7 +456,7 @@ public class InventoryManager
 
         tooltip.SetActive(false);
 
-        GameManager.Instance.StopCoroutine(handlePositionToolTip);
+        Main.Instance.StopCoroutine(handlePositionToolTip);
     }
 
     private IEnumerator HandlePositionToolTip()
@@ -466,8 +466,8 @@ public class InventoryManager
         while (true)
         {
             position = Camera.main.WorldToNormalizedViewportPoint(Input.mousePosition);
-            position = GameManager.Instance.UIManager.UICamera.ScreenToViewportPoint(Input.mousePosition);
-            position = GameManager.Instance.UIManager.UICamera.NormalizedViewportToWorldPoint(position);
+            position = UIManager.Instance.UICamera.ScreenToViewportPoint(Input.mousePosition);
+            position = UIManager.Instance.UICamera.NormalizedViewportToWorldPoint(position);
             position.z = 0;
             tooltip.transform.position = position;
             yield return null;

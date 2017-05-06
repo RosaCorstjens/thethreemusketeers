@@ -106,8 +106,8 @@ public class ItemGenerator
                     switch (r)
                     {
                         case 0:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Weapons.FindAll(w => w.Tier <= maxTier && w.Tier >= minTier).Count);
-                            baseWeapon = GameManager.Instance.ItemManager.ItemContainer.Weapons.FindAll(w => w.Tier <= maxTier && w.Tier >= minTier)[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, ItemManager.Instance.ItemContainer.Weapons.FindAll(w => w.Tier <= maxTier && w.Tier >= minTier).Count);
+                            baseWeapon = ItemManager.Instance.ItemContainer.Weapons.FindAll(w => w.Tier <= maxTier && w.Tier >= minTier)[randomObject];
 
                             equipment = Equipment.Weapon;
                             generatedName = baseWeapon.Name;
@@ -123,8 +123,8 @@ public class ItemGenerator
 
                             break;
                         case 1:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier).Count);
-                            baseArmor = GameManager.Instance.ItemManager.ItemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier)[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, ItemManager.Instance.ItemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier).Count);
+                            baseArmor = ItemManager.Instance.ItemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier)[randomObject];
 
                             equipment = (Equipment)baseArmor.ArmorType;
                             generatedName = baseArmor.Name;
@@ -137,8 +137,8 @@ public class ItemGenerator
 
                             break;
                         case 2:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier).Count);
-                            baseShield = GameManager.Instance.ItemManager.ItemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier)[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, ItemManager.Instance.ItemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier).Count);
+                            baseShield = ItemManager.Instance.ItemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier)[randomObject];
 
                             equipment = Equipment.Shield;
                             generatedName = baseShield.Name;
@@ -157,8 +157,8 @@ public class ItemGenerator
 
                             break;
                         case 3:
-                            randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier).Count);
-                            baseJewerly = GameManager.Instance.ItemManager.ItemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier)[randomObject];
+                            randomObject = UnityEngine.Random.Range(0, ItemManager.Instance.ItemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier).Count);
+                            baseJewerly = ItemManager.Instance.ItemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier)[randomObject];
 
                             equipment = baseJewerly.JewelryType == JewelryType.Amulet ? Equipment.Amulet : Equipment.Ring;
                             generatedName = baseJewerly.Name;
@@ -294,9 +294,9 @@ public class ItemGenerator
 
                 // Potions
                 case 1:
-                    randomObject = UnityEngine.Random.Range(0, GameManager.Instance.ItemManager.ItemContainer.Potions.Count);
+                    randomObject = UnityEngine.Random.Range(0, ItemManager.Instance.ItemContainer.Potions.Count);
 
-                    BasePotion basePotion = GameManager.Instance.ItemManager.ItemContainer.Potions[randomObject];
+                    BasePotion basePotion = ItemManager.Instance.ItemContainer.Potions[randomObject];
 
                     toAdd.AddComponent<PotionInstance>().Initialize(basePotion, quality);
 

@@ -42,7 +42,7 @@ public class EquipmentSlot : SlotBase
 
         item.Equipped = false;
 
-        GameManager.Instance.UIManager.InventoryManager.AddItem(item);
+        UIManager.Instance.InventoryManager.AddItem(item);
 
         ClearSlot();
     }
@@ -56,7 +56,7 @@ public class EquipmentSlot : SlotBase
 
         emptyIcon.gameObject.SetActive(true);
 
-        GameManager.Instance.UIManager.InventoryManager.CharacterPanel.CalculateEquippedStats();
+        UIManager.Instance.InventoryManager.CharacterPanel.CalculateEquippedStats();
     }
 
     public override void Drop()

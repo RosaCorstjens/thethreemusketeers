@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class DungeonManager : MonoBehaviour
+public class DungeonManager : Singleton<DungeonManager>, ISingletonInstance
 {
     public int columns = 1000;                                 // The number of columns on the board (how wide it will be).
     public int rows = 1000;                                    // The number of rows on the board (how tall it will be).
@@ -136,8 +136,8 @@ public class DungeonManager : MonoBehaviour
         StartNewDungeon();
 
         // Respawn player.
-        GameManager.Instance.UIManager.NextDungeon();
-        GameManager.Instance.StartCoroutine(GameManager.Instance.ActiveCharacterInformation.PlayerController.Respawn(ActiveDungeon.StartPosition));
+        UIManager.Instance.NextDungeon();
+        Main.Instance.StartCoroutine(GameManager.Instance.ActiveCharacterInformation.PlayerController.Respawn(ActiveDungeon.StartPosition));
     }
 
     public static Room SmallestRoomInList(List<Room> rooms)

@@ -28,7 +28,7 @@ public class SlotBase : ButtonBase
     {
         if (IsEmpty) return;
 
-        GameManager.Instance.UIManager.InventoryManager.ShowTooltip(item);
+        UIManager.Instance.InventoryManager.ShowTooltip(item);
 
         base.HighlightButton();
     }
@@ -37,7 +37,7 @@ public class SlotBase : ButtonBase
     {
         if (IsEmpty) return;
 
-        GameManager.Instance.UIManager.InventoryManager.HideTooltip();
+        UIManager.Instance.InventoryManager.HideTooltip();
 
         base.DeHighlightButton();
     }
@@ -49,7 +49,7 @@ public class SlotBase : ButtonBase
 
         DeHighlightButton();
 
-        GameManager.Instance.UIManager.InventoryManager.ShowDetailedInformation(this);
+        UIManager.Instance.InventoryManager.ShowDetailedInformation(this);
     }
 
     // Right click
@@ -57,7 +57,7 @@ public class SlotBase : ButtonBase
     {
         if (IsEmpty) return;
 
-        GameManager.Instance.UIManager.InventoryManager.ShowActionMenu(this);
+        UIManager.Instance.InventoryManager.ShowActionMenu(this);
     }
 
     public virtual void AddItem(EquipmentInstance item)
@@ -68,7 +68,7 @@ public class SlotBase : ButtonBase
         this.item = item;
 
         iconSprite.spriteName = item.ItemInfo.SpriteName;
-        qualityColor.color = GameManager.Instance.ItemManager.QualityColors[(int)item.Quality];
+        qualityColor.color = ItemManager.Instance.QualityColors[(int)item.Quality];
     }
 
     // Double click
@@ -83,7 +83,7 @@ public class SlotBase : ButtonBase
         item.Drop();
         ClearSlot();
 
-        GameManager.Instance.UIManager.InventoryManager.AlertItemDropped(this);
+        UIManager.Instance.InventoryManager.AlertItemDropped(this);
     }
 
     public virtual void ClearSlot()

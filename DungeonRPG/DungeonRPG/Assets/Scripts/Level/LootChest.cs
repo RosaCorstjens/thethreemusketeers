@@ -37,7 +37,7 @@ public class LootChest : MonoBehaviour
 
     public void PlayerInRange()
     {
-        GameManager.Instance.UIManager.WorldUIManager.ShowPressToOpen(this.gameObject);
+        UIManager.Instance.WorldUIManager.ShowPressToOpen(this.gameObject);
 
         materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Self-Illumin/Bumped Diffuse"));
 
@@ -46,7 +46,7 @@ public class LootChest : MonoBehaviour
 
     public void PlayerOutOfRange()
     {
-        GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+        UIManager.Instance.WorldUIManager.HideLabel();
 
         materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Bumped Diffuse"));
 
@@ -68,7 +68,7 @@ public class LootChest : MonoBehaviour
 
         trigger.gameObject.SetActive(false);
 
-        GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+        UIManager.Instance.WorldUIManager.HideLabel();
 
         materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Bumped Diffuse"));
 

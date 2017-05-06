@@ -167,7 +167,7 @@ public class DetailedItemInformation : MonoBehaviour
 
         // Set basic information
         icon.spriteName = item.ItemInfo.SpriteName;
-        qualityColor.color = GameManager.Instance.ItemManager.QualityColors[(int)item.Quality];
+        qualityColor.color = ItemManager.Instance.QualityColors[(int)item.Quality];
 
         generatedName.text = item.GetTitle();
 
@@ -186,7 +186,7 @@ public class DetailedItemInformation : MonoBehaviour
 
         // Set standard stats.
         requiredLvl.text = "Required level: "+ item.Level; 
-        itemType.text = "[" + GameManager.Instance.ItemManager.QualityHexColors[(int)item.Quality] + "]" + item.Quality.ToString() + " " + item.ItemInfo.Name + "[-]";
+        itemType.text = "[" + ItemManager.Instance.QualityHexColors[(int)item.Quality] + "]" + item.Quality.ToString() + " " + item.ItemInfo.Name + "[-]";
 
         equipped.SetActive(item.Equipped);
         useLabel.text = item.Equipped ? "Deequip" : "Equip";
@@ -254,20 +254,20 @@ public class DetailedItemInformation : MonoBehaviour
 
     public void Equip()
     {
-        GameManager.Instance.UIManager.InventoryManager.CurrentActiveSlot.Use();
+        UIManager.Instance.InventoryManager.CurrentActiveSlot.Use();
 
-        equipped.SetActive(GameManager.Instance.UIManager.InventoryManager.CurrentActiveSlot.CurrentItem.Equipped);
-        useLabel.text = GameManager.Instance.UIManager.InventoryManager.CurrentActiveSlot.CurrentItem.Equipped ? "Deequip" : "Equip";
+        equipped.SetActive(UIManager.Instance.InventoryManager.CurrentActiveSlot.CurrentItem.Equipped);
+        useLabel.text = UIManager.Instance.InventoryManager.CurrentActiveSlot.CurrentItem.Equipped ? "Deequip" : "Equip";
     }
 
     public void Drop()
     {
-        GameManager.Instance.UIManager.InventoryManager.CurrentActiveSlot.Drop();
-        GameManager.Instance.UIManager.InventoryManager.HideDetailedInformation();
+        UIManager.Instance.InventoryManager.CurrentActiveSlot.Drop();
+        UIManager.Instance.InventoryManager.HideDetailedInformation();
     }
 
     public void GoBack()
     {
-        GameManager.Instance.UIManager.InventoryManager.HideDetailedInformation();
+        UIManager.Instance.InventoryManager.HideDetailedInformation();
     }
 }

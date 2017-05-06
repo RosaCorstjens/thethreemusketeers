@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIManager
+public class UIManager : Singleton<UIManager>, ISingletonInstance
 {
     // Reference to root of all UI elements to parent them.
     private UIRoot uiRoot;                               
@@ -40,15 +40,15 @@ public class UIManager
     public void Initialize()
     {
         // Get the root.
-        uiRoot = GameObject.FindObjectOfType<UIRoot>();
+        uiRoot = Object.FindObjectOfType<UIRoot>();
 
         anchorTop = uiRoot.transform.FindChild("Anchor_Top").GetComponent<UIAnchor>();
 
         // Get the camera. 
         uiCamera = uiRoot.transform.FindChild("Camera").GetComponent<Camera>();
 
-        warningMessage = GameObject.Instantiate(Resources.Load<UILabel>("Prefabs/UI/InGameUI/WarningMessage"));
-        warningMessage.transform.SetParent(GameManager.Instance.UIManager.AnchorTop.transform);
+        warningMessage = Object.Instantiate(Resources.Load<UILabel>("Prefabs/UI/InGameUI/WarningMessage"));
+        warningMessage.transform.SetParent(anchorTop.transform);
         warningMessage.transform.localPosition = Vector3.zero;
         warningMessage.transform.localScale =  Vector3.one;
         warningMessage.gameObject.SetActive(false);
@@ -73,49 +73,49 @@ public class UIManager
     {
         warningMessage.text = INVENTORY_FULL_WARNING;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        Main.Instance.StartCoroutine(ShowWarning());
     }
 
     public void EquipWeaponWarning()
     {
         warningMessage.text = EQUIP_WEAPON_WARNING;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        Main.Instance.StartCoroutine(ShowWarning());
     }
 
     public void YouDiedWarning()
     {
         warningMessage.text = YOU_DIED;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        Main.Instance.StartCoroutine(ShowWarning());
     }
 
     public void LevelUp()
     {
         warningMessage.text = LEVEL_UP;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        Main.Instance.StartCoroutine(ShowWarning());
     }
 
     public void NoHealthPotion()
     {
         warningMessage.text = NO_HEALTH_POTIONS;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        Main.Instance.StartCoroutine(ShowWarning());
     }
 
     public void NoEnergyPotion()
     {
         warningMessage.text = NO_ENGERGY_POTIONS;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        Main.Instance.StartCoroutine(ShowWarning());
     }
 
     public void NextDungeon()
     {
         warningMessage.text = NEXT_DUNGEON;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        Main.Instance.StartCoroutine(ShowWarning());
     }
 
     private IEnumerator ShowWarning()

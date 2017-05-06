@@ -18,7 +18,7 @@ public class ItemInstance : MonoBehaviour
     public virtual void Initialize(BaseItem itemInfo, Quality quality)
     {
         // TO DO: give potions and gold their own material
-        gameObject.GetComponent<Renderer>().material = GameManager.Instance.ItemManager.QualityMaterials[(int)quality];
+        gameObject.GetComponent<Renderer>().material = ItemManager.Instance.QualityMaterials[(int)quality];
 
         gameObject.SetActive(false);
 
@@ -39,7 +39,7 @@ public class ItemInstance : MonoBehaviour
         {
             if (!AddToInventory())
             {
-                GameManager.Instance.UIManager.InventoryFullWarning();
+                UIManager.Instance.InventoryFullWarning();
                 return;
             }
             gameObject.SetActive(false);

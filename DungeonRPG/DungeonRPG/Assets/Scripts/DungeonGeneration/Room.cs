@@ -58,7 +58,7 @@ public class Room
 
                 if ((otherPos - myPos).magnitude < shortestDistance)
                 {
-                    shortestDistance = (GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(otherRoom.Floors[i].xPos, otherRoom.Floors[i].yPos)) - GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(floors[j].xPos, floors[j].yPos))).magnitude;
+                    shortestDistance = (DungeonManager.Instance.GridToWorldPosition(new Vector2(otherRoom.Floors[i].xPos, otherRoom.Floors[i].yPos)) - DungeonManager.Instance.GridToWorldPosition(new Vector2(floors[j].xPos, floors[j].yPos))).magnitude;
                 }
             }
         }
