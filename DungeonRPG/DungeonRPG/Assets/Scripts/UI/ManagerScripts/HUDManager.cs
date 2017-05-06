@@ -15,7 +15,7 @@ public class HUDManager
     public void Initialize()
     {
         hud = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/UI/InGameUI/HUD"));
-        hud.transform.SetParent(GameManager.Instance.UIManager.UIRoot.transform);
+        hud.transform.SetParent(UIManager.Instance.UIRoot.transform);
         hud.transform.localPosition = Vector3.zero;
         hud.transform.localScale = Vector3.one;
 

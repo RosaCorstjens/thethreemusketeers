@@ -28,7 +28,7 @@ public class InventoryMenu : MonoBehaviour
         details.Selected = false;
         skills.Selected = false;
 
-        GameManager.Instance.UIManager.InventoryManager.ChangeState(InventoryManager.InventoryStates.Inventory);
+        UIManager.Instance.InventoryManager.ChangeState(InventoryManager.InventoryStates.Inventory);
     }
 
     public void ShowCharacterDetails()
@@ -37,7 +37,7 @@ public class InventoryMenu : MonoBehaviour
         details.Selected = true;
         skills.Selected = false;
 
-        GameManager.Instance.UIManager.InventoryManager.ChangeState(InventoryManager.InventoryStates.Details);
+        UIManager.Instance.InventoryManager.ChangeState(InventoryManager.InventoryStates.Details);
     }
 
     public void ShowSkills()

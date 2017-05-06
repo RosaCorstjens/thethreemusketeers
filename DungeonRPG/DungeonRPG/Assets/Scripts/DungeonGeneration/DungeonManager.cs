@@ -2,8 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class DungeonManager : MonoBehaviour
+public class DungeonManager 
 {
+    private DungeonManager() { }
+
+    private static DungeonManager instance;
+    public static DungeonManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new DungeonManager();
+                instance.Initialize();
+            }
+            return instance;
+        }
+    }
+
     public int columns = 1000;                                 // The number of columns on the board (how wide it will be).
     public int rows = 1000;                                    // The number of rows on the board (how tall it will be).
     public IntRange numRooms = new IntRange(15, 20);          // The range of the number of rooms there can be.
@@ -136,7 +152,7 @@ public class DungeonManager : MonoBehaviour
         StartNewDungeon();
 
         // Respawn player.
-        GameManager.Instance.UIManager.NextDungeon();
+        UIManager.Instance.NextDungeon();
         GameManager.Instance.StartCoroutine(GameManager.Instance.ActiveCharacterInformation.PlayerController.Respawn(ActiveDungeon.StartPosition));
     }
 

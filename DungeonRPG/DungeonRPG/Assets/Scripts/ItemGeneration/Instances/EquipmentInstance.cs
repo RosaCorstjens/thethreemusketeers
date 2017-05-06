@@ -22,7 +22,7 @@ public class EquipmentInstance: ItemInstance
             equipped = value;
             if (equipped) GameManager.Instance.ActiveCharacterInformation.AddStats(this);
             else GameManager.Instance.ActiveCharacterInformation.RemoveStats(this);
-            GameManager.Instance.UIManager.InventoryManager.CharacterPanel.SetPlayerInformation();
+            UIManager.Instance.InventoryManager.CharacterPanel.SetPlayerInformation();
         }
     }
 
@@ -80,7 +80,7 @@ public class EquipmentInstance: ItemInstance
 
     public string GetTitle()
     {
-        return string.Format("[" + GameManager.Instance.ItemManager.QualityHexColors[(int)quality] + "]{0}[-]", generatedName);
+        return string.Format("[" + ItemManager.Instance.QualityHexColors[(int)quality] + "]{0}[-]", generatedName);
     }
 
     public  string GetTooltipText()
@@ -119,6 +119,6 @@ public class EquipmentInstance: ItemInstance
 
     protected override bool AddToInventory()
     {
-        return GameManager.Instance.UIManager.InventoryManager.AddItem(this);
+        return UIManager.Instance.InventoryManager.AddItem(this);
     }
 }

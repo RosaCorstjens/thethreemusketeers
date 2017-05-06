@@ -42,10 +42,10 @@ public class CharacterPanel : MonoBehaviour
     // Positions the different equiment icons on the outline circle. 
     private void SetupEquimentIcons()
     {
-        equipedOutline = GameManager.Instance.UIManager.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/EquipmentOutline").GetComponent<UISprite>();
+        equipedOutline = UIManager.Instance.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/EquipmentOutline").GetComponent<UISprite>();
         equipedPrefab = Resources.Load<GameObject>("Prefabs/UI/InventoryPopup/EquipSlot");
 
-        characterSprite = GameManager.Instance.UIManager.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/CharacterOutline/Character").GetComponent<UISprite>();
+        characterSprite = UIManager.Instance.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/CharacterOutline/Character").GetComponent<UISprite>();
         characterSprite.spriteName = GameManager.Instance.ActiveCharacterInformation.CharacterClass.CharacterClassType.ToString().ToLower();
 
         amountEquiped = System.Enum.GetValues(typeof(EquipmentSlotType)).Length;
@@ -60,7 +60,7 @@ public class CharacterPanel : MonoBehaviour
         Vector2 firstPoint = new Vector2(origin.x, origin.y + r);
 
         GameObject temp = GameObject.Instantiate(equipedPrefab, firstPoint, Quaternion.identity) as GameObject;
-        temp.transform.SetParent(GameManager.Instance.UIManager.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/EquipmentOutline"));
+        temp.transform.SetParent(UIManager.Instance.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/EquipmentOutline"));
         temp.transform.localScale =  Vector3.one;
         temp.transform.localPosition = firstPoint;
 
@@ -71,7 +71,7 @@ public class CharacterPanel : MonoBehaviour
         {
             Vector2 tempVector = RotateAroundPoint(firstPoint, origin, Quaternion.Euler(0, 0, angle * i));//inventoryGameObject.transform.RotateAround(firstPoint, origin, angle * i));
             GameObject tempObject = GameObject.Instantiate(equipedPrefab, tempVector, Quaternion.identity) as GameObject;
-            tempObject.transform.SetParent(GameManager.Instance.UIManager.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/EquipmentOutline"));
+            tempObject.transform.SetParent(UIManager.Instance.InventoryManager.InventoryTransform.transform.FindChild("Anchor_MidLeft/Equipment/EquipmentOutline"));
             tempObject.transform.localScale =  Vector3.one;
             tempObject.transform.localPosition = tempVector;
 

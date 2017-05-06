@@ -15,7 +15,7 @@ public class WorldUIManager
         // Get the prefab for the 'press e label', instatiate it. 
         label = Resources.Load<UILabel>("Prefabs/UI/InGameUI/PressEToOpenLabel");
         label = GameObject.Instantiate(label);
-        label.transform.SetParent(GameManager.Instance.UIManager.UIRoot.transform);
+        label.transform.SetParent(UIManager.Instance.UIRoot.transform);
         label.transform.localScale =  Vector3.one;
         label.gameObject.SetActive(false);
     }
@@ -28,7 +28,7 @@ public class WorldUIManager
         while (true)
         {
             position = Camera.main.WorldToNormalizedViewportPoint(go.transform.position);
-            label.transform.position = GameManager.Instance.UIManager.UICamera.NormalizedViewportToWorldPoint(position);
+            label.transform.position = UIManager.Instance.UICamera.NormalizedViewportToWorldPoint(position);
 
             yield return null;
         }

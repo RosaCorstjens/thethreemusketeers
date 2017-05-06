@@ -15,7 +15,7 @@ public class InventorySlot : SlotBase
     {
         base.ClearSlot();
 
-        GameManager.Instance.UIManager.InventoryManager.EmptySlots++;
+        UIManager.Instance.InventoryManager.EmptySlots++;
     }
 
     public override void Use()
@@ -23,10 +23,10 @@ public class InventorySlot : SlotBase
         base.Use();
         
         // Take first item and use it. 
-        if(!GameManager.Instance.UIManager.InventoryManager.EquipItem(item)) return;
+        if(!UIManager.Instance.InventoryManager.EquipItem(item)) return;
 
         ClearSlot();
-        GameManager.Instance.UIManager.InventoryManager.Reorder(this);
+        UIManager.Instance.InventoryManager.Reorder(this);
     }
 
 }

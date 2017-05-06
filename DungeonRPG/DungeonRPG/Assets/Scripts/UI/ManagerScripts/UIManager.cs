@@ -1,8 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UIManager
+public class UIManager 
 {
+    private UIManager() { }
+
+    private static UIManager instance;
+    public static UIManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new UIManager();
+                instance.Initialize();
+            }
+            return instance;
+        }
+    }
+
     // Reference to root of all UI elements to parent them.
     private UIRoot uiRoot;                               
     public UIRoot UIRoot { get { return uiRoot; } }
@@ -40,15 +56,15 @@ public class UIManager
     public void Initialize()
     {
         // Get the root.
-        uiRoot = GameObject.FindObjectOfType<UIRoot>();
+        uiRoot = Object.FindObjectOfType<UIRoot>();
 
         anchorTop = uiRoot.transform.FindChild("Anchor_Top").GetComponent<UIAnchor>();
 
         // Get the camera. 
         uiCamera = uiRoot.transform.FindChild("Camera").GetComponent<Camera>();
 
-        warningMessage = GameObject.Instantiate(Resources.Load<UILabel>("Prefabs/UI/InGameUI/WarningMessage"));
-        warningMessage.transform.SetParent(GameManager.Instance.UIManager.AnchorTop.transform);
+        warningMessage = Object.Instantiate(Resources.Load<UILabel>("Prefabs/UI/InGameUI/WarningMessage"));
+        warningMessage.transform.SetParent(anchorTop.transform);
         warningMessage.transform.localPosition = Vector3.zero;
         warningMessage.transform.localScale =  Vector3.one;
         warningMessage.gameObject.SetActive(false);

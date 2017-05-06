@@ -81,7 +81,7 @@ public class Dungeon
 
     public void GenerateDungeon(int dLevel, int columns, int rows, int numRooms, float minDistStartEnd)
     {
-        dm = GameManager.Instance.DungeonManager;
+        dm = DungeonManager.Instance;
 
         this.dLevel = dLevel;
         this.columns = columns;
@@ -257,7 +257,7 @@ public class Dungeon
         GameObject tileInstance = GameObject.Instantiate(prefab, position, Quaternion.identity) as GameObject;
 
         // Set the tile's parent to the board holder.
-        tileInstance.transform.parent = GameManager.Instance.DungeonManager.LevelParent.transform;
+        tileInstance.transform.parent = DungeonManager.Instance.LevelParent.transform;
 
         floor.myGO = tileInstance;
 
@@ -488,7 +488,7 @@ public class Dungeon
         List<Floor> edgeFloors = EndRoom.Floors.FindAll(f => f.placement == Floor.Placement.Edge);
         Floor endFloor = edgeFloors[Random.Range(0, edgeFloors.Count)];
         GameObject portal = GameObject.Instantiate(dm.PortalPrefab);
-        portal.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+        portal.transform.SetParent(DungeonManager.Instance.LevelParent.transform);
         portal.transform.position = dm.GridToWorldPosition(new Vector2(endFloor.xPos, endFloor.yPos));
         portal.transform.position += new Vector3(0, 1.75f, 0);
         portal.transform.localEulerAngles = endFloor.ObjectRotation();
@@ -548,7 +548,7 @@ public class Dungeon
             for (int j = 0; j < amount; j++)
             {
                 Floor randomFloor = monsterRooms[i].RandomFloorInRoom();
-                Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
+                Vector3 spawnPos = DungeonManager.Instance.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
                 Vector3 monsterPosition = spawnPos + new Vector3(0, 0.1f, 0);
 
                 int randomamount = Random.Range(1, 3);
@@ -559,7 +559,7 @@ public class Dungeon
                 
                 for (int k = 0; k < randomamount; k++)
                 {
-                    GameObject monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, monsterPosition + positions[k], Quaternion.identity) as GameObject;
+                    GameObject monsterObject = GameObject.Instantiate(DungeonManager.Instance.SpiderPrefab, monsterPosition + positions[k], Quaternion.identity) as GameObject;
                     EnemyController monster = monsterObject.GetComponent<EnemyController>();
                     monster.Initialize();
 
@@ -572,12 +572,12 @@ public class Dungeon
         for (int i = 0; i < treasureRooms.Count; i++)
         {
             Floor randomFloor = treasureRooms[i].RandomFloorInRoom();
-            Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
+            Vector3 spawnPos = DungeonManager.Instance.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
             Vector3 chestPosition = spawnPos + new Vector3(0, 0.2f, 0);
-            GameObject chestObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.ChestPrefab, chestPosition, Quaternion.identity) as GameObject;
+            GameObject chestObject = GameObject.Instantiate(DungeonManager.Instance.ChestPrefab, chestPosition, Quaternion.identity) as GameObject;
 
             int randomNeighbour = Random.Range(0, randomFloor.Neighbours.Count);
-            Vector3 lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(randomFloor.Neighbours[randomNeighbour].xPos, randomFloor.Neighbours[randomNeighbour].yPos));
+            Vector3 lookPos = DungeonManager.Instance.GridToWorldPosition(new Vector2(randomFloor.Neighbours[randomNeighbour].xPos, randomFloor.Neighbours[randomNeighbour].yPos));
             chestObject.transform.LookAt(lookPos);
             LootChest chest = chestObject.GetComponent<LootChest>();
             chest.Initialize();

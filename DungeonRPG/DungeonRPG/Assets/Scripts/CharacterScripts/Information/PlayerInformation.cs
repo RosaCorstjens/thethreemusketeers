@@ -74,7 +74,7 @@ public class PlayerInformation : BaseCharacterInformation
         base.LevelUp();
         xpTillNextLvl = GetXPTillNextLevel(level);
         Debug.Log("xp till next: " + xpTillNextLvl);
-        GameManager.Instance.UIManager.LevelUp();
+        UIManager.Instance.LevelUp();
     }
 
     private int GetXPTillNextLevel(int x)
