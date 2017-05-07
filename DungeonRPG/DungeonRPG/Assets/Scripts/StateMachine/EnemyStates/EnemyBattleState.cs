@@ -15,8 +15,8 @@ public class EnemyBattleState : State<EnemyController>
     {
         if (!agent.OnHitCooldown)
         {
-            float distance = (agent.TargetTransform.transform.position - agent.transform.position).magnitude;
-            float direction = Vector3.Dot((agent.TargetTransform.position - agent.transform.position).normalized,
+            float distance = (agent.targetTransform.transform.position - agent.transform.position).magnitude;
+            float direction = Vector3.Dot((agent.targetTransform.position - agent.transform.position).normalized,
                 agent.transform.forward);
 
             if (distance < agent.NoticeDistance && distance > agent.AttackDistance)

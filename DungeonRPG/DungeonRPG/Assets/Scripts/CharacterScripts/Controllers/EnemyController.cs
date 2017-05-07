@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class EnemyController : MonoBehaviour
 {
     private Loottable loottable;
-    private Vector3 startPosition;
+    public Vector3 startPosition;
 
     public float currentHealth;
     private float maxHealth = 20f;
@@ -13,15 +13,8 @@ public class EnemyController : MonoBehaviour
 
     public int level = 1;
 
-    private Transform targetTransform;
-    public Transform TargetTransform
-    {
-        get
-        {
-            return targetTransform;
-        }
-    }
-    private PlayerController targetScript;
+    public Transform targetTransform;
+    public PlayerController targetScript;
     public bool OnHitCooldown;
     private float basicAttackCooldown = 2f;
     public float BasicAttackCooldown
@@ -37,6 +30,13 @@ public class EnemyController : MonoBehaviour
 
     private int damage = 8;
     private float baseProgression = 0.5f;
+    public float BaseProgression
+    {
+        get
+        {
+            return baseProgression;
+        }
+    }
 
     private float noticeDistance = 10f;
     public float NoticeDistance
@@ -105,6 +105,7 @@ public class EnemyController : MonoBehaviour
         dictionary.Add("Battle", new EnemyBattleState());
         dictionary.Add("Attack", new EnemyAttackState());
         dictionary.Add("Dying", new EnemyDyingState());
+        dictionary.Add("Reset", new EnemyResetSate());
 
         finiteStateMachine = new StateMachine<EnemyController>(this, new EnemyIdleState(), dictionary);
     }
@@ -116,24 +117,15 @@ public class EnemyController : MonoBehaviour
 
     public void Reset()
     {
-        this.gameObject.SetActive(true);
+        FiniteStateMachine.SetState(FiniteStateMachine.PossibleStates["Reset"]);
 
         myTransform = transform;
         isDead = false;
 
-        anim.SetTrigger("Revive");
-        anim.SetBool("Dead", false);
-
         loottable.Initialize(2,5);
-
-        transform.position = startPosition;
+        
         currentHealth = maxHealth;
 
-        targetTransform = GameManager.Instance.ActiveCharacter.transform;
-        targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
-
-        //StopCoroutine(HandleMovement());
-        //StartCoroutine(HandleMovement());
     }
 
     public void Rotate()
@@ -174,7 +166,6 @@ public class EnemyController : MonoBehaviour
 
             isDead = true;
             currentHealth = 0;
-            Die();
 
             return;
         }
@@ -182,28 +173,11 @@ public class EnemyController : MonoBehaviour
         if (currentHealth > maxHealth) currentHealth = maxHealth;
     }
 
-    private void Die()
+    public void Die()
     {
-        anim.SetBool("Dead", true);
-        GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression);
-
-        GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerKill));
-
-        StartCoroutine(WaitForDestory());
-    }
-
-    private IEnumerator WaitForDestory()
-    {
-        yield return new WaitForSeconds(3);
-
-        //StopCoroutine(HandleMovement());
-
         loottable.DropItems(this.transform.position);
 
         this.gameObject.SetActive(false);
         this.transform.position = startPosition;
-        //Destroy(this.gameObject);
-
-        yield break;
     }
 }

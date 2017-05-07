@@ -10,7 +10,7 @@
     //called every frame
     public override void Execute(EnemyController agent)
     {
-        float distance = (agent.TargetTransform.transform.position - agent.transform.position).magnitude;
+        float distance = (agent.targetTransform.transform.position - agent.transform.position).magnitude;
         if (distance < agent.NoticeDistance)
         {
             agent.FiniteStateMachine.SetState(agent.FiniteStateMachine.PossibleStates["Battle"]);
