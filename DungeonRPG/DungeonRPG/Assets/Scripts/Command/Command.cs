@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Command<T> where T : IControlable
+public class Command<T> 
 {
     public virtual void Execute(T controller, float input = 0)
     {
