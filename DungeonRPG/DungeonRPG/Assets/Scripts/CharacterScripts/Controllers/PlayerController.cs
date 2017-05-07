@@ -9,7 +9,7 @@ using UnityEngineInternal;
 [RequireComponent(typeof(PlayerMovement))]
 //[RequireComponent(typeof(PlayerInformation))]
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IControlable
 {
     public float currentHealth;
 
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         IsInitialized = true;
     }
 
-    private void Update()
+    public void Update()
     {
         if (!IsInitialized) return;
 

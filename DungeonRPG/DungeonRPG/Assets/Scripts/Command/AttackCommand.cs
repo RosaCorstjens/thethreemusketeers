@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackCommand : Command
+public class AttackCommand<T> : Command<T> where T : IControlable
 {
-    public override void Execute(PlayerController player)
+    public override void Execute(T controller)
     {
-        player.Attack();
+        controller.Attack();
     }
 }

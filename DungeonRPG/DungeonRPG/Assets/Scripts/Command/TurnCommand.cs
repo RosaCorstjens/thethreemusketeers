@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnCommand : Command
+public class TurnCommand<T> : Command<T> where T : IControlable
 {
-    public override void Execute(PlayerController player, float input)
+    public override void Execute(T controller, float input)
     {
-        player.Turn(input);
+        controller.Turn(input);
     }
 }

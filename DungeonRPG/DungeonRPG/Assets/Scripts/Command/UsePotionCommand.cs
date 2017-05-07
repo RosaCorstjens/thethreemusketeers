@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UsePotionCommand : Command
+public class UsePotionCommand : Command<PlayerController>
 {
-    public override void Execute(PlayerController player)
+    public override void Execute(PlayerController controller)
     {
-        player.UsePotion();
+        controller.UsePotion();
     }
 }

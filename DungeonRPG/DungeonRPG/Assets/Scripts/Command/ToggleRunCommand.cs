@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleRunCommand : Command
+public class ToggleRunCommand : Command<PlayerController> 
 {
-    public override void Execute(PlayerController player)
+    public override void Execute(PlayerController controller)
     {
-        player.SwitchRun();
+        controller.SwitchRun();
     }
 }

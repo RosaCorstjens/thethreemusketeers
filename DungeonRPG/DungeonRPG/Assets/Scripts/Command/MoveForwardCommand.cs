@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveForwardCommand : Command {
-
-    public override void Execute(PlayerController player, float input)
+public class MoveForwardCommand<T> : Command<T> where T : IControlable
+{ 
+    public override void Execute(T controller, float input)
     {
-        player.Move(input, "MoveMeForward", Vector3.forward);
+        controller.Move(input, "MoveMeForward", Vector3.forward);
     }
 }

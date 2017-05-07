@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StrafeCommand : Command {
-
-    public override void Execute(PlayerController player, float input)
+public class StrafeCommand<T> : Command<T> where T : IControlable
+{
+    public override void Execute(T controller, float input)
     {
-        player.Move(input, "MoveMeSideways", Vector3.right);
+        controller.Move(input, "MoveMeSideways", Vector3.right);
     }
 }

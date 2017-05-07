@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class InputHandler
 {
-    private Dictionary<string, Command> commands;
+    private Dictionary<string, Command<PlayerController>> commands;
     private PlayerController playerController;
 
     public InputHandler(PlayerController thisController)
     {
         playerController = thisController;
 
-        commands = new Dictionary<string, Command>();
-        commands.Add("Forward", new MoveForwardCommand());
-        commands.Add("Strafe", new StrafeCommand());
-        commands.Add("Turn", new TurnCommand());
-        commands.Add("Attack", new AttackCommand());
+        commands = new Dictionary<string, Command<PlayerController>>();
+        commands.Add("Forward", new MoveForwardCommand<PlayerController>());
+        commands.Add("Strafe", new StrafeCommand<PlayerController>());
+        commands.Add("Turn", new TurnCommand<PlayerController>());
+        commands.Add("Attack", new AttackCommand<PlayerController>());
         commands.Add("UsePotion", new UsePotionCommand());
         commands.Add("ToggleRun", new ToggleRunCommand());
     }
