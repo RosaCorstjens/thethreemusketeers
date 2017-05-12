@@ -1,15 +1,15 @@
-﻿public class EnemyRecievedDamageState : State<EnemyController>
+﻿public class EnemyRecievedDamageState : State<Spider>
 {
     float time;
 
     //called once when entering state
-    public override void Enter(EnemyController agent)
+    public override void Enter(Spider agent)
     {
         time = 0;
     }
 
     //called every frame
-    public override void Execute(EnemyController agent)
+    public override void Execute(Spider agent)
     {
         time += RealTime.deltaTime;
         if(time >= agent.CoolDownTime)
@@ -20,7 +20,7 @@
     }
 
     //called when leavin stae
-    public override void Exit(EnemyController agent)
+    public override void Exit(Spider agent)
     {
         agent.OnHitCooldown = false;
         return;

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBattleState : State<EnemyController>
+public class EnemyBattleState : State<Spider>
 {
     //called once when entering state
-    public override void Enter(EnemyController agent)
+    public override void Enter(Spider agent)
     {
         return;
     }
 
     //called every frame
-    public override void Execute(EnemyController agent)
+    public override void Execute(Spider agent)
     {
         float distance = (agent.targetTransform.transform.position - agent.transform.position).magnitude;
         float direction = Vector3.Dot((agent.targetTransform.position - agent.transform.position).normalized,
@@ -35,7 +35,7 @@ public class EnemyBattleState : State<EnemyController>
     }
 
     //called when leaving state
-    public override void Exit(EnemyController agent)
+    public override void Exit(Spider agent)
     {
         return;
     }

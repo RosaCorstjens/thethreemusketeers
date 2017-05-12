@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class EnemyController : MonoBehaviour
+public class Spider : MonoBehaviour, IPoolable
 {
     private Loottable loottable;
     public Vector3 startPosition;
@@ -17,88 +17,43 @@ public class EnemyController : MonoBehaviour
     public PlayerController targetScript;
     public bool OnHitCooldown;
     private float basicAttackCooldown = 2f;
-    public float BasicAttackCooldown
-    {
-        get
-        {
-            return basicAttackCooldown;
-        }
-    }
+    public float BasicAttackCooldown { get { return basicAttackCooldown; } }
 
     private float moveSpeed = 1.5f;
     private int rotationSpeed = 3;
 
     private int damage = 8;
     private float baseProgression = 0.5f;
-    public float BaseProgression
-    {
-        get
-        {
-            return baseProgression;
-        }
-    }
+    public float BaseProgression { get { return baseProgression; } }
 
     private float noticeDistance = 10f;
-    public float NoticeDistance
-    {
-        get
-        {
-            return noticeDistance;
-        }
-    }
+    public float NoticeDistance { get { return noticeDistance; } }
     private float attackDistance = 2f;
-    public float AttackDistance
-    {
-        get
-        {
-            return attackDistance;
-        }
-    }
+    public float AttackDistance { get { return attackDistance; } }
 
     private Transform myTransform;
     private Animator anim;
-    public Animator Anim
-    {
-        get
-        {
-            return anim;
-        }
-    }
+    public Animator Anim { get { return anim; } }
 
     private float coolDownTime = 2f;
-    public float CoolDownTime
-    {
-        get
-        {
-            return coolDownTime;
-        }
-    }
+    public float CoolDownTime { get { return coolDownTime; } }
 
-    private StateMachine<EnemyController> finiteStateMachine;
-    public StateMachine<EnemyController> FiniteStateMachine
-    {
-        get
-        {
-            return finiteStateMachine;
-        }
-    }
+    private StateMachine<Spider> finiteStateMachine;
+    public StateMachine<Spider> FiniteStateMachine { get { return finiteStateMachine; } }
 
     public void Initialize()
     {
-        myTransform = transform;
+        //myTransform = transform;
         startPosition = transform.position;
 
-        targetTransform = GameManager.Instance.ActiveCharacter.transform;
-        targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
+        //targetTransform = GameManager.Instance.ActiveCharacter.transform;
+        //targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
+        //anim = GetComponent<Animator>();
+        //currentHealth = maxHealth;
+        //loottable = new Loottable();
+        //loottable.Initialize(2, 5);
 
-        anim = GetComponent<Animator>();
-
-        currentHealth = maxHealth;
-
-        loottable = new Loottable();
-        loottable.Initialize(2, 5);
-
-        Dictionary<string, State<EnemyController>> dictionary = new Dictionary<string, State<EnemyController>>();
+        Dictionary<string, State<Spider>> dictionary = new Dictionary<string, State<Spider>>();
 
         dictionary.Add("Idle", new EnemyIdleState());
         dictionary.Add("RecievedDamage", new EnemyRecievedDamageState());
@@ -107,25 +62,63 @@ public class EnemyController : MonoBehaviour
         dictionary.Add("Dying", new EnemyDyingState());
         dictionary.Add("Reset", new EnemyResetSate());
 
-        finiteStateMachine = new StateMachine<EnemyController>(this, new EnemyIdleState(), dictionary);
+        finiteStateMachine = new StateMachine<Spider>(this, new EnemyIdleState(), dictionary);
+
+        gameObject.SetActive(false);
     }
 
-    void Update()
+    public void Activate()
     {
-        FiniteStateMachine.Update();
+        myTransform = transform;
+        targetTransform = GameManager.Instance.ActiveCharacter.transform;
+        targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
+        anim = GetComponent<Animator>();
+        currentHealth = maxHealth;
+
+        loottable = new Loottable();
+        loottable.Initialize(2, 5);
+
+        finiteStateMachine.Init();
+        FiniteStateMachine.SetState(FiniteStateMachine.PossibleStates["Reset"]);
+        myTransform = transform;
+        this.transform.position = startPosition;
+        isDead = false;
+
+        gameObject.SetActive(true);
     }
 
-    public void Reset()
+    /*public void Reset()
     {
         FiniteStateMachine.SetState(FiniteStateMachine.PossibleStates["Reset"]);
 
         myTransform = transform;
         isDead = false;
 
-        loottable.Initialize(2,5);
-        
-        currentHealth = maxHealth;
+        loottable.Initialize(2, 5);
 
+        currentHealth = maxHealth;
+    }*/
+
+    public void Deactivate()
+    {
+        myTransform = null;
+        targetTransform = null;
+        targetScript = null;
+        anim = null;
+        loottable = null;
+        //finiteStateMachine = null;
+
+        gameObject.SetActive(false);
+    }
+
+    public void Destroy()
+    {
+        Destroy(this);
+    }
+
+    void Update()
+    {
+        FiniteStateMachine.Update();
     }
 
     public void Rotate()
@@ -162,10 +155,10 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            FiniteStateMachine.SetState(FiniteStateMachine.PossibleStates["Dying"]);
-
             isDead = true;
             currentHealth = 0;
+
+            FiniteStateMachine.SetState(FiniteStateMachine.PossibleStates["Dying"]);
 
             return;
         }
@@ -177,7 +170,11 @@ public class EnemyController : MonoBehaviour
     {
         loottable.DropItems(this.transform.position);
 
-        this.gameObject.SetActive(false);
-        this.transform.position = startPosition;
+        DungeonManager.Instance.CurrentDungeon.Enemies.Remove(this);
+
+        GameManager.Instance.PoolingManager.SpiderObjectPool.Store(this);
+
+        //this.gameObject.SetActive(false);
+        //this.transform.position = startPosition;
     }
 }

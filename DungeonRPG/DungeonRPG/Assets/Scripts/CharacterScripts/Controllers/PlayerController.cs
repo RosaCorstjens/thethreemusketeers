@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour, IControlable
         set { inMenu = value; }
     }
     private bool inBattle;
-    private EnemyController targetToAttack;
+    private Spider targetToAttack;
     private bool onCooldown;
     private float basicAttackCooldown = 0;
 
@@ -136,9 +136,9 @@ public class PlayerController : MonoBehaviour, IControlable
         }
     }
 
-    private EnemyController FindTarget()
+    private Spider FindTarget()
     {
-        foreach (EnemyController enemy in DungeonManager.Instance.CurrentDungeon.Enemies)
+        foreach (Spider enemy in DungeonManager.Instance.CurrentDungeon.Enemies)
         {
             if (enemy.gameObject.activeInHierarchy)
             {
@@ -233,7 +233,7 @@ public class PlayerController : MonoBehaviour, IControlable
         yield break;
     }
 
-    public void GotHit(float dmg, EnemyController enemy)
+    public void GotHit(float dmg, Spider enemy)
     {
         // adjust dmg based on armor
         dmg -= GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.Armor) /

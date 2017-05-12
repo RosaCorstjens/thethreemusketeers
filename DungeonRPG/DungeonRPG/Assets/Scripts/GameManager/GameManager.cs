@@ -70,6 +70,9 @@ public class GameManager : MonoBehaviour
     private SaveInformation saveInformation;
     public SaveInformation SaveInformation { get { return saveInformation; } }
 
+    private PoolingManager poolingManager;
+    public PoolingManager PoolingManager { get { return poolingManager; } }
+
     public bool Initialized { get; private set; }
 
     private GameManager() { }
@@ -100,6 +103,10 @@ public class GameManager : MonoBehaviour
         cameraManager.Initialize();
 
         InstantiateCharacterPrefabs();
+
+        poolingManager = new PoolingManager();
+        poolingManager.Initialize();
+
         RenderSettings.fog = true;
         //RenderSettings.ambientLight = new Color(0, 0, 255);
         //RenderSettings.ambientIntensity = 0.00001f;

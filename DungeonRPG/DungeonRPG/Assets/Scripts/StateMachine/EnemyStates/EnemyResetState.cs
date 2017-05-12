@@ -1,7 +1,7 @@
-﻿public class EnemyResetSate : State<EnemyController>
+﻿public class EnemyResetSate : State<Spider>
 {
     //called once when entering state
-    public override void Enter(EnemyController agent)
+    public override void Enter(Spider agent)
     {
         agent.gameObject.SetActive(true);
 
@@ -19,13 +19,13 @@
     }
 
     //called every frame
-    public override void Execute(EnemyController agent)
+    public override void Execute(Spider agent)
     {
         return;
     }
 
     //called when leavin stae
-    public override void Exit(EnemyController agent)
+    public override void Exit(Spider agent)
     {
         return;
     }

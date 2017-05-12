@@ -23,8 +23,9 @@ public class Dungeon
     public List<Room> Rooms { get { return rooms; } }
     private List<Corridor> corridors;
 
-    private List<EnemyController> enemies;
-    public List<EnemyController> Enemies { get { return enemies; } }
+    private List<Vector3> enemyStartPositions;
+    private List<Spider> enemies;
+    public List<Spider> Enemies { get { return enemies; } }
     private List<LootChest> lootchests;
 
     private Vector3 startPosition;
@@ -65,7 +66,7 @@ public class Dungeon
         Debug.Log("rooms and corridors destroyed. " + rooms.Count + " " + corridors.Count);
 
         // clear enemies
-        enemies.HandleAction(e => GameObject.Destroy(e.gameObject));
+        enemies.HandleAction(e => GameManager.Instance.PoolingManager.SpiderObjectPool.Store(e));
         enemies.Clear();
         Debug.Log("enemies destroyed. " + enemies.Count);
 
@@ -536,7 +537,8 @@ public class Dungeon
     private void SpawnContent()
     {
         // monster rooms
-        enemies = new List<EnemyController>();
+        enemies = new List<Spider>();
+        enemyStartPositions = new List<Vector3>();
         lootchests = new List<LootChest>();
 
         for (int i = 0; i < monsterRooms.Count; i++)
@@ -556,13 +558,13 @@ public class Dungeon
                 positions.Add(new Vector3(0, 0, 0));
                 positions.Add(new Vector3(-1, 0, 0));
                 positions.Add(new Vector3(0, 0, 1));
-                
+
                 for (int k = 0; k < randomamount; k++)
                 {
-                    GameObject monsterObject = GameObject.Instantiate(DungeonManager.Instance.SpiderPrefab, monsterPosition + positions[k], Quaternion.identity) as GameObject;
-                    EnemyController monster = monsterObject.GetComponent<EnemyController>();
-                    monster.Initialize();
+                    Spider monster = GameManager.Instance.PoolingManager.SpiderObjectPool.New();
+                    monster.transform.position = monsterPosition + positions[k];
 
+                    enemyStartPositions.Add(monster.transform.position);
                     enemies.Add(monster);
                 }
             }
@@ -615,6 +617,16 @@ public class Dungeon
 
     public void RestartDungeon()
     {
-        enemies.HandleAction(e => e.Reset());
+        enemies.HandleAction(e => GameManager.Instance.PoolingManager.SpiderObjectPool.Store(e));
+        enemies = null;
+
+        enemies = new List<Spider>();
+
+        for (int i = 0; i < enemyStartPositions.Count; i++)
+        {
+            Spider monster = GameManager.Instance.PoolingManager.SpiderObjectPool.New();
+            monster.transform.position = enemyStartPositions[i];
+            enemies.Add(monster);
+        }
     }
 }

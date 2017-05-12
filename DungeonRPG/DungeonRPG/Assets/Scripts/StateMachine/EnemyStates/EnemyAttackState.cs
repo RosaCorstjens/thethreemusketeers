@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackState : State<EnemyController>
+public class EnemyAttackState : State<Spider>
 {
     bool onCooldown;
 
     //called once when entering state
-    public override void Enter(EnemyController agent)
+    public override void Enter(Spider agent)
     {
         onCooldown = false;
         return;
     }
 
     //called every frame
-    public override void Execute(EnemyController agent)
+    public override void Execute(Spider agent)
     {
         float distance = (agent.targetTransform.transform.position - agent.transform.position).magnitude;
         
@@ -31,7 +31,7 @@ public class EnemyAttackState : State<EnemyController>
     }
 
     //called when leavin stae
-    public override void Exit(EnemyController agent)
+    public override void Exit(Spider agent)
     {
         return;
     }

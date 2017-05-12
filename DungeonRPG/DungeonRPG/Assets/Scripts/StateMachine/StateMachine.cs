@@ -8,6 +8,7 @@ public class StateMachine<T>
     T owner;
 
     //state properties
+    private State<T> startState;
     private State<T> previous;
     private State<T> current;
     public State<T> Current
@@ -30,13 +31,18 @@ public class StateMachine<T>
         //fill the dictionary with the possible states
         PossibleStates = possibleStates;
 
+        this.startState = startState;
+    }
+
+    public void Init()
+    {
         //Set the startState
         SetState(startState);
     }
 
     public void Update()
     {
-        if(Current != null)
+        if (Current != null)
         {
             Current.Execute(owner);
         }
@@ -45,7 +51,7 @@ public class StateMachine<T>
     public void SetState(State<T> newState)
     {
         previous = current;
-        if(current != null)
+        if (current != null)
         {
             current.Exit(owner);
         }
