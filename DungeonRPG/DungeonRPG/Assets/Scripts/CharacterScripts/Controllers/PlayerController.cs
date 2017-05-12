@@ -9,7 +9,7 @@ using UnityEngineInternal;
 [RequireComponent(typeof(PlayerMovement))]
 //[RequireComponent(typeof(PlayerInformation))]
 
-public class PlayerController : MonoBehaviour, IControlable
+public class PlayerController : WorldObject, IControlable
 {
     public float currentHealth;
 
@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour, IControlable
     public void Initialize(Vector3 spawnPosition)
     {
         transform.position = spawnPosition;
+        pos = transform.position;
+        previousPos = pos;
 
         currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;
 
@@ -69,9 +71,11 @@ public class PlayerController : MonoBehaviour, IControlable
         IsInitialized = true;
     }
 
-    public void Update()
+    public override void Update()
     {
         if (!IsInitialized) return;
+
+        base.Update();
 
         if (onHitCooldown)
         {
@@ -138,8 +142,12 @@ public class PlayerController : MonoBehaviour, IControlable
 
     private Spider FindTarget()
     {
-        foreach (Spider enemy in DungeonManager.Instance.CurrentDungeon.Enemies)
+        List<WorldObject> possibleEnemies = DungeonManager.Instance.SpatialPartitionGrid.GetObjectsAt(DungeonManager.Instance.SpatialPartitionGrid.GetCellAt(transform.position));
+
+        foreach (WorldObject enemy in DungeonManager.Instance.CurrentDungeon.Enemies)
         {
+            if (enemy == this) break;
+
             if (enemy.gameObject.activeInHierarchy)
             {
                 // distance check
@@ -149,7 +157,7 @@ public class PlayerController : MonoBehaviour, IControlable
                     float direction = Vector3.Dot((enemy.transform.position - transform.position).normalized, transform.forward);
                     if (direction > 0)
                     {
-                        return enemy;
+                        return (Spider)enemy;
                     }
                 }
             }

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Spider : MonoBehaviour, IPoolable
+public class Spider : WorldObject, IPoolable
 {
     private Loottable loottable;
     public Vector3 startPosition;
@@ -67,6 +67,15 @@ public class Spider : MonoBehaviour, IPoolable
         gameObject.SetActive(false);
     }
 
+    public void SetPosition(Vector3 position)
+    {
+        DungeonManager.Instance.SpatialPartitionGrid.RemoveObjectFromGrid(this);
+        pos = position;
+        previousPos = pos;
+        transform.position = position;
+        AddToGrid();
+    }
+
     public void Activate()
     {
         myTransform = transform;
@@ -87,18 +96,6 @@ public class Spider : MonoBehaviour, IPoolable
         gameObject.SetActive(true);
     }
 
-    /*public void Reset()
-    {
-        FiniteStateMachine.SetState(FiniteStateMachine.PossibleStates["Reset"]);
-
-        myTransform = transform;
-        isDead = false;
-
-        loottable.Initialize(2, 5);
-
-        currentHealth = maxHealth;
-    }*/
-
     public void Deactivate()
     {
         myTransform = null;
@@ -108,6 +105,8 @@ public class Spider : MonoBehaviour, IPoolable
         loottable = null;
         //finiteStateMachine = null;
 
+        DungeonManager.Instance.SpatialPartitionGrid.RemoveObjectFromGrid(this);
+
         gameObject.SetActive(false);
     }
 
@@ -116,8 +115,9 @@ public class Spider : MonoBehaviour, IPoolable
         Destroy(this);
     }
 
-    void Update()
+    public override void Update()
     {
+        base.Update();
         FiniteStateMachine.Update();
     }
 

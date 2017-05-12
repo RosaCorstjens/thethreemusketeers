@@ -175,13 +175,13 @@ public class ItemGenerator
 
                     List<AffixRange> copyAffixContainer = affixContainer.Affixes.FindAll(a => a.EquipmentTypes.Contains(equipment) && a.MinLevel <= level && a.MaxLevel >= level);
 
-                    for (int j = 0; j < copyAffixContainer.Count; j++)
+                    /*for (int j = 0; j < copyAffixContainer.Count; j++)
                     {
                         AffixRange tempAffixRange = new AffixRange(copyAffixContainer[j].ID, copyAffixContainer[j].Name, copyAffixContainer[j].IsPrefix, copyAffixContainer[j].Rare, copyAffixContainer[j].Tier, copyAffixContainer[j].MinLevel, copyAffixContainer[j].MaxLevel, copyAffixContainer[j].Probability, copyAffixContainer[j].Modifier, copyAffixContainer[j].PossibleValues, copyAffixContainer[j].EquipmentTypes);
                         possibleAffixes.Add(tempAffixRange);
-                    }
+                    }*/
 
-                    //possibleAffixes.AddRange(affixContainer.Affixes.FindAll(a => a.EquipmentTypes.Contains(equipment) && a.MinLevel <= level && a.MaxLevel >= level));
+                    possibleAffixes.AddRange(copyAffixContainer.FindAll(a => a.EquipmentTypes.Contains(equipment) && a.MinLevel <= level && a.MaxLevel >= level));
                     List<AffixRange> chosenAffixes = new List<AffixRange>();
 
                     bool hasPre = false;

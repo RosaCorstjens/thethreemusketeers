@@ -41,6 +41,33 @@ public class Dungeon
     private int numRooms;
     private float minDistStartEnd;
 
+    private int minx = 2000, maxx = -2000, miny = 2000, maxy = -2000;
+    public Vector3 MinPosition { get { return DungeonManager.Instance.GridToWorldPosition(new Vector2(minx, miny)); } }
+    public Vector3 MaxPosition { get { return DungeonManager.Instance.GridToWorldPosition(new Vector2(maxx, maxy)); } }
+
+    private void FindMinMax()
+    {            
+        for (int i = 0; i < floors.Count; i++)
+        {
+            if (floors[i].xPos < minx)
+            {
+                minx = floors[i].xPos;
+            }
+            if(floors[i].xPos > maxx)
+            {
+                maxx = floors[i].xPos;
+            }
+
+            if (floors[i].yPos < miny)
+            {
+                miny = floors[i].yPos;
+            }
+            if (floors[i].yPos > maxy)
+            {
+                maxy = floors[i].yPos;
+            }
+        }
+    }
 
     public void ClearDungeon()
     {
@@ -98,6 +125,9 @@ public class Dungeon
         InstantiateFloors();
         RedefineRoomsAndCorridors();
         EvaluateDungeon();
+
+        FindMinMax();
+
     }
 
     public void BuildDungeon()
@@ -562,8 +592,8 @@ public class Dungeon
                 for (int k = 0; k < randomamount; k++)
                 {
                     Spider monster = GameManager.Instance.PoolingManager.SpiderObjectPool.New();
-                    monster.transform.position = monsterPosition + positions[k];
-
+                    monster.SetPosition(monsterPosition + positions[k]);
+                    
                     enemyStartPositions.Add(monster.transform.position);
                     enemies.Add(monster);
                 }

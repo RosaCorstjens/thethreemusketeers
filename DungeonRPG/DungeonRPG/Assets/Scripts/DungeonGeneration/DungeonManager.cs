@@ -20,6 +20,9 @@ public class DungeonManager
         }
     }
 
+    private Grid spatialPartitionGrid;
+    public Grid SpatialPartitionGrid { get { return spatialPartitionGrid; } }
+
     public int columns = 1000;                                 // The number of columns on the board (how wide it will be).
     public int rows = 1000;                                    // The number of rows on the board (how tall it will be).
     public IntRange numRooms = new IntRange(15, 20);          // The range of the number of rooms there can be.
@@ -74,7 +77,19 @@ public class DungeonManager
 
         floor = 1;
 
-        StartNewDungeon();
+        GetDungeon();
+
+        ActiveDungeon = CurrentDungeon;
+
+        Vector3 origin = new Vector3(ActiveDungeon.MinPosition.x - 5, 10, ActiveDungeon.MinPosition.z - 5);
+        int width = Mathf.RoundToInt(ActiveDungeon.MaxPosition.x - ActiveDungeon.MinPosition.x) + 10;
+        int height = Mathf.RoundToInt(ActiveDungeon.MaxPosition.z - ActiveDungeon.MinPosition.z) + 10;
+        spatialPartitionGrid = new Grid(origin, width, height);
+        spatialPartitionGrid.BuildGrid();
+
+        ActiveDungeon.BuildDungeon();
+
+        //StartNewDungeon();
 
         GameManager.Instance.ActiveCharacterInformation.PlayerController.Initialize(CurrentDungeon.StartPosition);
     }
@@ -83,12 +98,9 @@ public class DungeonManager
     {
         // TO DO: Set parameters to match the players level. 
 
-        GetDungeon();
 
-        ActiveDungeon = CurrentDungeon;
 
         // TO DO: wait till now to do all building stuff and active this shit!
-        ActiveDungeon.BuildDungeon();
 
         //CurrentDungeon.GenerateDungeon(GameManager.Instance.ActiveCharacterInformation.Level, columns, rows, numRooms.GetRandomInRange(), minDistStartEnd);//GenerateDungeon();//GetNewDungeon(dungeonType);
     }

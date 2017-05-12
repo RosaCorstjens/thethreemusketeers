@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         poolingManager = new PoolingManager();
         poolingManager.Initialize();
 
-        RenderSettings.fog = true;
+        //RenderSettings.fog = true;
         //RenderSettings.ambientLight = new Color(0, 0, 255);
         //RenderSettings.ambientIntensity = 0.00001f;
         StartState(gameState);

@@ -22,6 +22,12 @@ public class ItemInstance : MonoBehaviour
 
         gameObject.SetActive(false);
 
+        //BaseItem x = new BaseArmor("Cool armor", "nope", ItemType.Equipment, 1, EquipmentType.Armor, StatTypes.Armor, null, ArmorType.Chest);
+
+        //BaseArmor y = (BaseArmor)x;
+
+        //Debug.Log(y.ArmorType);
+
         this.itemInfo = itemInfo;
         this.quality = quality;
 
