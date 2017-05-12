@@ -7,6 +7,7 @@ using System.IO;
 
 public class ItemGenerator
 {
+    ItemFactory factory = new ItemFactory();
     private GameObject dropPrefab;
     public GameObject DropPrefab { get { if (dropPrefab == null) dropPrefab = Resources.Load<GameObject>("Prefabs/Items/DroppedItems/ItemDrop"); return dropPrefab; } }
 
@@ -53,7 +54,8 @@ public class ItemGenerator
     // TO DO: implement loottable system. 
     public List<ItemInstance> GenerateRandomItem(int amount = 1)
     {
-        // Will be filled with all items and be returned. 
+        return factory.GetItemInstances(amount);
+        /*// Will be filled with all items and be returned. 
         List<ItemInstance> returnList = new List<ItemInstance>(amount);
 
         // Create as many items as 'amount'.
@@ -307,6 +309,6 @@ public class ItemGenerator
 
         } 
 
-        return returnList;
+        return returnList;*/
     }
 }
