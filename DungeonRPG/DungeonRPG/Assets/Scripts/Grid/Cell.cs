@@ -32,8 +32,6 @@ public class Cell
         Y = y;
         neighbors = new List<Cell>();
         objects = new List<WorldObject>();
-
-        GameObject.Instantiate(ItemManager.Instance.ItemGenerator.DropPrefab, DungeonManager.Instance.SpatialPartitionGrid.GridToWorld(X, Y), Quaternion.identity);
     }
 
     public void AddObject(WorldObject obj)
