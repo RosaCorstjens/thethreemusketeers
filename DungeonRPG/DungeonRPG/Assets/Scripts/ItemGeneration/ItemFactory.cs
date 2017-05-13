@@ -233,7 +233,7 @@ public class ItemFactory
 
     public ItemInstance GetItemInstance(ItemType type)
     {
-        Quality quality = getQuality();
+        Quality quality = GetQuality();
 
         int level = (int)((int)(quality + 1) * UnityEngine.Random.Range(1, 2.5f));
         int maxTier = (Mathf.FloorToInt((float)(GameManager.Instance.ActiveCharacterInformation.Level + 3) / 10)) + 1;
@@ -417,7 +417,7 @@ public class ItemFactory
         return returnInstances;
     }
 
-    Quality getQuality()
+    Quality GetQuality()
     {
         // Determine quality by rolling and checking the probabilty.
         Quality quality = Quality.Common;
@@ -437,17 +437,4 @@ public class ItemFactory
         }
         return quality;
     }
-
-    // COLOR STUFF
-    [SerializeField]
-    private List<Color> qualityColors = new List<Color>();
-    public List<Color> QualityColors { get { return qualityColors; } }
-
-    [SerializeField]
-    private List<string> qualityHexColors = new List<string>();
-    public List<string> QualityHexColors { get { return qualityHexColors; } }
-
-    [SerializeField]
-    private List<Material> qualityMaterials = new List<Material>();
-    public List<Material> QualityMaterials { get { return qualityMaterials; } }
 }
