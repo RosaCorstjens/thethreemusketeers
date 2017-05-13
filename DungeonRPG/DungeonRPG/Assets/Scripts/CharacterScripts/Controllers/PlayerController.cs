@@ -256,6 +256,29 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Hitted(1));
     }
 
+    public void GotHit(float dmg)
+    {
+        // if shield, adjust dmg based on block chance and amount
+        if (inOffHand)
+        {
+            float randomroll = Random.Range(0, 100);
+            if (randomroll < GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.BlockChance))
+            {
+                dmg -= GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.BlockAmount);
+            }
+        }
+
+        AdjustCurrentHealth(-dmg);
+
+        if (regenCoroutine != null)
+        {
+            StopCoroutine(regenCoroutine);
+        }
+        regenCoroutine = StartCoroutine(PauseRegen(regenCooldown));
+
+        StartCoroutine(Hitted(1));
+    }
+
     private IEnumerator Hitted(float cooldownTime)
     {
         onHitCooldown = true;
