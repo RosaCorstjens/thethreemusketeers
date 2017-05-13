@@ -7,6 +7,8 @@ using Object = UnityEngine.Object;
 
 public class Cell
 {
+    static List<Vector2> directions = new List<Vector2>();
+
     public int X { get; private set; }
     public int Y { get; private set; }
 
@@ -46,15 +48,17 @@ public class Cell
 
     public void FindNeighbors()
     {
-        List<Vector2> directions = new List<Vector2>();
-        directions.Add(new Vector2(1, 0));
-        directions.Add(new Vector2(-1, 0));
-        directions.Add(new Vector2(0, 1));
-        directions.Add(new Vector2(0, -1));
-        directions.Add(new Vector2(1, 1));
-        directions.Add(new Vector2(-1, -1));
-        directions.Add(new Vector2(-1, 1));
-        directions.Add(new Vector2(1, -1));
+        if(directions.Count == 0)
+        {
+            directions.Add(new Vector2(1, 0));
+            directions.Add(new Vector2(-1, 0));
+            directions.Add(new Vector2(0, 1));
+            directions.Add(new Vector2(0, -1));
+            directions.Add(new Vector2(1, 1));
+            directions.Add(new Vector2(-1, -1));
+            directions.Add(new Vector2(-1, 1));
+            directions.Add(new Vector2(1, -1));
+        }
 
         for (int i = 0; i < directions.Count; i++)
         {

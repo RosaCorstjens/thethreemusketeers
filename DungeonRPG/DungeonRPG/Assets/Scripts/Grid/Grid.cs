@@ -96,6 +96,7 @@ public class Grid
     {
         Vector2 oldCell = WorldToGrid(obj.PreviousPos);
         Vector2 newCell = WorldToGrid(obj.Pos);
+        Debug.Log("Updating object in grid");
 
         cells[(int)oldCell.x, (int)oldCell.y].RemoveObject(obj);
         cells[(int)newCell.x, (int)newCell.y].AddObject(obj);
