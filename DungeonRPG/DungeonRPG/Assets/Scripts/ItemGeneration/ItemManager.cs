@@ -28,12 +28,19 @@ public class ItemManager
         }
     }
 
-    private ItemContainer itemContainer = new ItemContainer();
-    public ItemContainer ItemContainer { get { return itemContainer; } }
+    private ItemFactory factory;
+    public ItemFactory Factory
+    {
+        get
+        {
+            return factory;
+        }
 
-    private ItemGenerator itemGenerator;
-    public ItemGenerator ItemGenerator { get { return itemGenerator; } }
-
+        set
+        {
+            factory = value;
+        }
+    }
     public void Initialize()
     {
         // quality colors
@@ -54,23 +61,8 @@ public class ItemManager
         qualityMaterials.Add(Resources.Load<Material>("Materials/Items/DroppedItems/emissive_yellow"));
         qualityMaterials.Add(Resources.Load<Material>("Materials/Items/DroppedItems/emissive_orange"));
 
-        itemGenerator = new ItemGenerator();
-        itemGenerator.Initialize();
-        ReadItemXML();
-        Debug.Log("Items: "+ itemContainer.ItemAmount());
-    }
-
-    public void ReadItemXML()
-    {
-        Type[] itemTypes = { typeof(BasePotion), typeof(BaseShield), typeof(BaseWeapon), typeof(BaseArmor), typeof(BaseJewelry) };
-
-        XmlSerializer serializer = new XmlSerializer(typeof(ItemContainer), itemTypes);
-
-        TextReader textReader = new StreamReader(Application.streamingAssetsPath + "/Items.xml");
-
-        itemContainer = (ItemContainer) serializer.Deserialize(textReader);
-
-        textReader.Close();
+        Factory = new ItemFactory();
+        Debug.Log("Items: "+ Factory.ItemAmount());
     }
 
     // COLOR STUFF
