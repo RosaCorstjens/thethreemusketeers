@@ -108,9 +108,9 @@ public class InventoryManager
         List<Stat> baseStats = new List<Stat>();
         Equipment equipment = Equipment.Weapon;
         string generatedName = "";
-        GameObject toAdd = GameObject.Instantiate(ItemManager.Instance.ItemGenerator.DropPrefab);
+        GameObject toAdd = GameObject.Instantiate(ItemManager.Instance.Factory.DropPrefab);
 
-        BaseWeapon baseItem = ItemManager.Instance.ItemContainer.Weapons[0];
+        BaseWeapon baseItem = (BaseWeapon)ItemManager.Instance.Factory.GetFlyWeightById(ItemType.Weapon, 0);
 
         generatedName = baseItem.Name;
 

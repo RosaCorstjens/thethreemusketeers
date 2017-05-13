@@ -20,7 +20,7 @@ class Loottable
 
         items = new List<GameObject>();
 
-        ItemManager.Instance.ItemGenerator.GenerateRandomItem(amount).HandleAction(i => items.Add(i.gameObject));
+        ItemManager.Instance.Factory.GetItemInstances(amount).HandleAction(i => items.Add(i.gameObject));
     }
 
     public void DropItems(Vector3 pos)

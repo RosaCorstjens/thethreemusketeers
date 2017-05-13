@@ -58,6 +58,11 @@ public class ItemFactory
         textReader.Close();
     }
 
+    public int ItemAmount()
+    {
+        return itemContainer.ItemAmount();
+    }
+
     private void LoadItemXML()
     {
         Type[] itemTypes = { typeof(BasePotion), typeof(BaseShield), typeof(BaseWeapon), typeof(BaseArmor), typeof(BaseJewelry) };
@@ -163,9 +168,37 @@ public class ItemFactory
         }
 
         return affixStats;
-    } 
+    }
+
+    public BaseItem GetFlyWeightById(ItemType type, int id)
+    {
+        switch (type)
+        {
+            case ItemType.Armor:
+                return itemContainer.Armor[id];
+
+            case ItemType.Shield:
+                return itemContainer.Shields[id];
+
+            case ItemType.Jewerly:
+                return itemContainer.Jewelry[id];
+
+            case ItemType.Weapon:
+                return itemContainer.Weapons[id];
+
+            case ItemType.Potion:
+                return itemContainer.Potions[id];
+
+            case ItemType.Equipment:
+                //TODO: remove equipment, for now selects one of the equipment types as random
+                int randType = (int)UnityEngine.Random.Range(0, 4);
+                return GetFlyWeightById((ItemType)1 + randType, id);
+
+            default: return null;
+        }
+    }
         
-    BaseItem getFlyWeight(ItemType type, int minTier, int maxTier)
+    BaseItem GetFlyWeight(ItemType type, int minTier, int maxTier)
     {
         switch (type)
         {
@@ -192,12 +225,13 @@ public class ItemFactory
             case ItemType.Equipment:
                 //TODO: remove equipment, for now selects one of the equipment types as random
                 int randType = (int)UnityEngine.Random.Range(0, 4);
-                return getFlyWeight((ItemType)1 + randType, minTier, maxTier);
+                return GetFlyWeight((ItemType)1 + randType, minTier, maxTier);
+
             default: return null;
         }
     }
 
-    ItemInstance GetItemInstance(ItemType type)
+    public ItemInstance GetItemInstance(ItemType type)
     {
         Quality quality = getQuality();
 
@@ -249,7 +283,7 @@ public class ItemFactory
                 baseStats.Add(stat);
 
                 ArmorInstance armorInstance = toAdd.AddComponent<ArmorInstance>();
-                armorInstance.Initialize((BaseArmor)getFlyWeight(ItemType.Armor, minTier, maxTier), quality, level, generatedName, baseStats, armorAffixStats);
+                armorInstance.Initialize((BaseArmor)GetFlyWeight(ItemType.Armor, minTier, maxTier), quality, level, generatedName, baseStats, armorAffixStats);
                 return armorInstance;
 
                 break;
@@ -289,7 +323,7 @@ public class ItemFactory
                 baseStats.Add(blockAmount);
 
                 ShieldInstance shieldInstance = toAdd.AddComponent<ShieldInstance>();
-                shieldInstance.Initialize((BaseShield)getFlyWeight(ItemType.Shield, minTier, maxTier), quality, level, generatedName, baseStats, shieldAffixStats);
+                shieldInstance.Initialize((BaseShield)GetFlyWeight(ItemType.Shield, minTier, maxTier), quality, level, generatedName, baseStats, shieldAffixStats);
                 return shieldInstance;
 
             case ItemType.Jewerly:
@@ -323,7 +357,7 @@ public class ItemFactory
 
             case ItemType.Weapon:
                 equipment = Equipment.Weapon;
-                BaseWeapon weapon = (BaseWeapon)getFlyWeight(ItemType.Weapon, minTier, maxTier);
+                BaseWeapon weapon = (BaseWeapon)GetFlyWeight(ItemType.Weapon, minTier, maxTier);
                 generatedName = weapon.Name;
                 level += (weapon.Tier - 1) * 10;
 
@@ -352,12 +386,12 @@ public class ItemFactory
                 baseStats.Add(attackSpeed);
 
                 WeaponInstance weaponInstance = toAdd.AddComponent<WeaponInstance>();
-                weaponInstance.Initialize((BaseWeapon)getFlyWeight(ItemType.Weapon, minTier, maxTier), quality, level, generatedName, baseStats, weaponAffixStats);
+                weaponInstance.Initialize((BaseWeapon)GetFlyWeight(ItemType.Weapon, minTier, maxTier), quality, level, generatedName, baseStats, weaponAffixStats);
                 return weaponInstance;
 
             case ItemType.Potion:
                 PotionInstance potionInstance = toAdd.AddComponent<PotionInstance>();
-                potionInstance.Initialize(getFlyWeight(ItemType.Potion, minTier, maxTier), quality);
+                potionInstance.Initialize((BasePotion)GetFlyWeight(ItemType.Potion, minTier, maxTier), quality);
                 return potionInstance;
 
             case ItemType.Equipment:
@@ -368,9 +402,19 @@ public class ItemFactory
 
             case ItemType.Random:
                 int randType = (int)UnityEngine.Random.Range(0, 5);
-                return GetItemInstance((ItemType)randType);
+                return GetItemInstance((ItemType)1 + randType);
         }
         return null;
+    }
+
+    public List<ItemInstance> GetItemInstances(int amount)
+    {
+        List<ItemInstance> returnInstances = new List<ItemInstance>();
+        for (int i = 0; i < amount; i++)
+        {
+            returnInstances.Add(GetItemInstance(ItemType.Random));
+        }
+        return returnInstances;
     }
 
     Quality getQuality()
@@ -392,16 +436,6 @@ public class ItemFactory
             }
         }
         return quality;
-    }
-
-    public List<ItemInstance> GetItemInstances(int amount)
-    {
-        List<ItemInstance> returnInstances = new List<ItemInstance>();
-        for (int i = 0; i < amount; i++)
-        {
-            returnInstances.Add(GetItemInstance(ItemType.Random));
-        }
-        return returnInstances;
     }
 
     // COLOR STUFF
