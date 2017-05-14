@@ -7,9 +7,9 @@ public class JewerlyInstance : EquipmentInstance
     private BaseJewelry baseJewelry;
     public BaseJewelry BaseJewelry { get { return baseJewelry; } }
 
-    public void Initialize(BaseJewelry itemInfo, Quality quality, int level, string generatedName, List<Stat> baseStats = null, List<Affix> affixes = null)
+    public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseJewelry jewelryData)
     {
-        base.Initialize(itemInfo, quality, level, generatedName, baseStats, affixes);
-        baseJewelry = itemInfo;
+        base.Initialize(itemData, equipmentData);
+        baseJewelry = jewelryData;
     }
 }

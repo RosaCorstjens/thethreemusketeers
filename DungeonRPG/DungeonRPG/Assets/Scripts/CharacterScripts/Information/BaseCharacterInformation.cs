@@ -73,14 +73,14 @@ public class BaseCharacterInformation
 
     public void AddStats(EquipmentInstance item)
     {
-        for (int i = 0; i < item.Modifiers.Count; i++)
+        for (int i = 0; i < item.EquipmentData.Modifiers.Count; i++)
         {
-            if (item.Modifiers[i].affected == StatTypes.HealthPerHit)
+            if (item.EquipmentData.Modifiers[i].affected == StatTypes.HealthPerHit)
             {
-                Debug.Log("item hph: "+ item.Modifiers[i].value);
+                Debug.Log("item hph: "+ item.EquipmentData.Modifiers[i].value);
             }
-            stats.AddModifier(item.Modifiers[i]);
-            if (item.Modifiers[i].affected == StatTypes.HealthPerHit)
+            stats.AddModifier(item.EquipmentData.Modifiers[i]);
+            if (item.EquipmentData.Modifiers[i].affected == StatTypes.HealthPerHit)
             {
                 Debug.Log("stat hph: " + stats.Get(StatTypes.HealthPerHit));
             }
@@ -89,9 +89,9 @@ public class BaseCharacterInformation
 
     public void RemoveStats(EquipmentInstance item)
     {
-        for (int i = 0; i < item.Modifiers.Count; i++)
+        for (int i = 0; i < item.EquipmentData.Modifiers.Count; i++)
         {
-            stats.RemoveModifier(item.Modifiers[i]);
+            stats.RemoveModifier(item.EquipmentData.Modifiers[i]);
         }
     }
 

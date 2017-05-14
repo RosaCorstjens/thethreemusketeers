@@ -26,8 +26,8 @@ public class EquipmentSlot : SlotBase
 
         item.Equipped = true;
 
-        if (item.BaseEquipment.EquipmentType == EquipmentType.Weapon) GameManager.Instance.ActiveCharacterInformation.PlayerController.SetHand(item.GetComponent<WeaponInstance>());
-        if (item.BaseEquipment.EquipmentType == EquipmentType.Shield) GameManager.Instance.ActiveCharacterInformation.PlayerController.SetOffHand(item.GetComponent<ShieldInstance>());
+        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Weapon) GameManager.Instance.ActiveCharacterInformation.PlayerController.SetHand(item.GetComponent<WeaponInstance>());
+        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Shield) GameManager.Instance.ActiveCharacterInformation.PlayerController.SetOffHand(item.GetComponent<ShieldInstance>());
 
         emptyIcon.gameObject.SetActive(false);
 
@@ -49,8 +49,8 @@ public class EquipmentSlot : SlotBase
 
     public override void ClearSlot()
     {
-        if (item.BaseEquipment.EquipmentType == EquipmentType.Weapon) GameManager.Instance.ActiveCharacterInformation.PlayerController.RemoveFromHand();
-        if (item.BaseEquipment.EquipmentType == EquipmentType.Shield) GameManager.Instance.ActiveCharacterInformation.PlayerController.RemoveFromOffHand();
+        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Weapon) GameManager.Instance.ActiveCharacterInformation.PlayerController.RemoveFromHand();
+        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Shield) GameManager.Instance.ActiveCharacterInformation.PlayerController.RemoveFromOffHand();
 
         base.ClearSlot();
 

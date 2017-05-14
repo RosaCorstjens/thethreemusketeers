@@ -166,16 +166,16 @@ public class DetailedItemInformation : MonoBehaviour
         gameObject.SetActive(true);
 
         // Set basic information
-        icon.spriteName = item.ItemInfo.SpriteName;
-        qualityColor.color = ItemManager.Instance.QualityColors[(int)item.Quality];
+        icon.spriteName = item.ItemData.BaseItem.SpriteName;
+        qualityColor.color = ItemManager.Instance.QualityColors[(int)item.ItemData.Quality];
 
-        generatedName.text = item.GetTitle();
+        generatedName.text = item.EquipmentData.TitleText;
 
-        if (item.BaseEquipment.EquipmentType != EquipmentType.Jewelry)
+        if (item.EquipmentData.BaseEquipment.EquipmentType != EquipmentType.Jewelry)
         {
             mainStatType.gameObject.SetActive(true);
             mainStatNumber.gameObject.SetActive(true);
-            mainStatType.text = item.BaseEquipment.MainStat.ToString();
+            mainStatType.text = item.EquipmentData.BaseEquipment.MainStat.ToString();
             mainStatNumber.text = "" + item.MainStatValue;
         }
         else
@@ -185,47 +185,49 @@ public class DetailedItemInformation : MonoBehaviour
         }
 
         // Set standard stats.
-        requiredLvl.text = "Required level: "+ item.Level; 
-        itemType.text = "[" + ItemManager.Instance.QualityHexColors[(int)item.Quality] + "]" + item.Quality.ToString() + " " + item.ItemInfo.Name + "[-]";
+        requiredLvl.text = "Required level: "+ item.EquipmentData.Level; 
+        itemType.text = "[" + ItemManager.Instance.QualityHexColors[(int)item.ItemData.Quality] + "]" + item.ItemData.Quality.ToString() + " " + item.ItemData.BaseItem.Name + "[-]";
 
         equipped.SetActive(item.Equipped);
         useLabel.text = item.Equipped ? "Deequip" : "Equip";
 
         // Set extra stats if it has any. 
-        if (item.AffixStats != null)
+        if (item.EquipmentData.AffixStats != null)
         {
             // foreach to enble looping over a dictionary.
-            for(int i = 0; i < item.AffixStats.Count; i++)
+            for(int i = 0; i < item.EquipmentData.AffixStats.Count; i++)
             {
-                extraStatLabels[i].text = "+ " + item.AffixStats[i].Modifier.value + (item.AffixStats[i].IsPercent ? "% " : " ") + statTypeStringsForUI[item.AffixStats[i].Modifier.affected];
+                extraStatLabels[i].text = "+ " + item.EquipmentData.AffixStats[i].Modifier.value + (item.EquipmentData.AffixStats[i].IsPercent ? "% " : " ") + statTypeStringsForUI[item.EquipmentData.AffixStats[i].Modifier.affected];
                 extraStatObjects[i].transform.SetParent(extraStatGrid.transform);
                 extraStatObjects[i].SetActive(true);
             }
 
             extraStatGrid.Reposition();
 
-            extraStatParent.GetComponent<UIWidget>().SetAnchor(standardStats, 0, -20 + (item.AffixStats.Count * -15), 0, -40);
+            extraStatParent.GetComponent<UIWidget>().SetAnchor(standardStats, 0, -20 + (item.EquipmentData.AffixStats.Count * -15), 0, -40);
 
             extraStatParent.gameObject.SetActive(true);
         }
 
         // Set the item related stats if it has any. 
-        if (item.BaseEquipment.EquipmentType == EquipmentType.Shield)
+        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Shield)
         {
-            blockChance.text = item.BaseStats.Find(b => b.StatType == StatTypes.BlockChance).Value + "% Chance to Block";
-            blockAmount.text = item.BaseStats.Find(b => b.StatType == StatTypes.BlockAmount).Value + " Block Amount";
+            blockChance.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.BlockChance).Value + "% Chance to Block";
+            blockAmount.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.BlockAmount).Value + " Block Amount";
 
-            shieldRelatedStats.GetComponent<UIWidget>().SetAnchor(item.AffixStats != null ? extraStatParent : standardStats, 0, -50, 0, item.AffixStats != null ? -20 + (item.AffixStats.Count * -15) : -50);
+            shieldRelatedStats.GetComponent<UIWidget>().SetAnchor(item.EquipmentData.AffixStats != null ? 
+                extraStatParent : standardStats, 0, -50, 0, item.EquipmentData.AffixStats != null ? -20 + (item.EquipmentData.AffixStats.Count * -15) : -50);
             shieldRelatedStats.gameObject.SetActive(true);
         }
 
-        if (item.BaseEquipment.EquipmentType == EquipmentType.Weapon)
+        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Weapon)
         {
-            damage.text = item.BaseStats.Find(b => b.StatType == StatTypes.WeaponDamage).Value + " Damage";
-            attackSpeed.text = item.BaseStats.Find(b => b.StatType == StatTypes.AttackSpeed).Value + " Attacks per Second";
+            damage.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.WeaponDamage).Value + " Damage";
+            attackSpeed.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.AttackSpeed).Value + " Attacks per Second";
             xHanded.text = item.GetComponent<WeaponInstance>().BaseWeapon.Handed.ToString();
 
-            weaponRelatedStats.GetComponent<UIWidget>().SetAnchor(item.AffixStats != null ? extraStatParent : standardStats, 0, -50, 0, item.AffixStats != null ? -20 + (item.AffixStats.Count * -15) : -50);
+            weaponRelatedStats.GetComponent<UIWidget>().SetAnchor(item.EquipmentData.AffixStats != null ? 
+                extraStatParent : standardStats, 0, -50, 0, item.EquipmentData.AffixStats != null ? -20 + (item.EquipmentData.AffixStats.Count * -15) : -50);
             weaponRelatedStats.gameObject.SetActive(true);
         }
     }

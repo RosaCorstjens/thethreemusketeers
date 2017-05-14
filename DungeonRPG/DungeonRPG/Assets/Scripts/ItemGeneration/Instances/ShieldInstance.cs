@@ -10,13 +10,13 @@ public class ShieldInstance : EquipmentInstance
     private GameObject shieldObject;
     public GameObject ShieldObject { get { return shieldObject; } }
 
-    public void Initialize(BaseShield itemInfo, Quality quality, int level, string generatedName, List<Stat> baseStats, List<Affix> affixes = null)
+    public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseShield shieldData)
     {
-        base.Initialize(itemInfo, quality, level, generatedName, baseStats, affixes);
-        baseShield = itemInfo;
+        base.Initialize(itemData, equipmentData);
+        baseShield = shieldData;
 
-        shieldObject = GameObject.Instantiate(Resources.Load<GameObject>(baseShield.PrefabPath));
-        shieldObject.SetActive(false);
+        //shieldObject = GameObject.Instantiate(Resources.Load<GameObject>(equipmentData.BaseEquipment.baseShield.PrefabPath));
+        //shieldObject.SetActive(false);
     }
 
 }

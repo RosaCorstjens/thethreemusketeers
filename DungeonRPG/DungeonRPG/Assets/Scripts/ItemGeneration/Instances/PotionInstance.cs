@@ -6,16 +6,10 @@ public class PotionInstance : ItemInstance
     private BasePotion basePotion;
     public BasePotion BasePotion { get { return basePotion; } }
 
-    public void Initialize(BasePotion itemInfo, Quality quality)
+    public void Initialize(ItemPrivateData itemData, BasePotion potionData)
     {
-        base.Initialize(itemInfo, quality);
-
-        gameObject.SetActive(false);
-
-        basePotion = itemInfo;
-
-        dropped = false;
-
+        base.Initialize(itemData);
+        basePotion = potionData;
         gameObject.GetComponent<Renderer>().material = ItemManager.Instance.QualityMaterials[0];
     }
 

@@ -4,28 +4,18 @@ using UnityEngine;
 using System.Text;
 
 [RequireComponent(typeof(BoxCollider))]
-public class ItemInstance : MonoBehaviour 
+public class ItemInstance : MonoBehaviour
 {
-    protected BaseItem itemInfo;
-    public BaseItem ItemInfo { get { return itemInfo; } }
+    protected ItemPrivateData itemData;
+    public ItemPrivateData ItemData { get { return itemData; } }
 
-    protected bool dropped;                               
-    public bool Dropped { get { return dropped; } set { dropped = value; } }
-
-    protected Quality quality;
-    public Quality Quality { get { return quality; } }
-
-    public virtual void Initialize(BaseItem itemInfo, Quality quality)
+    public virtual void Initialize(ItemPrivateData itemData)
     {
-        // TO DO: give potions and gold their own material
-        gameObject.GetComponent<Renderer>().material = ItemManager.Instance.QualityMaterials[(int)quality];
+        this.itemData = itemData;
 
+        gameObject.GetComponent<Renderer>().material = ItemManager.Instance.QualityMaterials[(int)itemData.Quality];
         gameObject.SetActive(false);
-
-        this.itemInfo = itemInfo;
-        this.quality = quality;
-
-        dropped = false;
+        itemData.Dropped = false;
     }
 
     public virtual void Use()
@@ -43,7 +33,7 @@ public class ItemInstance : MonoBehaviour
                 return;
             }
             gameObject.SetActive(false);
-            dropped = false;
+            itemData.Dropped = false;
         }
     }
 
@@ -54,8 +44,7 @@ public class ItemInstance : MonoBehaviour
 
     public virtual void Drop()
     {
-        dropped = true;
-
+        itemData.Dropped = true;
         gameObject.SetActive(true);
     }
 }

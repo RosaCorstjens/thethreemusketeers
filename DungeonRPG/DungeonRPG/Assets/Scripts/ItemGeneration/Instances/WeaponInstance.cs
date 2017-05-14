@@ -10,13 +10,12 @@ public class WeaponInstance : EquipmentInstance
     private GameObject weaponObject;
     public GameObject WeaponObject { get { return weaponObject; } }
 
-    public void Initialize(BaseWeapon itemInfo, Quality quality, int level, string generatedName, List<Stat> baseStats, List<Affix> affixes = null)
+    public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseWeapon weaponInfo)
     {
-        base.Initialize(itemInfo, quality, level, generatedName, baseStats, affixes);
-        baseWeapon = itemInfo;
+        base.Initialize(itemData, equipmentData);
+        baseWeapon = weaponInfo;
 
-        weaponObject = GameObject.Instantiate(Resources.Load<GameObject>(baseWeapon.PrefabPath));
+        weaponObject = Instantiate(Resources.Load<GameObject>(baseWeapon.PrefabPath));
         weaponObject.SetActive(false);
     }
-
 }

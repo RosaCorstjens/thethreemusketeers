@@ -338,7 +338,7 @@ public class InventoryManager
         if (item == null) item = currentActiveSlot.CurrentItem;
 
         // not a sufficient level
-        if (item.Level > GameManager.Instance.ActiveCharacterInformation.Level) return false;
+        if (item.EquipmentData.Level > GameManager.Instance.ActiveCharacterInformation.Level) return false;
 
         if (actionMenuOn) HideActionMenu();
 
@@ -346,15 +346,15 @@ public class InventoryManager
         EquipmentSlotType itemsType;
 
         // Check for shield
-        if (item.BaseEquipment.EquipmentType == EquipmentType.Shield)
+        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Shield)
         {
             itemsType = EquipmentSlotType.OffHand;
         }
-        else if (item.BaseEquipment.EquipmentType == EquipmentType.Weapon)
+        else if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Weapon)
         {
             itemsType = EquipmentSlotType.MainHand;
         }
-        else if(item.BaseEquipment.EquipmentType == EquipmentType.Armor)
+        else if(item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Armor)
         {
             itemsType = (EquipmentSlotType)(int)item.GetComponent<ArmorInstance>().BaseArmor.ArmorType;
         }
@@ -398,7 +398,7 @@ public class InventoryManager
     //    {
     //        if (!slots[i].IsEmpty)
     //        {
-    //            if (slots[i].CurrentItem.ItemInfo == item.ItemInfo && slots[i].IsAvailable)
+    //            if (slots[i].CurrentItem.BaseItem == item.BaseItem && slots[i].IsAvailable)
     //            {
     //                slots[i].AddItem(item);
 
@@ -440,8 +440,8 @@ public class InventoryManager
     {
         if (actionMenuOn || state != InventoryStates.Inventory) return;
 
-        tooltipTitle.text = item.GetTitle();
-        tooltipText.text = item.GetTooltipText();
+        tooltipTitle.text = item.EquipmentData.TitleText;
+        tooltipText.text = item.EquipmentData.StatsText;
 
         tooltip.SetActive(true);
 

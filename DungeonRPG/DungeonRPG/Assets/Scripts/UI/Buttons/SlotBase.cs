@@ -67,8 +67,8 @@ public class SlotBase : ButtonBase
 
         this.item = item;
 
-        iconSprite.spriteName = item.ItemInfo.SpriteName;
-        qualityColor.color = ItemManager.Instance.QualityColors[(int)item.Quality];
+        iconSprite.spriteName = item.ItemData.BaseItem.SpriteName;
+        qualityColor.color = ItemManager.Instance.QualityColors[(int)item.ItemData.Quality];
     }
 
     // Double click

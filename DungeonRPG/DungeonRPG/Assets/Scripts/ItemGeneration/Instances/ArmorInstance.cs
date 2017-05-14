@@ -7,9 +7,9 @@ public class ArmorInstance : EquipmentInstance
     private BaseArmor baseArmor;
     public BaseArmor BaseArmor { get { return baseArmor; } }
 
-    public void Initialize(BaseArmor itemInfo, Quality quality, int level, string generatedName, List<Stat> baseStats, List<Affix> affixes = null)
+    public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseArmor armorData)
     {
-        base.Initialize(itemInfo, quality, level, generatedName, baseStats, affixes);
-        baseArmor = itemInfo;
+        base.Initialize(itemData, equipmentData);
+        baseArmor = armorData;
     }
 }
