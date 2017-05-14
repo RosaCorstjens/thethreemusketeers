@@ -248,7 +248,6 @@ public class ItemFactory
         string prefix = "";
         string suffix = "";
 
-
         switch (type)
         {
             case ItemType.Armor:
