@@ -67,7 +67,8 @@ public class SlotBase : ButtonBase
 
         this.item = item;
 
-        iconSprite.spriteName = item.ItemData.BaseItem.SpriteName;
+        iconSprite.spriteName = this.item.BaseEquipment.SpriteName;
+
         qualityColor.color = ItemManager.Instance.QualityColors[(int)item.ItemData.Quality];
     }
 

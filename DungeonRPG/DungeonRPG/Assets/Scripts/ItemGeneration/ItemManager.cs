@@ -62,7 +62,6 @@ public class ItemManager
         qualityMaterials.Add(Resources.Load<Material>("Materials/Items/DroppedItems/emissive_orange"));
 
         Factory = new ItemFactory();
-        Debug.Log("Items: "+ Factory.ItemAmount());
     }
 
     // COLOR STUFF

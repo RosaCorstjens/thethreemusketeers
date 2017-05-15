@@ -9,7 +9,7 @@ public class JewerlyInstance : EquipmentInstance
 
     public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseJewelry jewelryData)
     {
-        base.Initialize(itemData, equipmentData);
+        base.Initialize(itemData, equipmentData, jewelryData);
         baseJewelry = jewelryData;
     }
 }

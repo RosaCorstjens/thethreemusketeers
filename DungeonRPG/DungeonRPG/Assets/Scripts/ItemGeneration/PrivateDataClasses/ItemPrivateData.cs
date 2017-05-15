@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ItemPrivateData  {
 
-    public ItemPrivateData(bool dropped, Quality quality)
+    public ItemPrivateData(Quality quality)
     {
-        this.dropped = dropped;
+        this.dropped = false;
         this.quality = quality;
     }
 

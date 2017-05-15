@@ -12,17 +12,6 @@
         <max>20</max>
       </RestoreAmount>
     </BasePotion>
-    <BasePotion>
-      <Name>Mana Potion</Name>
-      <SpriteName>hp</SpriteName>
-      <ItemType>Potion</ItemType>
-      <Tier>1</Tier>
-      <PotionType>Mana</PotionType>
-      <RestoreAmount>
-        <min>5</min>
-        <max>15</max>
-      </RestoreAmount>
-    </BasePotion>
   </Potions>
   
   <Weapons>  

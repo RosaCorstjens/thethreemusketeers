@@ -9,7 +9,7 @@ public class ArmorInstance : EquipmentInstance
 
     public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseArmor armorData)
     {
-        base.Initialize(itemData, equipmentData);
+        base.Initialize(itemData, equipmentData, armorData);
         baseArmor = armorData;
     }
 }

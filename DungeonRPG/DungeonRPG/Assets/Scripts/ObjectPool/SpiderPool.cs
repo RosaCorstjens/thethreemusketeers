@@ -19,7 +19,6 @@ public class SpiderPool : ObjectPool<Spider>
             Spider temp = GameObject.Instantiate(prefabObject);
             temp.Initialize();
             pooledObjects.Enqueue(temp);
-            Debug.Log("Created spider " + i + " now " + pooledObjects.Count + " spiders in pool");
         }
     }
 

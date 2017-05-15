@@ -8,7 +8,7 @@ public class PotionInstance : ItemInstance
 
     public void Initialize(ItemPrivateData itemData, BasePotion potionData)
     {
-        base.Initialize(itemData);
+        base.Initialize(itemData, potionData);
         basePotion = potionData;
         gameObject.GetComponent<Renderer>().material = ItemManager.Instance.QualityMaterials[0];
     }

@@ -346,7 +346,6 @@ public class PlayerController : WorldObject, IControlable
 
         inHand = item;
         basicAttackCooldown = GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.AttackSpeed);
-        Debug.Log(basicAttackCooldown);
 
         inHand.WeaponObject.transform.SetParent(hand);
         inHand.WeaponObject.transform.localRotation = hand.localRotation * Quaternion.Euler(0, 0, 45) * Quaternion.Euler(0, -180, 0);

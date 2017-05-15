@@ -12,11 +12,11 @@ public class ShieldInstance : EquipmentInstance
 
     public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseShield shieldData)
     {
-        base.Initialize(itemData, equipmentData);
+        base.Initialize(itemData, equipmentData, shieldData);
         baseShield = shieldData;
 
-        //shieldObject = GameObject.Instantiate(Resources.Load<GameObject>(equipmentData.BaseEquipment.baseShield.PrefabPath));
-        //shieldObject.SetActive(false);
+        shieldObject = GameObject.Instantiate(Resources.Load<GameObject>(baseShield.PrefabPath));
+        shieldObject.SetActive(false);
     }
 
 }

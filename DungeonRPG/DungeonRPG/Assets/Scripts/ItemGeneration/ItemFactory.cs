@@ -73,7 +73,7 @@ public class ItemFactory
         textReader.Close();
     }
 
-    List<AffixRange> ChooseAffixes(Quality quality, Equipment equipment, int level)
+    public List<AffixRange> ChooseAffixes(Quality quality, Equipment equipment, int level)
     {
         // Determine amount of affixes. 
         int amountAffixes = (int)(quality + 1) * 2;
@@ -139,7 +139,7 @@ public class ItemFactory
          return chosenAffixes;
     }
 
-    List<Affix> DetermineAffixes(List<AffixRange> chosenAffixes)
+    public List<Affix> DetermineAffixes(List<AffixRange> chosenAffixes)
     {
         // Initialize all chosen affixes with determined values. 
         List<Affix> affixStats = new List<Affix>();
@@ -233,6 +233,12 @@ public class ItemFactory
 
     public ItemInstance GetItemInstance(ItemType type)
     {
+        if (type == ItemType.Equipment || type == ItemType.Random)
+        {
+            int randType = (int) UnityEngine.Random.Range(0, type == ItemType.Equipment ? 4 : 5);
+            return GetItemInstance((ItemType) 1 + randType);
+        }
+
         Quality quality = GetQuality();
 
         int level = (int)((int)(quality + 1) * UnityEngine.Random.Range(1, 2.5f));
@@ -244,166 +250,118 @@ public class ItemFactory
 
         List<Stat> baseStats = new List<Stat>();
         Equipment equipment;
+
         string generatedName = "";
+
+        ItemPrivateData itemData = new ItemPrivateData(quality);
+
+        if (type == ItemType.Potion)
+        {
+            PotionInstance potionInstance = toAdd.AddComponent<PotionInstance>();
+            potionInstance.Initialize(itemData, (BasePotion)GetFlyWeight(ItemType.Potion, minTier, maxTier));
+            return potionInstance;
+        }
+        else
+        {
+            switch (type)
+            {
+                case ItemType.Armor:
+                    BaseArmor armor = (BaseArmor) GetFlyWeight(ItemType.Armor, minTier, maxTier); // itemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier)[randomItem];
+
+                    equipment = (Equipment)armor.ArmorType;
+                    level += (armor.Tier - 1) * 10;
+
+                    List<AffixRange> chosenArmorAffixes = ChooseAffixes(quality, equipment, level);
+                    List<Affix> armorAffixStats = DetermineAffixes(chosenArmorAffixes);
+
+                    int armorValue = (int)armor.BaseStats.Find(s => s.StatType == StatTypes.Armor).Range.GetRandomInRange();
+                    Stat stat = new Stat(StatTypes.Armor, armorValue);
+                    baseStats.Add(stat);
+
+                    ArmorInstance armorInstance = toAdd.AddComponent<ArmorInstance>();
+                    armorInstance.Initialize(itemData, new EquipmentPrivateData(armor, GetGeneratedName(chosenArmorAffixes, armor.Name), level, quality, baseStats, armorAffixStats), armor);
+                    return armorInstance;
+                    break;
+
+                case ItemType.Shield:
+                    BaseShield shield = (BaseShield)GetFlyWeight(ItemType.Shield, minTier, maxTier);
+
+                    equipment = Equipment.Shield;
+                    level += (shield.Tier - 1) * 10;
+
+                    List<AffixRange> chosenShieldAffixes = ChooseAffixes(quality, equipment, level);
+                    List<Affix> shieldAffixStats = DetermineAffixes(chosenShieldAffixes);
+
+                    int armorVal = (int)shield.BaseStats.Find(s => s.StatType == StatTypes.Armor).Range.GetRandomInRange();
+                    int blockChanceVal = (int)shield.BaseStats.Find(s => s.StatType == StatTypes.BlockChance).Range.GetRandomInRange();
+                    int blockAmountVal = (int)shield.BaseStats.Find(s => s.StatType == StatTypes.BlockAmount).Range.GetRandomInRange();
+                    Stat armorS = new Stat(StatTypes.Armor, armorVal);
+                    Stat blockChance = new Stat(StatTypes.BlockChance, blockChanceVal);
+                    Stat blockAmount = new Stat(StatTypes.BlockAmount, blockAmountVal);
+                    baseStats.Add(armorS);
+                    baseStats.Add(blockChance);
+                    baseStats.Add(blockAmount);
+
+                    ShieldInstance shieldInstance = toAdd.AddComponent<ShieldInstance>();
+                    shieldInstance.Initialize(itemData, new EquipmentPrivateData(shield, GetGeneratedName(chosenShieldAffixes, shield.Name), level, quality, baseStats, shieldAffixStats), shield);
+                    return shieldInstance;
+
+                case ItemType.Jewerly:
+                    BaseJewelry jewerly = (BaseJewelry)GetFlyWeight(ItemType.Jewerly, minTier, maxTier);
+
+                    equipment = jewerly.JewelryType == JewelryType.Amulet ? Equipment.Amulet : Equipment.Ring;
+                    level += (jewerly.Tier - 1) * 10;
+
+                    List<AffixRange> chosenJewerlyAffixes = ChooseAffixes(quality, equipment, level);
+                    List<Affix> jewerlyAffixStats = DetermineAffixes(chosenJewerlyAffixes);
+
+                    JewerlyInstance jewerlyInstance = toAdd.AddComponent<JewerlyInstance>();
+                    jewerlyInstance.Initialize(itemData, new EquipmentPrivateData(jewerly, GetGeneratedName(chosenJewerlyAffixes, jewerly.Name), level, quality, new List<Stat>(), jewerlyAffixStats), jewerly);
+                    return jewerlyInstance;
+
+                case ItemType.Weapon:
+                    BaseWeapon weapon = (BaseWeapon)GetFlyWeight(ItemType.Weapon, minTier, maxTier);
+
+                    equipment = Equipment.Weapon;
+                    level += (weapon.Tier - 1) * 10;
+
+                    // affixes
+                    List<AffixRange> chosenWeaponAffixes = ChooseAffixes(quality, equipment, level);
+                    List<Affix> weaponAffixStats = DetermineAffixes(chosenWeaponAffixes);
+
+                    // base stats weapon
+                    int damageValue = (int)weapon.BaseStats.Find(s => s.StatType == StatTypes.Damage).Range.GetRandomInRange();
+                    float attackSpeedValue = (float)Math.Round(weapon.BaseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Range.GetRandomInRange(), 2);
+                    Stat damage = new Stat(StatTypes.WeaponDamage, damageValue);
+                    Stat attackSpeed = new Stat(StatTypes.AttackSpeed, attackSpeedValue);
+                    baseStats.Add(damage);
+                    baseStats.Add(attackSpeed);
+
+                    WeaponInstance weaponInstance = toAdd.AddComponent<WeaponInstance>();
+                    weaponInstance.Initialize(itemData, new EquipmentPrivateData(weapon, GetGeneratedName(chosenWeaponAffixes, weapon.Name), level, quality, baseStats, weaponAffixStats), weapon);
+                    return weaponInstance;
+            }
+        }
+
+        return null;
+    }
+
+    private string GetGeneratedName(List<AffixRange> chosenAffixes, string name)
+    {
         string prefix = "";
         string suffix = "";
 
-        switch (type)
+        if (chosenAffixes.Find(a => a.IsPrefix == true) != null)
         {
-            case ItemType.Armor:
-                int randomArmor = UnityEngine.Random.Range(0, itemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier).Count);
-                BaseArmor armor = itemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier)[randomArmor];
-
-                equipment = (Equipment)armor.ArmorType;
-                generatedName = armor.Name;
-                level += (armor.Tier - 1) * 10;
-                int armorValue = (int)armor.BaseStats.Find(s => s.StatType == StatTypes.Armor).Range.GetRandomInRange();
-
-                List<AffixRange> chosenArmorAffixes = ChooseAffixes(quality, equipment, level);
-
-                //determine new name
-                prefix = "";
-                suffix = "";
-                if (chosenArmorAffixes.Find(a => a.IsPrefix == true) != null)
-                {
-                    List<AffixRange> prefixes = chosenArmorAffixes.FindAll(a => a.IsPrefix);
-                    prefix = prefixes[UnityEngine.Random.Range(0, prefixes.Count)].Name + " ";
-                }
-                if (chosenArmorAffixes.Find(a => a.IsPrefix == false) != null)
-                {
-                    List<AffixRange> suffixes = chosenArmorAffixes.FindAll(a => !a.IsPrefix);
-                    suffix = " " + suffixes[UnityEngine.Random.Range(0, suffixes.Count)].Name;
-                }
-                generatedName = prefix + generatedName + suffix;
-
-                List<Affix> armorAffixStats = DetermineAffixes(chosenArmorAffixes);
-
-                Stat stat = new Stat(StatTypes.Armor, armorValue);
-                baseStats.Add(stat);
-
-                ArmorInstance armorInstance = toAdd.AddComponent<ArmorInstance>();
-                armorInstance.Initialize((BaseArmor)GetFlyWeight(ItemType.Armor, minTier, maxTier), quality, level, generatedName, baseStats, armorAffixStats);
-                return armorInstance;
-
-                break;
-            case ItemType.Shield:
-                int randomShield = UnityEngine.Random.Range(0, itemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier).Count);
-                BaseShield baseShield = itemContainer.Shields.FindAll(s => s.Tier <= maxTier && s.Tier >= minTier)[randomShield];
-
-                equipment = Equipment.Shield;
-                generatedName = baseShield.Name;
-                level += (baseShield.Tier - 1) * 10;
-
-                List<AffixRange> chosenShieldAffixes = ChooseAffixes(quality, equipment, level);
-                //determine new name
-                prefix = "";
-                suffix = "";
-                if (chosenShieldAffixes.Find(a => a.IsPrefix == true) != null)
-                {
-                    List<AffixRange> prefixes = chosenShieldAffixes.FindAll(a => a.IsPrefix);
-                    prefix = prefixes[UnityEngine.Random.Range(0, prefixes.Count)].Name + " ";
-                }
-                if (chosenShieldAffixes.Find(a => a.IsPrefix == false) != null)
-                {
-                    List<AffixRange> suffixes = chosenShieldAffixes.FindAll(a => !a.IsPrefix);
-                    suffix = " " + suffixes[UnityEngine.Random.Range(0, suffixes.Count)].Name;
-                }
-                generatedName = prefix + generatedName + suffix;
-                List<Affix> shieldAffixStats = DetermineAffixes(chosenShieldAffixes);
-
-                int armorVal = (int)baseShield.BaseStats.Find(s => s.StatType == StatTypes.Armor).Range.GetRandomInRange();
-                int blockChanceVal = (int)baseShield.BaseStats.Find(s => s.StatType == StatTypes.BlockChance).Range.GetRandomInRange();
-                int blockAmountVal = (int)baseShield.BaseStats.Find(s => s.StatType == StatTypes.BlockAmount).Range.GetRandomInRange();
-                Stat armorS = new Stat(StatTypes.Armor, armorVal);
-                Stat blockChance = new Stat(StatTypes.BlockChance, blockChanceVal);
-                Stat blockAmount = new Stat(StatTypes.BlockAmount, blockAmountVal);
-                baseStats.Add(armorS);
-                baseStats.Add(blockChance);
-                baseStats.Add(blockAmount);
-
-                ShieldInstance shieldInstance = toAdd.AddComponent<ShieldInstance>();
-                shieldInstance.Initialize((BaseShield)GetFlyWeight(ItemType.Shield, minTier, maxTier), quality, level, generatedName, baseStats, shieldAffixStats);
-                return shieldInstance;
-
-            case ItemType.Jewerly:
-                int randomJewel = UnityEngine.Random.Range(0, itemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier).Count);
-                BaseJewelry baseJewerly = itemContainer.Jewelry.FindAll(j => j.Tier <= maxTier && j.Tier >= minTier)[randomJewel];
-
-                equipment = baseJewerly.JewelryType == JewelryType.Amulet ? Equipment.Amulet : Equipment.Ring;
-                generatedName = baseJewerly.Name;
-                level += (baseJewerly.Tier - 1) * 10;
-
-                List<AffixRange> chosenJewerlyAffixes = ChooseAffixes(quality, equipment, level);
-                //determine new name
-                prefix = "";
-                suffix = "";
-                if (chosenJewerlyAffixes.Find(a => a.IsPrefix == true) != null)
-                {
-                    List<AffixRange> prefixes = chosenJewerlyAffixes.FindAll(a => a.IsPrefix);
-                    prefix = prefixes[UnityEngine.Random.Range(0, prefixes.Count)].Name + " ";
-                }
-                if (chosenJewerlyAffixes.Find(a => a.IsPrefix == false) != null)
-                {
-                    List<AffixRange> suffixes = chosenJewerlyAffixes.FindAll(a => !a.IsPrefix);
-                    suffix = " " + suffixes[UnityEngine.Random.Range(0, suffixes.Count)].Name;
-                }
-                generatedName = prefix + generatedName + suffix;
-                List<Affix> jewerlyAffixStats = DetermineAffixes(chosenJewerlyAffixes);
-
-                JewerlyInstance jewerlyInstance = toAdd.AddComponent<JewerlyInstance>();
-                jewerlyInstance.Initialize(baseJewerly, quality, level, generatedName, new List<Stat>(), jewerlyAffixStats);
-                return jewerlyInstance;
-
-            case ItemType.Weapon:
-                equipment = Equipment.Weapon;
-                BaseWeapon weapon = (BaseWeapon)GetFlyWeight(ItemType.Weapon, minTier, maxTier);
-                generatedName = weapon.Name;
-                level += (weapon.Tier - 1) * 10;
-
-                List<AffixRange> chosenWeaponAffixes = ChooseAffixes(quality, equipment, level);
-                //determine new name
-                prefix = "";
-                suffix = "";
-                if (chosenWeaponAffixes.Find(a => a.IsPrefix == true) != null)
-                {
-                    List<AffixRange> prefixes = chosenWeaponAffixes.FindAll(a => a.IsPrefix);
-                    prefix = prefixes[UnityEngine.Random.Range(0, prefixes.Count)].Name + " ";
-                }
-                if (chosenWeaponAffixes.Find(a => a.IsPrefix == false) != null)
-                {
-                    List<AffixRange> suffixes = chosenWeaponAffixes.FindAll(a => !a.IsPrefix);
-                    suffix = " " + suffixes[UnityEngine.Random.Range(0, suffixes.Count)].Name;
-                }
-                generatedName = prefix + generatedName + suffix;
-                List<Affix> weaponAffixStats = DetermineAffixes(chosenWeaponAffixes);
-
-                int damageValue = (int)weapon.BaseStats.Find(s => s.StatType == StatTypes.Damage).Range.GetRandomInRange();
-                float attackSpeedValue = (float)Math.Round(weapon.BaseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Range.GetRandomInRange(), 2);
-                Stat damage = new Stat(StatTypes.WeaponDamage, damageValue);
-                Stat attackSpeed = new Stat(StatTypes.AttackSpeed, attackSpeedValue);
-                baseStats.Add(damage);
-                baseStats.Add(attackSpeed);
-
-                WeaponInstance weaponInstance = toAdd.AddComponent<WeaponInstance>();
-                weaponInstance.Initialize((BaseWeapon)GetFlyWeight(ItemType.Weapon, minTier, maxTier), quality, level, generatedName, baseStats, weaponAffixStats);
-                return weaponInstance;
-
-            case ItemType.Potion:
-                PotionInstance potionInstance = toAdd.AddComponent<PotionInstance>();
-                potionInstance.Initialize((BasePotion)GetFlyWeight(ItemType.Potion, minTier, maxTier), quality);
-                return potionInstance;
-
-            case ItemType.Equipment:
-                //TODO: remove equipment, for now selects one of the equipment types as random
-                int randEquipment = (int)UnityEngine.Random.Range(0, 4);
-                Debug.Log("picked as random type" + (ItemType)1 + randEquipment);
-                return GetItemInstance((ItemType) 1 + randEquipment);
-
-            case ItemType.Random:
-                int randType = (int)UnityEngine.Random.Range(0, 5);
-                return GetItemInstance((ItemType)1 + randType);
+            List<AffixRange> prefixes = chosenAffixes.FindAll(a => a.IsPrefix);
+            prefix = prefixes[UnityEngine.Random.Range(0, prefixes.Count)].Name + " ";
         }
-        return null;
+        if (chosenAffixes.Find(a => a.IsPrefix == false) != null)
+        {
+            List<AffixRange> suffixes = chosenAffixes.FindAll(a => !a.IsPrefix);
+            suffix = " " + suffixes[UnityEngine.Random.Range(0, suffixes.Count)].Name;
+        }
+        return (prefix + name + suffix);
     }
 
     public List<ItemInstance> GetItemInstances(int amount)

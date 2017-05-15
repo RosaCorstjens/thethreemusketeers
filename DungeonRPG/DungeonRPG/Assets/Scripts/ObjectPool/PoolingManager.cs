@@ -19,7 +19,6 @@ public class PoolingManager
 
     public void Initialize()
     {
-        Debug.Log("Initializing spider pool...");
         spiderObjectPool.Initialize();
     }
 

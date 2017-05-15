@@ -99,7 +99,6 @@ public class CharacterPanel : MonoBehaviour
         dexterityLabel = gameObject.transform.FindChild("PrimaryStats/StatGrid/Dexterity/Amount").GetComponent<UILabel>();
         intelligenceLabel = gameObject.transform.FindChild("PrimaryStats/StatGrid/Intelligence/Amount").GetComponent<UILabel>();
         vitalityLabel = gameObject.transform.FindChild("PrimaryStats/StatGrid/Vitality/Amount").GetComponent<UILabel>();
-
     }
 
     public bool Equip(EquipmentInstance item, EquipmentSlotType type)

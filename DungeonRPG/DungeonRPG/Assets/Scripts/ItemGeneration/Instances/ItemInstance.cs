@@ -9,9 +9,13 @@ public class ItemInstance : MonoBehaviour
     protected ItemPrivateData itemData;
     public ItemPrivateData ItemData { get { return itemData; } }
 
-    public virtual void Initialize(ItemPrivateData itemData)
+    protected BaseItem baseItem;
+    public BaseItem BaseItem { get { return baseItem; } }
+
+    public virtual void Initialize(ItemPrivateData itemData, BaseItem baseItem)
     {
         this.itemData = itemData;
+        this.baseItem = baseItem;
 
         gameObject.GetComponent<Renderer>().material = ItemManager.Instance.QualityMaterials[(int)itemData.Quality];
         gameObject.SetActive(false);

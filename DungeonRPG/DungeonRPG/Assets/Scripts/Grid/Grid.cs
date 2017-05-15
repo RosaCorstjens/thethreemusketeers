@@ -85,10 +85,8 @@ public class Grid
 
     public void AddObjectToGrid(WorldObject obj)
     {
-        Debug.Log(obj.Pos);
         Vector2 gridPos = WorldToGrid(obj.Pos);
-        Debug.Log("Adding object to grid");
-
+  
         cells[(int)gridPos.x, (int)gridPos.y].AddObject(obj);
     }
 
@@ -96,7 +94,6 @@ public class Grid
     {
         Vector2 oldCell = WorldToGrid(obj.PreviousPos);
         Vector2 newCell = WorldToGrid(obj.Pos);
-        Debug.Log("Updating object in grid");
 
         cells[(int)oldCell.x, (int)oldCell.y].RemoveObject(obj);
         cells[(int)newCell.x, (int)newCell.y].AddObject(obj);
@@ -107,7 +104,6 @@ public class Grid
         Vector2 currentCell = WorldToGrid(obj.Pos);
 
         if (currentCell.x < 0 || currentCell.x >= width || currentCell.y < 0 || currentCell.y >= height) return;
-        Debug.Log("Removing object from grid");
 
         cells[(int)currentCell.x, (int)currentCell.y].RemoveObject(obj);
     }

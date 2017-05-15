@@ -7,6 +7,9 @@ public class EquipmentInstance: ItemInstance
     protected EquipmentPrivateData equipmentData;
     public EquipmentPrivateData EquipmentData { get { return equipmentData; } }
 
+    protected BaseEquipment baseEquipment;
+    public BaseEquipment BaseEquipment { get { return baseEquipment; } }
+
     public bool Equipped
     {
         get { return equipmentData.Equipped; }
@@ -19,19 +22,19 @@ public class EquipmentInstance: ItemInstance
         }
     }
 
-    public float MainStatValue { get { return equipmentData.BaseStats.Find(b => b.StatType == equipmentData.BaseEquipment.MainStat).Value; } }
+    public float MainStatValue { get { return equipmentData.BaseStats.Find(b => b.StatType == BaseEquipment.MainStat).Value; } }
 
-    public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData)
+    public void Initialize(ItemPrivateData itemData, EquipmentPrivateData equipmentData, BaseEquipment baseEquipment)
     {
-        base.Initialize(itemData);
+        base.Initialize(itemData, baseEquipment);
 
-        this.itemData = itemData;
         this.equipmentData = equipmentData;
+        this.baseEquipment = baseEquipment;
     }
 
     public override void Use()
     {
-        Debug.Log(itemData.BaseItem.Name + " equipped.");
+        Debug.Log(BaseItem.Name + " equipped.");
     }
 
     public override void Drop()

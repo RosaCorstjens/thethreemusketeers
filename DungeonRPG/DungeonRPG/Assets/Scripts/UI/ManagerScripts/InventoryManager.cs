@@ -105,22 +105,21 @@ public class InventoryManager
         inventoryGameObject.SetActive(false);
 
         // give the player his first item
+        BaseWeapon weapon = (BaseWeapon)ItemManager.Instance.Factory.GetFlyWeightById(ItemType.Weapon, 0);
+        ItemPrivateData itemData = new ItemPrivateData(0);
+
+        // base stats weapon
         List<Stat> baseStats = new List<Stat>();
-        Equipment equipment = Equipment.Weapon;
-        string generatedName = "";
-        GameObject toAdd = GameObject.Instantiate(ItemManager.Instance.Factory.DropPrefab);
-
-        BaseWeapon baseItem = (BaseWeapon)ItemManager.Instance.Factory.GetFlyWeightById(ItemType.Weapon, 0);
-
-        generatedName = baseItem.Name;
-
-        int damageValue = (int)baseItem.BaseStats.Find(s => s.StatType == StatTypes.Damage).Range.GetRandomInRange();
-        float attackSpeedValue = (float)Math.Round(baseItem.BaseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Range.GetRandomInRange(), 2);
+        int damageValue = (int)weapon.BaseStats.Find(s => s.StatType == StatTypes.Damage).Range.GetRandomInRange();
+        float attackSpeedValue = (float)Math.Round(weapon.BaseStats.Find(s => s.StatType == StatTypes.AttackSpeed).Range.GetRandomInRange(), 2);
         Stat damage = new Stat(StatTypes.WeaponDamage, damageValue);
         Stat attackSpeed = new Stat(StatTypes.AttackSpeed, attackSpeedValue);
         baseStats.Add(damage);
         baseStats.Add(attackSpeed);
-        toAdd.AddComponent<WeaponInstance>().Initialize(baseItem, 0, 1, generatedName, baseStats, new List<Affix>());
+
+        GameObject toAdd = GameObject.Instantiate(ItemManager.Instance.Factory.DropPrefab);
+        WeaponInstance weaponInstance = toAdd.AddComponent<WeaponInstance>();
+        weaponInstance.Initialize(itemData, new EquipmentPrivateData(weapon, weapon.Name, 1, 0, baseStats, new List<Affix>()), weapon);
 
         AddItem(toAdd.GetComponent<WeaponInstance>());
     }
@@ -346,15 +345,15 @@ public class InventoryManager
         EquipmentSlotType itemsType;
 
         // Check for shield
-        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Shield)
+        if (item.BaseEquipment.EquipmentType == EquipmentType.Shield)
         {
             itemsType = EquipmentSlotType.OffHand;
         }
-        else if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Weapon)
+        else if (item.BaseEquipment.EquipmentType == EquipmentType.Weapon)
         {
             itemsType = EquipmentSlotType.MainHand;
         }
-        else if(item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Armor)
+        else if(item.BaseEquipment.EquipmentType == EquipmentType.Armor)
         {
             itemsType = (EquipmentSlotType)(int)item.GetComponent<ArmorInstance>().BaseArmor.ArmorType;
         }

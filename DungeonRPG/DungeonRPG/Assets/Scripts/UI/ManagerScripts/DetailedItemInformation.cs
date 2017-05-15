@@ -166,16 +166,16 @@ public class DetailedItemInformation : MonoBehaviour
         gameObject.SetActive(true);
 
         // Set basic information
-        icon.spriteName = item.ItemData.BaseItem.SpriteName;
+        icon.spriteName = item.BaseItem.SpriteName;
         qualityColor.color = ItemManager.Instance.QualityColors[(int)item.ItemData.Quality];
 
         generatedName.text = item.EquipmentData.TitleText;
 
-        if (item.EquipmentData.BaseEquipment.EquipmentType != EquipmentType.Jewelry)
+        if (item.BaseEquipment.EquipmentType != EquipmentType.Jewelry)
         {
             mainStatType.gameObject.SetActive(true);
             mainStatNumber.gameObject.SetActive(true);
-            mainStatType.text = item.EquipmentData.BaseEquipment.MainStat.ToString();
+            mainStatType.text = item.BaseEquipment.MainStat.ToString();
             mainStatNumber.text = "" + item.MainStatValue;
         }
         else
@@ -186,7 +186,7 @@ public class DetailedItemInformation : MonoBehaviour
 
         // Set standard stats.
         requiredLvl.text = "Required level: "+ item.EquipmentData.Level; 
-        itemType.text = "[" + ItemManager.Instance.QualityHexColors[(int)item.ItemData.Quality] + "]" + item.ItemData.Quality.ToString() + " " + item.ItemData.BaseItem.Name + "[-]";
+        itemType.text = "[" + ItemManager.Instance.QualityHexColors[(int)item.ItemData.Quality] + "]" + item.ItemData.Quality.ToString() + " " + item.BaseItem.Name + "[-]";
 
         equipped.SetActive(item.Equipped);
         useLabel.text = item.Equipped ? "Deequip" : "Equip";
@@ -210,7 +210,7 @@ public class DetailedItemInformation : MonoBehaviour
         }
 
         // Set the item related stats if it has any. 
-        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Shield)
+        if (item.BaseEquipment.EquipmentType == EquipmentType.Shield)
         {
             blockChance.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.BlockChance).Value + "% Chance to Block";
             blockAmount.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.BlockAmount).Value + " Block Amount";
@@ -220,7 +220,7 @@ public class DetailedItemInformation : MonoBehaviour
             shieldRelatedStats.gameObject.SetActive(true);
         }
 
-        if (item.EquipmentData.BaseEquipment.EquipmentType == EquipmentType.Weapon)
+        if (item.BaseEquipment.EquipmentType == EquipmentType.Weapon)
         {
             damage.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.WeaponDamage).Value + " Damage";
             attackSpeed.text = item.EquipmentData.BaseStats.Find(b => b.StatType == StatTypes.AttackSpeed).Value + " Attacks per Second";
