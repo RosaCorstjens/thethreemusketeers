@@ -420,8 +420,31 @@ public class PlayerController : MonoBehaviour
         return keys.Contains(keyId);
     }
 
-    public void ObtainKey(int id)
+    public void ObtainKey(int keyId)
     {
-        keys.Add(id);
+        keys.Add(keyId);
+    }
+
+    public bool HasMultiKey(int keyId)
+    {
+        int count = 0;
+        foreach (var key in multiKeys)
+        {
+            if(key == keyId)
+            {
+                count++;
+            }
+        }
+
+        if(count >= 2)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void ObtainMultiKey(int keyId)
+    {
+        multiKeys.Add(keyId);
     }
 }
