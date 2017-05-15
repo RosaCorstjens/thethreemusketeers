@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour
     public bool CanMove { get; set; }
     public bool IsInitialized { get; set; }
 
+    public List<int> keys;
+    public List<int> multiKeys;
+
     // Use this for initialization
     public void Initialize(Vector3 spawnPosition)
     {
@@ -410,5 +413,15 @@ public class PlayerController : MonoBehaviour
         inOffHand.ShieldObject.SetActive(false);
 
         inOffHand = null;
+    }
+
+    public bool HasKey(int keyId)
+    {
+        return keys.Contains(keyId);
+    }
+
+    public void ObtainKey(int id)
+    {
+        keys.Add(id);
     }
 }
