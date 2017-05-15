@@ -17,13 +17,13 @@ public class EnemyBattleState : State<Spider>
         float direction = Vector3.Dot((agent.targetTransform.position - agent.transform.position).normalized,
             agent.transform.forward);
 
-        if (distance < agent.NoticeDistance && distance > agent.AttackDistance)
+        if (distance < agent.NoticeDistance && distance > agent.AttackRange)
         {
             agent.Rotate();
 
             agent.Move();
         }
-        else if (distance <= agent.AttackDistance && direction > 0)
+        else if (distance <= agent.AttackRange && direction > 0)
         {
             agent.FiniteStateMachine.SetState(agent.FiniteStateMachine.PossibleStates["Attack"]);
         }

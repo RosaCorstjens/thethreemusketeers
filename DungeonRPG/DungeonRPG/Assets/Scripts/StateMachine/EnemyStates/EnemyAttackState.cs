@@ -18,7 +18,7 @@ public class EnemyAttackState : State<Spider>
     {
         float distance = (agent.targetTransform.transform.position - agent.transform.position).magnitude;
         
-        if (distance > agent.AttackDistance)
+        if (distance > agent.AttackRange)
         {
             agent.FiniteStateMachine.SetState(agent.FiniteStateMachine.PossibleStates["Battle"]);
         }

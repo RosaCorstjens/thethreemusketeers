@@ -14,17 +14,17 @@ public class WorldObject : MonoBehaviour
     public virtual void Update()
     {
         pos = transform.position;
+        if (previousPos == Vector3.zero) previousPos = pos;
 
         if (Mathf.Abs((previousPos - pos).magnitude) > Epsilon)
         {
-            UpdateGrid(DungeonManager.Instance.SpatialPartitionGrid.WorldToGrid(previousPos));
+            UpdateGrid();
             previousPos = pos;
         }
     }
 
-    protected virtual void UpdateGrid(Vector2 oldCell)
+    protected virtual void UpdateGrid()
     {
-        Vector2 newCell = DungeonManager.Instance.SpatialPartitionGrid.WorldToGrid(pos);
         DungeonManager.Instance.SpatialPartitionGrid.UpdateObjectInGrid(this);
     }
 

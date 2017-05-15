@@ -583,6 +583,21 @@ public class Dungeon
                 Vector3 spawnPos = DungeonManager.Instance.GridToWorldPosition(new Vector2(randomFloor.xPos, randomFloor.yPos));
                 Vector3 monsterPosition = spawnPos + new Vector3(0, 0.1f, 0);
 
+                float dist = Mathf.Abs((startPosition - monsterPosition).magnitude);
+                int upgradeAmount = 0;
+                if (dist < 50)
+                {
+                    upgradeAmount = 1;
+                }
+                else if (dist < 150)
+                {
+                    upgradeAmount = 2;
+                }
+                else
+                {
+                    upgradeAmount = 3;
+                }
+
                 int randomamount = Random.Range(1, 3);
                 List<Vector3> positions = new List<Vector3>();
                 positions.Add(new Vector3(0, 0, 0));
@@ -593,7 +608,9 @@ public class Dungeon
                 {
                     Spider monster = GameManager.Instance.PoolingManager.SpiderObjectPool.New();
                     monster.SetPosition(monsterPosition + positions[k]);
-                    
+
+                    monster.UpgradeEquipment(upgradeAmount, GameManager.Instance.ActiveCharacterInformation.Level);
+
                     enemyStartPositions.Add(monster.transform.position);
                     enemies.Add(monster);
                 }

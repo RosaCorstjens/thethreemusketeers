@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Spider : WorldObject, IPoolable
 {
+    // variables that can be upgraded
+    private ISpiderWeapon spiderWeapon;
+
     private Loottable loottable;
+
     public Vector3 startPosition;
 
     public float currentHealth;
-    private float maxHealth = 20f;
     private bool isDead = false;
 
     public int level = 1;
@@ -19,17 +23,14 @@ public class Spider : WorldObject, IPoolable
     private float basicAttackCooldown = 2f;
     public float BasicAttackCooldown { get { return basicAttackCooldown; } }
 
-    private float moveSpeed = 1.5f;
     private int rotationSpeed = 3;
 
-    private int damage = 8;
     private float baseProgression = 0.5f;
     public float BaseProgression { get { return baseProgression; } }
 
     private float noticeDistance = 10f;
     public float NoticeDistance { get { return noticeDistance; } }
-    private float attackDistance = 2f;
-    public float AttackDistance { get { return attackDistance; } }
+    public float AttackRange { get { return spiderWeapon.GetAttackRange(); } }
 
     private Transform myTransform;
     private Animator anim;
@@ -43,28 +44,43 @@ public class Spider : WorldObject, IPoolable
 
     public void Initialize()
     {
-        //myTransform = transform;
         startPosition = transform.position;
 
-        //targetTransform = GameManager.Instance.ActiveCharacter.transform;
-        //targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
-        //anim = GetComponent<Animator>();
-        //currentHealth = maxHealth;
-        //loottable = new Loottable();
-        //loottable.Initialize(2, 5);
+        spiderWeapon = new SpiderEquipment();
 
-        Dictionary<string, State<Spider>> dictionary = new Dictionary<string, State<Spider>>();
-
-        dictionary.Add("Idle", new EnemyIdleState());
-        dictionary.Add("RecievedDamage", new EnemyRecievedDamageState());
-        dictionary.Add("Battle", new EnemyBattleState());
-        dictionary.Add("Attack", new EnemyAttackState());
-        dictionary.Add("Dying", new EnemyDyingState());
-        dictionary.Add("Reset", new EnemyResetSate());
-
-        finiteStateMachine = new StateMachine<Spider>(this, new EnemyIdleState(), dictionary);
+        BuildStateMachine();
 
         gameObject.SetActive(false);
+    }
+
+    public void UpgradeEquipment(int amount, int level)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            int randomroll = UnityEngine.Random.Range(0, 3);
+
+            switch (randomroll)
+            {
+                // dmg
+                case 0:
+                    spiderWeapon = new DamageUpgrade(spiderWeapon, 3 * (level / 5f));
+                    break;
+
+                // health
+                case 1:
+                    spiderWeapon = new HealthUpgrade(spiderWeapon, 10 * (level / 5f));
+                    break;
+
+                // speed
+                case 2:
+                    spiderWeapon = new SpeedUpgrade(spiderWeapon, 0.1f * (level / 5f));
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        Debug.Log("Hi, I have " + amount + "upgrades. Damage: " + spiderWeapon.GetDamage() + ". Health: " + spiderWeapon.GetHealth() + ". Speed: " + spiderWeapon.GetSpeed());
     }
 
     public void SetPosition(Vector3 position)
@@ -76,13 +92,28 @@ public class Spider : WorldObject, IPoolable
         AddToGrid();
     }
 
+    private void BuildStateMachine()
+    {
+        Dictionary<string, State<Spider>> dictionary = new Dictionary<string, State<Spider>>();
+
+        dictionary.Add("Idle", new EnemyIdleState());
+        dictionary.Add("RecievedDamage", new EnemyRecievedDamageState());
+        dictionary.Add("Battle", new EnemyBattleState());
+        dictionary.Add("Attack", new EnemyAttackState());
+        dictionary.Add("Dying", new EnemyDyingState());
+        dictionary.Add("Reset", new EnemyResetSate());
+
+        finiteStateMachine = new StateMachine<Spider>(this, new EnemyIdleState(), dictionary);
+
+    }
+
     public void Activate()
     {
         myTransform = transform;
         targetTransform = GameManager.Instance.ActiveCharacter.transform;
         targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        currentHealth = spiderWeapon.GetHealth();
 
         loottable = new Loottable();
         loottable.Initialize(2, 5);
@@ -91,6 +122,7 @@ public class Spider : WorldObject, IPoolable
         FiniteStateMachine.SetState(FiniteStateMachine.PossibleStates["Reset"]);
         myTransform = transform;
         this.transform.position = startPosition;
+
         isDead = false;
 
         gameObject.SetActive(true);
@@ -98,6 +130,9 @@ public class Spider : WorldObject, IPoolable
 
     public void Deactivate()
     {
+        while (!spiderWeapon.IsBase()) { spiderWeapon = spiderWeapon.RemoveUpgrade(); }
+        //Debug.Log("Hi, I removed my upgrades!d Damage: " + spiderWeapon.GetDamage() + ". Health: " + spiderWeapon.GetHealth() + ". Speed: " + spiderWeapon.GetSpeed());
+
         myTransform = null;
         targetTransform = null;
         targetScript = null;
@@ -106,7 +141,8 @@ public class Spider : WorldObject, IPoolable
         //finiteStateMachine = null;
 
         DungeonManager.Instance.SpatialPartitionGrid.RemoveObjectFromGrid(this);
-
+        pos = this.transform.position;
+        previousPos = pos;
         gameObject.SetActive(false);
     }
 
@@ -130,14 +166,14 @@ public class Spider : WorldObject, IPoolable
     public void Move()
     {
         // If target is not reached, move towards target.
-        myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+        myTransform.position += myTransform.forward * spiderWeapon.GetSpeed() * Time.deltaTime;
         anim.SetFloat("MoveZ", 1f);
     }
 
     public void Attack()
     {
         anim.SetTrigger("Attack");
-        targetScript.GotHit(damage, this);
+        targetScript.GotHit(spiderWeapon.GetDamage(), this);
         AdjustCurrentHealth(-GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.Thorns));
     }
 
@@ -163,7 +199,7 @@ public class Spider : WorldObject, IPoolable
             return;
         }
 
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        if (currentHealth > spiderWeapon.GetHealth()) currentHealth = spiderWeapon.GetHealth();
     }
 
     public void Die()
