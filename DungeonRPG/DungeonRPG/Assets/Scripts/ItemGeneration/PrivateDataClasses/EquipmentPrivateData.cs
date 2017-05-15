@@ -7,7 +7,6 @@ public class EquipmentPrivateData
     public EquipmentPrivateData(BaseEquipment baseEquipment, string generatedName, int level, Quality quality,
         List<Stat> baseStats, List<Affix> affixStats = null)
     {
-        this.generatedName = generatedName;
         this.level = level;
 
         this.baseStats = baseStats;
@@ -36,8 +35,6 @@ public class EquipmentPrivateData
             modifiers.Add(affixStats[i].Modifier);
         }
     }
-
-    private string generatedName;
 
     private bool equipped;
     public bool Equipped { get { return equipped; } set { equipped = value; } }

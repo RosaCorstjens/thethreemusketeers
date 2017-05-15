@@ -266,6 +266,7 @@ public class ItemFactory
             switch (type)
             {
                 case ItemType.Armor:
+                    ArmorInstance armorInstance = toAdd.AddComponent<ArmorInstance>();
                     BaseArmor armor = (BaseArmor) GetFlyWeight(ItemType.Armor, minTier, maxTier); // itemContainer.Armor.FindAll(a => a.Tier <= maxTier && a.Tier >= minTier)[randomItem];
 
                     equipment = (Equipment)armor.ArmorType;
@@ -278,12 +279,12 @@ public class ItemFactory
                     Stat stat = new Stat(StatTypes.Armor, armorValue);
                     baseStats.Add(stat);
 
-                    ArmorInstance armorInstance = toAdd.AddComponent<ArmorInstance>();
                     armorInstance.Initialize(itemData, new EquipmentPrivateData(armor, GetGeneratedName(chosenArmorAffixes, armor.Name), level, quality, baseStats, armorAffixStats), armor);
                     return armorInstance;
                     break;
 
                 case ItemType.Shield:
+                    ShieldInstance shieldInstance = toAdd.AddComponent<ShieldInstance>();
                     BaseShield shield = (BaseShield)GetFlyWeight(ItemType.Shield, minTier, maxTier);
 
                     equipment = Equipment.Shield;
@@ -302,11 +303,11 @@ public class ItemFactory
                     baseStats.Add(blockChance);
                     baseStats.Add(blockAmount);
 
-                    ShieldInstance shieldInstance = toAdd.AddComponent<ShieldInstance>();
                     shieldInstance.Initialize(itemData, new EquipmentPrivateData(shield, GetGeneratedName(chosenShieldAffixes, shield.Name), level, quality, baseStats, shieldAffixStats), shield);
                     return shieldInstance;
 
                 case ItemType.Jewerly:
+                    JewerlyInstance jewerlyInstance = toAdd.AddComponent<JewerlyInstance>();
                     BaseJewelry jewerly = (BaseJewelry)GetFlyWeight(ItemType.Jewerly, minTier, maxTier);
 
                     equipment = jewerly.JewelryType == JewelryType.Amulet ? Equipment.Amulet : Equipment.Ring;
@@ -315,11 +316,11 @@ public class ItemFactory
                     List<AffixRange> chosenJewerlyAffixes = ChooseAffixes(quality, equipment, level);
                     List<Affix> jewerlyAffixStats = DetermineAffixes(chosenJewerlyAffixes);
 
-                    JewerlyInstance jewerlyInstance = toAdd.AddComponent<JewerlyInstance>();
                     jewerlyInstance.Initialize(itemData, new EquipmentPrivateData(jewerly, GetGeneratedName(chosenJewerlyAffixes, jewerly.Name), level, quality, new List<Stat>(), jewerlyAffixStats), jewerly);
                     return jewerlyInstance;
 
                 case ItemType.Weapon:
+                    WeaponInstance weaponInstance = toAdd.AddComponent<WeaponInstance>();
                     BaseWeapon weapon = (BaseWeapon)GetFlyWeight(ItemType.Weapon, minTier, maxTier);
 
                     equipment = Equipment.Weapon;
@@ -337,7 +338,6 @@ public class ItemFactory
                     baseStats.Add(damage);
                     baseStats.Add(attackSpeed);
 
-                    WeaponInstance weaponInstance = toAdd.AddComponent<WeaponInstance>();
                     weaponInstance.Initialize(itemData, new EquipmentPrivateData(weapon, GetGeneratedName(chosenWeaponAffixes, weapon.Name), level, quality, baseStats, weaponAffixStats), weapon);
                     return weaponInstance;
             }
