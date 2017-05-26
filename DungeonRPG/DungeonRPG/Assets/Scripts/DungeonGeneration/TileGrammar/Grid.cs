@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Grid
 {
-    private const char UNDEFINED = 'u';
-    private char[,] tiles;
-    private int width, height;
+    protected const char UNDEFINED = 'u';
+    protected char[,] tiles;
+    protected int width, height;
 
     public Grid(int width, int height)
     {
@@ -22,19 +22,16 @@ public class Grid
                 SetTile(new Coordinate(ix, iy), UNDEFINED);
             }
         }
-
-        char[,] test = new char[4,1];
-        test[0, 0] = 'B';
-        test[1, 0] = 'O';
-        test[2, 0] = 'O';
-        test[3, 0] = 'B';
-
-        SetTiles(new Coordinate(2, 2), test);
     }
 
     public char GetTile(Coordinate position)
     {
         return tiles[position.x, position.y];
+    }
+
+    public char GetTile(int x, int y)
+    {
+        return tiles[x, y];
     }
 
     public void SetTile(Coordinate position, char value)
@@ -77,7 +74,18 @@ public class Grid
         }
     }
 
-    public void printGrid(Text output)
+    public void SetTiles(char[,] value)
+    {
+        for (int ix = 0; ix < value.GetLength(0); ix++)
+        {
+            for (int iy = 0; iy < value.GetLength(1); iy++)
+            {
+                SetTile(new Coordinate(ix, iy), value[ix, iy]);
+            }
+        }
+    }
+
+    public void PrintGrid(Text output)
     {
         string outText = "";
         for (int ix = 0; ix < width; ix++)
@@ -89,6 +97,31 @@ public class Grid
             outText += "\n";
         }
         output.text = outText;
+    }
+
+    public bool Equals(Coordinate startPos, Grid matchGrid)
+    {
+        for (int x = startPos.x; x < matchGrid.width + startPos.x; x++)
+        {
+            for (int y = startPos.y; y < matchGrid.height + startPos.y; y++)
+            {
+                if (GetTile(x,y) != matchGrid.GetTile(x - startPos.x, y - startPos.y))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public static Grid CreateGrid(char[,] gridContent)
+    {
+        Grid returnGrid = new Grid(gridContent.GetLength(0), gridContent.GetLength(1));
+
+        returnGrid.SetTiles(gridContent);
+
+        return returnGrid;
     }
 }
 

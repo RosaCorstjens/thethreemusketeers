@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class GridTest : MonoBehaviour
 {
-    private Grid grid;
+    private GrammarGrid grid;
     public Text txt;
 
 	// Use this for initialization
 	void Start ()
 	{
-	    grid = new Grid(10, 10);
+	    grid = new GrammarGrid(10, 10);
 
 	}
 
     public void Print()
     {
-        grid.printGrid(txt);
+        grid.PrintGrid(txt);
     }
 }
