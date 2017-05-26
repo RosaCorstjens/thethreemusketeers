@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Node
 {
+    private List<Connection> previous;
     private List<Connection> connections;
     string symbol;
 
