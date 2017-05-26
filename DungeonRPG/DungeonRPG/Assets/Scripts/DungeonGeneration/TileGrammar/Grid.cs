@@ -3,11 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Orientation
+{
+    North = 0,
+    East = 1,
+    South = 2,
+    West = 3
+}
+
 public class Grid
 {
     protected const char UNDEFINED = 'u';
     protected char[,] tiles;
     protected int width, height;
+
+    public int Width { get { return width; } }
+    public int Height { get { return height; } }
+
 
     public Grid(int width, int height)
     {
@@ -120,6 +132,50 @@ public class Grid
         Grid returnGrid = new Grid(gridContent.GetLength(0), gridContent.GetLength(1));
 
         returnGrid.SetTiles(gridContent);
+
+        return returnGrid;
+    }
+
+    public static Grid RotateGrid(Grid grid, Orientation newOrientation)
+    {
+        switch (newOrientation)
+        {
+            case Orientation.North:
+                return grid;
+            case Orientation.East:
+                grid = RotateGrid90Degrees(grid);
+                break;
+            case Orientation.South:
+                grid = RotateGrid90Degrees(RotateGrid90Degrees(grid));
+                break;
+            case Orientation.West:
+                grid = RotateGrid90Degrees(RotateGrid90Degrees(RotateGrid90Degrees(grid)));
+                break;
+            default:
+                return grid;
+        }
+
+        return grid;
+    }
+
+    // https://stackoverflow.com/questions/18034805/rotate-mn-matrix-90-degrees
+    private static Grid RotateGrid90Degrees(Grid grid)
+    {
+        Grid returnGrid = new Grid(grid.height, grid.width);
+
+        int newCol, newRow = 0;
+
+        for (int oldCol = grid.Height - 1; oldCol >= 0; oldCol--)
+        {
+            newCol = 0;
+
+            for (int oldRow = 0; oldRow < grid.Width; oldRow++)
+            {
+                returnGrid.SetTile(new Coordinate(newRow, newCol), grid.GetTile(oldRow, oldCol));
+                newCol++;
+            }
+            newRow++;
+        }
 
         return returnGrid;
     }

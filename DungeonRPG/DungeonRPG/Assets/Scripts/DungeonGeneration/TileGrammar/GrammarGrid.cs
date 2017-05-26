@@ -10,38 +10,38 @@ public class GrammarGrid : Grid
 
     public GrammarGrid(int width, int height) : base(width, height)
     {
-        char[,] test = new char[4, 1];
-        test[0, 0] = 'B';
-        test[1, 0] = 'O';
-        test[2, 0] = 'O';
-        test[3, 0] = 'B';
+        /*char[,] test = new char[4, 1];
+        test[0, 0] = 'b';
+        test[1, 0] = 'o';
+        test[2, 0] = 'o';
+        test[3, 0] = 'b';
 
-        SetTiles(new Coordinate(2, 2), test);
-        SetTiles(new Coordinate(2, 3), test);
-        SetTiles(new Coordinate(2, 4), test);
-        SetTiles(new Coordinate(2, 5), test);
+        SetTiles(new Coordinate(1, 2), test);
+        SetTiles(new Coordinate(1, 3), test);
+        SetTiles(new Coordinate(1, 4), test);
+        SetTiles(new Coordinate(1, 5), test);
 
         char[,] test2 = new char[4, 4];
-        test2[0, 0] = 'B';
-        test2[1, 0] = 'O';
-        test2[2, 0] = 'O';
-        test2[3, 0] = 'B';
-        test2[0, 1] = 'B';
-        test2[1, 1] = 'O';
-        test2[2, 1] = 'O';
-        test2[3, 1] = 'B';
-        test2[0, 2] = 'B';
-        test2[1, 2] = 'O';
-        test2[2, 2] = 'O';
-        test2[3, 2] = 'B';
-        test2[0, 3] = 'B';
-        test2[1, 3] = 'O';
-        test2[2, 3] = 'O';
-        test2[3, 3] = 'B';
+        test2[0, 0] = 'b';
+        test2[1, 0] = 'o';
+        test2[2, 0] = 'o';
+        test2[3, 0] = 'b';
+        test2[0, 1] = 'b';
+        test2[1, 1] = 'o';
+        test2[2, 1] = 'o';
+        test2[3, 1] = 'b';
+        test2[0, 2] = 'b';
+        test2[1, 2] = 'o';
+        test2[2, 2] = 'o';
+        test2[3, 2] = 'b';
+        test2[0, 3] = 'b';
+        test2[1, 3] = 'o';
+        test2[2, 3] = 'o';
+        test2[3, 3] = 'b';
 
-        List<Coordinate> coords = Contains(CreateGrid(test2));
+        List<Coordinate> coords = Contains(CreateGrid(test2));*/
 
-        Debug.Log(coords.Count);
+       // Debug.Log(coords.Count);
     }
 
     /// <summary>
@@ -55,10 +55,17 @@ public class GrammarGrid : Grid
     {
         List <Coordinate> returnList = new List<Coordinate>();
 
-        // loop through complete grid to find all matching subgrids
-        for (int x = 0; x < width; x++)
+        // can this subgrid be contained in this grid?
+        if (subgrid.Width > width || subgrid.Height > height)
         {
-            for (int y = 0; y < height; y++)
+            Debug.Log("This subgrid is too big to be contained within this grid");
+            return returnList;
+        }
+
+        // loop through complete grid to find all matching subgrids
+        for (int x = 0; x < width - subgrid.Width + 1; x++)
+        {
+            for (int y = 0; y < height - subgrid.Height + 1; y++)
             {
                 // check for [0,0]
                 if (subgrid.GetTile(0, 0) == GetTile(x, y))
