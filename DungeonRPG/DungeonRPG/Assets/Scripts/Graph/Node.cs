@@ -44,17 +44,38 @@ public class Node
         }
     }
 
+    public void createChildNode(string pSymbol)
+    {
+        Node newNode = new Node(pSymbol);
+        AddNode(newNode);
+    }
+
     public void AddNode(Node newChildNode)
     {
         Connection newConnection = new Connection(newChildNode, false);
         connections.Add(newConnection);
+        newChildNode.AddPreviousNode(this);
+    }
+
+    public void AddPreviousNode(Node newPrevious)
+    {
+        Connection newConnection = new Connection(newPrevious, false);
+        previous.Add(newConnection);
     }
 
     public void AddDirectedNode(Node newChildNode)
     {
         Connection newConnection = new Connection(newChildNode, true);
         connections.Add(newConnection);
+        newChildNode.AddPreviousNode(this);
     }
+
+    public void AddDirectedPreviousNode(Node newPrevious)
+    {
+        Connection newConnection = new Connection(newPrevious, true);
+        previous.Add(newConnection);
+    }
+
 
     public string Debug()
     {
