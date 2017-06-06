@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Node
 {
-    private List<Connection> previous;
+    private List<Node> previous;
     private List<Connection> connections;
     string symbol;
+    public bool Iterated = false;
 
     public Node(string symbol)
     {
         this.symbol = symbol;
+        previous = new List<Node>();
+        connections = new List<Connection>();
     }
 
     public string Symbol
     {
         get
         {
-            return Symbol;
+            return symbol;
         }
     }
     
@@ -44,6 +47,18 @@ public class Node
         }
     }
 
+    public List<Node> Previous
+    {
+        get
+        {
+            if(previous == null)
+            {
+                previous = new List<Node>();
+            }
+            return previous;
+        }
+    }
+
     public void createChildNode(string pSymbol)
     {
         Node newNode = new Node(pSymbol);
@@ -59,8 +74,7 @@ public class Node
 
     public void AddPreviousNode(Node newPrevious)
     {
-        Connection newConnection = new Connection(newPrevious, false);
-        previous.Add(newConnection);
+        previous.Add(newPrevious);
     }
 
     public void AddDirectedNode(Node newChildNode)
@@ -68,12 +82,6 @@ public class Node
         Connection newConnection = new Connection(newChildNode, true);
         connections.Add(newConnection);
         newChildNode.AddPreviousNode(this);
-    }
-
-    public void AddDirectedPreviousNode(Node newPrevious)
-    {
-        Connection newConnection = new Connection(newPrevious, true);
-        previous.Add(newConnection);
     }
 
 

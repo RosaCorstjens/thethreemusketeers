@@ -2,12 +2,12 @@
 public class Connection
 {
     Node next;
-    bool directed;
+    bool isLiniar;
 
-    public Connection(Node next, bool directed)
+    public Connection(Node next, bool isLiniar)
     {
         this.next = next;
-        this.directed = directed;
+        this.isLiniar = isLiniar;
     }
 
     public Node Next
@@ -18,11 +18,11 @@ public class Connection
         }
     }
 
-    public bool Directed
+    public bool IsLiniar
     {
         get
         {
-            return directed;
+            return isLiniar;
         }
     }
     
