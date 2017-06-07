@@ -10,6 +10,11 @@ public class Connection
         this.isLiniar = isLiniar;
     }
 
+    public Connection()
+    {
+
+    }
+
     public Node Next
     {
         get

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class Graph : MonoBehaviour
 {
@@ -8,64 +9,52 @@ public class Graph : MonoBehaviour
 
     public Graph()
     {
-        startNode = new Node("e");
-        Node node2 = new Node("n");
-        Node node3 = new Node("n");
-        Node node4 = new Node("t");
-        Node node5 = new Node("i");
-        Node node6 = new Node("ts");
-        Node node7 = new Node("i");
-        Node node8 = new Node("t");
-        Node node9 = new Node("k");
-        Node node10 = new Node("l");
-        Node node11 = new Node("t");
-        Node node12 = new Node("i");
-        Node node13 = new Node("km");
-        Node node14 = new Node("lm");
-        Node node15 = new Node("ts");
-        Node node16 = new Node("h"); //hub
-        Node node17 = new Node("ts");
-        Node node18 = new Node("km");
-        Node node19 = new Node("ts");
-        Node node20 = new Node("t");
-        Node node21 = new Node("ts");
-        Node node22 = new Node("");
-        Node node23 = new Node("");
-        Node node24 = new Node("");
-        Node node25 = new Node("");
-        Node node26 = new Node("");
+        string input = File.ReadAllText("Assets/StreamingAssets/dungeonmission4.xpr");
 
-        startNode.AddNode(node2);
-        node2.AddNode(node3);
+        input = input.Replace("GRAPH", "");
 
-        node3.AddNode(node4);
-        node4.AddNode(node5);
+        string[] splitUpInput = input.Split(')');
 
-        node3.AddNode(node6);
-        node6.AddNode(node7);
+        Dictionary<int, Node> nodes = new Dictionary<int, Node>();
+        Dictionary<int, string> connections = new Dictionary<int, string>();
 
-        node3.AddNode(node8);
-        node8.AddNode(node9);
-        node9.AddNode(node10);
+        for (int i = 0; i < splitUpInput.Length; i++)
+        {
+            string[] parts = splitUpInput[i].Trim().Split(':');
 
-        node10.AddNode(node11);
-        node11.AddNode(node12);
+            if(parts[0] != "")
+            {
+                if (parts[1].Contains("edge"))
+                {
+                    connections.Add(int.Parse(parts[0]), parts[1]);
+                }
+                else
+                {
+                    string terminalSymbol = parts[1].Split('(')[0];
+                    nodes.Add(int.Parse(parts[0]), new Node(terminalSymbol));
+                }
+            }
+        }
 
-        node10.AddNode(node13);
-        node13.AddNode(node14);
-        node14.AddNode(node15);
-        node15.AddNode(node16);
+        foreach (KeyValuePair<int, string> connection in connections)
+        {
+            string connectionType = connection.Value.Split('(')[0];
 
-        node3.AddNode(node17);
-        node17.AddNode(node18);
-        node18.AddNode(node14);
+            string[] values = connection.Value.Split('(')[1].Split(',');
+            int parentId = int.Parse(values[0].Trim());
+            int childId = int.Parse(values[1].Trim());
 
-        node2.AddNode(node19);
-        node19.AddNode(node20);
-        node20.AddNode(node21);
-        node21.AddNode(node15);
+            if(connectionType == "edge")
+            {
+                nodes[parentId].AddNode(nodes[childId]);
+            }
+            else
+            {
+                nodes[parentId].AddDirectedNode(nodes[childId]);
+            }
+        }
 
-
+        startNode = nodes[0];
         PrintNodeList();
     }
 
@@ -86,19 +75,19 @@ public class Graph : MonoBehaviour
 
     public void PrintNodeList()
     {
-        List<string> nodes = GetNodeList();
-        foreach (string node in nodes)
+        List<Node> nodes = GetNodeList();
+        foreach (Node node in nodes)
         {
-            Debug.Log(node);
+            Debug.Log(node.Symbol);
         }
     }
 
-    public List<string> GetNodeList()
+    public List<Node> GetNodeList()
     {
         //ToDo:
         //startNode set according to read in file
 
-        List<string> nodes = new List<string>();
+        List<Node> nodes = new List<Node>();
 
         List<Node> unFinished = new List<Node>();
         unFinished.Insert(0, startNode);
@@ -107,55 +96,67 @@ public class Graph : MonoBehaviour
         {
             //first node from the unfinished list
             Node currentNode = unFinished[0];
+            bool previousNotIterated = false;
+            for (int i = 0; i < currentNode.Previous.Count; i++)
+            {
+                if (!currentNode.Previous[i].Iterated)
+                {
+                    unFinished.Remove(currentNode);
+                    unFinished.Add(currentNode);
+                    previousNotIterated = true;
+                    continue;
+                }
+            }
+            if (previousNotIterated) continue;
             if (!currentNode.Iterated)
             {
-                nodes.Add(currentNode.Symbol);
+                nodes.Add(currentNode);
                 currentNode.Iterated = true;
             }
-            if (currentNode.Connections.Count > 0)
+            //get a child
+            Connection connection = new Connection();
+
+            int remainingConnections = currentNode.Connections.Count;
+            for (int i = 0; i < currentNode.Connections.Count; i++)
             {
-                //get a child
-                Connection connection = currentNode.Connections[0];
-                //remove child from connections
-                currentNode.Connections.RemoveAt(0);
+                if (currentNode.Connections[i].Next.Iterated)
+                {
+                    remainingConnections--;
+                }
+                else
+                {
+                    connection = currentNode.Connections[i];
+                }
+            }
+            if(remainingConnections > 0)
+            {
                 if (connection.Next.Previous.Count <= 1)
                 {
-                    //adds the node its symbol to the nodes list
-                    if (connection.IsLiniar)
-                    {
-                        //adds connected command ot the string list 
-                        nodes.Add("connected");
-                    }
                     //inserts next node to the fron of the unfinished list
                     unFinished.Insert(0, connection.Next);
                 }
                 else
                 {
-                    bool temp = true;
-                    for (int i = 0; i < connection.Next.Previous.Count; i++)
+                    if (!unFinished.Contains(connection.Next))
                     {
-                        if (!connection.Next.Previous[i].Iterated)
-                        {
-                            temp = false;
-                        }
-                    }
-                    //node with multiple incoming connections
-                    if (temp)
-                    {
-                        //adds it to the end of the unfinished list when it is not already in it
-                        unFinished.Insert(0, connection.Next);
+                        unFinished.Add(connection.Next);
                     }
                 }
-                if(currentNode.Connections.Count == 0)
+                if (remainingConnections == 1)
                 {
-                    //no other connections left remove this node
                     unFinished.Remove(currentNode);
                 }
             }
             else
             {
+                //no other connections left remove this node
                 unFinished.Remove(currentNode);
             }
+        }
+
+        foreach (var node in nodes)
+        {
+            node.Iterated = false;
         }
 
 
