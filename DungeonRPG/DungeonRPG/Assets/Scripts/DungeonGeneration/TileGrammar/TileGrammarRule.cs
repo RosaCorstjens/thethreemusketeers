@@ -43,6 +43,10 @@ public class TileGrammarRule
     public List<Grid> RHS { get; private set; }
     public List<int> ProbabilitiesRHS { get; private set; }
 
+    private string ruleName;
+    private int width;
+    private int height;
+
     Grid GetRandomRHS()
     {
         //TODO: do we have to set a seed?

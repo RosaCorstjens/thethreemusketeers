@@ -5,28 +5,28 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 412280}
-  - component: {fileID: 11458286}
+  - 4: {fileID: 412280}
+  - 114: {fileID: 11458286}
   m_Layer: 5
-  m_Name: StandardStats
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &104054
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 414222}
-  - component: {fileID: 11461244}
+  - 4: {fileID: 414222}
+  - 114: {fileID: 11461244}
   m_Layer: 5
-  m_Name: Highlight
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,98 +37,98 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 422358}
-  - component: {fileID: 11407184}
+  - 4: {fileID: 422358}
+  - 114: {fileID: 11407184}
   m_Layer: 5
-  m_Name: Border
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &115856
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 428756}
-  - component: {fileID: 11443398}
-  - component: {fileID: 11439104}
-  - component: {fileID: 6505890}
-  - component: {fileID: 11499110}
+  - 4: {fileID: 428756}
+  - 114: {fileID: 11443398}
+  - 114: {fileID: 11439104}
+  - 65: {fileID: 6505890}
+  - 114: {fileID: 11499110}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &119278
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 413208}
-  - component: {fileID: 11468080}
+  - 4: {fileID: 413208}
+  - 114: {fileID: 11468080}
   m_Layer: 5
-  m_Name: Border
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &119850
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 435974}
-  - component: {fileID: 11451452}
-  - component: {fileID: 11449540}
-  - component: {fileID: 6595726}
-  - component: {fileID: 11413464}
+  - 4: {fileID: 435974}
+  - 114: {fileID: 11451452}
+  - 114: {fileID: 11449540}
+  - 65: {fileID: 6595726}
+  - 114: {fileID: 11413464}
   m_Layer: 5
-  m_Name: EquipButton
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &127284
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 470284}
-  - component: {fileID: 11404882}
+  - 4: {fileID: 470284}
+  - 114: {fileID: 11404882}
   m_Layer: 5
-  m_Name: Label
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &138358
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 465442}
-  - component: {fileID: 11442750}
+  - 4: {fileID: 465442}
+  - 114: {fileID: 11442750}
   m_Layer: 5
-  m_Name: Highlight
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,304 +139,304 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 461136}
-  - component: {fileID: 11436836}
+  - 4: {fileID: 461136}
+  - 114: {fileID: 11436836}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &140352
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 482626}
-  - component: {fileID: 11493988}
+  - 4: {fileID: 482626}
+  - 114: {fileID: 11493988}
   m_Layer: 5
-  m_Name: EquippedLabel
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &147650
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 486916}
-  - component: {fileID: 11419474}
+  - 4: {fileID: 486916}
+  - 114: {fileID: 11419474}
   m_Layer: 5
-  m_Name: Label
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &149646
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 415486}
-  - component: {fileID: 11468346}
+  - 4: {fileID: 415486}
+  - 114: {fileID: 11468346}
   m_Layer: 5
-  m_Name: InventorySlot
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &154188
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 413704}
-  - component: {fileID: 11421016}
+  - 4: {fileID: 413704}
+  - 114: {fileID: 11421016}
   m_Layer: 5
-  m_Name: Line
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &156502
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 442072}
-  - component: {fileID: 11402048}
+  - 4: {fileID: 442072}
+  - 114: {fileID: 11402048}
   m_Layer: 5
-  m_Name: Actions
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &159412
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 470962}
-  - component: {fileID: 11405232}
+  - 4: {fileID: 470962}
+  - 114: {fileID: 11405232}
   m_Layer: 5
-  m_Name: Number
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &160906
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 485358}
-  - component: {fileID: 11434576}
+  - 4: {fileID: 485358}
+  - 114: {fileID: 11434576}
   m_Layer: 5
-  m_Name: Background
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &161866
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 497372}
-  - component: {fileID: 11422986}
+  - 4: {fileID: 497372}
+  - 114: {fileID: 11422986}
   m_Layer: 5
-  m_Name: Label
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &162318
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 406186}
-  - component: {fileID: 11487630}
+  - 4: {fileID: 406186}
+  - 114: {fileID: 11487630}
   m_Layer: 5
-  m_Name: Background
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &166924
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 455556}
-  - component: {fileID: 11449398}
-  - component: {fileID: 11418972}
+  - 4: {fileID: 455556}
+  - 114: {fileID: 11449398}
+  - 114: {fileID: 11418972}
   m_Layer: 5
   m_Name: ItemInformationPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &167002
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 469970}
-  - component: {fileID: 11414896}
+  - 4: {fileID: 469970}
+  - 114: {fileID: 11414896}
   m_Layer: 5
-  m_Name: RequiredLevel
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &167462
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 401590}
-  - component: {fileID: 11492662}
+  - 4: {fileID: 401590}
+  - 114: {fileID: 11492662}
   m_Layer: 5
-  m_Name: Background
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &169808
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 426474}
-  - component: {fileID: 11475196}
+  - 4: {fileID: 426474}
+  - 114: {fileID: 11475196}
   m_Layer: 5
-  m_Name: Border
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &170942
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 402804}
-  - component: {fileID: 11479860}
+  - 4: {fileID: 402804}
+  - 114: {fileID: 11479860}
   m_Layer: 5
-  m_Name: Label
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &180062
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 446274}
-  - component: {fileID: 11412736}
+  - 4: {fileID: 446274}
+  - 114: {fileID: 11412736}
   m_Layer: 5
-  m_Name: BasicInformation
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &181392
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 431026}
-  - component: {fileID: 11489968}
-  - component: {fileID: 11444658}
-  - component: {fileID: 6516236}
-  - component: {fileID: 11446994}
+  - 4: {fileID: 431026}
+  - 114: {fileID: 11489968}
+  - 114: {fileID: 11444658}
+  - 65: {fileID: 6516236}
+  - 114: {fileID: 11446994}
   m_Layer: 5
-  m_Name: DropButton
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &184446
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 446244}
-  - component: {fileID: 11435918}
+  - 4: {fileID: 446244}
+  - 114: {fileID: 11435918}
   m_Layer: 5
-  m_Name: Name
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &186430
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 416900}
-  - component: {fileID: 11462868}
+  - 4: {fileID: 416900}
+  - 114: {fileID: 11462868}
   m_Layer: 5
-  m_Name: Highlight
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,33 +447,33 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 400482}
-  - component: {fileID: 11409874}
+  - 4: {fileID: 400482}
+  - 114: {fileID: 11409874}
   m_Layer: 5
-  m_Name: Grid
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &188348
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-  - component: {fileID: 482326}
-  - component: {fileID: 11429712}
+  - 4: {fileID: 482326}
+  - 114: {fileID: 11429712}
   m_Layer: 5
-  m_Name: ItemType
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400482
 Transform:
   m_ObjectHideFlags: 1
@@ -489,7 +489,6 @@ Transform:
   - {fileID: 428756}
   m_Father: {fileID: 442072}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &401590
 Transform:
   m_ObjectHideFlags: 1
@@ -502,7 +501,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 435974}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &402804
 Transform:
   m_ObjectHideFlags: 1
@@ -515,7 +513,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428756}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &406186
 Transform:
   m_ObjectHideFlags: 1
@@ -528,7 +525,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428756}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &412280
 Transform:
   m_ObjectHideFlags: 1
@@ -543,7 +539,6 @@ Transform:
   - {fileID: 482326}
   m_Father: {fileID: 455556}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &413208
 Transform:
   m_ObjectHideFlags: 1
@@ -556,7 +551,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 435974}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &413704
 Transform:
   m_ObjectHideFlags: 1
@@ -569,7 +563,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446274}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &414222
 Transform:
   m_ObjectHideFlags: 1
@@ -582,7 +575,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431026}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &415486
 Transform:
   m_ObjectHideFlags: 1
@@ -596,7 +588,6 @@ Transform:
   - {fileID: 461136}
   m_Father: {fileID: 446274}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &416900
 Transform:
   m_ObjectHideFlags: 1
@@ -604,12 +595,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.000015258789, z: 0}
+  m_LocalPosition: {x: 0, y: -1.52587891e-05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435974}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &422358
 Transform:
   m_ObjectHideFlags: 1
@@ -622,7 +612,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431026}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &426474
 Transform:
   m_ObjectHideFlags: 1
@@ -635,7 +624,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428756}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &428756
 Transform:
   m_ObjectHideFlags: 1
@@ -652,7 +640,6 @@ Transform:
   - {fileID: 465442}
   m_Father: {fileID: 400482}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &431026
 Transform:
   m_ObjectHideFlags: 1
@@ -669,7 +656,6 @@ Transform:
   - {fileID: 414222}
   m_Father: {fileID: 400482}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &435974
 Transform:
   m_ObjectHideFlags: 1
@@ -686,7 +672,6 @@ Transform:
   - {fileID: 416900}
   m_Father: {fileID: 400482}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &442072
 Transform:
   m_ObjectHideFlags: 1
@@ -700,7 +685,6 @@ Transform:
   - {fileID: 400482}
   m_Father: {fileID: 455556}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &446244
 Transform:
   m_ObjectHideFlags: 1
@@ -713,7 +697,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446274}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &446274
 Transform:
   m_ObjectHideFlags: 1
@@ -731,7 +714,6 @@ Transform:
   - {fileID: 482626}
   m_Father: {fileID: 455556}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &455556
 Transform:
   m_ObjectHideFlags: 1
@@ -747,7 +729,6 @@ Transform:
   - {fileID: 442072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &461136
 Transform:
   m_ObjectHideFlags: 1
@@ -760,7 +741,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 415486}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &465442
 Transform:
   m_ObjectHideFlags: 1
@@ -773,7 +753,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 428756}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &469970
 Transform:
   m_ObjectHideFlags: 1
@@ -786,7 +765,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412280}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &470284
 Transform:
   m_ObjectHideFlags: 1
@@ -799,7 +777,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 435974}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &470962
 Transform:
   m_ObjectHideFlags: 1
@@ -813,7 +790,6 @@ Transform:
   - {fileID: 497372}
   m_Father: {fileID: 446274}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &482326
 Transform:
   m_ObjectHideFlags: 1
@@ -826,7 +802,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412280}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &482626
 Transform:
   m_ObjectHideFlags: 1
@@ -839,7 +814,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446274}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &485358
 Transform:
   m_ObjectHideFlags: 1
@@ -852,7 +826,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431026}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &486916
 Transform:
   m_ObjectHideFlags: 1
@@ -865,7 +838,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 431026}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &497372
 Transform:
   m_ObjectHideFlags: 1
@@ -878,7 +850,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470962}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6505890
 BoxCollider:
   m_ObjectHideFlags: 1
