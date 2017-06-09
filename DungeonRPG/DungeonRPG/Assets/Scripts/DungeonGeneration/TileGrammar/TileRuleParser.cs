@@ -42,14 +42,7 @@ public class TileRuleParser
             //rule
             //split on < sign in part A & B
             //A:
-            //save name
-            //between '(' and ')' sign
-            //split on ',' or space and gather all elements
-            //save data in correct var
-            //find TILEMAP
-            //read width
-            //read depth
-            //read all tiles and create grid
+            
 
             //B:
             //extract everything between '{' and '}'
@@ -76,7 +69,6 @@ public class TileRuleParser
         if (input.Contains("TILEMAP"))
         {
             input = input.Substring(input.IndexOf(' ') + 1);
-            
         }
 
         //get width and heigth
@@ -89,7 +81,37 @@ public class TileRuleParser
             Debug.Log("wrong width/ height input");
         }
         RuleProxy proxy = new RuleProxy(width, height, "start");
-        //save grid with appropriate tiles
+        string[,] grid = getTileMap(input, width, height);
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                proxy.SetTile(x,y, grid[x,y]);
+            }
+        }
+    }
+
+    public void createRule(string input)
+    {
+        string[] parts = input.Split('>');
+        //A part:
+            //save name
+            //between '(' and ')' sign
+            //split on ',' or space and gather all elements
+            //save data in correct var
+            //find TILEMAP
+            //read width
+            //read depth
+            //read all tiles and create grid
+
+        //B part:
+    }
+
+    public string[,] getTileMap(string input, int width, int height)
+    {
+        string[,] GridArray;
+        GridArray = new string[width, height];
+
         int x = 0, y = 0;
         string[] tile;
         //add right values
@@ -108,14 +130,13 @@ public class TileRuleParser
                 tile = input.Substring(0, length).Split(':');
                 input = input.Substring(input.IndexOf(' ') + 1);
             }
-            
+
             int id = int.Parse(tile[0]);
             x = id % width;
             y = (int) id / width;
-            proxy.SetTile(x, y, tile[1]);
+            GridArray[x, y] = tile[1];
         }
-        //make rule
-
+        return GridArray;
     }
 }
 
