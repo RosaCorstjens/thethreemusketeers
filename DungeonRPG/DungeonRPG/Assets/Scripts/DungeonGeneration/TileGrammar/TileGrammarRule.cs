@@ -3,6 +3,20 @@ using System.Collections.Generic;
 
 public class TileGrammarRule
 {
+    public Grid LHS { get; private set; }
+    public List<Grid> RHS { get; private set; }
+    public List<int> ProbabilitiesRHS { get; private set; }
+
+    private string ruleName;
+    private int width;
+    private int height;
+
+    private int maxExecutions;
+
+    private bool canRotate;
+    private bool canMirrorH;
+    private bool canMirrorV;
+
     public TileGrammarRule() { }
 
     public TileGrammarRule(Grid LHS, List<Grid> RHS, List<int> probRHS = null)
@@ -38,14 +52,6 @@ public class TileGrammarRule
         this.ProbabilitiesRHS = new List<int>(); 
         this.ProbabilitiesRHS.Add(probRHS < 1 ? 1 : probRHS);
     }
-
-    public Grid LHS { get; private set; }
-    public List<Grid> RHS { get; private set; }
-    public List<int> ProbabilitiesRHS { get; private set; }
-
-    private string ruleName;
-    private int width;
-    private int height;
 
     Grid GetRandomRHS()
     {
