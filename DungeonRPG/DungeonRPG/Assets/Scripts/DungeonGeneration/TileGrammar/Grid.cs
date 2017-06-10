@@ -36,6 +36,21 @@ public class Grid
         }
     }
 
+    public Grid(char[,] grid)
+    {
+        width = grid.GetLength(0);
+        height = grid.GetLength(1);
+        tiles = new char[width, height];
+
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                tiles[x, y] = grid[x, y];
+            }
+        }
+    }
+
     public char GetTile(Coordinate position)
     {
         return tiles[position.x, position.y];

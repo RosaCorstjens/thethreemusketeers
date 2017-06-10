@@ -78,12 +78,12 @@ public class TileGrammarHandler
         rhs.Add(rhsTwo);
         rhs.Add(rhsThree);
 
-        List<int> probs = new List<int>();
+        List<float> probs = new List<float>();
         probs.Add(101);
         probs.Add(100);
         probs.Add(150);
 
-        TileGrammarRule ruleOne = new TileGrammarRule(lhsOne, rhs, probs);
+        TileGrammarRule ruleOne = new TileGrammarRule("testRule", lhsOne, rhs, probs);
 
         returnList.Add(ruleOne);
 
@@ -141,10 +141,10 @@ public class TileGrammarHandler
         int chosenCoord = UnityEngine.Random.Range(0, possCoordinates.Count);
 
         // random roll for RHS probabilities
-        int summedProb = 0;
+        float summedProb = 0.0f;
         rule.ProbabilitiesRHS.HandleAction(r => summedProb += r);
 
-        int chosenProb = UnityEngine.Random.Range(0, summedProb);
+        float chosenProb = UnityEngine.Random.Range(0, summedProb);
         int chosenRHS = 0;
             
         summedProb = 0;

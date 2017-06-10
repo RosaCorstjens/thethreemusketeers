@@ -9,14 +9,76 @@ using UnityEngine;
 public class TileRuleParser
 {
     private string filePath = "Assets/Resources/LudoScope/TileRules/TileRules.grm";
+    private TileGrammarRule startRule;
+    private List<TileGrammarRule> rules;
+
+    public static Dictionary<string, char> abbreviation = new Dictionary<string, char>
+    {
+        { "undefined", 'u'},
+        { "door", 'd'},
+        { "room", 'r'},
+        { "wall", 'w'},
+        { "treasure", 't'},
+        { "key", 'k'},
+        { "keyfinal", 'K'},
+        { "keymulti", '0'},
+        { "lock", 'l'},
+        { "lockfinal", 'L'},
+        { "lockmulti", '1'},
+        { "floor", 'f'},
+        { "hook", 'h'},
+        { "directedHook", 'H'},
+        { "monster", 'm'},
+        { "trap", 'p'},
+        { "entrance", 'e'},
+        { "portal", 'P'}
+    };
 
     public TileRuleParser(string filePath = "")
     {
         if (filePath != "") this.filePath = filePath;
         Debug.Log("Parsing Tile rules, using file:" + filePath);
+        rules = new List<TileGrammarRule>();
     }
 
-    public List<string> ReadFile()
+    public List<TileGrammarRule> getTileRules()
+    {
+        List<TileGrammarRule> ruleList = new List<TileGrammarRule>(rules.Count + 1);
+        ruleList.Add(startRule);
+        for (int i = 0; i < rules.Count; i++)
+        {
+         ruleList.Add(rules[i]);   
+        }
+        return ruleList;
+    }
+
+    public TileGrammarRule getRule(string name)
+    {
+        for (int i = 0; i < rules.Count; i++)
+        {
+            if (rules[i].Name == name)
+            {
+                return rules[i];
+            }
+        }
+        Debug.LogError("No such rule found");
+        return null;
+    }
+
+    public TileGrammarRule getRule(char abbreviationChar)
+    {
+        for (int i = 0; i < abbreviation.Count; i++)
+        {
+            if (abbreviation.ElementAt(i).Value == abbreviationChar)
+            {
+                return getRule(abbreviation.ElementAt(i).Key);
+            }
+        }
+        Debug.LogError("No such abbreviation found");
+        return null;
+    }
+
+    public void ReadFile()
     {
         Debug.Log("Reading file...");
         List<string> content = new List<string>();
@@ -31,8 +93,9 @@ public class TileRuleParser
             line = reader.ReadLine();
         }
 
-        while (!reader.EndOfStream)
+        while (!reader.EndOfStream || !line.IsNullOrEmpty())
         {
+            int i = 0;
             if (line != "")
             {
                 string type;
@@ -59,31 +122,27 @@ public class TileRuleParser
         
         reader.Close();
         Debug.Log("Reading done, parsing content...");
-
-        return content;
     }
-    //gt1 = rotate
-    //gt2 = hori
-    //gt4 = verti
     
     public void CreateStartRule(string input)
     {
-        string[,] grid = getTileMap(input);
+        char[,] grid = getTileMap(input);
         int width = grid.GetLength(0);
         int height = grid.GetLength(1);
 
         TileGrammarRuleProxy proxy = new TileGrammarRuleProxy("start");
         proxy.width = width;
         proxy.height = height;
-        proxy.Setup();
+        proxy.SetupLHS();
 
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
-                proxy.SetTile(x,y, grid[x,y]);
+                proxy.SetLHSTile(x,y, grid[x,y]);
             }
         }
+        startRule = proxy.getRule();
     }
 
     public void createRule(string input)
@@ -151,29 +210,35 @@ public class TileRuleParser
         }
         proxy.width = width;
         proxy.height = height;
-        proxy.Setup();
+        proxy.SetupLHS();
 
         lhs = lhs.Substring(lhs.IndexOf("TILEMAP"));
-        string[,] grid = getTileMap(lhs);
+        char[,] grid = getTileMap(lhs);
         //read all tiles and create grid
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
-                proxy.SetTile(x, y, grid[x, y]);
+                proxy.SetLHSTile(x, y, grid[x, y]);
             }
         }
 
-        List<TileGrammarRuleProxy> rhsProxies = new List<TileGrammarRuleProxy>();
         //B part:
         int ruleCounter = 0;
         while (rhs != "" || rhs.Length > 0)
         {
-            rhsProxies.Add(new TileGrammarRuleProxy("unnamed-rhs-rule"));
             //extract everything between '{' and '}'
             string rule = rhs.Substring(rhs.IndexOf('{'), rhs.IndexOf('}') - rhs.IndexOf('{'));
             rhs = rhs.Substring(rhs.IndexOf('}') + 1);
             int nameLength = rule.IndexOf('=') - 1;
+            float prob = 1.0f;
+
+            if (rule.Contains('>'))
+            {
+                proxy.executeRule = true;
+                rule = rule.Split('>')[0];
+            }
+
             if (rule.Contains('('))
             {
                 nameLength = rule.IndexOf('(') - 1;
@@ -188,14 +253,13 @@ public class TileRuleParser
                         case "prob": //not used
                             if (parameter[1].Contains('f'))
                                 parameter[1] = parameter[1].Substring(0, parameter[1].Length - 1);
-                            rhsProxies[ruleCounter].probability = float.Parse(parameter[1]);
+                            prob = float.Parse(parameter[1]);
                             break;
                         default:
                             Debug.Log("new type of parameter:" + parameter[0]);
                             break;
                     }
                 }
-                rhsProxies[ruleCounter].ruleName = rule.Substring(rule.IndexOf('{') + 1, nameLength);
                 rule = rule.Substring(rule.IndexOf(')') + 1);
                 if (rule.Length > 3)
                 {
@@ -204,36 +268,23 @@ public class TileRuleParser
             }
             else
             {
-                rhsProxies[ruleCounter].ruleName = rule.Substring(rule.IndexOf('{') + 1, nameLength - 1);
                 //skip = and space characters after name
                 if (rule.Length > 3)
                 {
                     rule = rule.Substring(nameLength + 3);
                 }
             }
-
-            if (rule.Contains('>'))
-            {
-                proxy.executeRule = true;
-                rule = rule.Split('>')[0];
-            }
-            string[,] rhsGrid = getTileMap(rule);
-            rhsProxies[ruleCounter].width = rhsGrid.GetLength(0);
-            rhsProxies[ruleCounter].height = rhsGrid.GetLength(1);
-            rhsProxies[ruleCounter].Setup();
-
-            for (int y = 0; y < height; y++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    rhsProxies[ruleCounter].SetTile(x, y, rhsGrid[x,y]);
-                }
-            }
+            proxy.ProbabilitiesRHS.Add(prob);
+            
+            char[,] rhsGrid = getTileMap(rule);
+            proxy.SetupRHS();
+            proxy.SetRHS(ruleCounter, rhsGrid);
             ruleCounter++;
         }
+        rules.Add(proxy.getRule());
     }
 
-    public string[,] getTileMap(string input)
+    public char[,] getTileMap(string input)
     {
         int width;
         int height;
@@ -253,7 +304,7 @@ public class TileRuleParser
             Debug.LogError("wrong width/ height input");
         }
 
-        string[,] gridArray = new string[width, height];
+        char[,] gridArray = new char[width, height];
 
         int x = 0, y = 0;
         string[] tile;
@@ -280,7 +331,7 @@ public class TileRuleParser
 
             if (x < width && y < height)
             {
-                gridArray[x, y] = tile[1];
+                gridArray[x, y] = abbreviation.Get(tile[1]);
             }
             else
             {

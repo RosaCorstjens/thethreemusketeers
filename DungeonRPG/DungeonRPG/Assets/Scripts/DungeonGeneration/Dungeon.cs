@@ -135,10 +135,10 @@ public class Dungeon
         baseRooms[0] = new BaseRoom();
         baseCorridors[0] = new BaseCorridor();
 
-        // Setup the first room, there is no previous corridor so we do not use one.
+        // SetupLHS the first room, there is no previous corridor so we do not use one.
         baseRooms[0].SetupRoom(dm.roomWidth, dm.roomHeight, columns, rows);
 
-        // Setup the first corridor using the first room.
+        // SetupLHS the first corridor using the first room.
         baseCorridors[0].SetupCorridor(baseRooms[0], dm.corridorLength, dm.roomWidth, dm.roomHeight, columns, rows, true);
 
         for (int i = 1; i < baseRooms.Length; i++)
@@ -146,7 +146,7 @@ public class Dungeon
             // Create a room.
             baseRooms[i] = new BaseRoom();
 
-            // Setup the room based on the previous corridor.
+            // SetupLHS the room based on the previous corridor.
             baseRooms[i].SetupRoom(dm.roomWidth, dm.roomHeight, columns, rows, baseCorridors[i - 1]);
 
             // If we haven't reached the end of the corridors array...
@@ -155,7 +155,7 @@ public class Dungeon
                 // ... create a corridor.
                 baseCorridors[i] = new BaseCorridor();
 
-                // Setup the corridor based on the room that was just created.
+                // SetupLHS the corridor based on the room that was just created.
                 baseCorridors[i].SetupCorridor(baseRooms[i], dm.corridorLength, dm.roomWidth, dm.roomHeight, columns, rows, false);
             }
         }
