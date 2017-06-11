@@ -6,12 +6,14 @@ using System.Text;
 using JetBrains.Annotations;
 using UnityEngine;
 
+//parses all excisting tilegrammar rules from a file and places them in a list.
 public class TileRuleParser
 {
-    private string filePath = "Assets/Resources/LudoScope/TileRules/TileRules.grm";
+    private string filePath = "Assets/Resources/LudoScope/TileRules/TileRules.grm"; //file location
     private TileGrammarRule startRule;
     private List<TileGrammarRule> rules;
 
+    //list of abbreviations per rulename
     public static Dictionary<string, char> abbreviation = new Dictionary<string, char>
     {
         { "undefined", 'u'},
@@ -34,13 +36,16 @@ public class TileRuleParser
         { "portal", 'P'}
     };
 
+    //constructs a tile parser (Wil also read the file already)
     public TileRuleParser(string filePath = "")
     {
         if (filePath != "") this.filePath = filePath;
         Debug.Log("Parsing Tile rules, using file:" + filePath);
         rules = new List<TileGrammarRule>();
+        ReadFile();
     }
 
+    //returns a list of all tile-grammar rules
     public List<TileGrammarRule> getTileRules()
     {
         List<TileGrammarRule> ruleList = new List<TileGrammarRule>(rules.Count + 1);
@@ -52,6 +57,7 @@ public class TileRuleParser
         return ruleList;
     }
 
+    //returns the tile-grammar rule with the given name
     public TileGrammarRule getRule(string name)
     {
         for (int i = 0; i < rules.Count; i++)
@@ -65,6 +71,7 @@ public class TileRuleParser
         return null;
     }
 
+    //returns the tile-grammar rule with the given abbreviation
     public TileGrammarRule getRule(char abbreviationChar)
     {
         for (int i = 0; i < abbreviation.Count; i++)
@@ -78,6 +85,7 @@ public class TileRuleParser
         return null;
     }
 
+    //reads the file saving the data as rules
     public void ReadFile()
     {
         Debug.Log("Reading file...");
@@ -123,7 +131,8 @@ public class TileRuleParser
         reader.Close();
         Debug.Log("Reading done, parsing content...");
     }
-    
+
+    //creates a start rule - a start rule is a rule in which no rhs exists. The lhs will define hw big the grid is and how it will be filled
     public void CreateStartRule(string input)
     {
         char[,] grid = getTileMap(input);
@@ -145,6 +154,7 @@ public class TileRuleParser
         startRule = proxy.getRule();
     }
 
+    // creates a rule with both lhs and rhs components. Saves this rule in the rule list
     public void createRule(string input)
     {
         string lhs = input.Substring(0, input.IndexOf('>'));
@@ -284,6 +294,7 @@ public class TileRuleParser
         rules.Add(proxy.getRule());
     }
 
+    //returns the grid described in an input.
     public char[,] getTileMap(string input)
     {
         int width;
