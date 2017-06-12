@@ -119,7 +119,7 @@ public class Grid
         {
             for (int iy = 0; iy < height; iy++)
             {
-                outText += "|" + tiles[iy, ix] + "|";
+                outText += "|" + ((tiles[iy, ix] == 'u')? "." : "0") + "|";
             }
             outText += "\n";
         }

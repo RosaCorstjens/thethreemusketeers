@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TileGrammarHandler
 {
@@ -8,93 +10,24 @@ public class TileGrammarHandler
     private List<RoomRuleProxy> roomList;
     private List<TileGrammarRule> rules;
     private List<TileGrammarRule> currentRecipe;
+    private GrammarGrid grid;
 
     public TileGrammarHandler()
     {
         rCreator = new RecipeCreator();
         roomList = rCreator.getRoomList();
 
-        SetRecipe(roomList);
+        SetRecipe();
+        grid = new GrammarGrid(40, 40);
+        ApplyRecipe();
     }
 
-    /*
-        int endN = 10;
-        int endE = 20;
-        int endS = 30; 
-        int endW = 40;
-        int chosenCoord = 29;
-
-        Orientation tempOrientation = chosenCoord > endN ?
-            (chosenCoord > endE ?
-                (chosenCoord > endS ?
-                Orientation.West : Orientation.South)
-            : Orientation.East) : Orientation.North;
-
-        Debug.Log(tempOrientation);*/
-
-    private List<TileGrammarRule> CreateTestRules()
+    public void Print(Text output)
     {
-        List<TileGrammarRule> returnList = new List<TileGrammarRule>();
-
-        //temporary: test recipe
-        char[,] lhsGridOne = 
-        {
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'}
-        };
-
-        char[,] rhsGridOne =
-        {
-            {'u', 'u', 'h', 'u', 'u'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'h', 'r', 'r', 'r', 'h'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'u', 'u', 'e', 'u', 'u'}
-        };
-
-        char[,] rhsGridTwo =
-        {
-            {'u', 'u', 'h', 'u', 'u'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'h', 'r', 'r', 'r', 'h'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'u', 'u', 'e', 'u', 'u'}
-        };
-
-        char[,] rhsGridThree =
-        {
-            {'u', 'u', 'h', 'u', 'u'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'h', 'r', 'r', 'r', 'h'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'u', 'u', 'e', 'u', 'u'}
-        };
-
-        Grid lhsOne = Grid.CreateGrid(lhsGridOne);
-        Grid rhsOne = Grid.CreateGrid(rhsGridOne);
-        Grid rhsTwo = Grid.CreateGrid(rhsGridTwo);
-        Grid rhsThree = Grid.CreateGrid(rhsGridThree);
-        List<Grid> rhs = new List<Grid>();
-        rhs.Add(rhsOne);
-        rhs.Add(rhsTwo);
-        rhs.Add(rhsThree);
-
-        List<float> probs = new List<float>();
-        probs.Add(101);
-        probs.Add(100);
-        probs.Add(150);
-
-        TileGrammarRule ruleOne = new TileGrammarRule("testRule", lhsOne, rhs, probs);
-
-        returnList.Add(ruleOne);
-
-        return returnList;
+        grid.PrintGrid(output);
     }
 
-    public void SetRecipe(List<RoomRuleProxy> roomList)
+    private void SetRecipe()
     {
         List<TileGrammarRule> rules = new List<TileGrammarRule>();
         for (int i = 0; i < roomList.Count; i++)
@@ -108,18 +41,38 @@ public class TileGrammarHandler
         currentRecipe = rules;
     }
 
-    public GrammarGrid ApplyRecipe(GrammarGrid grid)
+    public GrammarGrid ApplyRecipe()
     {
         //TODO: loop through recipe and apply
         for (int i = 0; i < currentRecipe.Count; i++)
         {
-            grid = ApplyRule(currentRecipe[i], grid);
+            if (currentRecipe[i].ExecuteRule)
+            {
+                Debug.Log("Executing...");
+                ApplyRule(currentRecipe[i]);
+                while (ApplyRule(currentRecipe[i]))
+                {
+                    
+                }
+            }
+            else
+            {
+                if (ApplyRule(currentRecipe[i]))
+                {
+                    Debug.Log(currentRecipe[i].Name + ": Succes");
+                }
+                else
+                {
+                    Debug.Log(currentRecipe[i].Name + ": Succes");
+                }
+            }
+            
         }
 
         return grid;
     }
 
-    private GrammarGrid ApplyRule(TileGrammarRule rule, GrammarGrid grid)
+    private bool ApplyRule(TileGrammarRule rule)
     {
         // add all non-rotated options
         List<Coordinate> possCoordinates = new List<Coordinate>();
@@ -137,7 +90,7 @@ public class TileGrammarHandler
         if (possCoordinates.Count == 0)
         {
             Debug.LogError("This rule isn't contained within specified grid!");
-            return grid;
+            return false;
         }
         else
         {
@@ -178,6 +131,6 @@ public class TileGrammarHandler
         Debug.Log("Orientation: " + tempOrientation);
         Debug.Log("ChosenRHS: " + chosenRHS);
 
-        return grid;
+        return true;
     }
 }

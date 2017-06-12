@@ -481,9 +481,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1425062535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f38c64820e1644ea712cc197876778, type: 3}
+  m_Script: {fileID: 11500000, guid: d9a6d4f8fab90694c88c44cff415d57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txt: {fileID: 1064745494}
 --- !u!114 &1425062538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +525,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1425062537}
-        m_MethodName: Fire
+        m_MethodName: Print
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

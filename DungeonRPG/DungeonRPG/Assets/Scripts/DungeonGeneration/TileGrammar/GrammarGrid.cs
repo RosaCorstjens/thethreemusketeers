@@ -8,38 +8,7 @@ public class GrammarGrid : Grid
 
     public GrammarGrid(int width, int height) : base(width, height)
     {
-        /*char[,] test = new char[4, 1];
-        test[0, 0] = 'b';
-        test[1, 0] = 'o';
-        test[2, 0] = 'o';
-        test[3, 0] = 'b';
-
-        SetTiles(new Coord(1, 2), test);
-        SetTiles(new Coord(1, 3), test);
-        SetTiles(new Coord(1, 4), test);
-        SetTiles(new Coord(1, 5), test);
-
-        char[,] test2 = new char[4, 4];
-        test2[0, 0] = 'b';
-        test2[1, 0] = 'o';
-        test2[2, 0] = 'o';
-        test2[3, 0] = 'b';
-        test2[0, 1] = 'b';
-        test2[1, 1] = 'o';
-        test2[2, 1] = 'o';
-        test2[3, 1] = 'b';
-        test2[0, 2] = 'b';
-        test2[1, 2] = 'o';
-        test2[2, 2] = 'o';
-        test2[3, 2] = 'b';
-        test2[0, 3] = 'b';
-        test2[1, 3] = 'o';
-        test2[2, 3] = 'o';
-        test2[3, 3] = 'b';
-
-        List<Coord> coords = Contains(CreateGrid(test2));*/
-
-       // Debug.Log(coords.Count);
+        
     }
 
     /// <summary>

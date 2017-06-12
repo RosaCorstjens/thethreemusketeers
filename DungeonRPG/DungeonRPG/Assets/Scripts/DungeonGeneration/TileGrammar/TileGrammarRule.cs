@@ -7,6 +7,10 @@ public class TileGrammarRule
     public Grid LHS { get; private set; }
     public List<Grid> RHS { get; private set; }
     public List<float> ProbabilitiesRHS { get; private set; }
+    public bool CanRotate { get { return canRotate; } }
+    public bool CanMirrorH { get { return canMirrorH; } }
+    public bool CanMirrorV { get { return canMirrorV; } }
+    public bool ExecuteRule { get { return executeRule; } }
 
     private string ruleName;
     private int width;
