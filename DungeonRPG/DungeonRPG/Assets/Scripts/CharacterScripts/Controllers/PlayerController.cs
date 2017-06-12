@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour
     public bool CanMove { get; set; }
     public bool IsInitialized { get; set; }
 
+    public List<int> keys;
+    public List<int> multiKeys;
+
     // Use this for initialization
     public void Initialize(Vector3 spawnPosition)
     {
@@ -258,6 +261,29 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Hitted(1));
     }
 
+    public void GotHit(float dmg)
+    {
+        // if shield, adjust dmg based on block chance and amount
+        if (inOffHand)
+        {
+            float randomroll = Random.Range(0, 100);
+            if (randomroll < GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.BlockChance))
+            {
+                dmg -= GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.BlockAmount);
+            }
+        }
+
+        AdjustCurrentHealth(-dmg);
+
+        if (regenCoroutine != null)
+        {
+            StopCoroutine(regenCoroutine);
+        }
+        regenCoroutine = StartCoroutine(PauseRegen(regenCooldown));
+
+        StartCoroutine(Hitted(1));
+    }
+
     private IEnumerator Hitted(float cooldownTime)
     {
         onHitCooldown = true;
@@ -389,5 +415,38 @@ public class PlayerController : MonoBehaviour
         inOffHand.ShieldObject.SetActive(false);
 
         inOffHand = null;
+    }
+
+    public bool HasKey(int keyId)
+    {
+        return keys.Contains(keyId);
+    }
+
+    public void ObtainKey(int keyId)
+    {
+        keys.Add(keyId);
+    }
+
+    public bool HasMultiKey(int keyId)
+    {
+        int count = 0;
+        foreach (var key in multiKeys)
+        {
+            if(key == keyId)
+            {
+                count++;
+            }
+        }
+
+        if(count >= 2)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void ObtainMultiKey(int keyId)
+    {
+        multiKeys.Add(keyId);
     }
 }
