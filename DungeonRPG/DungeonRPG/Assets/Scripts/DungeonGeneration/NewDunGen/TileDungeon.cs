@@ -38,6 +38,9 @@ public class TileDungeon
         dm = GameManager.Instance.DungeonManager;
         this.tiles = tiles;
 
+        enemies = new List<EnemyController>();
+        lootchests = new List<LootChest>();
+
         // instantiates all floor tiles
         InstantiateFloors();
 
