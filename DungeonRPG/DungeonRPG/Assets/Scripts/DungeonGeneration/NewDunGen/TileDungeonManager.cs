@@ -161,6 +161,10 @@ public class TileDungeonManager : MonoBehaviour
 
         SpiderPrefab = Resources.Load<GameObject>("Prefabs/Monsters/Spider");
         ChestPrefab = Resources.Load<GameObject>("Prefabs/Props/LootChest");
+
+        TrapPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Trap");
+        KeyPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Key");
+        LockPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/LockedDoor");
     }
 
     public Vector2 WorldToGridPosition(Vector3 worldPosition)

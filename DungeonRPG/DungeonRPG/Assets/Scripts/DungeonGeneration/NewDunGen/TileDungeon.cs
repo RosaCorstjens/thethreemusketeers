@@ -107,26 +107,57 @@ public class TileDungeon
 
                     // key
                     case 'k':
+                        GameObject keyObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        keyObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        KeyScript key = keyObject.GetComponent<KeyScript>();
+                        key.Initialize();
+
                         break;
 
                     // keymulti
                     case '0':
+                        GameObject keyMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        keyMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        KeyScript keyMulti = keyMultiObject.GetComponent<KeyScript>();
+                        keyMulti.Initialize();
                         break;
 
                     // keyfinal
                     case 'K':
+                        GameObject keyFinalObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        keyFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        KeyScript keyFinal = keyFinalObject.GetComponent<KeyScript>();
+                        keyFinal.Initialize();
                         break;
 
                     // lock
                     case 'l':
+                        GameObject lockObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        lockObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        LockScript lockScript = lockObject.GetComponent<LockScript>();
+                        lockScript.Initialize();
                         break;
 
                     // lockmulti
                     case '1':
+                        GameObject lockMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        lockMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        LockScript lockMultiScript = lockMultiObject.GetComponent<LockScript>();
+                        lockMultiScript.Initialize();
                         break;
 
                     // lockfinal
                     case 'L':
+                        GameObject lockFinalObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        lockFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        LockScript lockFinalScript = lockFinalObject.GetComponent<LockScript>();
+                        lockFinalScript.Initialize();
                         break;
 
                     // hook
@@ -152,6 +183,11 @@ public class TileDungeon
 
                     // trap
                     case 'p':
+                        GameObject trapObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.TrapPrefab, spawnPos + new Vector3(0, 0.1f, 0), Quaternion.identity) as GameObject;
+                        trapObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        TrapScript trap = trapObject.GetComponent<TrapScript>();
+                        trap.Initialize();
 
                         break;
 
