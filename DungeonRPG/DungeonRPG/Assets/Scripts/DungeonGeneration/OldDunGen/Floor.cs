@@ -9,24 +9,11 @@ public class Floor
     public enum Placement { Corner, Corridor, Edge, Mid }
     public Placement placement = Placement.Mid;
 
-    public enum RoomType { Room, Corridor }
-    public RoomType roomType = RoomType.Room;
-
     public List<Floor> Neighbours { get; private set; }
 
-    List<DungeonDirection> wallPlaces;
-
+    private GameObject myGO;
     private List<GameObject> wallGOs;
-
-    public bool visited = false;
-
-    // TO DO: fix this. a floor can only belong to one of them, but you need to inherit them so you can ref here to a basic space class. 
-    public Room myRoom;
-    public Corridor myCorridor;
-
-    public bool IsOccupied;
-
-    public GameObject myGO;
+    private List<DungeonDirection> wallPlaces;
 
     public void Initialize(int xPos, int yPos)
     {
@@ -60,6 +47,21 @@ public class Floor
         {
             placement = Placement.Corner;
         }
+    }
+
+    public void PlaceFloor()
+    {
+        // The position to be instantiated at is based on the coordinates.
+        Vector3 position = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(xPos, yPos));
+
+        // Create an instance of the prefab.
+        GameObject tileInstance = GameObject.Instantiate(GameManager.Instance.DungeonManager.FloorPrefab, position, Quaternion.identity) as GameObject;
+
+        // Set the tile's parent to the board holder.
+        tileInstance.transform.parent = GameManager.Instance.DungeonManager.LevelParent.transform;
+
+        // set the go
+        myGO = tileInstance;
     }
 
     public void PlaceWalls()
@@ -165,8 +167,6 @@ public class Floor
     public void Destroy()
     {
         wallGOs.HandleAction(w => GameObject.Destroy(w));
-        myRoom = null;
-        myCorridor = null;
         GameObject.Destroy(myGO);
     }
 }

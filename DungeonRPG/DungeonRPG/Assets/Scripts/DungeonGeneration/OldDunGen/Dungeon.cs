@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -89,10 +90,10 @@ public class Dungeon
         this.numRooms = numRooms;
         this.minDistStartEnd = minDistStartEnd;
 
-        SetupTilesArray();
-        CreateRoomsAndCorridors();
-        SetTilesValuesForRooms();
-        SetTilesValuesForCorridors();
+        //SetupTilesArray();
+        //CreateRoomsAndCorridors();
+        //SetTilesValuesForRooms();
+        //SetTilesValuesForCorridors();
 
         InstantiateFloors();
         RedefineRoomsAndCorridors();
@@ -618,3 +619,4 @@ public class Dungeon
         enemies.HandleAction(e => e.Reset());
     }
 }
+*/

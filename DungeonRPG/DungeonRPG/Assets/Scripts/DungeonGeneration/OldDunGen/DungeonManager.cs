@@ -1,19 +1,19 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class DungeonManager : MonoBehaviour
 {
+    // TileRuleParser tileRuleParser
+    // Graph missionGraph
+    // List<Node> missionInstructions
+    // List<TileGrammarRule> tileRecipe
+
+    public Dungeon CurrentDungeon { get; private set; }
+
     public int columns = 1000;                                 // The number of columns on the board (how wide it will be).
     public int rows = 1000;                                    // The number of rows on the board (how tall it will be).
-    public IntRange numRooms = new IntRange(15, 20);          // The range of the number of rooms there can be.
-    public IntRange roomWidth = new IntRange(4, 7);          // The range of widths rooms can have.
-    public IntRange roomHeight = new IntRange(4, 7);         // The range of heights rooms can have.
-    public IntRange corridorLength = new IntRange(3, 10);     // The range of lengths corridors between rooms can have.
-    public float minDistStartEnd = 50f;
-
-    public const float TREASURE_ROOM_AMOUNT = 18f;
-    public const float MONSTER_ROOM_AMOUNT = 80f;
 
     public enum TileType { Wall, Floor, }
     Color[] colors = { Color.black, Color.blue, Color.cyan, Color.gray, Color.green, Color.magenta, Color.red };
@@ -23,10 +23,11 @@ public class DungeonManager : MonoBehaviour
     public GameObject WallPrefab { get; private set; }
     public GameObject PillarPrefab { get; private set; }
     public GameObject CeilingPrefab { get; private set; }
-    public GameObject PortalPrefab { get; private set; }
 
+    public GameObject PortalPrefab { get; private set; }
     public GameObject ChestPrefab { get; private set; }
     public GameObject SpiderPrefab { get; private set; }
+    public GameObject TrapPrefab { get; private set; }
 
     private GameObject levelParent;
     public GameObject LevelParent { get { return levelParent; } }
@@ -36,58 +37,71 @@ public class DungeonManager : MonoBehaviour
 
     public Dictionary<DungeonDirection, Vector2> directionValues;
 
-    // The dungeon we're now working with in generation.
-    public Dungeon CurrentDungeon { get; private set; }
-    // The dungeon that is active in game.
-    public Dungeon ActiveDungeon { get; private set; }
+    private int currentLevel;
+    public int CurrentLevel { get { return currentLevel; } }
 
-    private int floor;
-    public int Floor { get { return floor; } }
-
+    /// <summary>
+    /// Initializes the dungeonmanager.
+    /// </summary>
     public void Initialize()
     {
+        // create a go to function as level parent
         levelParent = new GameObject("Level Parent");
 
+        // instantiate our 4 directions
         directionValues = new Dictionary<DungeonDirection, Vector2>();
         directionValues.Add(DungeonDirection.North, new Vector2(0, 1));
         directionValues.Add(DungeonDirection.East, new Vector2(1, 0));
         directionValues.Add(DungeonDirection.South, new Vector2(0, -1));
         directionValues.Add(DungeonDirection.West, new Vector2(-1, 0));
 
+        // obtain all prefabs for building the dungeon
         GetPrefabs();
 
-        floor = 1;
+        // start at level 1
+        currentLevel = 1;
 
+        // starts a new dungeon to play
         StartNewDungeon();
 
+        // starting up the player
         GameManager.Instance.ActiveCharacterInformation.PlayerController.Initialize(CurrentDungeon.StartPosition);
     }
 
+    /// <summary>
+    /// Generates and starts a new dungeon.
+    /// </summary>
     public void StartNewDungeon()
     {
-        // TO DO: Set parameters to match the players level. 
-
-        GetDungeon();
-
-        ActiveDungeon = CurrentDungeon;
-
-        // TO DO: wait till now to do all building stuff and active this shit!
-        ActiveDungeon.BuildDungeon();
-
-        //CurrentDungeon.GenerateDungeon(GameManager.Instance.ActiveCharacterInformation.Level, columns, rows, numRooms.GetRandomInRange(), minDistStartEnd);//GenerateDungeon();//GetNewDungeon(dungeonType);
-    }
-
-    private void GetDungeon()
-    {
+        // set the current dungeon to null
         CurrentDungeon = null;
 
+        // generate a new dungeon
         GenerateDungeon();
     }
 
     private void GenerateDungeon()
     {
         CurrentDungeon = new Dungeon();
-        CurrentDungeon.GenerateDungeon(GameManager.Instance.ActiveCharacterInformation.Level, columns, rows, numRooms.GetRandomInRange(), minDistStartEnd);
+        //CurrentDungeon.GenerateDungeon(GameManager.Instance.ActiveCharacterInformation.Level, columns, rows, numRooms.GetRandomInRange(), minDistStartEnd);
+        
+        CurrentDungeon.BuildDungeon();
+    }
+
+    public void FinishDungeon()
+    {
+        // Increase floor. 
+        currentLevel++;
+
+        // Clear current dungeon.
+        ClearDungeon();
+
+        // Start next.
+        StartNewDungeon();
+
+        // Respawn player.
+        GameManager.Instance.UIManager.NextDungeon();
+        GameManager.Instance.StartCoroutine(GameManager.Instance.ActiveCharacterInformation.PlayerController.Respawn(CurrentDungeon.StartPosition));
     }
 
     private void ClearDungeon()
@@ -124,22 +138,6 @@ public class DungeonManager : MonoBehaviour
         return returnVector;
     }
 
-    public void FinishDungeon()
-    {
-        // Increase floor. 
-        floor++;
-
-        // Clear current dungeon.
-        ClearDungeon();
-
-        // Start next.
-        StartNewDungeon();
-
-        // Respawn player.
-        GameManager.Instance.UIManager.NextDungeon();
-        GameManager.Instance.StartCoroutine(GameManager.Instance.ActiveCharacterInformation.PlayerController.Respawn(ActiveDungeon.StartPosition));
-    }
-
     public static Room SmallestRoomInList(List<Room> rooms)
     {
         Room returnRoom = rooms[0];
@@ -174,3 +172,4 @@ public class DungeonManager : MonoBehaviour
         return returnRoom;
     }
 }
+*/
