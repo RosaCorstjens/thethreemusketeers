@@ -135,7 +135,6 @@ public class TileGrammarRuleProxy {
             }
         }
 
-        return new TileGrammarRule(ruleName, LHS, RHS, probs);
-
+        return new TileGrammarRule(ruleName, LHS, RHS, probs, canRotate, canMirrorH, canMirrorV, executeRule);
     }
 }

@@ -21,11 +21,16 @@ public class TileGrammarRule
 
     public TileGrammarRule() { }
 
-    public TileGrammarRule(string name, Grid LHS, List<Grid> RHS, List<float> probRHS = null)
+    public TileGrammarRule(string name, Grid LHS, List<Grid> RHS, List<float> probRHS = null, bool canR = false, bool canMH = false, bool canMV = false, bool execute = false)
     {
         ruleName = name;
         width = LHS.Width;
         height = LHS.Height;
+
+        canRotate = canR;
+        canMirrorH = canMH;
+        canMirrorV = canMV;
+        executeRule = execute;
 
         this.LHS = LHS;
         this.RHS = RHS;

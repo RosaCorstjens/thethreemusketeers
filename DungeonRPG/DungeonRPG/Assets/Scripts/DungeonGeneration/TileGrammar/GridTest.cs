@@ -15,7 +15,7 @@ public class GridTest : MonoBehaviour
 	void Start ()
 	{
 	    grid = new GrammarGrid(10, 10);
-        handler = new TileGrammarHandler("");
+        handler = new TileGrammarHandler();
 	    handler.ApplyRecipe(grid);
 	}
 

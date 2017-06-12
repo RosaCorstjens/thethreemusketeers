@@ -14,10 +14,10 @@ public class GrammarGrid : Grid
         test[2, 0] = 'o';
         test[3, 0] = 'b';
 
-        SetTiles(new Coordinate(1, 2), test);
-        SetTiles(new Coordinate(1, 3), test);
-        SetTiles(new Coordinate(1, 4), test);
-        SetTiles(new Coordinate(1, 5), test);
+        SetTiles(new Coord(1, 2), test);
+        SetTiles(new Coord(1, 3), test);
+        SetTiles(new Coord(1, 4), test);
+        SetTiles(new Coord(1, 5), test);
 
         char[,] test2 = new char[4, 4];
         test2[0, 0] = 'b';
@@ -37,7 +37,7 @@ public class GrammarGrid : Grid
         test2[2, 3] = 'o';
         test2[3, 3] = 'b';
 
-        List<Coordinate> coords = Contains(CreateGrid(test2));*/
+        List<Coord> coords = Contains(CreateGrid(test2));*/
 
        // Debug.Log(coords.Count);
     }

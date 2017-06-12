@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class TileParserTestor : MonoBehaviour
 {
-    private TileRuleParser parser;
+    private TileGrammarHandler testObject;
     public void Fire()
     {
-        parser = new TileRuleParser();
-        parser.ReadFile();
+        testObject = new TileGrammarHandler();
     }
 }

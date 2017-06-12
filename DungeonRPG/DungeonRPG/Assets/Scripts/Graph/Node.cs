@@ -8,12 +8,16 @@ public class Node
     private List<Connection> connections;
     string symbol;
     public bool Iterated = false;
+    private int id = -1;
 
-    public Node(string symbol)
+    public int ID { get { return id; } }
+
+    public Node(string symbol, int id)
     {
         this.symbol = symbol;
         previous = new List<Node>();
         connections = new List<Connection>();
+        this.id = id;
     }
 
     public string Symbol
@@ -59,11 +63,11 @@ public class Node
         }
     }
 
-    public void createChildNode(string pSymbol)
+/*    public void createChildNode(string pSymbol)
     {
         Node newNode = new Node(pSymbol);
         AddNode(newNode);
-    }
+    }*/
 
     public void AddNode(Node newChildNode)
     {

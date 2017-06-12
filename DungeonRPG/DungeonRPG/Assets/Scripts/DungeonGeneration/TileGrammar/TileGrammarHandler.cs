@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class TileGrammarHandler
 {
+    private RecipeCreator rCreator;
+    private List<RoomRuleProxy> roomList;
     private List<TileGrammarRule> rules;
     private List<TileGrammarRule> currentRecipe;
 
-    public TileGrammarHandler(string ruleFile)
+    public TileGrammarHandler()
     {
-        ReadRules(ruleFile);
+        rCreator = new RecipeCreator();
+        roomList = rCreator.getRoomList();
 
-        SetRecipe(CreateTestRules());
+        SetRecipe(roomList);
+    }
 
+    /*
         int endN = 10;
         int endE = 20;
         int endS = 30; 
@@ -25,8 +30,7 @@ public class TileGrammarHandler
                 Orientation.West : Orientation.South)
             : Orientation.East) : Orientation.North;
 
-        Debug.Log(tempOrientation);
-    }
+        Debug.Log(tempOrientation);*/
 
     private List<TileGrammarRule> CreateTestRules()
     {
@@ -90,16 +94,18 @@ public class TileGrammarHandler
         return returnList;
     }
 
-    private void ReadRules(string ruleFile)
+    public void SetRecipe(List<RoomRuleProxy> roomList)
     {
-        
-    }
+        List<TileGrammarRule> rules = new List<TileGrammarRule>();
+        for (int i = 0; i < roomList.Count; i++)
+        {
+            for (int j = 0; j < roomList[i].AmountOfRules; j++)
+            {
+                rules.Add(roomList[i].GetRule(j));
+            }
+        }
 
-    public void SetRecipe(List<TileGrammarRule> newRecipe)
-    {
-        // maybe tests are needed
-
-        currentRecipe = newRecipe;
+        currentRecipe = rules;
     }
 
     public GrammarGrid ApplyRecipe(GrammarGrid grid)
