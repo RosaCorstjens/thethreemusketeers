@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: bf5288d99db2a824bb5df43afa30117a
+timeCreated: 1497282563
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Box001
+    100004: Box002
+    100006: Box003
+    100008: ChamferBox002
+    100010: ChamferBox003
+    100012: Circle002
+    100014: Circle006
+    100016: Circle007
+    100018: Circle008
+    100020: Circle028
+    100022: Circle029
+    100024: Circle030
+    100026: Circle031
+    100028: Circle032
+    100030: Circle033
+    100032: Circle034
+    100034: Circle035
+    100036: Circle036
+    100038: Circle037
+    100040: Circle038
+    100042: Circle039
+    100044: Circle040
+    100046: Circle041
+    400000: //RootNode
+    400002: Box001
+    400004: Box002
+    400006: Box003
+    400008: ChamferBox002
+    400010: ChamferBox003
+    400012: Circle002
+    400014: Circle006
+    400016: Circle007
+    400018: Circle008
+    400020: Circle028
+    400022: Circle029
+    400024: Circle030
+    400026: Circle031
+    400028: Circle032
+    400030: Circle033
+    400032: Circle034
+    400034: Circle035
+    400036: Circle036
+    400038: Circle037
+    400040: Circle038
+    400042: Circle039
+    400044: Circle040
+    400046: Circle041
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: ChamferBox002
+    2300008: ChamferBox003
+    2300010: Circle002
+    2300012: Circle006
+    2300014: Circle007
+    2300016: Circle008
+    2300018: Circle028
+    2300020: Circle029
+    2300022: Circle030
+    2300024: Circle031
+    2300026: Circle032
+    2300028: Circle033
+    2300030: Circle034
+    2300032: Circle035
+    2300034: Circle036
+    2300036: Circle037
+    2300038: Circle038
+    2300040: Circle039
+    2300042: Circle040
+    2300044: Circle041
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: ChamferBox002
+    3300008: ChamferBox003
+    3300010: Circle002
+    3300012: Circle006
+    3300014: Circle007
+    3300016: Circle008
+    3300018: Circle028
+    3300020: Circle029
+    3300022: Circle030
+    3300024: Circle031
+    3300026: Circle032
+    3300028: Circle033
+    3300030: Circle034
+    3300032: Circle035
+    3300034: Circle036
+    3300036: Circle037
+    3300038: Circle038
+    3300040: Circle039
+    3300042: Circle040
+    3300044: Circle041
+    4300000: Box001
+    4300002: ChamferBox002
+    4300004: Circle002
+    4300006: Box002
+    4300008: Box003
+    4300010: Circle006
+    4300012: Circle007
+    4300014: Circle008
+    4300016: Circle028
+    4300018: Circle029
+    4300020: Circle030
+    4300022: Circle031
+    4300024: Circle032
+    4300026: Circle033
+    4300028: Circle034
+    4300030: Circle035
+    4300032: Circle036
+    4300034: Circle037
+    4300036: Circle038
+    4300038: Circle039
+    4300040: Circle040
+    4300042: Circle041
+    4300044: ChamferBox003
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

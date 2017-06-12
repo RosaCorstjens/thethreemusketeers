@@ -7,7 +7,12 @@ public class SpikeScript : MonoBehaviour
     private Transform targetTransform;
     private PlayerController targetScript;
 
-    void Awake()
+    private void Awake()
+    {
+        Initialize();
+    }
+
+    void Initialize()
     {
         trigger = GetComponent<TriggerArea>();
 
