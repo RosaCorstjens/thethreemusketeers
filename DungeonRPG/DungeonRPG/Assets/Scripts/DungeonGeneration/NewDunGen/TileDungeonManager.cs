@@ -7,7 +7,8 @@ public class TileDungeonManager : MonoBehaviour
     public TileDungeon CurrentDungeon { get; private set; }
     public int CurrentLevel { get; private set; }
 
-    private int columns, rows = 1000;
+    public int Columns { get; private set; }
+    public int Rows { get; private set; }
 
     public float WorldScaleX
     {
@@ -31,9 +32,14 @@ public class TileDungeonManager : MonoBehaviour
     public GameObject ChestPrefab { get; private set; }
     public GameObject SpiderPrefab { get; private set; }
     public GameObject TrapPrefab { get; private set; }
+    public GameObject KeyPrefab { get; private set; }
+    public GameObject LockPrefab { get; private set; }
 
     public void Initialize()
     {
+        Columns = 10;
+        Rows = 10;
+
         // create a go to function as level parent
         LevelParent = new GameObject("Level Parent");
 
@@ -71,14 +77,69 @@ public class TileDungeonManager : MonoBehaviour
         // 5. get the tile grammar rules
 
         // 6. set up the tile array
-        char[][] tiles = new char[columns][];
+        char[][] tiles = new char[Columns][];
 
         // go through all the tile arrays...
-        for (int i = 0; i < tiles.Length; i++)
+        for (int i = 0; i < Columns; i++)
         {
             // ... and set each tile array is the correct height.
-            tiles[i] = new char[rows];
+            tiles[i] = new char[Rows];
+
+            for (int j = 0; j < Rows; j++)
+            {
+                tiles[i][j] = 'u';
+            }
         }
+
+        tiles[0][0] = 'f';
+        tiles[1][0] = 'f';
+        tiles[2][0] = 'f';
+        tiles[3][0] = 'f';
+        tiles[4][0] = 'f';
+        tiles[5][0] = 'f';
+        tiles[6][0] = 'f';
+        tiles[7][0] = 'f';
+        tiles[8][0] = 'f';
+        tiles[9][0] = 'f';
+
+        tiles[0][9] = 'f';
+        tiles[1][9] = 'f';
+        tiles[2][9] = 'f';
+        tiles[3][9] = 'f';
+        tiles[4][9] = 'f';
+        tiles[5][9] = 'f';
+        tiles[6][9] = 'f';
+        tiles[7][9] = 'f';
+        tiles[8][9] = 'f';
+        tiles[9][9] = 'f';
+
+        tiles[0][0] = 'f';
+        tiles[0][1] = 'f';
+        tiles[0][2] = 'f';
+        tiles[0][3] = 'f';
+        tiles[0][4] = 'f';
+        tiles[0][5] = 'f';
+        tiles[0][6] = 'f';
+        tiles[0][7] = 'f';
+        tiles[0][8] = 'f';
+        tiles[0][9] = 'f';
+
+        tiles[9][0] = 'f';
+        tiles[9][1] = 'f';
+        tiles[9][2] = 'f';
+        tiles[9][3] = 'f';
+        tiles[9][4] = 'f';
+        tiles[9][5] = 'f';
+        tiles[9][6] = 'f';
+        tiles[9][7] = 'f';
+        tiles[9][8] = 'f';
+        tiles[9][9] = 'f';
+
+        Debug.Log(Columns);
+        Debug.Log(Rows);
+        Debug.Log(tiles.Length);
+        
+        Debug.Log(tiles[0][0]);
 
         // 7. apply all rules to a 2d array
 
@@ -95,7 +156,9 @@ public class TileDungeonManager : MonoBehaviour
         WallPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/WallPlane");
         PillarPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Pillar");
         CeilingPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Ceiling");
+
         PortalPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Portal");
+
         SpiderPrefab = Resources.Load<GameObject>("Prefabs/Monsters/Spider");
         ChestPrefab = Resources.Load<GameObject>("Prefabs/Props/LootChest");
     }

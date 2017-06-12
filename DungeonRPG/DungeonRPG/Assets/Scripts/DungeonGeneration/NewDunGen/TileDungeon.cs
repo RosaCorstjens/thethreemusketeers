@@ -71,6 +71,111 @@ public class TileDungeon
 
     private void SpawnContent()
     {
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            for (int j = 0; j < tiles[i].Length; j++)
+            {
+                // if the tile is undefined
+                if (tiles[i][j] == 'u' || tiles[i][j] == 'f' || tiles[i][j] == 'd') continue;
+
+                Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(i, j));
+
+                switch (tiles[i][j]) {
+                    // room
+                    case 'r':
+                        Debug.LogError("An unfinalized room has been found.");
+                        break;
+
+                    // wall
+                    case 'w':
+                        Debug.LogError("A wall shouldn't occur.");
+                        break;
+
+                    // treasure
+                    case 't':
+                        GameObject chestObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.ChestPrefab, spawnPos + new Vector3(0, 0.2f, 0), Quaternion.identity) as GameObject;
+                        chestObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        int randomNeighbour = Random.Range(0, GetFloor(i, j).Neighbours.Count);
+                        Vector3 lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(GetFloor(i, j).Neighbours[randomNeighbour].xPos, GetFloor(i, j).Neighbours[randomNeighbour].yPos));
+                        chestObject.transform.LookAt(lookPos);
+                        LootChest chest = chestObject.GetComponent<LootChest>();
+                        chest.Initialize();
+
+                        lootchests.Add(chest);
+                        break;
+
+                    // key
+                    case 'k':
+                        break;
+
+                    // keymulti
+                    case '0':
+                        break;
+
+                    // keyfinal
+                    case 'K':
+                        break;
+
+                    // lock
+                    case 'l':
+                        break;
+
+                    // lockmulti
+                    case '1':
+                        break;
+
+                    // lockfinal
+                    case 'L':
+                        break;
+
+                    // hook
+                    case 'h':
+                        Debug.LogError("A hook shouldn't occur.");
+                        break;
+
+                    // hook directed
+                    case 'H':
+                        Debug.LogError("A directed hook shouldn't occur.");
+                        break;
+
+                    // monster
+                    case 'm':
+                        GameObject monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, spawnPos + new Vector3(0, 0.1f, 0), Quaternion.identity) as GameObject;
+                        monsterObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        EnemyController monster = monsterObject.GetComponent<EnemyController>();
+                        monster.Initialize();
+
+                        enemies.Add(monster);
+                        break;
+
+                    // trap
+                    case 'p':
+
+                        break;
+
+                    // entrance
+                    case 'e':
+                        startPosition = dm.GridToWorldPosition(new Vector2(i, j));
+                        break;
+
+                    // portal
+                    case 'P':
+                        GameObject portal = GameObject.Instantiate(dm.PortalPrefab, spawnPos + new Vector3(0, 1.75f, 0), Quaternion.identity);
+                        portal.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        portal.transform.localEulerAngles = GetFloor(i, j).ObjectRotation();
+
+                        PortalScript portalScript = portal.GetComponent<PortalScript>();
+                        portalScript.Initialze();
+                        break;
+
+                    default:
+                        Debug.LogError("Undefined type occured in the 2D tile array.");
+                        break;
+                }
+            }
+        }
     }
 
     public void ClearDungeon()
@@ -83,7 +188,7 @@ public class TileDungeon
 
     public bool IsOccupied(int xPos, int yPos)
     {
-        if (tiles[xPos][yPos] == 'u') return false;
+        if(xPos < 0 || xPos >= dm.Rows || yPos < 0 || yPos >= dm.Columns || tiles[xPos][yPos] == 'u') return false;
 
         return true;
     }

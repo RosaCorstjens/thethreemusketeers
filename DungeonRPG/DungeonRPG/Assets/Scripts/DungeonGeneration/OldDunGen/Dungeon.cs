@@ -6,6 +6,21 @@ using UnityEditor;
 using System;
 using Random = UnityEngine.Random;
 
+
+                /*
+                       { "treasure", 't'},          // LootChest prefab
+                       { "key", 'k'},               // Key prefab
+                       { "keyfinal", 'K'},          // Key (maybe other object)
+                       { "keymulti", '0'},          // Key ook maybe anders
+                       { "lock", 'l'},              // Lock prefab @ wall place
+                       { "lockfinal", 'L'},         // idem dito
+                       { "lockmulti", '1'},         // idem dito
+                       { "monster", 'm'},           // Spider prefab
+                       { "trap", 'p'},              // Spike prefab
+                       { "entrance", 'e'},          // StartPosition
+                       { "portal", 'P'}             // Portal prefab
+                *//*
+
 public class Dungeon
 {
     public enum DungeonType { MiniBoss, Normal, }
