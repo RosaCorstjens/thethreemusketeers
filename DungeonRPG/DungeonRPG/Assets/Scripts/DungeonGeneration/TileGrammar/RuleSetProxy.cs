@@ -2,23 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomRuleProxy
+public class RuleSetProxy
 {
     private int id;
     private List<TileGrammarRule> rules;
-    private List<Coord> hooks;
+    private List<Coordinate> hooks;
     private Node node;
 
     public int ID { get { return id; } }
     public Node MyNode { get { return node; } }
     public int AmountOfRules { get { return rules.Count; } }
 
-    public RoomRuleProxy(Node node)
+    public RuleSetProxy(Node node)
     {
-        id = node.ID;
-        this.node = node;
+        if (node == null)
+        {
+            id = -1;
+            this.node = null;
+        }
+        else
+        {
+            id = node.ID;
+            this.node = node;
+        }
+        
         rules = new List<TileGrammarRule>();
-        hooks = new List<Coord>();
+        hooks = new List<Coordinate>();
     }
 
     public void AddRule(TileGrammarRule rule)
@@ -38,16 +47,9 @@ public class RoomRuleProxy
             return null;
         }
     }
-}
 
-public struct Coord
-{
-    public int x;
-    public int y;
-
-    public Coord(int ix, int iy)
+    public void SetDirected()
     {
-        x = ix;
-        y = iy;
+        
     }
 }

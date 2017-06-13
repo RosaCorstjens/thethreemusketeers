@@ -46,7 +46,7 @@ public class TileRuleParser
     }
 
     //returns a list of all tile-grammar rules
-    public List<TileGrammarRule> getTileRules()
+    public List<TileGrammarRule> GetTileRules()
     {
         List<TileGrammarRule> ruleList = new List<TileGrammarRule>(rules.Count + 1);
         ruleList.Add(startRule);
@@ -58,7 +58,7 @@ public class TileRuleParser
     }
 
     //returns the tile-grammar rule with the given name
-    public TileGrammarRule getRule(string name)
+    public TileGrammarRule GetRule(string name)
     {
         for (int i = 0; i < rules.Count; i++)
         {
@@ -72,13 +72,13 @@ public class TileRuleParser
     }
 
     //returns the tile-grammar rule with the given abbreviation
-    public TileGrammarRule getRule(char abbreviationChar)
+    public TileGrammarRule GetRule(char abbreviationChar)
     {
         for (int i = 0; i < abbreviation.Count; i++)
         {
             if (abbreviation.ElementAt(i).Value == abbreviationChar)
             {
-                return getRule(abbreviation.ElementAt(i).Key);
+                return GetRule(abbreviation.ElementAt(i).Key);
             }
         }
         Debug.LogError("No such abbreviation found");
@@ -117,7 +117,7 @@ public class TileRuleParser
                 }
                 else if (type.Contains("rule"))
                 {
-                    createRule(line);
+                    CreateRule(line);
                 }
                 line = reader.ReadLine();
             }
@@ -135,7 +135,7 @@ public class TileRuleParser
     //creates a start rule - a start rule is a rule in which no rhs exists. The lhs will define hw big the grid is and how it will be filled
     public void CreateStartRule(string input)
     {
-        char[,] grid = getTileMap(input);
+        char[,] grid = GetTileMap(input);
         int width = grid.GetLength(0);
         int height = grid.GetLength(1);
 
@@ -155,7 +155,7 @@ public class TileRuleParser
     }
 
     // creates a rule with both lhs and rhs components. Saves this rule in the rule list
-    public void createRule(string input)
+    public void CreateRule(string input)
     {
         string lhs = input.Substring(0, input.IndexOf('>'));
         string rhs = input.Substring(input.IndexOf('>'), input.Length - input.IndexOf('>'));
@@ -223,7 +223,7 @@ public class TileRuleParser
         proxy.SetupLHS();
 
         lhs = lhs.Substring(lhs.IndexOf("TILEMAP"));
-        char[,] grid = getTileMap(lhs);
+        char[,] grid = GetTileMap(lhs);
         //read all tiles and create grid
         for (int y = 0; y < height; y++)
         {
@@ -286,7 +286,7 @@ public class TileRuleParser
             }
             proxy.ProbabilitiesRHS.Add(prob);
             
-            char[,] rhsGrid = getTileMap(rule);
+            char[,] rhsGrid = GetTileMap(rule);
             proxy.SetupRHS();
             proxy.SetRHS(ruleCounter, rhsGrid);
             ruleCounter++;
@@ -295,7 +295,7 @@ public class TileRuleParser
     }
 
     //returns the grid described in an input.
-    public char[,] getTileMap(string input)
+    public char[,] GetTileMap(string input)
     {
         int width;
         int height;

@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Used for debugging so that button can be used, should be remvoed!
+/// </summary>
 public class GridTest : MonoBehaviour
 {
-    private GrammarGrid grid;
+    private Grid grid;
     private TileGrammarHandler handler;
     private int i = 0;
 

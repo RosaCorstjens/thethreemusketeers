@@ -9,7 +9,7 @@ public class Graph : MonoBehaviour
 
     public Graph()
     {
-        string input = File.ReadAllText("Assets/StreamingAssets/dungeonmission4.xpr");
+        string input = File.ReadAllText("Assets/StreamingAssets/dungeonmission5.xpr");
 
         input = input.Replace("GRAPH", "");
 

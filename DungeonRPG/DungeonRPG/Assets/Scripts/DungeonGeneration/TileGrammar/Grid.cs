@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -119,7 +121,7 @@ public class Grid
         {
             for (int iy = 0; iy < height; iy++)
             {
-                outText += "|" + ((tiles[iy, ix] == 'u')? "." : "0") + "|";
+                outText += "|" + ((tiles[ix, iy] == 'u') ? "." : tiles[ix, iy].ToString()) + "|";
             }
             outText += "\n";
         }
@@ -132,7 +134,12 @@ public class Grid
         {
             for (int y = startPos.y; y < matchGrid.height + startPos.y; y++)
             {
-                if (GetTile(x,y) != matchGrid.GetTile(x - startPos.x, y - startPos.y))
+                char matchItem = UNDEFINED;
+                if ((x >= 0 && y >= 0 && x < width && y < height))
+                {
+                    matchItem = GetTile(x, y);
+                }
+                if (matchItem != matchGrid.GetTile(x - startPos.x, y - startPos.y))
                 {
                     return false;
                 }
@@ -193,6 +200,63 @@ public class Grid
         }
 
         return returnGrid;
+    }
+
+    /// <summary>
+    /// Determines whether the grid contains the given subgrid.
+    /// </summary>
+    /// <param name="subgrid">The subgrid.</param>
+    /// <returns>
+    ///   <c>true</c> if the grid contains the given subgrid; otherwise, <c>false</c>.
+    /// </returns>
+    public List<Coordinate> Contains(Grid subgrid, bool sizeless = false)
+    {
+        List<Coordinate> returnList = new List<Coordinate>();
+
+        // can this subgrid be contained in this grid?
+        if (!sizeless && (subgrid.Width > width || subgrid.Height > height))
+        {
+            Debug.Log("This subgrid is too big to be contained within this grid");
+            return returnList;
+        }
+        int xStart = 0;
+        int yStart = 0;
+        int xStop = width - subgrid.Width + 1;
+        int yStop = height - subgrid.Height + 1;
+
+        if (sizeless)
+        {
+            xStart -= subgrid.Width;
+            yStart -= subgrid.Height;
+            xStop += subgrid.Width;
+            yStop += subgrid.Height;
+        }
+        // loop through complete grid to find all matching subgrids
+        for (int x = xStart; x < xStop; x++)
+        {
+            for (int y = yStart; y < yStop; y++)
+            {
+                // check for [0,0]
+                char gridItem = UNDEFINED;
+                if (x >= 0 && y >= 0 && x < width && y < height)
+                {
+                    gridItem = GetTile(x, y);
+                }
+                if (subgrid.GetTile(0, 0) == gridItem)
+                {
+                    Coordinate c = new Coordinate(x, y);
+
+                    // match the subgrid with this grid from the current x, y
+                    if (Equals(c, subgrid))
+                    {
+                        // add the x, y pos to the options
+                        returnList.Add(c);
+                    }
+                }
+            }
+        }
+
+        return returnList;
     }
 }
 

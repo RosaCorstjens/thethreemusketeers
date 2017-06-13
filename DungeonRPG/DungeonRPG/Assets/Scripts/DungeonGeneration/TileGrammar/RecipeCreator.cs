@@ -8,12 +8,15 @@ public class RecipeCreator
     private Graph graph;
     private List<Node> graphRecipe;
     private List<TileGrammarRule> tileRecipe;
-    private List<RoomRuleProxy> roomList;
+    private List<RuleSetProxy> roomList;
     private int monsterPerRoom = 3;
     private int trapsPerRoom = 3;
 
     public static Dictionary<string, List<string>> graphToTile;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="RecipeCreator"/> class.
+    /// </summary>
     public RecipeCreator()
     {
         parser = new TileRuleParser();
@@ -25,28 +28,60 @@ public class RecipeCreator
         graphRecipe = graph.GetNodeList();
     }
 
-    public List<RoomRuleProxy> getRoomList()
+    /// <summary>
+    /// Creates the recipe.
+    /// </summary>
+    /// <returns></returns>
+    public List<RuleSetProxy> getRoomList()
     {
-        roomList = new List<RoomRuleProxy>(graphRecipe.Count);
+        roomList = new List<RuleSetProxy>(graphRecipe.Count);
         for (int i = 0; i < graphRecipe.Count; i++)
         {
-            roomList.Add(ReplaceRule(graphRecipe[i]));
+            bool isConnected = false;
+            if (i - 1 >= 0) isConnected = graphRecipe[i-1].Connections.FindAll(c => c.IsDirected).Count > 0;
+
+            roomList.Add(ReplaceRule(graphRecipe[i], isConnected, graphRecipe[i].Connections.FindAll(c => c.IsDirected).Count > 0));
         }
+        roomList.Add(getFinalRules());
         return roomList;
     }
 
-    RoomRuleProxy ReplaceRule(Node node)
+    public RuleSetProxy getFinalRules()
     {
-        RoomRuleProxy room = new RoomRuleProxy(node);
+        RuleSetProxy proxy = new RuleSetProxy(null);
+        proxy.AddRule(parser.GetRule("connect-hooks"));
+        proxy.AddRule(parser.GetRule("removehooks"));
+        return proxy;
+    }
+
+    /// <summary>
+    /// Replaces a node with the matching tile rules.
+    /// </summary>
+    /// <param name="node">The node to replace.</param>
+    /// <returns>A proxy object containing data about the rules etc.</returns>
+    RuleSetProxy ReplaceRule(Node node, bool isConnected = false, bool nextIsConnected = false)
+    {
+        RuleSetProxy room = new RuleSetProxy(node);
         List<string> ruleNames = graphToTile[node.Symbol];
-        for (int i = 0; i < ruleNames.Count; i++)
-        {
-            room.AddRule(parser.getRule(ruleNames[i]));
+        for (int i = 0; i < ruleNames.Count; i++) {
+            if (ruleNames[i] == "room" && isConnected) {
+                room.AddRule(parser.GetRule("connectedRoom"));
+                room.AddRule(parser.GetRule("undirectRoom"));
+            }
+            else
+            {
+                room.AddRule(parser.GetRule(ruleNames[i]));
+            }
+
+            if (ruleNames[i] == "room" && nextIsConnected) room.AddRule(parser.GetRule("directRoom"));
         }
 
         return room;
     }
 
+    /// <summary>
+    /// Sets the graph node to tile rules translations.
+    /// </summary>
     void GetGraphToTileTranslations()
     {
         List<string> content = new List<string>();
@@ -77,6 +112,7 @@ public class RecipeCreator
         content.Clear();
         content.Add("room");
         content.Add("lock");
+        content.Add("treasure");
         content.Add("finalize");
         graphToTile.Add("lock", new List<string>(content));
 
@@ -89,6 +125,7 @@ public class RecipeCreator
         content.Clear();
         content.Add("room");
         content.Add("lock-multi");
+        content.Add("treasure");
         content.Add("finalize");
         graphToTile.Add("lockmulti", new List<string>(content));
 
@@ -130,7 +167,11 @@ public class RecipeCreator
 
         content.Clear();
         content.Add("hub");
+        content.Add("undirectRoom");
+        content.Add("directRoom");
+        //evt content
         content.Add("finalize");
+        content.Add("removehooks");
         graphToTile.Add("hub", new List<string>(content));
     }
 }
