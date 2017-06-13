@@ -9,15 +9,16 @@ public class TileDungeon
     private char[][] tiles;
     private List<Floor> floors;
 
+    // TODO: empty and destory these lists properly
     private List<EnemyController> enemies;
-
-    public List<EnemyController> Enemies
-    {
-        get { return enemies; }
-    }
+    public List<EnemyController> Enemies { get { return enemies; } }
 
     private List<LootChest> lootchests;
-    //TODO: define other content
+
+    private List<KeyScript> keys;
+    private List<LockScript> locks;
+    private List<TrapScript> traps;
+    private PortalScript portal;
 
     private Vector3 startPosition;
 
@@ -40,6 +41,9 @@ public class TileDungeon
 
         enemies = new List<EnemyController>();
         lootchests = new List<LootChest>();
+        keys = new List<KeyScript>();
+        locks = new List<LockScript>();
+        traps = new List<TrapScript>();
 
         // instantiates all floor tiles
         InstantiateFloors();
@@ -74,6 +78,7 @@ public class TileDungeon
 
     private void SpawnContent()
     {
+        //TODO: key and lock are new content after you have been merged
         for (int i = 0; i < tiles.Length; i++)
         {
             for (int j = 0; j < tiles[i].Length; j++)
@@ -84,14 +89,11 @@ public class TileDungeon
                 Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(i, j));
 
                 switch (tiles[i][j]) {
-                    // room
-                    case 'r':
-                        Debug.LogError("An unfinalized room has been found.");
-                        break;
-
-                    // wall
-                    case 'w':
-                        Debug.LogError("A wall shouldn't occur.");
+                    case 'r': // room
+                    case 'w': // wall
+                    case 'h':
+                    case 'H':
+                        Debug.LogError(tiles[i][j].ToString() + " shouldn't occur in the generated dungeon.");
                         break;
 
                     // treasure
@@ -114,8 +116,9 @@ public class TileDungeon
                         keyObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         KeyScript key = keyObject.GetComponent<KeyScript>();
-                        key.Initialize();
+                        key.Initialize(0);
 
+                        keys.Add(key);
                         break;
 
                     // keymulti
@@ -124,7 +127,9 @@ public class TileDungeon
                         keyMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         KeyScript keyMulti = keyMultiObject.GetComponent<KeyScript>();
-                        keyMulti.Initialize();
+                        keyMulti.Initialize(1);
+
+                        keys.Add(keyMulti);
                         break;
 
                     // keyfinal
@@ -133,16 +138,21 @@ public class TileDungeon
                         keyFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         KeyScript keyFinal = keyFinalObject.GetComponent<KeyScript>();
-                        keyFinal.Initialize();
+                        keyFinal.Initialize(2);
+
+                        keys.Add(keyFinal);
                         break;
 
+                    // TODO: rotate lock according to neighbours (90 degrees)
                     // lock
                     case 'l':
                         GameObject lockObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         LockScript lockScript = lockObject.GetComponent<LockScript>();
-                        lockScript.Initialize();
+                        lockScript.Initialize(0);
+
+                        locks.Add(lockScript);
                         break;
 
                     // lockmulti
@@ -151,7 +161,9 @@ public class TileDungeon
                         lockMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         LockScript lockMultiScript = lockMultiObject.GetComponent<LockScript>();
-                        lockMultiScript.Initialize();
+                        lockMultiScript.Initialize(1);
+
+                        locks.Add(lockMultiScript);
                         break;
 
                     // lockfinal
@@ -160,17 +172,9 @@ public class TileDungeon
                         lockFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         LockScript lockFinalScript = lockFinalObject.GetComponent<LockScript>();
-                        lockFinalScript.Initialize();
-                        break;
+                        lockFinalScript.Initialize(2);
 
-                    // hook
-                    case 'h':
-                        Debug.LogError("A hook shouldn't occur.");
-                        break;
-
-                    // hook directed
-                    case 'H':
-                        Debug.LogError("A directed hook shouldn't occur.");
+                        locks.Add(lockFinalScript);
                         break;
 
                     // monster
@@ -188,10 +192,12 @@ public class TileDungeon
                     case 'p':
                         GameObject trapObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.TrapPrefab, spawnPos + new Vector3(0, 0.1f, 0), Quaternion.identity) as GameObject;
                         trapObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        trapObject.transform.Rotate(Vector3.right, -90);
 
                         TrapScript trap = trapObject.GetComponent<TrapScript>();
                         trap.Initialize();
 
+                        traps.Add(trap);
                         break;
 
                     // entrance
@@ -217,10 +223,12 @@ public class TileDungeon
         }
     }
 
+    // TODO
     public void ClearDungeon()
     {
     }
 
+    // TODO
     public void RestartDungeon()
     {
     }

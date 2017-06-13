@@ -10,9 +10,9 @@ public class KeyScript : MonoBehaviour
 
     int keyId;
 
-    public void Initialize ()
+    public void Initialize (int id)
     {
-        keyId = 0;
+        keyId = id;
 
         trigger = GetComponent<TriggerArea>();
 

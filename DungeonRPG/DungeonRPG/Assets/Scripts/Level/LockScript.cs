@@ -15,9 +15,9 @@ public class LockScript : MonoBehaviour
     int lockId;
     Animator anim;
 
-    public void Initialize()
+    public void Initialize(int id)
     {
-        lockId = 0;
+        lockId = id;
 
         trigger = GetComponent<TriggerArea>();
         

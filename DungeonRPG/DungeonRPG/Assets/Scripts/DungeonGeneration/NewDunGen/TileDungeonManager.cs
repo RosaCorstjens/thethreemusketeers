@@ -117,7 +117,7 @@ public class TileDungeonManager : MonoBehaviour
         tiles[1][2] = 'u';
         tiles[2][2] = 'm';
         tiles[3][2] = 'f';
-        tiles[4][2] = 'f';
+        tiles[4][2] = 'l';
         tiles[5][2] = 'u';
         tiles[6][2] = 'u';
         tiles[7][2] = 'u';
@@ -128,7 +128,7 @@ public class TileDungeonManager : MonoBehaviour
         tiles[1][3] = 'u';
         tiles[2][3] = 'f';
         tiles[3][3] = 'f';
-        tiles[4][3] = 'f';
+        tiles[4][3] = 'k';
         tiles[5][3] = 'u';
         tiles[6][3] = 'u';
         tiles[7][3] = 'u';
