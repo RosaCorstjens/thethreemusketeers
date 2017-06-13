@@ -419,7 +419,12 @@ public class PlayerController : MonoBehaviour
 
     public bool HasKey(int keyId)
     {
-        return keys.Contains(keyId);
+        if (keys.Contains(keyId))
+        {
+            keys.Remove(keyId);
+            return true;
+        }
+        return false;
     }
 
     public void ObtainKey(int keyId)

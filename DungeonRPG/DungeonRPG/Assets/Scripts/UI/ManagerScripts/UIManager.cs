@@ -35,6 +35,7 @@ public class UIManager
     private const string NO_ENGERGY_POTIONS = "You have no energy potions.";
     private const string NO_HEALTH_POTIONS = "You have no health potions.";
     private const string NEXT_DUNGEON = "Welcome in the next dungeon ...";
+    private const string NO_KEY = "You have no corresponding keys";
     private float showWarningTime = 1;
 
     public void Initialize()
@@ -86,6 +87,13 @@ public class UIManager
     public void YouDiedWarning()
     {
         warningMessage.text = YOU_DIED;
+        warningMessage.gameObject.SetActive(true);
+        GameManager.Instance.StartCoroutine(ShowWarning());
+    }
+
+    public void YouDoNotHaveAKeyWarning()
+    {
+        warningMessage.text = NO_KEY;
         warningMessage.gameObject.SetActive(true);
         GameManager.Instance.StartCoroutine(ShowWarning());
     }

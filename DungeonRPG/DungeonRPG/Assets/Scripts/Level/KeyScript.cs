@@ -24,7 +24,11 @@ public class KeyScript : MonoBehaviour
         targetTransform = GameManager.Instance.ActiveCharacter.transform;
         targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
 
-        this.GetComponent<MeshRenderer>().material.color = LockScript.GetColor(keyId);
+        MeshRenderer[] meshes = GetComponentsInChildren<MeshRenderer>();
+        foreach (var mesh in meshes)
+        {
+            mesh.material.color = LockScript.GetColor(keyId);
+        }
 
         trigger.onTriggerAction = PlayerInRange;
     }

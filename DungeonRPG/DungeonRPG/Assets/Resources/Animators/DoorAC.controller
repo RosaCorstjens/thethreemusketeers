@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LockAC
+  m_Name: DoorAC
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Unlock
@@ -58,18 +58,18 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Unlock
-  m_Speed: 1
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
-  m_Mirror: 1
+  m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f16836b4edb583446a5dde4cd7f749c7, type: 3}
+  m_Motion: {fileID: 7400000, guid: 82bd035211d5f5544a4fdd54fe11c116, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

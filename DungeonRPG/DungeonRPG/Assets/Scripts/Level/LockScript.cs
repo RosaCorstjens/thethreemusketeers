@@ -9,11 +9,10 @@ public class LockScript : MonoBehaviour
     private Transform targetTransform;
     private PlayerController targetScript;
 
+    Coroutine checkForKey;
     Coroutine unlock;
-    MeshRenderer[] children;
 
     int lockId;
-    Animator anim;
 
     private void Awake()
     {
@@ -26,14 +25,21 @@ public class LockScript : MonoBehaviour
 
         trigger = GetComponent<TriggerArea>();
         
-        children = transform.GetComponentsInChildren<MeshRenderer>();
+        Animator[] children = transform.GetComponentsInChildren<Animator>();
 
         Color doorColor = GetColor(lockId);
 
 
         foreach (var child in children)
         {
-            child.material.color = doorColor;
+            if (child.name.Contains("lock"))
+            {
+                MeshRenderer[] meshes = child.GetComponentsInChildren<MeshRenderer>();
+                foreach (var mesh in meshes)
+                {
+                    mesh.material.color = doorColor;
+                }
+            }
         }
 
         trigger.onTriggerAction = PlayerInRange;
@@ -41,8 +47,6 @@ public class LockScript : MonoBehaviour
 
         targetTransform = GameManager.Instance.ActiveCharacter.transform;
         targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
-
-        anim = GetComponent<Animator>();
     }
 
     public static Color GetColor(int id)
@@ -81,26 +85,70 @@ public class LockScript : MonoBehaviour
 
     public void PlayerInRange()
     {
-        unlock = StartCoroutine(Unlock());
+        GameManager.Instance.UIManager.WorldUIManager.ShowPressToOpen(this.gameObject);
+        checkForKey = StartCoroutine(CheckKeyPressed());
     }
 
     public void PlayerOutOfRange()
     {
-        if (unlock != null) StopCoroutine(unlock);
+        GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+        if (checkForKey != null) StopCoroutine(checkForKey);
+    }
+
+    public IEnumerator CheckKeyPressed()
+    {
+        while (true)
+        {
+            while (!Input.GetKey(KeyCode.E))
+            {
+                yield return null;
+            }
+            if (targetScript.HasKey(lockId))
+            {
+                GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+                if (unlock == null)
+                {
+                    unlock = StartCoroutine(Unlock());
+                }
+                yield return new WaitForSeconds(2f);
+            }
+            else
+            {
+                GameManager.Instance.UIManager.YouDoNotHaveAKeyWarning();
+            }
+            yield return null;
+        }
     }
 
     public IEnumerator Unlock()
     {
-        while (!targetScript.HasKey(lockId))
+        Animator[] anim = transform.GetComponentsInChildren<Animator>();
+        List<Animator> activeAnimations = new List<Animator>();
+        foreach (var animator in anim)
         {
-            yield return null;
+            if (animator.name.Contains("lock") && activeAnimations.Count < 2)
+            {
+                animator.SetTrigger("Unlock");
+                activeAnimations.Add(animator);
+            }
         }
-
-        anim.SetTrigger("Unlock");
         yield return new WaitForSeconds(2f);
 
-        trigger.gameObject.SetActive(false);
+        foreach (var animator in activeAnimations)
+        {
+            animator.gameObject.SetActive(false);
+        }
+        anim = transform.GetComponentsInChildren<Animator>();
+        if (anim.Length == 1)
+        {
+            anim[0].SetTrigger("Unlock");
+            yield return new WaitForSeconds(4f);
+            GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+            trigger.gameObject.SetActive(false);
+        }
 
-        yield break;
+        unlock = null;
+
+        yield return null;
     }
 }
