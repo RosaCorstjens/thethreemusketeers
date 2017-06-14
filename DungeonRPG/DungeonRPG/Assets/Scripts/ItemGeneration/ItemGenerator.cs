@@ -74,7 +74,7 @@ public class ItemGenerator
             {
                 counter += entry.Value;
 
-                // Found the chosen one. 
+                // Found the choosen one. 
                 if (randomRoll < counter)
                 {
                     quality = entry.Key;

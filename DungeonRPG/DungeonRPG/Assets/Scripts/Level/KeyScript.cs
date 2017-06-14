@@ -10,12 +10,7 @@ public class KeyScript : MonoBehaviour
 
     int keyId;
 
-    private void Awake()
-    {
-        Initialize(0);
-    }
-
-    void Initialize (int id)
+    public void Initialize (int id)
     {
         keyId = id;
 

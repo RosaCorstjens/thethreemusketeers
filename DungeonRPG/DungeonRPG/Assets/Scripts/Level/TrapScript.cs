@@ -10,12 +10,7 @@ public class TrapScript : MonoBehaviour
     bool dir;
     public float offset;
 
-    private void Awake()
-    {
-        Initialize();
-    }
-
-    void Initialize()
+    public void Initialize()
     {
         trigger = GetComponent<TriggerArea>();
 

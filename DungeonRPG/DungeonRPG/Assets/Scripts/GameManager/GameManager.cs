@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
     private CameraManager cameraManager;
     public CameraManager CameraManager { get { return cameraManager; } }
 
-    private DungeonManager dungeonManager;
-    public DungeonManager DungeonManager { get { return dungeonManager; } }
+    private TileDungeonManager dungeonManager;
+    public TileDungeonManager DungeonManager { get { return dungeonManager; } }
 
     private CharacterCreation characterCreation;
     public CharacterCreation CharacterCreation { get { return characterCreation; } set { characterCreation = value; } }
@@ -215,7 +215,7 @@ public class GameManager : MonoBehaviour
 
         UIManager.InitializeGameUI();
 
-        dungeonManager = new DungeonManager();
+        dungeonManager = new TileDungeonManager();
         dungeonManager.Initialize();
 
         CameraManager.SetTarget(activeCharacter.transform);

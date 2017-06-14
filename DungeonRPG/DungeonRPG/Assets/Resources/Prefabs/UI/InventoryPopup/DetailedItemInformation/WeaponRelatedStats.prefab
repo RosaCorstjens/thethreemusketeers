@@ -5,65 +5,65 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 458512}
-  - 114: {fileID: 11466826}
+  - component: {fileID: 458512}
+  - component: {fileID: 11466826}
   m_Layer: 5
-  m_Name: 
+  m_Name: AttackPerSecond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &123026
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 487496}
-  - 114: {fileID: 11477162}
+  - component: {fileID: 487496}
+  - component: {fileID: 11477162}
   m_Layer: 5
-  m_Name: 
+  m_Name: xHanded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &151126
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 467794}
-  - 114: {fileID: 11457686}
+  - component: {fileID: 467794}
+  - component: {fileID: 11457686}
   m_Layer: 5
-  m_Name: 
+  m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &199888
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 427476}
-  - 114: {fileID: 11415826}
+  - component: {fileID: 427476}
+  - component: {fileID: 11415826}
   m_Layer: 5
   m_Name: WeaponRelatedStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &427476
 Transform:
   m_ObjectHideFlags: 1
@@ -79,6 +79,7 @@ Transform:
   - {fileID: 487496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &458512
 Transform:
   m_ObjectHideFlags: 1
@@ -91,6 +92,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427476}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &467794
 Transform:
   m_ObjectHideFlags: 1
@@ -103,6 +105,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427476}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &487496
 Transform:
   m_ObjectHideFlags: 1
@@ -115,6 +118,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 427476}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11415826
 MonoBehaviour:
   m_ObjectHideFlags: 1

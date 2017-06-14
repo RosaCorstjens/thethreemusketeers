@@ -61,8 +61,6 @@ public class PlayerController : MonoBehaviour
         inOffHand = null;
         CanMove = true;
 
-        Graph graph = new Graph();
-
         IsInitialized = true;
     }
 

@@ -14,12 +14,7 @@ public class LockScript : MonoBehaviour
 
     int lockId;
 
-    private void Awake()
-    {
-        Initialize(0);
-    }
-
-    void Initialize(int id)
+    public void Initialize(int id)
     {
         lockId = id;
 
