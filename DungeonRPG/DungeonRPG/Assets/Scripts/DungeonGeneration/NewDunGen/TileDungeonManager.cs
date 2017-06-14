@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DungeonDirection
+{
+    North, East, South, West,
+}
+
 public class TileDungeonManager : MonoBehaviour
 {
     // vars for current dungeon/level
@@ -16,8 +21,6 @@ public class TileDungeonManager : MonoBehaviour
     public RecipeCreator RecipeCreator { get; private set; }
     public Graph Graph { get; private set; }
     public TileGrammarHandler TileGrammarHandler { get; private set; }
-
-
 
     public float WorldScaleX { get { return 3f; } }
     public float WorldScaleZ { get { return 3f; } }

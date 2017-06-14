@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using NUnit.Framework.Constraints;
+using Random = UnityEngine.Random;
 
 public class TileDungeon
 {
@@ -232,14 +235,172 @@ public class TileDungeon
         }
     }
 
-    // TODO
-    public void ClearDungeon()
+    private void RemoveContent()
     {
+        // clear enemies
+        enemies.HandleAction(e => GameObject.Destroy(e.gameObject));
+        enemies.Clear();
+        Debug.Log("enemies destroyed. " + enemies.Count);
+
+        // clear chests
+        lootchests.HandleAction(l => GameObject.Destroy(l.gameObject));
+        lootchests.Clear();
+        Debug.Log("lootchests destroyed. " + lootchests.Count);
+
+        // clear keys
+        keys.HandleAction(k => GameObject.Destroy(k.gameObject));
+        keys.Clear();
+        Debug.Log("keys destroyed. " + keys.Count);
+
+        // clear chests
+        locks.HandleAction(l => GameObject.Destroy(l.gameObject));
+        locks.Clear();
+        Debug.Log("locks destroyed. " + locks.Count);
+
+        // clear chests
+        traps.HandleAction(t => GameObject.Destroy(t.gameObject));
+        traps.Clear();
+        Debug.Log("traps destroyed. " + traps.Count);
     }
 
-    // TODO
+    public void ClearDungeon()
+    {
+        // remove tiles array
+        Array.Clear(tiles, 0, tiles.Length);
+        Debug.Log("2D array with tiles cleared. " + tiles.Length);
+
+        // remove floor object 
+        floors.HandleAction(f => f.Destroy());
+        floors.RemoveRange(0, floors.Count);
+        Debug.Log("floor removed. " + floors.Count);
+
+        // remove all content in the dungeon
+        RemoveContent();
+    }
+
     public void RestartDungeon()
     {
+        enemies.HandleAction(e => e.Reset());
+
+        //TODO: how do we reset the locks and keys? for now i removed them and put them back.
+        // clear keys
+        keys.HandleAction(k => GameObject.Destroy(k.gameObject));
+        keys.Clear();
+        Debug.Log("keys destroyed. " + keys.Count);
+
+        // clear chests
+        locks.HandleAction(l => GameObject.Destroy(l.gameObject));
+        locks.Clear();
+        Debug.Log("locks destroyed. " + locks.Count);
+
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            for (int j = 0; j < tiles[i].Length; j++)
+            {
+                // if the tile is undefined
+                if (tiles[i][j] != 'k' || tiles[i][j] != '0' || tiles[i][j] != 'K' || tiles[i][j] != 'l' ||
+                    tiles[i][j] != '1' || tiles[i][j] != 'L') continue;
+
+                Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(i, j));
+
+                switch (tiles[i][j])
+                {
+                    // key
+                    case 'k':
+                        GameObject keyObject =
+                            GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab,
+                                spawnPos + new Vector3(0, 1, 0), Quaternion.identity) as GameObject;
+                        keyObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        KeyScript key = keyObject.GetComponent<KeyScript>();
+                        key.Initialize(0);
+
+                        keys.Add(key);
+                        break;
+
+                    // keymulti
+                    case '0':
+                        GameObject keyMultiObject =
+                            GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab,
+                                spawnPos + new Vector3(0, 1, 0), Quaternion.identity) as GameObject;
+                        keyMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        KeyScript keyMulti = keyMultiObject.GetComponent<KeyScript>();
+                        keyMulti.Initialize(1);
+
+                        keys.Add(keyMulti);
+                        break;
+
+                    // keyfinal
+                    case 'K':
+                        GameObject keyFinalObject =
+                            GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab,
+                                spawnPos + new Vector3(0, 1, 0), Quaternion.identity) as GameObject;
+                        keyFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        KeyScript keyFinal = keyFinalObject.GetComponent<KeyScript>();
+                        keyFinal.Initialize(2);
+
+                        keys.Add(keyFinal);
+                        break;
+
+                    // TODO: rotate lock according to neighbours (90 degrees)
+                    // lock
+                    case 'l':
+                        GameObject lockObject =
+                            GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos,
+                                Quaternion.identity) as GameObject;
+                        lockObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        Vector3 lookPos =
+                            GameManager.Instance.DungeonManager.GridToWorldPosition(
+                                new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
+                        lockObject.transform.LookAt(lookPos);
+
+                        LockScript lockScript = lockObject.GetComponent<LockScript>();
+                        lockScript.Initialize(0);
+
+                        locks.Add(lockScript);
+                        break;
+
+                    // lockmulti
+                    case '1':
+                        GameObject lockMultiObject =
+                            GameObject.Instantiate(GameManager.Instance.DungeonManager.MultiLockPrefab, spawnPos,
+                                Quaternion.identity) as GameObject;
+                        lockMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        lookPos =
+                            GameManager.Instance.DungeonManager.GridToWorldPosition(
+                                new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
+                        lockMultiObject.transform.LookAt(lookPos);
+
+                        LockScript lockMultiScript = lockMultiObject.GetComponent<LockScript>();
+                        lockMultiScript.Initialize(1);
+
+                        locks.Add(lockMultiScript);
+                        break;
+
+                    // lockfinal
+                    case 'L':
+                        GameObject lockFinalObject =
+                            GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos,
+                                Quaternion.identity) as GameObject;
+                        lockFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        lookPos =
+                            GameManager.Instance.DungeonManager.GridToWorldPosition(
+                                new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
+                        lockFinalObject.transform.LookAt(lookPos);
+
+                        LockScript lockFinalScript = lockFinalObject.GetComponent<LockScript>();
+                        lockFinalScript.Initialize(2);
+
+                        locks.Add(lockFinalScript);
+                        break;
+                }
+            }
+        }
     }
 
     public bool IsOccupied(int xPos, int yPos)
