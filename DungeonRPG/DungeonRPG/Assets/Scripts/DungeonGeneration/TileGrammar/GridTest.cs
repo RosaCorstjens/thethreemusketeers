@@ -17,7 +17,7 @@ public class GridTest : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-        handler = new TileGrammarHandler();
+        //handler = new TileGrammarHandler();
 	}
 
     public void Print()

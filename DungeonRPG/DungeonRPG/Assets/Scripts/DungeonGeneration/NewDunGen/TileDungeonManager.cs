@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class TileDungeonManager : MonoBehaviour
 {
+    // vars for current dungeon/level
     public TileDungeon CurrentDungeon { get; private set; }
     public int CurrentLevel { get; private set; }
-
     public int Columns { get; private set; }
     public int Rows { get; private set; }
 
-    public float WorldScaleX
-    {
-        get { return 3f; }
-    }
 
-    public float WorldScaleZ
-    {
-        get { return 3f; }
-    }
+    // vars for dungeon generation
+    public TileRuleParser Parser { get; private set; }
+    public RecipeCreator RecipeCreator { get; private set; }
+    public Graph Graph { get; private set; }
+    public TileGrammarHandler TileGrammarHandler { get; private set; }
+
+
+
+    public float WorldScaleX { get { return 3f; } }
+    public float WorldScaleZ { get { return 3f; } }
 
     public Dictionary<DungeonDirection, Vector2> directionValues;
 
@@ -58,6 +60,12 @@ public class TileDungeonManager : MonoBehaviour
         CurrentLevel = 1;
 
         // starts a new dungeon to play
+        Parser = new TileRuleParser();
+        Graph = new Graph();                    // TODO: graph class should get a string with the correct file
+
+        RecipeCreator = new RecipeCreator(Graph);
+        TileGrammarHandler = new TileGrammarHandler(RecipeCreator.getRoomList());
+
         StartNewDungeon();
 
         // starting up the player
@@ -78,135 +86,23 @@ public class TileDungeonManager : MonoBehaviour
         // 5. get the tile grammar rules
 
         // 6. set up the tile array
-        char[][] tiles = new char[Columns][];
+        char[][] tiles = new char[TileGrammarHandler.grid.Width][];
 
         // go through all the tile arrays...
-        for (int i = 0; i < Columns; i++)
+        for (int i = 0; i < TileGrammarHandler.grid.Width; i++)
         {
             // ... and set each tile array is the correct height.
-            tiles[i] = new char[Rows];
+            tiles[i] = new char[TileGrammarHandler.grid.Height];
 
-            for (int j = 0; j < Rows; j++)
+            for (int j = 0; j < TileGrammarHandler.grid.Height; j++)
             {
-                tiles[i][j] = 'u';
+                Debug.Log(i + " " + j);
+                tiles[i][j] = TileGrammarHandler.grid.GetTile(i, j);
             }
         }
 
-        tiles[0][0] = 'u';
-        tiles[1][0] = 'u';
-        tiles[2][0] = 'u';
-        tiles[3][0] = 'u';
-        tiles[4][0] = 'u';
-        tiles[5][0] = 'u';
-        tiles[6][0] = 'u';
-        tiles[7][0] = 'u';
-        tiles[8][0] = 'u';
-        tiles[9][0] = 'u';
-
-        tiles[0][1] = 'u';
-        tiles[1][1] = 'u';
-        tiles[2][1] = 'f';
-        tiles[3][1] = 'f';
-        tiles[4][1] = 'm';
-        tiles[5][1] = 'u';
-        tiles[6][1] = 'u';
-        tiles[7][1] = 'u';
-        tiles[8][1] = 'u';
-        tiles[9][1] = 'u';
-
-        tiles[0][2] = 'u';
-        tiles[1][2] = 'u';
-        tiles[2][2] = 'm';
-        tiles[3][2] = 'f';
-        tiles[4][2] = 'l';
-        tiles[5][2] = 'u';
-        tiles[6][2] = 'u';
-        tiles[7][2] = 'u';
-        tiles[8][2] = 'u';
-        tiles[9][2] = 'u';
-
-        tiles[0][3] = 'u';
-        tiles[1][3] = 'u';
-        tiles[2][3] = 'f';
-        tiles[3][3] = 'f';
-        tiles[4][3] = 'k';
-        tiles[5][3] = 'u';
-        tiles[6][3] = 'u';
-        tiles[7][3] = 'u';
-        tiles[8][3] = 'u';
-        tiles[9][3] = 'u';
-    
-        tiles[0][4] = 'u';
-        tiles[1][4] = 'u';
-        tiles[2][4] = 'u';
-        tiles[3][4] = 'f';
-        tiles[4][4] = 'u';
-        tiles[5][4] = 'u';
-        tiles[6][4] = 'u';
-        tiles[7][4] = 'u';
-        tiles[8][4] = 'u';
-        tiles[9][4] = 'u';
-
-        tiles[0][5] = 'u';
-        tiles[1][5] = 'u';
-        tiles[2][5] = 'f';
-        tiles[3][5] = 'f';
-        tiles[4][5] = 'f';
-        tiles[5][5] = 'u';
-        tiles[6][5] = 'f';
-        tiles[7][5] = 'f';
-        tiles[8][5] = 'f';
-        tiles[9][5] = 'u';
-
-        tiles[0][6] = 'u';
-        tiles[1][6] = 'u';
-        tiles[2][6] = 'e';
-        tiles[3][6] = 'f';
-        tiles[4][6] = 'f';
-        tiles[5][6] = 'p';
-        tiles[6][6] = 't';
-        tiles[7][6] = 'f';
-        tiles[8][6] = 'f';
-        tiles[9][6] = 'u';
-
-        tiles[0][7] = 'u';
-        tiles[1][7] = 'u';
-        tiles[2][7] = 'f';
-        tiles[3][7] = 'f';
-        tiles[4][7] = 'P';
-        tiles[5][7] = 'u';
-        tiles[6][7] = 'f';
-        tiles[7][7] = 'f';
-        tiles[8][7] = 'f';
-        tiles[9][7] = 'u';
-
-        tiles[0][8] = 'u';
-        tiles[1][8] = 'u';
-        tiles[2][8] = 'u';
-        tiles[3][8] = 'u';
-        tiles[4][8] = 'u';
-        tiles[5][8] = 'u';
-        tiles[6][8] = 'u';
-        tiles[7][8] = 'u';
-        tiles[8][8] = 'u';
-        tiles[9][8] = 'u';
-    
-        tiles[0][9] = 'u';
-        tiles[1][9] = 'u';
-        tiles[2][9] = 'u';
-        tiles[3][9] = 'u';
-        tiles[4][9] = 'u';
-        tiles[5][9] = 'u';
-        tiles[6][9] = 'u';
-        tiles[7][9] = 'u';
-        tiles[8][9] = 'u';
-        tiles[9][9] = 'u';
-        
-        Debug.Log(Columns);
-        Debug.Log(Rows);
-        Debug.Log(tiles.Length);
-        
-        Debug.Log(tiles[0][0]);
+        Columns = TileGrammarHandler.grid.Height;
+        Rows = TileGrammarHandler.grid.Width;
 
         // 7. apply all rules to a 2d array
 

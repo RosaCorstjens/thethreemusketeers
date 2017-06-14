@@ -6,16 +6,14 @@ using UnityEngine.UI;
 
 public class TileGrammarHandler
 {
-    private RecipeCreator rCreator;
     private List<RuleSetProxy> roomList;
     private List<TileGrammarRule> rules;
     private List<TileGrammarRule> currentRecipe;
-    private Grid grid;
+    public Grid grid;
 
-    public TileGrammarHandler()
+    public TileGrammarHandler(List<RuleSetProxy> roomList)
     {
-        rCreator = new RecipeCreator();
-        roomList = rCreator.getRoomList();
+        this.roomList = roomList;
 
         SetRecipe();
 
@@ -90,7 +88,7 @@ public class TileGrammarHandler
             }
         }
 
-        Debug.LogError("Succeeded creating dungeon");
+        Debug.Log("Succeeded creating dungeon");
         return true;
     }
 

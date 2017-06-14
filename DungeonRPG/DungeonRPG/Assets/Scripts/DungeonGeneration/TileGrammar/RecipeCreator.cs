@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class RecipeCreator
 {
-    private TileRuleParser parser;
-    private Graph graph;
-    private List<Node> graphRecipe;
-    private List<TileGrammarRule> tileRecipe;
-    private List<RuleSetProxy> roomList;
-    private int monsterPerRoom = 3;
-    private int trapsPerRoom = 3;
+    private TileRuleParser parser;                  // ref to parser to quickly use it
+
+    private List<Node> graphRecipe;                 // the recipe fromt the graph
+    private List<TileGrammarRule> tileRecipe;       // the translated recipe for tiles
+    private List<RuleSetProxy> roomList;            // the translated rules per room
+
+    private IntRange monsterPerRoom;
+    private IntRange trapsPerRoom;
 
     public static Dictionary<string, List<string>> graphToTile;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RecipeCreator"/> class.
     /// </summary>
-    public RecipeCreator()
+    public RecipeCreator(Graph graphToProcess)
     {
-        parser = new TileRuleParser();
-        graph = new Graph();
+        parser = GameManager.Instance.DungeonManager.Parser;
+
+        monsterPerRoom = new IntRange(2, 4);
+        trapsPerRoom = new IntRange(2, 4);
 
         graphToTile = new Dictionary<string, List<string>>();
         GetGraphToTileTranslations();
 
-        graphRecipe = graph.GetNodeList();
+        graphRecipe = graphToProcess.GetNodeList();
     }
 
     /// <summary>
@@ -84,6 +87,8 @@ public class RecipeCreator
     /// </summary>
     void GetGraphToTileTranslations()
     {
+        int randomNr = 0;
+
         List<string> content = new List<string>();
         content.Clear();
         content.Add("room");
@@ -136,8 +141,8 @@ public class RecipeCreator
 
         content.Clear();
         content.Add("room");
-        //TODO: make nmonsters random 
-        for (int i = 0; i < monsterPerRoom; i++)
+        randomNr = monsterPerRoom.GetRandomInRange();
+        for (int i = 0; i < randomNr; i++)
         {
             content.Add("monster");
         }
@@ -146,8 +151,8 @@ public class RecipeCreator
 
         content.Clear();
         content.Add("room");
-        //TODO: make nTraps random 
-        for (int i = 0; i < trapsPerRoom; i++)
+        randomNr = trapsPerRoom.GetRandomInRange();
+        for (int i = 0; i < randomNr; i++)
         {
             content.Add("trap");
         }

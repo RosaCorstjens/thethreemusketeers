@@ -157,7 +157,7 @@ public class TileDungeon
 
                     // lockmulti
                     case '1':
-                        GameObject lockMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        GameObject lockMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.MultiLockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         LockScript lockMultiScript = lockMultiObject.GetComponent<LockScript>();
