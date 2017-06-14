@@ -136,11 +136,11 @@ PlayerSettings:
   protectGraphicsMemory: 0
   useHDRDisplay: 0
   applicationIdentifier:
-    Android: com.unity.sampleassets
+    Android: com.Company.ProductName
     Standalone: unity.DefaultCompany.2013_10 - Sample Assets
-    Tizen: com.unity.sampleassets
-    iOS: com.unity.sampleassets
-    tvOS: com.unity.sampleassets
+    Tizen: com.Company.ProductName
+    iOS: com.Company.ProductName
+    tvOS: com.Company.ProductName
   buildNumber:
     iOS: 0
   AndroidBundleVersionCode: 1
@@ -164,7 +164,7 @@ PlayerSettings:
   iOSTargetOSVersionString: 6.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
-  tvOSTargetOSVersionString: 9.0
+  tvOSTargetOSVersionString: 
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -232,8 +232,8 @@ PlayerSettings:
     m_Icons:
     - serializedVersion: 2
       m_Icon: {fileID: 0}
-      m_Width: 128
-      m_Height: 128
+      m_Width: 0
+      m_Height: 0
   m_BuildTargetBatching:
   - m_BuildTarget: Web
     m_StaticBatching: 1
@@ -505,7 +505,7 @@ PlayerSettings:
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
   webGLMemorySize: 256
-  webGLExceptionSupport: 0
+  webGLExceptionSupport: 1
   webGLNameFilesAsHashes: 0
   webGLDataCaching: 0
   webGLDebugSymbols: 0
@@ -531,7 +531,7 @@ PlayerSettings:
     Standalone: 0
     WP8: 2
     WebGL: 1
-    iOS: 0
+    iOS: 1
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   apiCompatibilityLevelPerPlatform: {}

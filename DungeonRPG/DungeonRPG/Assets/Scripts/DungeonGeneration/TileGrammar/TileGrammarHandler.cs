@@ -1,119 +1,199 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TileGrammarHandler
 {
+    private RecipeCreator rCreator;
+    private List<RuleSetProxy> roomList;
     private List<TileGrammarRule> rules;
     private List<TileGrammarRule> currentRecipe;
+    private Grid grid;
 
-    public TileGrammarHandler(string ruleFile)
+    public TileGrammarHandler()
     {
-        ReadRules(ruleFile);
+        rCreator = new RecipeCreator();
+        roomList = rCreator.getRoomList();
 
-        SetRecipe(CreateTestRules());
+        SetRecipe();
 
-        int endN = 10;
-        int endE = 20;
-        int endS = 30; 
-        int endW = 40;
-        int chosenCoord = 29;
+        grid = new Grid(1, 1);
+
+        while (!ApplyRecipe())
+        {
+            grid = new Grid(1, 1);
+        }
+    }
+
+    public void Print(Text output)
+    {
+        grid.PrintGrid(output);
+    }
+
+    private void SetRecipe()
+    {
+        List<TileGrammarRule> rules = new List<TileGrammarRule>();
+        for (int i = 0; i < roomList.Count; i++)
+        {
+            for (int j = 0; j < roomList[i].AmountOfRules; j++) 
+            {
+                rules.Add(roomList[i].GetRule(j));
+            }
+        }
+
+        currentRecipe = rules;
+    }
+
+    public bool ApplyRecipe()
+    {
+        // loop through recipe and apply
+        for (int i = 0; i < currentRecipe.Count; i++)
+        {
+            if (currentRecipe[i].ExecuteRule)
+            {
+                //Debug.Log("Executing...");
+                //ApplyRule(currentRecipe[i]);
+                while (ApplyRule(currentRecipe[i]))
+                {
+                }
+                Debug.Log(currentRecipe[i].Name + ": Succes");
+
+            }
+            else
+            {
+                if (ApplyRule(currentRecipe[i]))
+                {
+                    Debug.Log(currentRecipe[i].Name + ": Succes");
+                }
+                else
+                {
+                    //TODO: change width and height and recheck
+                    if (ApplyRuleSizeLess(currentRecipe[i]))
+                    {
+
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Mui problemos, los cameros is ingeslotos!");
+                        Debug.LogError(currentRecipe[i].Name + ": Failed, creating new dungeon");
+                        return false;
+                    }
+
+                    //if still not solved:
+                    //  if room is connected - find previous
+
+                    
+                    //return grid;
+                }
+            }
+        }
+
+        Debug.LogError("Succeeded creating dungeon");
+        return true;
+    }
+
+    private bool ApplyRuleSizeLess(TileGrammarRule rule)
+    {
+        // add all non-rotated options
+        List<Coordinate> possCoordinates = new List<Coordinate>();
+        int endN, endE, endS = 0;
+        possCoordinates.AddRange(grid.Contains(Grid.RotateGrid(rule.LHS, Orientation.North), true));
+        endN = possCoordinates.Count - 1;
+        possCoordinates.AddRange(grid.Contains(Grid.RotateGrid(rule.LHS, Orientation.East), true));
+        endE = possCoordinates.Count - 1;
+        possCoordinates.AddRange(grid.Contains(Grid.RotateGrid(rule.LHS, Orientation.South), true));
+        endS = possCoordinates.Count - 1;
+        possCoordinates.AddRange(grid.Contains(Grid.RotateGrid(rule.LHS, Orientation.West), true));
+
+        // check for no possible coordinates
+        if (possCoordinates.Count == 0)
+        {
+            Debug.Log("Rescaling grid did not work.");
+            return false;
+        }
+
+        int chosenCoord = UnityEngine.Random.Range(0, possCoordinates.Count);
+
+        // random roll for RHS probabilities
+        float summedProb = 0.0f;
+        rule.ProbabilitiesRHS.HandleAction(r => summedProb += r);
+
+        float chosenProb = UnityEngine.Random.Range(0, summedProb);
+        int chosenRHS = 0;
+
+        summedProb = 0;
+        for (int i = 0; i < rule.ProbabilitiesRHS.Count; i++)
+        {
+            summedProb += rule.ProbabilitiesRHS[i];
+
+            // found the chosen one
+            if (chosenProb < summedProb)
+            {
+                chosenRHS = i;
+                break;
+            }
+        }
 
         Orientation tempOrientation = chosenCoord > endN ?
             (chosenCoord > endE ?
-                (chosenCoord > endS ?
-                Orientation.West : Orientation.South)
+            (chosenCoord > endS ?
+            Orientation.West : Orientation.South)
             : Orientation.East) : Orientation.North;
 
-        Debug.Log(tempOrientation);
-    }
+        //rescalen
+        //TODO:
+        Coordinate originTranslation = new Coordinate(0,0);
+        Coordinate scalar = new Coordinate(0,0);
+        int ruleW = Grid.RotateGrid(rule.RHS[chosenRHS], tempOrientation).Width;
+        int ruleH = Grid.RotateGrid(rule.RHS[chosenRHS], tempOrientation).Height;
 
-    private List<TileGrammarRule> CreateTestRules()
-    {
-        List<TileGrammarRule> returnList = new List<TileGrammarRule>();
-
-        //temporary: test recipe
-        char[,] lhsGridOne = 
+        if (possCoordinates[chosenCoord].x < 0)
         {
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'},
-            {'u', 'u', 'u', 'u', 'u'}
-        };
-
-        char[,] rhsGridOne =
-        {
-            {'u', 'u', 'h', 'u', 'u'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'h', 'r', 'r', 'r', 'h'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'u', 'u', 'e', 'u', 'u'}
-        };
-
-        char[,] rhsGridTwo =
-        {
-            {'u', 'u', 'h', 'u', 'u'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'h', 'r', 'r', 'r', 'h'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'u', 'u', 'e', 'u', 'u'}
-        };
-
-        char[,] rhsGridThree =
-        {
-            {'u', 'u', 'h', 'u', 'u'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'h', 'r', 'r', 'r', 'h'},
-            {'u', 'r', 'r', 'r', 'u'},
-            {'u', 'u', 'e', 'u', 'u'}
-        };
-
-        Grid lhsOne = Grid.CreateGrid(lhsGridOne);
-        Grid rhsOne = Grid.CreateGrid(rhsGridOne);
-        Grid rhsTwo = Grid.CreateGrid(rhsGridTwo);
-        Grid rhsThree = Grid.CreateGrid(rhsGridThree);
-        List<Grid> rhs = new List<Grid>();
-        rhs.Add(rhsOne);
-        rhs.Add(rhsTwo);
-        rhs.Add(rhsThree);
-
-        List<int> probs = new List<int>();
-        probs.Add(101);
-        probs.Add(100);
-        probs.Add(150);
-
-        TileGrammarRule ruleOne = new TileGrammarRule(lhsOne, rhs, probs);
-
-        returnList.Add(ruleOne);
-
-        return returnList;
-    }
-
-    private void ReadRules(string ruleFile)
-    {
-        
-    }
-
-    public void SetRecipe(List<TileGrammarRule> newRecipe)
-    {
-        // maybe tests are needed
-
-        currentRecipe = newRecipe;
-    }
-
-    public GrammarGrid ApplyRecipe(GrammarGrid grid)
-    {
-        //TODO: loop through recipe and apply
-        for (int i = 0; i < currentRecipe.Count; i++)
-        {
-            grid = ApplyRule(currentRecipe[i], grid);
+            //x smaller
+            originTranslation.x = ruleW;
+            scalar.x += ruleW;
         }
+        if (possCoordinates[chosenCoord].y < 0)
+        {
+            //y smaller
+            originTranslation.y = ruleH;
+            scalar.y += ruleH;
+        }
+        if (possCoordinates[chosenCoord].x > grid.Width - ruleW)
+        {
+            //x bigger
+            scalar.x += ruleW;
+        }
+        if (possCoordinates[chosenCoord].y > grid.Height - ruleH)
+        {
+            //y bigger
+            scalar.y += ruleH;
+        }
+        //1. new grid aanmaken
+        Grid newGrid = new Grid(grid.Width + scalar.x, grid.Height + scalar.y);
+        //3. oude grid invullen
+        newGrid.SetTiles(originTranslation, grid);
+        
+        //4. oude grid replacen
+        grid = new Grid(newGrid.Width, newGrid.Height);
+        grid = newGrid;
 
-        return grid;
+        Coordinate newpos = possCoordinates[chosenCoord];
+        newpos.x += originTranslation.x;
+        newpos.y += originTranslation.y;
+
+        Grid henry = Grid.RotateGrid(rule.RHS[chosenRHS], tempOrientation);
+        grid.SetTiles(newpos, henry);
+
+        Debug.LogWarning("Resize: " + scalar.x + " - " + scalar.y);
+        // Debug.Log("ChosenRHS: " + chosenRHS);
+
+        return true;
     }
 
-    private GrammarGrid ApplyRule(TileGrammarRule rule, GrammarGrid grid)
+    private bool ApplyRule(TileGrammarRule rule)
     {
         // add all non-rotated options
         List<Coordinate> possCoordinates = new List<Coordinate>();
@@ -130,21 +210,21 @@ public class TileGrammarHandler
         // check for no possible coordinates
         if (possCoordinates.Count == 0)
         {
-            Debug.LogError("This rule isn't contained within specified grid!");
-            return grid;
+            Debug.Log("I cannot place this rule anymore.");
+            return false;
         }
         else
         {
-            Debug.Log("I found " + possCoordinates.Count + "options!");
+            //Debug.Log("I found " + possCoordinates.Count + " occurings of the LHS of this rule!");
         }
 
         int chosenCoord = UnityEngine.Random.Range(0, possCoordinates.Count);
 
         // random roll for RHS probabilities
-        int summedProb = 0;
+        float summedProb = 0.0f;
         rule.ProbabilitiesRHS.HandleAction(r => summedProb += r);
 
-        int chosenProb = UnityEngine.Random.Range(0, summedProb);
+        float chosenProb = UnityEngine.Random.Range(0, summedProb);
         int chosenRHS = 0;
             
         summedProb = 0;
@@ -169,9 +249,9 @@ public class TileGrammarHandler
         grid.SetTiles(possCoordinates[chosenCoord], Grid.RotateGrid(rule.RHS[chosenRHS], 
             tempOrientation));
 
-        Debug.Log("Orientation: " + tempOrientation);
-        Debug.Log("ChosenRHS: " + chosenRHS);
+       // Debug.Log("Orientation: " + tempOrientation);
+       // Debug.Log("ChosenRHS: " + chosenRHS);
 
-        return grid;
+        return true;
     }
 }

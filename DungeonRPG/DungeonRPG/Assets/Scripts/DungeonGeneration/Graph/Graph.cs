@@ -9,7 +9,7 @@ public class Graph : MonoBehaviour
 
     public Graph()
     {
-        string input = File.ReadAllText("Assets/StreamingAssets/dungeonmission4.xpr");
+        string input = File.ReadAllText("Assets/StreamingAssets/dungeonmission5.xpr");
 
         input = input.Replace("GRAPH", "");
 
@@ -31,7 +31,7 @@ public class Graph : MonoBehaviour
                 else
                 {
                     string terminalSymbol = parts[1].Split('(')[0];
-                    nodes.Add(int.Parse(parts[0]), new Node(terminalSymbol));
+                    nodes.Add(int.Parse(parts[0]), new Node(terminalSymbol, int.Parse(parts[0])));
                 }
             }
         }
