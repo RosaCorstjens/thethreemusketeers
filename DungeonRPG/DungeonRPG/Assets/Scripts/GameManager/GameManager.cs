@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -46,6 +47,8 @@ public enum Quality { Common, Magic, Rare, Legendary }
 
 public enum GameStates { MainMenu, CharacterCreation, InGame }
 
+public enum KindsOfFun { Challenge, Explore }
+
 public class GameManager : MonoBehaviour
 {
     // Singleton to make the gamemanager easy to acces. 
@@ -61,6 +64,12 @@ public class GameManager : MonoBehaviour
 
     private GameStates gameState;
     public GameStates GameState { get { return gameState; } }
+
+    //[SerializeField] private List<KindsOfFun> preferedKindsOfFuns = new List<KindsOfFun>();
+    [SerializeField] private bool challenge;
+    public bool Challenge { get { return challenge; } }
+    [SerializeField] private bool explore;
+    public bool Explore { get { return explore; } }
 
     private GameObject warriorPrefab;
     public GameObject WarriorPrefab { get { return warriorPrefab; } }
@@ -117,6 +126,7 @@ public class GameManager : MonoBehaviour
         RenderSettings.fog = true;
         //RenderSettings.ambientLight = new Color(0, 0, 255);
         //RenderSettings.ambientIntensity = 0.00001f;
+
         StartState(gameState);
     }
 

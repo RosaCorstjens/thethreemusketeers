@@ -7,9 +7,9 @@ public class Graph : MonoBehaviour
 {
     Node startNode;
 
-    public Graph()
+    public Graph(string filepath)
     {
-        string input = File.ReadAllText("Assets/StreamingAssets/dungeonmission5.xpr");
+        string input = File.ReadAllText(filepath);
 
         input = input.Replace("GRAPH", "");
 

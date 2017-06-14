@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using System.IO;
+
 public enum DungeonDirection
 {
     North, East, South, West,
@@ -43,9 +45,6 @@ public class TileDungeonManager : MonoBehaviour
 
     public void Initialize()
     {
-        Columns = 10;
-        Rows = 10;
-
         // create a go to function as level parent
         LevelParent = new GameObject("Level Parent");
 
@@ -62,13 +61,10 @@ public class TileDungeonManager : MonoBehaviour
         // start at level 1
         CurrentLevel = 1;
 
-        // starts a new dungeon to play
+        // read all rules and the amount of mission graphs
         Parser = new TileRuleParser();
-        Graph = new Graph();                    // TODO: graph class should get a string with the correct file
 
-        RecipeCreator = new RecipeCreator(Graph);
-        TileGrammarHandler = new TileGrammarHandler(RecipeCreator.getRoomList());
-
+        // starts a new dungeon to play
         StartNewDungeon();
 
         // starting up the player
@@ -77,16 +73,37 @@ public class TileDungeonManager : MonoBehaviour
 
     void StartNewDungeon()
     {
-        // 1. set the current dungeon to null
+        // set the current dungeon to null
         CurrentDungeon = null;
 
-        // 2. read all rules and the amount of mission graphs
+        // chose a mission graph based on the set preference
+        string filepath = "";
+        if (GameManager.Instance.Challenge)
+        {
+            filepath += "Challenge";
+        }
+        if (GameManager.Instance.Explore)
+        {
+            filepath += "Explore";
+        }
+        filepath += "Missions/";
 
-        // 3. chose a mission graph based on the set preference
+        DirectoryInfo info = new DirectoryInfo(filepath);
+        FileInfo[] fileInfo = info.GetFiles();
+        List<FileInfo> fileInfoList = new List<FileInfo>();
+        foreach (FileInfo file in fileInfo)
+        {
+            if (file.FullName.Contains(".xpr") && !file.FullName.Contains(".meta"))
+            {
+                fileInfoList.Add(file);
+            }
+        }
 
-        // 4. obtain the ordered graph
+        Graph = new Graph(fileInfoList[Random.Range(0, fileInfoList.Count)].FullName);                    // TODO: graph class should get a string with the correct file
 
-        // 5. get the tile grammar rules
+        // obtain the recipe and apply the rules
+        RecipeCreator = new RecipeCreator(Graph);
+        TileGrammarHandler = new TileGrammarHandler(RecipeCreator.getRoomList());
 
         // 6. set up the tile array
         char[][] tiles = new char[TileGrammarHandler.grid.Width][];
@@ -107,12 +124,10 @@ public class TileDungeonManager : MonoBehaviour
         Columns = TileGrammarHandler.grid.Height;
         Rows = TileGrammarHandler.grid.Width;
 
-        // 7. apply all rules to a 2d array
-
-        // 8. create a new dungeon
+        // create a new dungeon
         CurrentDungeon = new TileDungeon();
 
-        // 9. and initialize it!
+        // and initialize it!
         CurrentDungeon.Initialize(tiles);
     }
 
