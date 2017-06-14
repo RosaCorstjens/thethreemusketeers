@@ -24,7 +24,7 @@ public class LockScript : MonoBehaviour
 
         Color doorColor = GetColor(lockId);
 
-
+        // handles multiple keys if there are multiple lock anims
         foreach (var child in children)
         {
             if (child.name.Contains("lock"))
