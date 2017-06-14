@@ -112,7 +112,7 @@ public class TileDungeon
 
                     // key
                     case 'k':
-                        GameObject keyObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        GameObject keyObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos + new Vector3(0, 1, 0), Quaternion.identity) as GameObject;
                         keyObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         KeyScript key = keyObject.GetComponent<KeyScript>();
@@ -123,7 +123,7 @@ public class TileDungeon
 
                     // keymulti
                     case '0':
-                        GameObject keyMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        GameObject keyMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos + new Vector3(0, 1, 0), Quaternion.identity) as GameObject;
                         keyMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         KeyScript keyMulti = keyMultiObject.GetComponent<KeyScript>();
@@ -134,7 +134,7 @@ public class TileDungeon
 
                     // keyfinal
                     case 'K':
-                        GameObject keyFinalObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos, Quaternion.identity) as GameObject;
+                        GameObject keyFinalObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.KeyPrefab, spawnPos + new Vector3(0, 1, 0), Quaternion.identity) as GameObject;
                         keyFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         KeyScript keyFinal = keyFinalObject.GetComponent<KeyScript>();
@@ -149,6 +149,9 @@ public class TileDungeon
                         GameObject lockObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
+                        lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
+                        lockObject.transform.LookAt(lookPos);
+
                         LockScript lockScript = lockObject.GetComponent<LockScript>();
                         lockScript.Initialize(0);
 
@@ -160,6 +163,9 @@ public class TileDungeon
                         GameObject lockMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.MultiLockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
+                        lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
+                        lockMultiObject.transform.LookAt(lookPos);
+
                         LockScript lockMultiScript = lockMultiObject.GetComponent<LockScript>();
                         lockMultiScript.Initialize(1);
 
@@ -170,6 +176,9 @@ public class TileDungeon
                     case 'L':
                         GameObject lockFinalObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+
+                        lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
+                        lockFinalObject.transform.LookAt(lookPos);
 
                         LockScript lockFinalScript = lockFinalObject.GetComponent<LockScript>();
                         lockFinalScript.Initialize(2);

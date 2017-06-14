@@ -23,6 +23,8 @@ public class KeyScript : MonoBehaviour
         foreach (var mesh in meshes)
         {
             mesh.material.color = LockScript.GetColor(keyId);
+            /*mesh.material.EnableKeyword("_EMISSION");
+            mesh.material.SetColor("_EMISSION", new Color(0.125f, 0.125f, 0.125f));*/
         }
 
         trigger.onTriggerAction = PlayerInRange;

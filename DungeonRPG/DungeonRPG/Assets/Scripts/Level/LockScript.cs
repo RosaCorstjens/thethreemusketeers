@@ -33,6 +33,8 @@ public class LockScript : MonoBehaviour
                 foreach (var mesh in meshes)
                 {
                     mesh.material.color = doorColor;
+                    /*mesh.material.EnableKeyword("_EMISSION");
+                    mesh.material.SetColor("_EMISSION", new Color(0.125f, 0.125f, 0.125f));*/
                 }
             }
         }
@@ -48,30 +50,21 @@ public class LockScript : MonoBehaviour
     {
         switch (id)
         {
+            // normal keys/locks
             case 0:
-                return Color.blue;
-                break;
-            case 1:
-                return Color.cyan;
-                break;
-            case 2:
-                return Color.gray;
-                break;
-            case 3:
                 return Color.green;
                 break;
-            case 4:
-                return Color.magenta;
-                break;
-            case 5:
-                return Color.red;
-                break;
-            case 6:
-                return Color.white;
-                break;
-            case 7:
+
+            // multi keys/locks
+            case 1:
                 return Color.yellow;
                 break;
+
+            // final keys/locks
+            case 2:
+                return Color.red;
+                break;
+
             default:
                 return Color.black;
                 break;
