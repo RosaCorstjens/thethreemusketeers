@@ -24,8 +24,9 @@ public class TileDungeonManager : MonoBehaviour
     public Graph Graph { get; private set; }
     public TileGrammarHandler TileGrammarHandler { get; private set; }
 
-    public float WorldScaleX { get { return 3f; } }
-    public float WorldScaleZ { get { return 3f; } }
+    public float WorldScaleX { get { return 5f; } }
+    public float WorldScaleZ { get { return 5f; } }
+    public float WorldScaleY { get { return 5f; } }
 
     public Dictionary<DungeonDirection, Vector2> directionValues;
 
@@ -134,7 +135,7 @@ public class TileDungeonManager : MonoBehaviour
     void GetPrefabs()
     {
         FloorPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Floor");
-        WallPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/WallPlane");
+        WallPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Wall");
         PillarPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Pillar");
         CeilingPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Ceiling");
 

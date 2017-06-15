@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
         dungeonManager = new TileDungeonManager();
         dungeonManager.Initialize();
 
-        CameraManager.SetTarget(activeCharacter.transform);
+        CameraManager.SetTarget(activeCharacter.transform.FindChild("CameraTarget"));
         CameraManager.FocusBack(true);
         CameraManager.CameraScript.CanReceiveInput = true;
         CameraManager.CameraScript.height = 2;

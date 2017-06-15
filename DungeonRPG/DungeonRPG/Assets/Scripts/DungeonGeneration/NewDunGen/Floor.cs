@@ -59,6 +59,7 @@ public class Floor
 
         // Set the tile's parent to the board holder.
         tileInstance.transform.parent = GameManager.Instance.DungeonManager.LevelParent.transform;
+        tileInstance.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, tileInstance.transform.localScale.y, GameManager.Instance.DungeonManager.WorldScaleZ);
 
         // set the go
         myGO = tileInstance;
@@ -97,6 +98,8 @@ public class Floor
 
             GameObject go = GameObject.Instantiate(wallPrefab, position, Quaternion.Euler(0, yRot, 0)) as GameObject;
             go.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+            go.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
+
             wallGOs.Add(go);
         }
     }

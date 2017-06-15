@@ -150,6 +150,7 @@ public class TileDungeon
                     case 'l':
                         GameObject lockObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        lockObject.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
 
                         lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
                         lockObject.transform.LookAt(lookPos);
@@ -164,6 +165,7 @@ public class TileDungeon
                     case '1':
                         GameObject lockMultiObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.MultiLockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        lockMultiObject.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
 
                         lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
                         lockMultiObject.transform.LookAt(lookPos);
@@ -178,6 +180,7 @@ public class TileDungeon
                     case 'L':
                         GameObject lockFinalObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
                         lockFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        lockFinalObject.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
 
                         lookPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(GetFloor(i, j).Neighbours[0].xPos, GetFloor(i, j).Neighbours[0].yPos));
                         lockFinalObject.transform.LookAt(lookPos);

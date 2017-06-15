@@ -127,8 +127,9 @@ public class LockScript : MonoBehaviour
             animator.gameObject.SetActive(false);
         }
 
+        anim = transform.GetComponentsInChildren<Animator>();
         Animator myAnim = transform.GetComponent<Animator>();
-        if (myAnim != null){
+        if (myAnim != null && anim.Length == 1){
             myAnim.SetTrigger("Unlock");
             Debug.Log("Unlocking");
             yield return new WaitForSeconds(4f);
