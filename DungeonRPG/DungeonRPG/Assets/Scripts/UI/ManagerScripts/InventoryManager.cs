@@ -77,6 +77,8 @@ public class InventoryManager
         set { emptySlots = value; }
     }
 
+    public WeaponInstance StartItem { get; private set; }
+
     // Called from UI manager to initialize the inventory manager. 
     public void Initialize()
     {
@@ -122,7 +124,8 @@ public class InventoryManager
         baseStats.Add(attackSpeed);
         toAdd.AddComponent<WeaponInstance>().Initialize(baseItem, 0, 1, generatedName, baseStats, new List<Affix>());
 
-        AddItem(toAdd.GetComponent<WeaponInstance>());
+        StartItem = toAdd.GetComponent<WeaponInstance>();
+        AddItem(StartItem);
     }
 
     private void InstantiateInventory()

@@ -55,8 +55,8 @@ public class PlayerController : MonoBehaviour
         currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;
 
         hand = transform.FindChild(GameManager.Instance.ActiveCharacterInformation.CharacterClass.CharacterClassType.ToString() + "/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4");
-        inHand = null; // Start with nothing in hand. 
-        SetHand();
+        inHand = null;//.StartItem; // Start with nothing in hand. 
+        GameManager.Instance.UIManager.InventoryManager.EquipItem(GameManager.Instance.UIManager.InventoryManager.StartItem);
 
         //offhand = transform.FindChild("PelvisRoot/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/OffHand");
         inOffHand = null;
@@ -69,12 +69,12 @@ public class PlayerController : MonoBehaviour
     {
         if (!IsInitialized) return;
 
-        if (onHitCooldown)
+/*        if (onHitCooldown)
         {
             SendMessage("MoveMeForward", 0f);
             SendMessage("MoveMeSideways", 0f);
             return;
-        }
+        }*/
 
         GetInput();
 
@@ -341,7 +341,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetHand(WeaponInstance item)
     {
-        if (inHand != null)
+        if (inHand != null && IsInitialized)
         {
             RemoveFromHand();
 
@@ -361,7 +361,6 @@ public class PlayerController : MonoBehaviour
 
         inHand = item;
         basicAttackCooldown = GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.AttackSpeed);
-        Debug.Log(basicAttackCooldown);
 
         inHand.WeaponObject.transform.SetParent(hand);
         inHand.WeaponObject.transform.localRotation = hand.localRotation * Quaternion.Euler(0, 0, 45) * Quaternion.Euler(0, -180, 0);
@@ -369,18 +368,22 @@ public class PlayerController : MonoBehaviour
 
         inHand.WeaponObject.SetActive(false);
 
-        switch (inHand.BaseWeapon.WeaponType)
+        if (IsInitialized)
         {
-            case WeaponType.Bow:
-                SendMessage("ToggleBow", true);
-                break;
-            case WeaponType.Staff:
-                SendMessage("ToggleStaff", true);
-                break;
-            case WeaponType.Sword:
-                SendMessage("ToggleSword", true);
-                break;
+            switch (inHand.BaseWeapon.WeaponType)
+            {
+                case WeaponType.Bow:
+                    SendMessage("ToggleBow", true);
+                    break;
+                case WeaponType.Staff:
+                    SendMessage("ToggleStaff", true);
+                    break;
+                case WeaponType.Sword:
+                    SendMessage("ToggleSword", true);
+                    break;
+            }
         }
+
     }
 
     public void RemoveFromHand()
