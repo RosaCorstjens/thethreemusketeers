@@ -73,7 +73,7 @@ public class Floor
         for (int i = 0; i < wallPlaces.Count; i++)
         {
             Vector3 position = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(xPos, yPos));
-            position.y = 1.75f;
+            position.y = GameManager.Instance.DungeonManager.WorldScaleY / 2f;
             float yRot = 0;
 
             switch (wallPlaces[i])

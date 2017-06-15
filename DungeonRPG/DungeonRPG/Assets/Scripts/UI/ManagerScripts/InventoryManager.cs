@@ -27,9 +27,7 @@ public class InventoryManager
     private List<InventorySlot> slots;                                  // List of all slots. 
 
     private UILabel healthPotionsLabel;
-    private UILabel energyPotionsLabel;
     private List<PotionInstance> healthPotions;
-    private List<PotionInstance> energyPotions;
 
     private CharacterPanel characterPanel;
     public CharacterPanel CharacterPanel { get { return characterPanel; } }
@@ -125,7 +123,7 @@ public class InventoryManager
         toAdd.AddComponent<WeaponInstance>().Initialize(baseItem, 0, 1, generatedName, baseStats, new List<Affix>());
 
         StartItem = toAdd.GetComponent<WeaponInstance>();
-        AddItem(StartItem);
+        //AddItem(StartItem);
     }
 
     private void InstantiateInventory()
@@ -208,14 +206,11 @@ public class InventoryManager
     {
         // Find the labels for coins and potions to get a reference. 
         healthPotionsLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/HealthPotions/Label").GetComponent<UILabel>();
-        energyPotionsLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/EnergyPotions/Label").GetComponent<UILabel>();
 
         healthPotions = new List<PotionInstance>();
-        energyPotions = new List<PotionInstance>();
 
         // Set the text labels to the correct amount (0). 
         healthPotionsLabel.text = healthPotions.Count + "";
-        energyPotionsLabel.text = energyPotions.Count + "";
     }
 
     public void ToggleMenu(bool on)
@@ -304,8 +299,6 @@ public class InventoryManager
                 return true;
 
             case PotionType.Mana:
-                energyPotions.Add(item);
-                energyPotionsLabel.text = energyPotions.Count + "";
                 return true;
         }
         return false;

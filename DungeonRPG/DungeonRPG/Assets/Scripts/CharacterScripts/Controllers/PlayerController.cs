@@ -363,10 +363,12 @@ public class PlayerController : MonoBehaviour
         basicAttackCooldown = GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.AttackSpeed);
 
         inHand.WeaponObject.transform.SetParent(hand);
-        inHand.WeaponObject.transform.localRotation = hand.localRotation * Quaternion.Euler(0, 0, 45) * Quaternion.Euler(0, -180, 0);
+        inHand.WeaponObject.transform.localRotation = hand.localRotation * Quaternion.Euler(0, 0, 45) *
+                                                      Quaternion.Euler(0, -180, 0);
         inHand.WeaponObject.transform.localPosition = new Vector3(0, 0, 0);
 
-        inHand.WeaponObject.SetActive(false);
+        if (inBattle) inHand.WeaponObject.SetActive(true);
+        else inHand.WeaponObject.SetActive(false);
 
         if (IsInitialized)
         {
