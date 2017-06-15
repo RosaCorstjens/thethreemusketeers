@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
         hand = transform.FindChild(GameManager.Instance.ActiveCharacterInformation.CharacterClass.CharacterClassType.ToString() + "/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4");
         inHand = null; // Start with nothing in hand. 
+        SetHand();
 
         //offhand = transform.FindChild("PelvisRoot/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftArmRoll/LeftForeArm/LeftForeArmRoll/LeftHand/OffHand");
         inOffHand = null;
