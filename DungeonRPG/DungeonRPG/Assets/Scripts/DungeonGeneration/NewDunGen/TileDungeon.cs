@@ -282,9 +282,11 @@ public class TileDungeon
 
     public void RestartDungeon()
     {
-        enemies.HandleAction(e => e.Reset());
-
-        //TODO: how do we reset the locks and keys? for now i removed them and put them back.
+        // clear enemies
+        enemies.HandleAction(e => GameObject.Destroy(e.gameObject));
+        enemies.Clear();
+        Debug.Log("enemies destroyed. " + enemies.Count);
+        
         // clear keys
         keys.HandleAction(k => GameObject.Destroy(k.gameObject));
         keys.Clear();
@@ -299,9 +301,8 @@ public class TileDungeon
         {
             for (int j = 0; j < tiles[i].Length; j++)
             {
-                // if the tile is undefined
-                if (tiles[i][j] != 'k' || tiles[i][j] != '0' || tiles[i][j] != 'K' || tiles[i][j] != 'l' ||
-                    tiles[i][j] != '1' || tiles[i][j] != 'L') continue;
+                // if the tile's content shouldnt be respawned
+                if (tiles[i][j] != 'k' && tiles[i][j] != '0' && tiles[i][j] != 'K' && tiles[i][j] != 'l' && tiles[i][j] != '1' && tiles[i][j] != 'L' && tiles[i][j] != 'm') continue;
 
                 Vector3 spawnPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(i, j));
 
@@ -399,6 +400,17 @@ public class TileDungeon
                         lockFinalScript.Initialize(2);
 
                         locks.Add(lockFinalScript);
+                        break;
+
+                    // monster
+                    case 'm':
+                        GameObject monsterObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.SpiderPrefab, spawnPos + new Vector3(0, 0.1f, 0), Quaternion.identity) as GameObject;
+                        monsterObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        Debug.Log("Spider spawned");
+                        EnemyController monster = monsterObject.GetComponent<EnemyController>();
+                        monster.Initialize();
+
+                        enemies.Add(monster);
                         break;
                 }
             }

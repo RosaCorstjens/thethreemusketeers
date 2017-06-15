@@ -316,6 +316,9 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         // dungeon monsters respawn
+        SendMessage("MoveMeForward", 0f);
+        SendMessage("MoveMeSideways", 0f);
+
         StartCoroutine(Respawn(GameManager.Instance.DungeonManager.CurrentDungeon.StartPosition));
 
         GameManager.Instance.DungeonManager.CurrentDungeon.RestartDungeon();
@@ -325,6 +328,9 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Respawn(Vector3 pos)
     {
+        SendMessage("MoveMeForward", 0f);
+        SendMessage("MoveMeSideways", 0f);
+
         onCooldown = true;
         inBattle = false;
         CanMove = false;

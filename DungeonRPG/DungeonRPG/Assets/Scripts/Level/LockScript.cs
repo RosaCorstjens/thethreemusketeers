@@ -12,6 +12,8 @@ public class LockScript : MonoBehaviour
     Coroutine checkForKey;
     Coroutine unlock;
 
+    List<Material> materials;
+
     int lockId;
 
     public void Initialize(int id)
@@ -21,6 +23,7 @@ public class LockScript : MonoBehaviour
         trigger = GetComponent<TriggerArea>();
         
         Animator[] children = transform.GetComponentsInChildren<Animator>();
+        materials = new List<Material>();
 
         Color doorColor = GetColor(lockId);
 
@@ -33,9 +36,11 @@ public class LockScript : MonoBehaviour
                 foreach (var mesh in meshes)
                 {
                     mesh.material.color = doorColor;
-                    /*mesh.material.EnableKeyword("_EMISSION");
-                    mesh.material.SetColor("_EMISSION", new Color(0.125f, 0.125f, 0.125f));*/
                 }
+
+                Renderer[] tempArrayRender = child.GetComponentsInChildren<Renderer>();
+                List<Renderer> tempListRender = new List<Renderer>(tempArrayRender);
+                tempListRender.HandleAction(r => materials.AddRange(r.materials));
             }
         }
 
@@ -74,12 +79,16 @@ public class LockScript : MonoBehaviour
     public void PlayerInRange()
     {
         GameManager.Instance.UIManager.WorldUIManager.ShowPressToOpen(this.gameObject);
+        materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Self-Illumin/Bumped Diffuse"));
+
         checkForKey = StartCoroutine(CheckKeyPressed());
     }
 
     public void PlayerOutOfRange()
     {
         GameManager.Instance.UIManager.WorldUIManager.HideLabel();
+        materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Bumped Diffuse"));
+
         if (checkForKey != null) StopCoroutine(checkForKey);
     }
 

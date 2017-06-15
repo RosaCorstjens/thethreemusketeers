@@ -48,7 +48,7 @@ public class LootChest : MonoBehaviour
     {
         GameManager.Instance.UIManager.WorldUIManager.HideLabel();
 
-        materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Bumped Diffuse"));
+        materials.HandleAction(m => m.shader = Shader.Find("Standard"));
 
         if (checkForOpen != null) StopCoroutine(checkForOpen);
     }
