@@ -72,7 +72,7 @@ public class LootChest : MonoBehaviour
 
         materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Bumped Diffuse"));
 
-        loottable.DropItems(this.transform.position + new Vector3(2.5f, 0, 0));
+        loottable.DropItems(transform.position + (2.5f * transform.forward));
 
         yield break;
     }
