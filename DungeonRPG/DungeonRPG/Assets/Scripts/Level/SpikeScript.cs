@@ -3,27 +3,13 @@ using System.Collections;
 
 public class SpikeScript : MonoBehaviour
 {
-    TriggerArea trigger;
-    private Transform targetTransform;
-    private PlayerController targetScript;
+    void Initialize() { }
 
-    private void Awake()
+    public void OnTriggerEnter(Collider col)
     {
-        Initialize();
-    }
-
-    void Initialize()
-    {
-        trigger = GetComponent<TriggerArea>();
-
-        targetTransform = GameManager.Instance.ActiveCharacter.transform;
-        targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
-
-        trigger.onTriggerAction = PlayerInRange;
-    }
-
-    public void PlayerInRange()
-    {
-        targetScript.GotHit(5);
+        if (col.tag == "Player")
+        {
+            col.GetComponent<PlayerController>().GotHit(GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth / 100 * 5);
+        }
     }
 }

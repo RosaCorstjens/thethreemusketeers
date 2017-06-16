@@ -4,57 +4,56 @@ using UnityEngine;
 
 public class TrapScript : MonoBehaviour
 {
-    TriggerArea trigger;
-    public Transform spike;
-    Coroutine activateSpikes;
-    bool dir;
-    public float offset;
+    [SerializeField] Transform spike;
+    Coroutine moveSpikeCoroutine;
+
+    bool spikesOut;
+    float spikeSpeed = 1.5f;
+
+    bool goingUp;
+    [SerializeField] float yOffset;
 
     public void Initialize()
     {
-        trigger = GetComponent<TriggerArea>();
-
         spike = transform.FindChild("[trap]-spikes");
-
-        trigger.onTriggerAction = PlayerInRange;
-        trigger.offTriggerAction = PlayerOutOfRange;
+        goingUp = true;
+        yOffset = spike.localPosition.z;
     }
 
-    public void PlayerInRange()
+    public void OnTriggerStay(Collider col)
     {
-        activateSpikes = StartCoroutine(MoveSpikes());
-    }
+        if (col.tag == "Player")
+        {
+            if (!spikesOut)
+            {
+                if(moveSpikeCoroutine != null) StopCoroutine(moveSpikeCoroutine);
 
-    public void PlayerOutOfRange()
-    {
-        if (activateSpikes != null) StopCoroutine(activateSpikes);
+                spikesOut = true;
+                moveSpikeCoroutine = StartCoroutine(MoveSpikes());
+            }
+        }
     }
 
     public IEnumerator MoveSpikes()
     {
-        while (true)
+        yield return new WaitForSeconds(1f);
+
+        while (spikesOut)
         {
-            if (dir)
-            {
-                offset += Time.deltaTime;
+            if (goingUp) { yOffset += spikeSpeed * Time.deltaTime; }
+            else { yOffset -= spikeSpeed * 0.5f * Time.deltaTime; }
+
+            if (yOffset >= 0) {
+                yOffset = 0;
+                goingUp = false;
+                yield return new WaitForSeconds(0.5f);
             }
-            else
-            {
-                offset -= Time.deltaTime * 0.2f;
+            else if (yOffset < -0.4) {
+                spikesOut = false;
+                goingUp = true;
             }
 
-            if (offset >= 0)
-            {
-                offset = 0;
-                dir = false;
-            }
-            else if (offset < -0.4)
-            {
-                dir = true;
-                yield return new WaitForSeconds(2f);
-            }
-
-            spike.localPosition = new Vector3(0, 0, offset);
+            spike.localPosition = new Vector3(0, 0, yOffset);           // since model is rotated 90 degrees local z axis is world y axis. 
 
             yield return null;
         }

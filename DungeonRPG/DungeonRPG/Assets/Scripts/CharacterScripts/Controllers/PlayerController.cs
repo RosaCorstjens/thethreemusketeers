@@ -11,7 +11,7 @@ using UnityEngineInternal;
 
 public class PlayerController : MonoBehaviour
 {
-    public float currentHealth;
+    private float currentHealth;
 
     private Transform hand;
     private Transform offhand;

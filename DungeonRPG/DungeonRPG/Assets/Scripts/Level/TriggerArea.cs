@@ -22,6 +22,7 @@ public class TriggerArea : MonoBehaviour
     {
         if (col.tag == "Player")
         {
+            Debug.Log(offTriggerAction);
             offTriggerAction();
         }
     }

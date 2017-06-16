@@ -204,9 +204,10 @@ public class TileDungeon
 
                     // trap
                     case 'p':
-                        GameObject trapObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.TrapPrefab, spawnPos + new Vector3(0, 0.1f, 0), Quaternion.identity) as GameObject;
+                        GameObject trapObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.TrapPrefab, spawnPos + new Vector3(0, 0.29f, 0), Quaternion.identity) as GameObject;
                         trapObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
                         trapObject.transform.Rotate(Vector3.right, -90);
+                        trapObject.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleZ, trapObject.transform.localScale.z);
 
                         TrapScript trap = trapObject.GetComponent<TrapScript>();
                         trap.Initialize();
