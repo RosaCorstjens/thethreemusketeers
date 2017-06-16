@@ -52,7 +52,7 @@ public class RecipeCreator
     public RuleSetProxy getFinalRules()
     {
         RuleSetProxy proxy = new RuleSetProxy(null);
-        proxy.AddRule(parser.GetRule("connect-hooks"));
+        proxy.AddRule(parser.GetRule("connecthooks"));
         proxy.AddRule(parser.GetRule("removehooks"));
         return proxy;
     }
@@ -68,15 +68,15 @@ public class RecipeCreator
         List<string> ruleNames = graphToTile[node.Symbol];
         for (int i = 0; i < ruleNames.Count; i++) {
             if (ruleNames[i] == "room" && isConnected) {
-                room.AddRule(parser.GetRule("connectedRoom"));
-                room.AddRule(parser.GetRule("undirectRoom"));
+                room.AddRule(parser.GetRule("connectedroom"));
+                room.AddRule(parser.GetRule("undirectroom"));
             }
             else
             {
                 room.AddRule(parser.GetRule(ruleNames[i]));
             }
 
-            if (ruleNames[i] == "room" && nextIsConnected) room.AddRule(parser.GetRule("directRoom"));
+            if (ruleNames[i] == "room" && nextIsConnected) room.AddRule(parser.GetRule("directroom"));
         }
 
         return room;
@@ -94,7 +94,7 @@ public class RecipeCreator
         content.Add("room");
         content.Add("treasure");
         content.Add("finalize");
-        graphToTile.Add("items", new List<string>(content));
+        graphToTile.Add("treasure", new List<string>(content));
 
         content.Clear();
         content.Add("room");
@@ -110,7 +110,7 @@ public class RecipeCreator
 
         content.Clear();
         content.Add("room");
-        content.Add("key-multi");
+        content.Add("keymulti");
         content.Add("finalize");
         graphToTile.Add("keymulti", new List<string>(content));
 
@@ -129,7 +129,7 @@ public class RecipeCreator
 
         content.Clear();
         content.Add("room");
-        content.Add("lock-multi");
+        content.Add("lockmulti");
         content.Add("treasure");
         content.Add("finalize");
         graphToTile.Add("lockmulti", new List<string>(content));
@@ -147,7 +147,7 @@ public class RecipeCreator
             content.Add("monster");
         }
         content.Add("finalize");
-        graphToTile.Add("test", new List<string>(content));
+        graphToTile.Add("monster", new List<string>(content));
 
         content.Clear();
         content.Add("room");
@@ -157,7 +157,7 @@ public class RecipeCreator
             content.Add("trap");
         }
         content.Add("finalize");
-        graphToTile.Add("testsecret", new List<string>(content));
+        graphToTile.Add("trap", new List<string>(content));
 
         content.Clear();
         content.Add("entrance");
@@ -172,8 +172,8 @@ public class RecipeCreator
 
         content.Clear();
         content.Add("hub");
-        content.Add("undirectRoom");
-        content.Add("directRoom");
+        content.Add("undirectroom");
+        content.Add("directroom");
         //evt content
         content.Add("finalize");
         content.Add("removehooks");

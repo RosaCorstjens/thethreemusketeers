@@ -28,8 +28,8 @@ public class TileRuleParser
         { "lockfinal", 'L'},
         { "lockmulti", '1'},
         { "floor", 'f'},
-        { "hook", 'h'},
-        { "directedHook", 'H'},
+        { "Hook", 'h'},
+        { "DirectedHook", 'H'},
         { "monster", 'm'},
         { "trap", 'p'},
         { "entrance", 'e'},
@@ -67,7 +67,7 @@ public class TileRuleParser
                 return rules[i];
             }
         }
-        Debug.LogError("No such rule found");
+        Debug.LogError("No such rule found: " + name);
         return null;
     }
 

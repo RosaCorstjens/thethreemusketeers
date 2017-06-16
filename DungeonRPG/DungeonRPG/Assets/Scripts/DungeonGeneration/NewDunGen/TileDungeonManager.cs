@@ -78,7 +78,7 @@ public class TileDungeonManager : MonoBehaviour
         CurrentDungeon = null;
 
         // chose a mission graph based on the set preference
-        string filepath = "";
+        string filepath = "Assets/StreamingAssets/";
         if (GameManager.Instance.Challenge)
         {
             filepath += "Challenge";

@@ -247,9 +247,6 @@ public class TileGrammarHandler
         grid.SetTiles(possCoordinates[chosenCoord], Grid.RotateGrid(rule.RHS[chosenRHS], 
             tempOrientation));
 
-       // Debug.Log("Orientation: " + tempOrientation);
-       // Debug.Log("ChosenRHS: " + chosenRHS);
-
         return true;
     }
 }
