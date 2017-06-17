@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 136853227349596344}
   - component: {fileID: 114899365193105218}
   - component: {fileID: 114392464955606812}
+  - component: {fileID: 114755266407667506}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -152,6 +153,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be7244d823a6614cb88024c85a7edb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+--- !u!114 &114755266407667506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1572835293461868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4998b499a1ed28d4bad97f49239f7ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerDistance: 10
+  GizmoPrefab: {fileID: 1066569222448034, guid: be742861280bba64f91e0e029d512180,
+    type: 2}
 --- !u!114 &114899365193105218
 MonoBehaviour:
   m_ObjectHideFlags: 1

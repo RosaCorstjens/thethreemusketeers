@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 114722743847041454}
   - component: {fileID: 114322078040859622}
   - component: {fileID: 95867258642834950}
+  - component: {fileID: 114773737519459812}
   m_Layer: 0
   m_Name: LockedDoor
   m_TagString: Untagged
@@ -1689,6 +1690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f14921c8d8c75e43962ec01f33d9bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &114722743847041454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1700,3 +1702,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dde4cc795983a4fa4276b945b53633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114773737519459812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860823181893302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4998b499a1ed28d4bad97f49239f7ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerDistance: 10
+  GizmoPrefab: {fileID: 1066569222448034, guid: 37bfc9b8c04e4b54ba9bba3b670a1b8b,
+    type: 2}
