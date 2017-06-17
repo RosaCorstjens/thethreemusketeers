@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - component: {fileID: 431266}
   - component: {fileID: 11452426}
+  - component: {fileID: 114456275418306560}
   m_Layer: 0
   m_Name: LootChest
   m_TagString: Untagged
@@ -89,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.89, y: 0, z: 0}
+  m_LocalPosition: {x: 10.88, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480186}
@@ -278,3 +279,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139448}
   m_IsPrefabParent: 1
+--- !u!114 &114456275418306560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4998b499a1ed28d4bad97f49239f7ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GizmoPrefab: {fileID: 1066569222448034, guid: b7df7b56849328f488d3e19a36de7cf1,
+    type: 2}

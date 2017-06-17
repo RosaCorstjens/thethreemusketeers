@@ -629,6 +629,7 @@ GameObject:
   - component: {fileID: 9576396}
   - component: {fileID: 11497858}
   - component: {fileID: 11452320}
+  - component: {fileID: 114073956468810166}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -2041,9 +2042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0849ef52a04e24e4880a93295941c36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
   keys: 
-  multiKeys: 
 --- !u!114 &11497858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2203,3 +2202,16 @@ Transform:
   m_Father: {fileID: 429690}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114073956468810166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4998b499a1ed28d4bad97f49239f7ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GizmoPrefab: {fileID: 1413081004159880, guid: d39a336eaacb712499e88cba99c388cc,
+    type: 2}

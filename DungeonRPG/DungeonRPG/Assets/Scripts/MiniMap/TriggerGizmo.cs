@@ -7,7 +7,7 @@ public class TriggerGizmo : MonoBehaviour {
 
     protected string targetTag = "Player";
     protected GameObject targetObject;
-    protected float triggerDistance = 10.0f;
+    [SerializeField] protected float triggerDistance = 10.0f;
     protected bool Triggered = false;
     protected float heigth = 12.0f;
 
