@@ -103,6 +103,9 @@ public class UIManager
         warningMessage.text = LEVEL_UP;
         warningMessage.gameObject.SetActive(true);
         GameManager.Instance.StartCoroutine(ShowWarning());
+
+        GameManager.Instance.UIManager.HudManager.UpdateLevelText();
+        GameManager.Instance.UIManager.InventoryManager.CharacterPanel.UpdateLevelText();
     }
 
     public void NoHealthPotion()
@@ -124,6 +127,8 @@ public class UIManager
         warningMessage.text = NEXT_DUNGEON;
         warningMessage.gameObject.SetActive(true);
         GameManager.Instance.StartCoroutine(ShowWarning());
+
+        GameManager.Instance.UIManager.HudManager.UpdateFloorText();
     }
 
     private IEnumerator ShowWarning()

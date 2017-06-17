@@ -182,4 +182,9 @@ public class CharacterPanel : MonoBehaviour
         playerName.text = "" + GameManager.Instance.ActiveCharacterInformation.Name;
         level.text = "Level " + GameManager.Instance.ActiveCharacterInformation.Level;
     }
+
+    public void UpdateLevelText()
+    {
+        level.text = "Lvl. " + GameManager.Instance.ActiveCharacterInformation.Level;
+    }
 }

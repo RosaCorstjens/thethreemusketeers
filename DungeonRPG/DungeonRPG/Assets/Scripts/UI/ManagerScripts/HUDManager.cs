@@ -14,6 +14,9 @@ public class HUDManager
     private UILabel finalKeysLabel;
     private UILabel healthPotionsLabel;
 
+    private UILabel levelLabel;
+    private UILabel floorLabel;
+
     public void Initialize()
     {
         hud = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/UI/InGameUI/HUD"));
@@ -29,10 +32,16 @@ public class HUDManager
         multiKeysLabel = hud.transform.FindChild("Anchor_BottomRight/StandardItems/MultiKeys/Label").GetComponent<UILabel>();
         finalKeysLabel = hud.transform.FindChild("Anchor_BottomRight/StandardItems/FinalKeys/Label").GetComponent<UILabel>();
 
+        levelLabel = hud.transform.FindChild("Anchor_TopLeft/Level/Label").GetComponent<UILabel>();
+        floorLabel = hud.transform.FindChild("Anchor_TopLeft/Floor/Label").GetComponent<UILabel>();
+
         healthPotionsLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.HealthPotionAmount;
         keysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.KeyAmount;
         multiKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.MultiKeyAmount;
         finalKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.FinalKeyAmount;
+
+        levelLabel.text = "Lvl. " + 1;
+        floorLabel.text = "Floor: " + 1;
     }
 
     public void UpdatePotionValue()
@@ -54,5 +63,15 @@ public class HUDManager
                 finalKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.FinalKeyAmount;
                 break;
         }
+    }
+
+    public void UpdateLevelText()
+    {
+        levelLabel.text = "Lvl. " + GameManager.Instance.ActiveCharacterInformation.Level;
+    }
+
+    public void UpdateFloorText()
+    {
+        floorLabel.text = "Floor: " + GameManager.Instance.DungeonManager.CurrentLevel;
     }
 }

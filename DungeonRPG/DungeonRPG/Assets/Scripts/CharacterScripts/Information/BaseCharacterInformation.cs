@@ -98,8 +98,7 @@ public class BaseCharacterInformation
     // Although enemies can't really level up, this is usefull to generate their stats based on base stats and there level. 
     protected virtual void LevelUp()
     {
-        level++;
-
+        level++;       
         // Some increase of stats stuff. 
     }
 }
