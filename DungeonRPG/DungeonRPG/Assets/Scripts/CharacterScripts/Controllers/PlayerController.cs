@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
     public bool IsInitialized { get; set; }
 
     public List<int> keys;
-    public List<int> multiKeys;
 
     // Use this for initialization
     public void Initialize(Vector3 spawnPosition)
@@ -427,41 +426,22 @@ public class PlayerController : MonoBehaviour
         inOffHand = null;
     }
 
-    public bool HasKey(int keyId)
+    public bool HasKey(int keyId, KeyType type)
     {
         if (keys.Contains(keyId))
         {
             keys.Remove(keyId);
+            GameManager.Instance.UIManager.InventoryManager.RemoveKey(type);
+
             return true;
         }
         return false;
     }
 
-    public void ObtainKey(int keyId)
+    public void ObtainKey(int keyId, KeyType type)
     {
         keys.Add(keyId);
-    }
 
-    public bool HasMultiKey(int keyId)
-    {
-        int count = 0;
-        foreach (var key in multiKeys)
-        {
-            if(key == keyId)
-            {
-                count++;
-            }
-        }
-
-        if(count >= 2)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public void ObtainMultiKey(int keyId)
-    {
-        multiKeys.Add(keyId);
+        GameManager.Instance.UIManager.InventoryManager.AddKey(type);
     }
 }

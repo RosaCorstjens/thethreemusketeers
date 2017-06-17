@@ -9,8 +9,10 @@ public class HUDManager
     private HUDBar healthBar;
     public HUDBar HealthBar { get { return healthBar; } }
 
-    private HUDBar manaBar;
-    public HUDBar ManaBar { get { return manaBar; } }
+    private UILabel keysLabel;
+    private UILabel multiKeysLabel;
+    private UILabel finalKeysLabel;
+    private UILabel healthPotionsLabel;
 
     public void Initialize()
     {
@@ -19,10 +21,38 @@ public class HUDManager
         hud.transform.localPosition = Vector3.zero;
         hud.transform.localScale = Vector3.one;
 
-        healthBar = hud.transform.FindChild("HealthBarContainer").GetComponent<HUDBar>();
-        manaBar = hud.transform.FindChild("ManaBarContainer").GetComponent<HUDBar>();
-
+        healthBar = hud.transform.FindChild("Anchor_BottomLeft/HealthBarContainer").GetComponent<HUDBar>();
         healthBar.Initialize();
-        manaBar.Initialize();
+
+        healthPotionsLabel = hud.transform.FindChild("Anchor_BottomRight/StandardItems/HealthPotions/Label").GetComponent<UILabel>();
+        keysLabel = hud.transform.FindChild("Anchor_BottomRight/StandardItems/Keys/Label").GetComponent<UILabel>();
+        multiKeysLabel = hud.transform.FindChild("Anchor_BottomRight/StandardItems/MultiKeys/Label").GetComponent<UILabel>();
+        finalKeysLabel = hud.transform.FindChild("Anchor_BottomRight/StandardItems/FinalKeys/Label").GetComponent<UILabel>();
+
+        healthPotionsLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.HealthPotionAmount;
+        keysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.KeyAmount;
+        multiKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.MultiKeyAmount;
+        finalKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.FinalKeyAmount;
+    }
+
+    public void UpdatePotionValue()
+    {
+        healthPotionsLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.HealthPotionAmount;
+    }
+
+    public void UpdateKeyValue(KeyType type)
+    {
+        switch (type)
+        {
+            case KeyType.Normal:
+                keysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.KeyAmount;
+                break;
+            case KeyType.Multi:
+                multiKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.MultiKeyAmount;
+                break;
+            case KeyType.Final:
+                finalKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.FinalKeyAmount;
+                break;
+        }
     }
 }

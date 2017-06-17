@@ -2,8 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum KeyType
+{
+    Normal = 0,
+    Multi, 
+    Final
+}
+
 public class KeyScript : MonoBehaviour
 {
+    [SerializeField] private KeyType type;
+
     TriggerArea trigger;
     private Transform targetTransform;
     private PlayerController targetScript;
@@ -13,6 +22,7 @@ public class KeyScript : MonoBehaviour
     public void Initialize (int id)
     {
         keyId = id;
+        type = LockScript.GetType(id);
 
         trigger = GetComponent<TriggerArea>();
 
@@ -23,8 +33,6 @@ public class KeyScript : MonoBehaviour
         foreach (var mesh in meshes)
         {
             mesh.material.color = LockScript.GetColor(keyId);
-            /*mesh.material.EnableKeyword("_EMISSION");
-            mesh.material.SetColor("_EMISSION", new Color(0.125f, 0.125f, 0.125f));*/
         }
 
         trigger.onTriggerAction = PlayerInRange;
@@ -32,7 +40,7 @@ public class KeyScript : MonoBehaviour
 
     public void PlayerInRange()
     {
-        targetScript.ObtainKey(keyId);
+        targetScript.ObtainKey(keyId, type);
         gameObject.SetActive(false);
     }
 }

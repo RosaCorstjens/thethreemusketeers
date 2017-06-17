@@ -5,10 +5,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 444448}
-  - 114: {fileID: 11411334}
+  - component: {fileID: 444448}
+  - component: {fileID: 11411334}
   m_Layer: 0
   m_Name: CelticHandFontAtlas
   m_TagString: Untagged
@@ -25,10 +25,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11411334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43,8 +43,8 @@ MonoBehaviour:
   mMat: {fileID: 2100000, guid: 4575f1a8fd9648a41b2a1a329ecaa738, type: 2}
   mUVRect:
     serializedVersion: 2
-    x: 0.54785156
-    y: 0.24951172
+    x: 0.42236328
+    y: 0.46875
     width: 0.125
     height: 0.125
   mFont:

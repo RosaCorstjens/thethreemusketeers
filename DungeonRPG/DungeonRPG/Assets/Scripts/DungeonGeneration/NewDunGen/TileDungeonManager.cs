@@ -117,7 +117,6 @@ public class TileDungeonManager : MonoBehaviour
 
             for (int j = 0; j < TileGrammarHandler.grid.Height; j++)
             {
-                Debug.Log(i + " " + j);
                 tiles[i][j] = TileGrammarHandler.grid.GetTile(i, j);
             }
         }

@@ -9,7 +9,7 @@ public class HUDBar : MonoBehaviour
     public void Initialize()
     {
         foregroundSprite = transform.FindChild("Foreground").GetComponent<UISprite>();
-        totalWidth = transform.GetComponent<UIWidget>().width;
+        totalWidth = foregroundSprite.GetComponent<UIWidget>().width;
     }
 
     public void SetBar(float currentValue, float maxValue)

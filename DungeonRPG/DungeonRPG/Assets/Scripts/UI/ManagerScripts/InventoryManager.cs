@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class InventoryManager
 {
-    public enum InventoryStates { Inventory, Details, Skills }
+    public enum InventoryStates { Inventory, Details }
     private InventoryStates state = InventoryStates.Inventory; 
 
     // Anchor references.
@@ -26,8 +26,17 @@ public class InventoryManager
     private int amountOfSlots = 30;                                     // The amount of slots.                         
     private List<InventorySlot> slots;                                  // List of all slots. 
 
+    private UILabel keysLabel;
+    private UILabel multiKeysLabel;
+    private UILabel finalKeysLabel;
+
     private UILabel healthPotionsLabel;
     private List<PotionInstance> healthPotions;
+
+    public int KeyAmount { get; private set; }
+    public int MultiKeyAmount { get; private set; }
+    public int FinalKeyAmount { get; private set; }
+    public int HealthPotionAmount { get { return healthPotions.Count; } }
 
     private CharacterPanel characterPanel;
     public CharacterPanel CharacterPanel { get { return characterPanel; } }
@@ -206,11 +215,22 @@ public class InventoryManager
     {
         // Find the labels for coins and potions to get a reference. 
         healthPotionsLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/HealthPotions/Label").GetComponent<UILabel>();
+        keysLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/Keys/Label").GetComponent<UILabel>();
+        multiKeysLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/MultiKeys/Label").GetComponent<UILabel>();
+        finalKeysLabel = inventoryGameObject.transform.FindChild("Anchor_MidLeft/StandardItems/FinalKeys/Label").GetComponent<UILabel>();
 
         healthPotions = new List<PotionInstance>();
 
         // Set the text labels to the correct amount (0). 
         healthPotionsLabel.text = healthPotions.Count + "";
+
+        KeyAmount = 0;
+        MultiKeyAmount = 0;
+        FinalKeyAmount = 0;
+
+        keysLabel.text = "" + KeyAmount;
+        multiKeysLabel.text = "" + MultiKeyAmount;
+        finalKeysLabel.text = "" + FinalKeyAmount;
     }
 
     public void ToggleMenu(bool on)
@@ -278,6 +298,54 @@ public class InventoryManager
         }
     }
 
+    public void AddKey(KeyType type)
+    {
+        switch (type)
+        {
+            case KeyType.Normal:
+                KeyAmount++;
+                keysLabel.text = "" + KeyAmount;
+
+                break;
+            case KeyType.Multi:
+                MultiKeyAmount++;
+                multiKeysLabel.text = "" + MultiKeyAmount;
+
+                break;
+            case KeyType.Final:
+                FinalKeyAmount++;
+                finalKeysLabel.text = "" + FinalKeyAmount;
+
+                break;
+        }
+
+        GameManager.Instance.UIManager.HudManager.UpdateKeyValue(type);
+    }
+
+    public void RemoveKey(KeyType type)
+    {
+        switch (type)
+        {
+            case KeyType.Normal:
+                KeyAmount--;
+                keysLabel.text = "" + KeyAmount;
+
+                break;
+            case KeyType.Multi:
+                MultiKeyAmount--;
+                multiKeysLabel.text = "" + MultiKeyAmount;
+
+                break;
+            case KeyType.Final:
+                FinalKeyAmount--;
+                finalKeysLabel.text = "" + FinalKeyAmount;
+
+                break;
+        }
+
+        GameManager.Instance.UIManager.HudManager.UpdateKeyValue(type);
+    }
+
     // Returns true if item is succesfully added to the inventory. 
     public bool AddItem(EquipmentInstance item)
     {
@@ -296,6 +364,9 @@ public class InventoryManager
             case PotionType.Health:
                 healthPotions.Add(item);
                 healthPotionsLabel.text = healthPotions.Count + "";
+
+                GameManager.Instance.UIManager.HudManager.UpdatePotionValue();
+
                 return true;
 
             case PotionType.Mana:
@@ -315,6 +386,9 @@ public class InventoryManager
 
                 healthPotions.Remove(healthPotions[0]);
                 healthPotionsLabel.text = healthPotions.Count + "";
+
+                GameManager.Instance.UIManager.HudManager.UpdatePotionValue();
+
             }
             else
             {
@@ -387,26 +461,6 @@ public class InventoryManager
 
         return false;
     }
-
-    //private bool AddToStackableSlot(ItemInstance item)
-    //{
-    //    for (int i = 0; i < slots.Count; i++)
-    //    {
-    //        if (!slots[i].IsEmpty)
-    //        {
-    //            if (slots[i].CurrentItem.ItemInfo == item.ItemInfo && slots[i].IsAvailable)
-    //            {
-    //                slots[i].AddItem(item);
-
-    //                emptySlots--;
-
-    //                return true;
-    //            }
-    //        }
-    //    }
-
-    //    return AddToEmptySlot(item);
-    //}
 
     //// Reorders after an item is removed. 
 
@@ -536,8 +590,6 @@ public class InventoryManager
             case InventoryStates.Details:
                 HideCharacterDetails();
                 break;
-            case InventoryStates.Skills:
-                break;
         }
 
         state = newState;
@@ -549,8 +601,6 @@ public class InventoryManager
                 break;
             case InventoryStates.Details:
                 ShowCharacterDetails();
-                break;
-            case InventoryStates.Skills:
                 break;
         }
     }

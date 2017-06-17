@@ -8,17 +8,14 @@ public class InventoryMenu : MonoBehaviour
 
     HooverButton inventory;
     HooverButton details;
-    HooverButton skills;
 
     public void Initialize()
     {
         inventory = transform.FindChild("Grid/InventoryButton").GetComponent<HooverButton>();
         details = transform.FindChild("Grid/DetailsButton").GetComponent<HooverButton>();
-        skills = transform.FindChild("Grid/SkillsButton").GetComponent<HooverButton>();
 
         inventory.Initlialize();
         details.Initlialize();
-        skills.Initlialize();
         inventory.Selected = true;
     }
 
@@ -26,7 +23,6 @@ public class InventoryMenu : MonoBehaviour
     {
         inventory.Selected = true;
         details.Selected = false;
-        skills.Selected = false;
 
         GameManager.Instance.UIManager.InventoryManager.ChangeState(InventoryManager.InventoryStates.Inventory);
     }
@@ -35,7 +31,6 @@ public class InventoryMenu : MonoBehaviour
     {
         inventory.Selected = false;
         details.Selected = true;
-        skills.Selected = false;
 
         GameManager.Instance.UIManager.InventoryManager.ChangeState(InventoryManager.InventoryStates.Details);
     }

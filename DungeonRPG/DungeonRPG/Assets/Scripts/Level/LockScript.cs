@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LockScript : MonoBehaviour
 {
+    [SerializeField] private KeyType type;
+
     TriggerArea trigger;
 
     private Transform targetTransform;
@@ -26,6 +28,7 @@ public class LockScript : MonoBehaviour
         materials = new List<Material>();
 
         Color doorColor = GetColor(lockId);
+        type = GetType(id);
 
         // handles multiple keys if there are multiple lock anims
         foreach (var child in children)
@@ -76,6 +79,31 @@ public class LockScript : MonoBehaviour
         }
     }
 
+    public static KeyType GetType(int id)
+    {
+        switch (id)
+        {
+            // normal keys/locks
+            case 0:
+                return KeyType.Normal;
+                break;
+
+            // multi keys/locks
+            case 1:
+                return KeyType.Multi;
+                break;
+
+            // final keys/locks
+            case 2:
+                return KeyType.Final;
+                break;
+
+            default:
+                return KeyType.Normal;
+                break;
+        }
+    }
+
     public void PlayerInRange()
     {
         GameManager.Instance.UIManager.WorldUIManager.ShowPressToOpen(this.gameObject);
@@ -100,7 +128,7 @@ public class LockScript : MonoBehaviour
             {
                 yield return null;
             }
-            if (targetScript.HasKey(lockId))
+            if (targetScript.HasKey(lockId, type))
             {
                 GameManager.Instance.UIManager.WorldUIManager.HideLabel();
                 if (unlock == null)
