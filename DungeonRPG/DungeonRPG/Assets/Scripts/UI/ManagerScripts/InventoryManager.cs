@@ -66,6 +66,7 @@ public class InventoryManager
     // ----------------- BEGIN CHARACTER DETAILS ------------------------- // 
 
     private CharacterDetailsPanel characterDetailsPanel;
+    public CharacterDetailsPanel CharacterDetailsPanel { get { return characterDetailsPanel; } }
     private bool showingCharacterDetailsPanel;
 
     // ----------------- END CHARACTER DETAILS ------------------------- // 

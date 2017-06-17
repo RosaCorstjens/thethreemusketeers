@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyController : MonoBehaviour
 {
     private ISpiderWeapon spiderWeapon;
+    private int amountOfUpgrades;
 
     private Loottable loottable;
     private Vector3 startPosition;
@@ -23,14 +24,14 @@ public class EnemyController : MonoBehaviour
     private float moveSpeed = 1.5f;
     private int rotationSpeed = 3;
 
-    private float baseProgression = 0.5f;
+    private static FloatRange baseProgression;
 
     private float noticeDistance = 10f;
 
     private Transform myTransform;
     private Animator anim;
 
-    public void Initialize(int amountOfUpgrade, int level)
+    public void Initialize(int amountOfUpgrades, int level)
     {
         myTransform = transform;
         startPosition = transform.position;
@@ -46,8 +47,10 @@ public class EnemyController : MonoBehaviour
         loottable.Initialize(2, 5);
 
         spiderWeapon = new SpiderEquipment();
-        UpgradeEquipment(amountOfUpgrade, level);
-
+        this.amountOfUpgrades = amountOfUpgrades;
+        UpgradeEquipment(this.amountOfUpgrades, level);
+        baseProgression = new FloatRange(0.05f, 0.1f);
+        
         StartCoroutine(HandleMovement());
     }
 
@@ -211,7 +214,7 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         anim.SetBool("Dead", true);
-        GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression);
+        GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression.GetRandomInRange() * amountOfUpgrades);
 
         GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerKill));
 

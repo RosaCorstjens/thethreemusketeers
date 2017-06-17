@@ -7,13 +7,13 @@ using System.Xml.Serialization;
 
 public enum StatTypes
 {
-    Strength,
+    Strength,       // 1
     Dexterity,
     Intelligence,
-    Vitality,
+    Vitality,       // 2
 
     Armor,
-    Damage,
+    Damage,         // 2
     WeaponDamage,
     Resistance,
 
