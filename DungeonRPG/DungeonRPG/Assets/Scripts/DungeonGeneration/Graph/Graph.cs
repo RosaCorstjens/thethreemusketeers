@@ -55,7 +55,7 @@ public class Graph : MonoBehaviour
         }
 
         startNode = nodes[0];
-        PrintNodeList();
+        //PrintNodeList();
     }
 
     public Node StartNode

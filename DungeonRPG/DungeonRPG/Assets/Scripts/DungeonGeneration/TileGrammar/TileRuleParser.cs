@@ -88,7 +88,6 @@ public class TileRuleParser
     //reads the file saving the data as rules
     public void ReadFile()
     {
-        Debug.Log("Reading file...");
         List<string> content = new List<string>();
         StreamReader reader = new StreamReader(filePath, Encoding.Default);
         string raw = reader.ReadToEnd();
@@ -129,7 +128,6 @@ public class TileRuleParser
         }
         
         reader.Close();
-        Debug.Log("Reading done, parsing content...");
     }
 
     //creates a start rule - a start rule is a rule in which no rhs exists. The lhs will define hw big the grid is and how it will be filled

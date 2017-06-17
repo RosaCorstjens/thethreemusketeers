@@ -19,7 +19,7 @@ public class ItemGenerator
     public void Initialize()
     {
         ReadAffixXML();
-        Debug.Log("Affixes:" + affixContainer.Affixes.Count);
+        //Debug.Log("Affixes:" + affixContainer.Affixes.Count);
         SetUpQualityProbability();
     }
 

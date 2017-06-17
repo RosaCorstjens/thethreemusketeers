@@ -22,7 +22,7 @@ public class RecipeCreator
     {
         parser = GameManager.Instance.DungeonManager.Parser;
 
-        monsterPerRoom = new IntRange(4, 6);
+        monsterPerRoom = new IntRange(3, 4);
         trapsPerRoom = new IntRange(5, 9);
 
         graphToTile = new Dictionary<string, List<string>>();

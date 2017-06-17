@@ -56,14 +56,14 @@ public class TileGrammarHandler
                 while (ApplyRule(currentRecipe[i]))
                 {
                 }
-                Debug.Log(currentRecipe[i].Name + ": Succes");
+                //Debug.Log(currentRecipe[i].Name + ": Succes");
 
             }
             else
             {
                 if (ApplyRule(currentRecipe[i]))
                 {
-                    Debug.Log(currentRecipe[i].Name + ": Succes");
+                    //Debug.Log(currentRecipe[i].Name + ": Succes");
                 }
                 else
                 {
@@ -74,7 +74,7 @@ public class TileGrammarHandler
                     }
                     else
                     {
-                        Debug.LogWarning("Mui problemos, los cameros is ingeslotos!");
+                        //Debug.LogWarning("Mui problemos, los cameros is ingeslotos!");
                         Debug.LogError(currentRecipe[i].Name + ": Failed, creating new dungeon");
                         return false;
                     }
@@ -88,7 +88,7 @@ public class TileGrammarHandler
             }
         }
 
-        Debug.Log("Succeeded creating dungeon");
+        //Debug.Log("Succeeded creating dungeon");
         return true;
     }
 
@@ -108,7 +108,7 @@ public class TileGrammarHandler
         // check for no possible coordinates
         if (possCoordinates.Count == 0)
         {
-            Debug.Log("Rescaling grid did not work.");
+            //Debug.Log("Rescaling grid did not work.");
             return false;
         }
 
@@ -185,7 +185,7 @@ public class TileGrammarHandler
         Grid henry = Grid.RotateGrid(rule.RHS[chosenRHS], tempOrientation);
         grid.SetTiles(newpos, henry);
 
-        Debug.LogWarning("Resize: " + scalar.x + " - " + scalar.y);
+        //Debug.LogWarning("Resize: " + scalar.x + " - " + scalar.y);
         // Debug.Log("ChosenRHS: " + chosenRHS);
 
         return true;
@@ -208,7 +208,6 @@ public class TileGrammarHandler
         // check for no possible coordinates
         if (possCoordinates.Count == 0)
         {
-            Debug.Log("I cannot place this rule anymore.");
             return false;
         }
         else

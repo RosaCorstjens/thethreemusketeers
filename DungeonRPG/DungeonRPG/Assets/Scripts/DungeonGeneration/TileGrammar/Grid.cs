@@ -216,7 +216,6 @@ public class Grid
         // can this subgrid be contained in this grid?
         if (!sizeless && (subgrid.Width > width || subgrid.Height > height))
         {
-            Debug.Log("This subgrid is too big to be contained within this grid");
             return returnList;
         }
         int xStart = 0;

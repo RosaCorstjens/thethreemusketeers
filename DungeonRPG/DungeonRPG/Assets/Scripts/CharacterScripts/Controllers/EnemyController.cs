@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
+    private ISpiderWeapon spiderWeapon;
+
     private Loottable loottable;
     private Vector3 startPosition;
 
@@ -21,16 +23,14 @@ public class EnemyController : MonoBehaviour
     private float moveSpeed = 1.5f;
     private int rotationSpeed = 3;
 
-    private int damage = 8;
     private float baseProgression = 0.5f;
 
     private float noticeDistance = 10f;
-    private float attackDistance = 2f;
 
     private Transform myTransform;
     private Animator anim;
 
-    public void Initialize()
+    public void Initialize(int amountOfUpgrade, int level)
     {
         myTransform = transform;
         startPosition = transform.position;
@@ -45,7 +45,41 @@ public class EnemyController : MonoBehaviour
         loottable = new Loottable();
         loottable.Initialize(2, 5);
 
+        spiderWeapon = new SpiderEquipment();
+        UpgradeEquipment(amountOfUpgrade, level);
+
         StartCoroutine(HandleMovement());
+    }
+
+    public void UpgradeEquipment(int amount, int level)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            int randomroll = UnityEngine.Random.Range(0, 3);
+
+            switch (randomroll)
+            {
+                // dmg
+                case 0:
+                    spiderWeapon = new DamageUpgrade(spiderWeapon, 3 * (level / 5f));
+                    break;
+
+                // health
+                case 1:
+                    spiderWeapon = new HealthUpgrade(spiderWeapon, 10 * (level / 5f));
+                    break;
+
+                // speed
+                case 2:
+                    spiderWeapon = new SpeedUpgrade(spiderWeapon, 0.1f * (level / 5f));
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        Debug.Log("Hi, I have " + amount + "upgrades. Damage: " + spiderWeapon.GetDamage() + ". Health: " + spiderWeapon.GetHealth() + ". Speed: " + spiderWeapon.GetSpeed());
     }
 
     public void Reset()
@@ -81,13 +115,13 @@ public class EnemyController : MonoBehaviour
                 float direction = Vector3.Dot((targetTransform.position - transform.position).normalized,
                     transform.forward);
 
-                if (distance < noticeDistance && distance > attackDistance)
+                if (distance < noticeDistance && distance > spiderWeapon.GetAttackRange())
                 {
                     Rotate();
 
                     Move();
                 }
-                else if (distance <= attackDistance && direction > 0 && !onCooldown)
+                else if (distance <= spiderWeapon.GetAttackRange() && direction > 0 && !onCooldown)
                 {
                     Attack();
                     StartCoroutine(WaitForCooldown(basicAttackCooldown));
@@ -124,7 +158,7 @@ public class EnemyController : MonoBehaviour
     private void Attack()
     {
         anim.SetTrigger("Attack");
-        targetScript.GotHit(damage, this);
+        targetScript.GotHit(spiderWeapon.GetDamage(), this);
         AdjustCurrentHealth(-GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.Thorns));
     }
 
@@ -180,6 +214,8 @@ public class EnemyController : MonoBehaviour
         GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression);
 
         GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerKill));
+
+        while (!spiderWeapon.IsBase()) { spiderWeapon = spiderWeapon.RemoveUpgrade(); }
 
         StartCoroutine(WaitForDestory());
     }

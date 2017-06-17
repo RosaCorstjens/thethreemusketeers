@@ -21,7 +21,7 @@ public class ItemManager
         itemGenerator = new ItemGenerator();
         itemGenerator.Initialize();
         ReadItemXML();
-        Debug.Log("Items: "+ itemContainer.ItemAmount());
+        //Debug.Log("Items: "+ itemContainer.ItemAmount());
     }
 
     public void ReadItemXML()

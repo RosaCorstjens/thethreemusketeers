@@ -197,7 +197,8 @@ public class TileDungeon
                         monsterObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
 
                         EnemyController monster = monsterObject.GetComponent<EnemyController>();
-                        monster.Initialize();
+                        int upgradeAmount = CalculateAmountOfMonsterUpgrades(spawnPos);
+                        monster.Initialize(upgradeAmount, GameManager.Instance.ActiveCharacterInformation.Level);
 
                         enemies.Add(monster);
                         break;
@@ -409,7 +410,9 @@ public class TileDungeon
                         monsterObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
                         Debug.Log("Spider spawned");
                         EnemyController monster = monsterObject.GetComponent<EnemyController>();
-                        monster.Initialize();
+
+                        int upgradeAmount = CalculateAmountOfMonsterUpgrades(spawnPos);
+                        monster.Initialize(upgradeAmount, GameManager.Instance.ActiveCharacterInformation.Level);
 
                         enemies.Add(monster);
                         break;
@@ -423,6 +426,23 @@ public class TileDungeon
         if(xPos < 0 || xPos >= dm.Rows || yPos < 0 || yPos >= dm.Columns || tiles[xPos][yPos] == 'u') return false;
 
         return true;
+    }
+
+    private int CalculateAmountOfMonsterUpgrades(Vector3 monsterPosition)
+    {
+        float dist = Mathf.Abs((startPosition - monsterPosition).magnitude);
+        if (dist < 50)
+        {
+            return 1;
+        }
+        else if (dist < 100)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
     }
 }
 
