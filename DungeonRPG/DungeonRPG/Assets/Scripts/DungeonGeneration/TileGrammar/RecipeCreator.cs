@@ -173,7 +173,7 @@ public class RecipeCreator
         content.Clear();
         content.Add("hub");
         content.Add("undirectroom");
-        content.Add("directroom");
+        content.Add("directhub");
         //evt content
         content.Add("finalize");
         content.Add("removehooks");

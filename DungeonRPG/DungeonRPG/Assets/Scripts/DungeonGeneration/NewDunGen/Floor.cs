@@ -176,7 +176,11 @@ public class Floor
 
     public void SetTestColor(Color color)
     {
-        Vector3 worldPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(xPos, yPos));
         myGO.GetComponent<Renderer>().material.color = color;
+    }
+
+    public void SetMaterial(Material mat)
+    {
+        myGO.GetComponent<Renderer>().material = mat;
     }
 }

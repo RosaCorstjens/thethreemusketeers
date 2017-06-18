@@ -43,6 +43,7 @@ public class TileDungeonManager : MonoBehaviour
     public GameObject KeyPrefab { get; private set; }
     public GameObject LockPrefab { get; private set; }
     public GameObject MultiLockPrefab { get; private set; }
+    public List<GameObject> HubPropPrefabs { get; private set; }
 
     public void Initialize()
     {
@@ -147,6 +148,11 @@ public class TileDungeonManager : MonoBehaviour
         KeyPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/Key");
         LockPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/LockedDoor");
         MultiLockPrefab = Resources.Load<GameObject>("Prefabs/Dungeon/MultiLockedDoor");
+
+        HubPropPrefabs = new List<GameObject>();
+        HubPropPrefabs.Add(Resources.Load<GameObject>("Prefabs/HudProps/Barrel"));
+        HubPropPrefabs.Add(Resources.Load<GameObject>("Prefabs/HudProps/Cage"));
+        HubPropPrefabs.Add(Resources.Load<GameObject>("Prefabs/HudProps/Chain"));
     }
 
     public Vector2 WorldToGridPosition(Vector3 worldPosition)

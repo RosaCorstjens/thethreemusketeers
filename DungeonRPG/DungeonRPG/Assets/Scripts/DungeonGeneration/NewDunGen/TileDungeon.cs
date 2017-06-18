@@ -231,6 +231,20 @@ public class TileDungeon
                         portalScript.Initialze();
                         break;
 
+                    case '3':
+                        Floor floor = GetFloor(i, j);
+                        floor.SetMaterial(Resources.Load<Material>("Materials/Dungeon/Bricks"));
+                        if (floor.placement == Floor.Placement.Corner || floor.placement == Floor.Placement.Edge)
+                        {
+                            GameObject hudProb = GameObject.Instantiate(dm.HubPropPrefabs[UnityEngine.Random.Range(0, dm.HubPropPrefabs.Count)], spawnPos, Quaternion.identity);
+                            hudProb.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        }
+
+                        break;
+                    case '2':
+                        GetFloor(i, j).SetMaterial(Resources.Load<Material>("Materials/Dungeon/Bricks"));
+                        break;
+
                     default:
                         Debug.LogError("Undefined type occured in the 2D tile array.");
                         break;
