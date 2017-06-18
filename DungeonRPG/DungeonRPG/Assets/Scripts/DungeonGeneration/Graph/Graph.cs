@@ -119,7 +119,7 @@ public class Graph : MonoBehaviour
             int remainingConnections = currentNode.Connections.Count;
             for (int i = 0; i < currentNode.Connections.Count; i++)
             {
-                if (currentNode.Connections[i].Next.Iterated)
+                if (currentNode.Connections[i].Next.Iterated || unFinished.Contains(currentNode.Connections[i].Next))
                 {
                     remainingConnections--;
                 }
@@ -139,7 +139,13 @@ public class Graph : MonoBehaviour
                 {
                     if (!unFinished.Contains(connection.Next))
                     {
+
                         unFinished.Add(connection.Next);
+                    }
+                    else
+                    {
+                        unFinished.Remove(currentNode);
+                        unFinished.Add(currentNode);
                     }
                 }
                 if (remainingConnections == 1)

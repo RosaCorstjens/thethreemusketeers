@@ -29,6 +29,8 @@ public class RecipeCreator
         GetGraphToTileTranslations();
 
         graphRecipe = graphToProcess.GetNodeList();
+
+        int i = 0;
     }
 
     /// <summary>
