@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
             foreach (EnemyController enemy in GameManager.Instance.DungeonManager.CurrentDungeon.Enemies)
             {
-                if (enemy.gameObject.activeInHierarchy)
+                if (!enemy.IsDead)
                 {
                     // distance check
                     float distance = (enemy.transform.position - transform.position).magnitude;
@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
 
         dmg += GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.WeaponDamage);
 
-        targetToAttack.AdjustCurrentHealth(-dmg);
+        targetToAttack.GotHit(dmg);
         AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerHit));
     }
 

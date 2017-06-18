@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     private float maxHealth = 20f;
     private bool isDead = false;
 
+    public bool IsDead { get { return isDead; } }
+
     public int level = 1;
 
     private Transform targetTransform;
@@ -80,7 +82,6 @@ public class EnemyController : MonoBehaviour
                 r.material = Resources.Load("Materials/Monsters/Spider/spider_diffYellow") as Material;
                 break;
         }
-
 
         StartCoroutine(HandleMovement());
     }
@@ -218,8 +219,14 @@ public class EnemyController : MonoBehaviour
     private IEnumerator Hitted(float cooldownTime)
     {
         onHitCooldown = true;
+        
+        yield return new WaitForSeconds(cooldownTime / 2.0f);
+        Renderer r = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>();
+        Material myMat = r.material;
+        r.material = Resources.Load("Materials/Monsters/Spider/spider_hit") as Material;
+        yield return new WaitForSeconds(cooldownTime / 2.0f);
+        r.material = myMat;
 
-        yield return new WaitForSeconds(cooldownTime);
 
         onHitCooldown = false;
 
@@ -229,7 +236,7 @@ public class EnemyController : MonoBehaviour
     public void GotHit(float dmg)
     {
         AdjustCurrentHealth(-dmg);
-        StartCoroutine(Hitted(2));
+        StartCoroutine(Hitted(1));
     }
 
     public void AdjustCurrentHealth(float adj)
