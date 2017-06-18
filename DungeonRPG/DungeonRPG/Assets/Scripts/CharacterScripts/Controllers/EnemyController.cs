@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
@@ -18,13 +19,17 @@ public class EnemyController : MonoBehaviour
 
     public int level = 1;
 
-    private Transform targetTransform;
+    private Vector3 currentTargetPos;               // the current position to walk to
+    private Vector3 targetPosition;                 // the target position if in wander state
+    private Transform targetTransform;              // the target position of the player when in follow state. 
     private PlayerController targetScript;
     private bool onCooldown;
     private bool onHitCooldown = false;
     private float basicAttackCooldown = 2f;
 
-    private int rotationSpeed = 4;
+    private int inBattleRotationSpeed = 4;
+    private int wanderRotationSpeed = 1;
+    private int currentRotationSpeed { get { return currentTargetPos == targetPosition ? wanderRotationSpeed : inBattleRotationSpeed; } }
 
     private static FloatRange baseProgression;
 
@@ -35,6 +40,8 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     private int[] upgrades; // 0 = damage, 1 = health, 2 = speed
+
+    private List<Floor> floorsInMyRoom;
 
     public void Initialize(int amountOfUpgrades, int level)
     {
@@ -51,8 +58,6 @@ public class EnemyController : MonoBehaviour
         targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
 
         anim = GetComponent<Animator>();
-
-        
 
         loottable = new Loottable();
         loottable.Initialize(2, 5);
@@ -83,7 +88,27 @@ public class EnemyController : MonoBehaviour
                 break;
         }
 
+        floorsInMyRoom = new List<Floor>();
+        floorsInMyRoom = GameManager.Instance.DungeonManager.CurrentDungeon.GetFloorsInRoom(
+            GameManager.Instance.DungeonManager.WorldToGridPosition(transform.position));
+
+        SetNewTargetPosition();
+
         StartCoroutine(HandleMovement());
+    }
+
+    private void SetNewTargetPosition()
+    {
+        int randomFloor = UnityEngine.Random.Range(0, floorsInMyRoom.Count);
+
+        Vector3 newPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(floorsInMyRoom[randomFloor].xPos, floorsInMyRoom[randomFloor].yPos));
+        newPos.y = myTransform.position.y;
+        if (targetPosition != newPos) {
+            targetPosition = newPos;
+        }
+        else {
+            SetNewTargetPosition();
+        }
     }
 
     public void UpgradeEquipment(int amount, int level)
@@ -151,27 +176,44 @@ public class EnemyController : MonoBehaviour
         {
             if (!onHitCooldown)
             {
-                float distance = (targetTransform.transform.position - transform.position).magnitude;
+                float distanceToPlayer = (targetTransform.transform.position - transform.position).magnitude;
                 float direction = Vector3.Dot((targetTransform.position - transform.position).normalized,
                     transform.forward);
 
                 // folow player state
-                if (distance < noticeDistance && distance > spiderWeapon.GetAttackRange())
-                { 
-                    Rotate();
+                if (distanceToPlayer < noticeDistance && distanceToPlayer > spiderWeapon.GetAttackRange())
+                {
+                    currentTargetPos = targetTransform.position;
 
+                    Rotate();
                     Move();
                 }
                 // attack state
-                else if (distance <= spiderWeapon.GetAttackRange() && direction > 0 && !onCooldown)
+                else if (distanceToPlayer <= spiderWeapon.GetAttackRange() && direction > 0 && !onCooldown)
                 {
+                    currentTargetPos = targetTransform.position;
+
                     Attack();
                     StartCoroutine(WaitForCooldown(basicAttackCooldown));
                 }
                 // wander state
                 else
                 {
-                    anim.SetFloat("MoveZ", 0f);
+                    currentTargetPos = targetPosition;
+
+                    float distToPoint = (currentTargetPos - transform.position).magnitude;
+                    if (distToPoint < 0.5f)
+                    {
+                        SetNewTargetPosition();
+                        anim.SetFloat("MoveZ", 0f);
+
+                        yield return new WaitForSeconds(1);
+
+                        currentTargetPos = targetPosition;
+                    }
+
+                    Rotate();
+                    Move();
                 }
             }
             else
@@ -188,7 +230,7 @@ public class EnemyController : MonoBehaviour
     private void Rotate()
     {
         // If not looking at target, look at target. 
-        myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(targetTransform.position - myTransform.position), rotationSpeed * Time.deltaTime);
+        myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(currentTargetPos - myTransform.position), currentRotationSpeed * Time.deltaTime);
     }
 
     private void Move()

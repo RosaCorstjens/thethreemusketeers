@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Floor 
 {
     public int xPos, yPos;
+    public bool visited = false;
 
     public enum Placement { Corner, Corridor, Edge, Mid }
     public Placement placement = Placement.Mid;
@@ -171,5 +172,11 @@ public class Floor
     {
         wallGOs.HandleAction(w => GameObject.Destroy(w));
         GameObject.Destroy(myGO);
+    }
+
+    public void SetTestColor(Color color)
+    {
+        Vector3 worldPos = GameManager.Instance.DungeonManager.GridToWorldPosition(new Vector2(xPos, yPos));
+        myGO.GetComponent<Renderer>().material.color = color;
     }
 }

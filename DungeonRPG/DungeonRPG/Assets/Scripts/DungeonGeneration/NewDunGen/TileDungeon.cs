@@ -444,5 +444,53 @@ public class TileDungeon
             return 3;
         }
     }
+
+    void PopulateGroup(List<Floor> group, Floor floor)
+    {
+        group.Add(floor);
+        floor.visited = true;
+
+        // Check all four neighbors and recurse on them if needed:
+        if (floor.xPos > 0)
+        {
+            var neighbor = GetFloor(floor.xPos - 1, floor.yPos);
+            if (neighbor != null && neighbor.placement != Floor.Placement.Corridor && neighbor.visited == false)
+                PopulateGroup(group, neighbor);
+        }
+        if (floor.xPos < dm.Columns - 1)
+        {
+            var neighbor = GetFloor(floor.xPos + 1, floor.yPos);
+            if (neighbor != null && neighbor.placement != Floor.Placement.Corridor && neighbor.visited == false)
+                PopulateGroup(group, neighbor);
+        }
+        if (floor.yPos > 0)
+        {
+            var neighbor = GetFloor(floor.xPos, floor.yPos - 1);
+            if (neighbor != null && neighbor.placement != Floor.Placement.Corridor && neighbor.visited == false)
+                PopulateGroup(group, neighbor);
+        }
+        if (floor.yPos < dm.Rows - 1)
+        {
+            var neighbor = GetFloor(floor.xPos, floor.yPos + 1);
+            if (neighbor != null && neighbor.placement != Floor.Placement.Corridor && neighbor.visited == false)
+                PopulateGroup(group, neighbor);
+        }
+    }
+
+    public List<Floor> GetFloorsInRoom(Floor floor)
+    {
+        List<Floor> floorsInRoom = new List<Floor>();
+
+        PopulateGroup(floorsInRoom, floor);
+
+        floorsInRoom.HandleAction(f => f.visited = false);
+
+        return floorsInRoom;
+    }
+
+    public List<Floor> GetFloorsInRoom(Vector2 floorCoord)
+    {
+        return GetFloorsInRoom(GetFloor((int)floorCoord.x, (int)floorCoord.y));
+    }
 }
 
