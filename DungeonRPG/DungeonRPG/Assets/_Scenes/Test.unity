@@ -186,22 +186,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: preferedKindsOfFuns.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityMaterials.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityHexColors.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 437536, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.4283044
@@ -233,130 +217,6 @@ Prefab:
     - target: {fileID: 437536, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityHexColors.Array.data[0]
-      value: D3D3D3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityHexColors.Array.data[1]
-      value: 0075FF
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityHexColors.Array.data[2]
-      value: FFED00
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityHexColors.Array.data[3]
-      value: FF5900
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityHexColors.Array.data[4]
-      value: FF5900
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[0].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[1].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[2].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[3].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[4].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[0].r
-      value: 0.827451
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[0].g
-      value: 0.827451
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[0].b
-      value: 0.827451
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[1].r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[1].g
-      value: 0.45882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[1].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[2].r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[2].g
-      value: 0.92941177
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[2].b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[3].g
-      value: 0.34901962
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[4].r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityColors.Array.data[4].g
-      value: 0.35172415
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityMaterials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e6f08c7d9cf527d48af274947cb01f00, type: 2}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityMaterials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6121c789b7182e143b0ec796ee4156ac, type: 2}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityMaterials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: d998e218a6e36b642b7a0635146d34b5, type: 2}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityMaterials.Array.data[4]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4f50bb5b7c191b04caaed7cbaee37b6f, type: 2}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: itemManager.qualityMaterials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4f50bb5b7c191b04caaed7cbaee37b6f, type: 2}
-    - target: {fileID: 185614, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: preferedKindsOfFuns.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: challenge
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477624, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
-      propertyPath: explore
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30718f0e4da13cb45bb55da60d697594, type: 2}
@@ -883,7 +743,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 40
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
