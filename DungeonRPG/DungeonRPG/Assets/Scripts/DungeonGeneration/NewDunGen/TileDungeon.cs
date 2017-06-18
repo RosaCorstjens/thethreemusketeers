@@ -237,7 +237,7 @@ public class TileDungeon
                         if (floor.placement == Floor.Placement.Corner || floor.placement == Floor.Placement.Edge)
                         {
                             GameObject hudProb = GameObject.Instantiate(dm.HubPropPrefabs[UnityEngine.Random.Range(0, dm.HubPropPrefabs.Count)], spawnPos, Quaternion.identity);
-                            hudProb.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                            hudProb.transform.SetParent(GameManager.Instance.DungeonManager.TestParent.transform);
                         }
 
                         break;

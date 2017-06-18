@@ -31,6 +31,7 @@ public class TileDungeonManager : MonoBehaviour
     public Dictionary<DungeonDirection, Vector2> directionValues;
 
     public GameObject LevelParent { get; private set; }
+    public GameObject TestParent { get; private set; }
 
     public GameObject FloorPrefab { get; private set; }
     public GameObject WallPrefab { get; private set; }
@@ -49,6 +50,7 @@ public class TileDungeonManager : MonoBehaviour
     {
         // create a go to function as level parent
         LevelParent = new GameObject("Level Parent");
+        TestParent = new GameObject("Test Parent");
 
         // instantiate our 4 directions
         directionValues = new Dictionary<DungeonDirection, Vector2>();
