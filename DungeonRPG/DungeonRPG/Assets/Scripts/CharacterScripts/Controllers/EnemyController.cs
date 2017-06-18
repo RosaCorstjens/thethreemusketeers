@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 startPosition;
 
     public float currentHealth;
+    [SerializeField]
     private float maxHealth = 20f;
     private bool isDead = false;
 
@@ -21,8 +22,7 @@ public class EnemyController : MonoBehaviour
     private bool onHitCooldown = false;
     private float basicAttackCooldown = 2f;
 
-    private float moveSpeed = 1.5f;
-    private int rotationSpeed = 3;
+    private int rotationSpeed = 4;
 
     private static FloatRange baseProgression;
 
@@ -31,17 +31,26 @@ public class EnemyController : MonoBehaviour
     private Transform myTransform;
     private Animator anim;
 
+    [SerializeField]
+    private int[] upgrades; // 0 = damage, 1 = health, 2 = speed
+
     public void Initialize(int amountOfUpgrades, int level)
     {
         myTransform = transform;
         startPosition = transform.position;
+
+        upgrades = new int[3];
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            upgrades[i] = 0;
+        }
 
         targetTransform = GameManager.Instance.ActiveCharacter.transform;
         targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
 
         anim = GetComponent<Animator>();
 
-        currentHealth = maxHealth;
+        
 
         loottable = new Loottable();
         loottable.Initialize(2, 5);
@@ -50,7 +59,29 @@ public class EnemyController : MonoBehaviour
         this.amountOfUpgrades = amountOfUpgrades;
         UpgradeEquipment(this.amountOfUpgrades, level);
         baseProgression = new FloatRange(0.05f, 0.1f);
-        
+
+        maxHealth = spiderWeapon.GetHealth();
+        currentHealth = maxHealth;
+
+        //finds highest value of upgrades and returns its index
+        int bestUpgrade = (upgrades[0] > upgrades[1])
+            ? upgrades[0] > upgrades[2] ? 0 : 2
+            : upgrades[1] > upgrades[2] ? 1 : 2;
+        Renderer r = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>();
+        switch (bestUpgrade)
+        {
+            case 0:
+                r.material = Resources.Load("Materials/Monsters/Spider/spider_diffRed") as Material;
+                break;
+            case 1:
+                r.material = Resources.Load("Materials/Monsters/Spider/spider_diffCyan") as Material;
+                break;
+            case 2:
+                r.material = Resources.Load("Materials/Monsters/Spider/spider_diffYellow") as Material;
+                break;
+        }
+
+
         StartCoroutine(HandleMovement());
     }
 
@@ -65,16 +96,21 @@ public class EnemyController : MonoBehaviour
                 // dmg
                 case 0:
                     spiderWeapon = new DamageUpgrade(spiderWeapon, 3 * (level / 5f));
+                    upgrades[0]++;
                     break;
 
                 // health
                 case 1:
                     spiderWeapon = new HealthUpgrade(spiderWeapon, 10 * (level / 5f));
+                    upgrades[1]++;
                     break;
 
                 // speed
                 case 2:
-                    spiderWeapon = new SpeedUpgrade(spiderWeapon, 0.1f * (level / 5f));
+                    float value = 1f * (level / 5f);
+                    value = value >= 5.0f ? 5.0f : value;
+                    spiderWeapon = new SpeedUpgrade(spiderWeapon, value);
+                    upgrades[2]++;
                     break;
 
                 default:
@@ -118,17 +154,20 @@ public class EnemyController : MonoBehaviour
                 float direction = Vector3.Dot((targetTransform.position - transform.position).normalized,
                     transform.forward);
 
+                // folow player state
                 if (distance < noticeDistance && distance > spiderWeapon.GetAttackRange())
-                {
+                { 
                     Rotate();
 
                     Move();
                 }
+                // attack state
                 else if (distance <= spiderWeapon.GetAttackRange() && direction > 0 && !onCooldown)
                 {
                     Attack();
                     StartCoroutine(WaitForCooldown(basicAttackCooldown));
                 }
+                // wander state
                 else
                 {
                     anim.SetFloat("MoveZ", 0f);
@@ -154,7 +193,7 @@ public class EnemyController : MonoBehaviour
     private void Move()
     {
         // If target is not reached, move towards target.
-        myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+        myTransform.position += myTransform.forward * spiderWeapon.GetSpeed() * Time.deltaTime;
         anim.SetFloat("MoveZ", 1f);
     }
 
