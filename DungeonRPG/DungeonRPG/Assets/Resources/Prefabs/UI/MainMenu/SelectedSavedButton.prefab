@@ -245,8 +245,8 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 7.2
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11411334, guid: 46168f31cc104cb408df80e6f69150f0, type: 2}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mFont: {fileID: 0}
   mText: Level 1
   mFontSize: 15
   mFontStyle: 0
@@ -313,8 +313,8 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 5.142857
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11411334, guid: 46168f31cc104cb408df80e6f69150f0, type: 2}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mFont: {fileID: 0}
   mText: Character Name
   mFontSize: 20
   mFontStyle: 0
@@ -466,8 +466,8 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 7.2
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11411334, guid: 46168f31cc104cb408df80e6f69150f0, type: 2}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mFont: {fileID: 0}
   mText: Warrior
   mFontSize: 15
   mFontStyle: 0

@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54, y: -21, z: 0}
+  m_LocalPosition: {x: 55, y: -21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495152}
@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54, y: -21, z: 0}
+  m_LocalPosition: {x: 55, y: -21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495152}
@@ -195,7 +195,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 0
-  mWidth: 104
+  mWidth: 106
   mHeight: 14
   mDepth: 502
   autoResizeBoxCollider: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 7.428571
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mFont: {fileID: 0}
   mText: Awesome Sword
   mFontSize: 14
   mFontStyle: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 166
+  mWidth: 168
   mHeight: 92
   mDepth: 500
   autoResizeBoxCollider: 0
@@ -324,8 +324,8 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 7.714286
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mFont: {fileID: 0}
   mText: ToolTipText Hello
   mFontSize: 14
   mFontStyle: 0
@@ -384,7 +384,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.3455882, g: 0.3455882, b: 0.3455882, a: 1}
   mPivot: 4
-  mWidth: 122
+  mWidth: 124
   mHeight: 50
   mDepth: 500
   autoResizeBoxCollider: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3006
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
