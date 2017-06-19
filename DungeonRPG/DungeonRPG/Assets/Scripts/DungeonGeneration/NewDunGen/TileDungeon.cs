@@ -21,6 +21,7 @@ public class TileDungeon
     private List<LockScript> locks;
     private List<TrapScript> traps;
     private PortalScript portal;
+    private List<GameObject> hudObjects;
 
     private Vector3 startPosition;
 
@@ -46,6 +47,7 @@ public class TileDungeon
         keys = new List<KeyScript>();
         locks = new List<LockScript>();
         traps = new List<TrapScript>();
+        hudObjects = new List<GameObject>();
 
         // instantiates all floor tiles
         InstantiateFloors();
@@ -238,6 +240,8 @@ public class TileDungeon
                         {
                             GameObject hudProb = GameObject.Instantiate(dm.HubPropPrefabs[UnityEngine.Random.Range(0, dm.HubPropPrefabs.Count)], spawnPos, Quaternion.identity);
                             hudProb.transform.SetParent(GameManager.Instance.DungeonManager.TestParent.transform);
+
+                            hudObjects.Add(hudProb);
                         }
 
                         break;
@@ -270,15 +274,20 @@ public class TileDungeon
         keys.Clear();
         Debug.Log("keys destroyed. " + keys.Count);
 
-        // clear chests
+        // clear locks
         locks.HandleAction(l => GameObject.Destroy(l.gameObject));
         locks.Clear();
         Debug.Log("locks destroyed. " + locks.Count);
 
-        // clear chests
+        // clear traps
         traps.HandleAction(t => GameObject.Destroy(t.gameObject));
         traps.Clear();
         Debug.Log("traps destroyed. " + traps.Count);
+
+        // clear hud objects
+        hudObjects.HandleAction(g => GameObject.Destroy(g.gameObject));
+        hudObjects.Clear();
+        Debug.Log("hudObjects destroyed. " + hudObjects.Count);
     }
 
     public void ClearDungeon()
