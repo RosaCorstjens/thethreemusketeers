@@ -9,7 +9,7 @@ using UnityEngine;
 //parses all excisting tilegrammar rules from a file and places them in a list.
 public class TileRuleParser
 {
-    private string filePath = "Assets/Resources/LudoScope/TileRules/TileRules.grm"; //file location
+    private string filePath = "Assets/StreamingAssets/TileRules/TileRules.grm"; //file location
     private TileGrammarRule startRule;
     private List<TileGrammarRule> rules;
 
