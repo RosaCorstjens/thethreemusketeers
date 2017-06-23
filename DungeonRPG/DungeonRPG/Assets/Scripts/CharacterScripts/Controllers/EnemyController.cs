@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
     private int inBattleRotationSpeed = 4;
     private int wanderRotationSpeed = 1;
     private int currentRotationSpeed { get { return currentTargetPos == targetPosition ? wanderRotationSpeed : inBattleRotationSpeed; } }
+    private Coroutine movementCoroutine;
 
     private static FloatRange baseProgression;
 
@@ -93,7 +94,7 @@ public class EnemyController : MonoBehaviour
 
         SetNewTargetPosition();
 
-        StartCoroutine(HandleMovement());
+        movementCoroutine = StartCoroutine(HandleMovement());
     }
 
     private void SetNewTargetPosition()
@@ -165,8 +166,8 @@ public class EnemyController : MonoBehaviour
         targetTransform = GameManager.Instance.ActiveCharacter.transform;
         targetScript = targetTransform.gameObject.GetComponent<PlayerController>();
 
-        StopCoroutine(HandleMovement());
-        StartCoroutine(HandleMovement());
+        StopCoroutine(movementCoroutine);
+        movementCoroutine = StartCoroutine(HandleMovement());
     }
 
     private IEnumerator HandleMovement()
@@ -192,8 +193,10 @@ public class EnemyController : MonoBehaviour
                 {
                     currentTargetPos = targetTransform.position;
 
+                    anim.SetFloat("MoveZ", 0f);
+
                     Attack();
-                    StartCoroutine(WaitForCooldown(basicAttackCooldown));
+                    yield return StartCoroutine(WaitForCooldown(basicAttackCooldown));
                 }
                 // wander state
                 else
@@ -312,9 +315,9 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator WaitForDestory()
     {
-        yield return new WaitForSeconds(3);
+        StopCoroutine(movementCoroutine);
 
-        StopCoroutine(HandleMovement());
+        yield return new WaitForSeconds(3);
 
         loottable.Initialize(2, 5);
         loottable.DropItems(this.transform.position);
