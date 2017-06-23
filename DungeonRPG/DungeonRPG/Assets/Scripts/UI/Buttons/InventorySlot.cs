@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class InventorySlot : SlotBase
 {
+    private Coroutine checkForAction;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -29,4 +31,20 @@ public class InventorySlot : SlotBase
         GameManager.Instance.UIManager.InventoryManager.Reorder(this);
     }
 
+    public override void HighlightButton()
+    {
+        base.HighlightButton();
+
+        checkForAction = StartCoroutine(GameManager.Instance.UIManager.InventoryManager.CheckForActionOnAction(this));
+    }
+
+    public override void DeHighlightButton()
+    {
+        if (checkForAction != null)
+        {
+            StopCoroutine(checkForAction);
+        }
+
+        base.DeHighlightButton();
+    }
 }

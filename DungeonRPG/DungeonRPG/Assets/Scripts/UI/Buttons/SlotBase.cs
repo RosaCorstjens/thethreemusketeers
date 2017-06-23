@@ -35,8 +35,6 @@ public class SlotBase : ButtonBase
 
     public override void DeHighlightButton()
     {
-        if (IsEmpty) return;
-
         GameManager.Instance.UIManager.InventoryManager.HideTooltip();
 
         base.DeHighlightButton();

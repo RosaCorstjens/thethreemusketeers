@@ -6598,9 +6598,9 @@ MonoBehaviour:
   arrangement: 0
   sorting: 0
   pivot: 1
-  maxPerLine: 3
-  cellWidth: 100
-  cellHeight: 100
+  maxPerLine: 5
+  cellWidth: 60
+  cellHeight: 60
   animateSmoothly: 0
   hideInactive: 1
   keepWithinPanel: 0
