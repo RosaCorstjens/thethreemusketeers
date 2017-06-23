@@ -301,7 +301,7 @@ public class InventoryManager
         }
     }
 
-    public IEnumerator CheckForActionOnAction(InventorySlot activeSlot)
+    public IEnumerator CheckForActionOnAction(SlotBase activeSlot)
     {
         while (true)
         {

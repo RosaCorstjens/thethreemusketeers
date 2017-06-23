@@ -16,6 +16,8 @@ public class SlotBase : ButtonBase
     protected SlotType slotType;
     public SlotType ThisSlotType { get { return slotType; } }
 
+    private Coroutine checkForAction;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -31,10 +33,17 @@ public class SlotBase : ButtonBase
         GameManager.Instance.UIManager.InventoryManager.ShowTooltip(item);
 
         base.HighlightButton();
+
+        checkForAction = StartCoroutine(GameManager.Instance.UIManager.InventoryManager.CheckForActionOnAction(this));
     }
 
     public override void DeHighlightButton()
     {
+        if (checkForAction != null)
+        {
+            StopCoroutine(checkForAction);
+        }
+
         GameManager.Instance.UIManager.InventoryManager.HideTooltip();
 
         base.DeHighlightButton();
