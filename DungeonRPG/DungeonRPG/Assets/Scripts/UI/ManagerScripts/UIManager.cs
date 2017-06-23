@@ -36,7 +36,6 @@ public class UIManager
     private const string NO_HEALTH_POTIONS = "You have no health potions.";
     private const string NEXT_DUNGEON = "Welcome in the next dungeon ...";
     private const string NO_KEY = "You have no corresponding keys";
-    private float showWarningTime = 1;
 
     public void Initialize()
     {
@@ -74,35 +73,35 @@ public class UIManager
     {
         warningMessage.text = INVENTORY_FULL_WARNING;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(1));
     }
 
     public void EquipWeaponWarning()
     {
         warningMessage.text = EQUIP_WEAPON_WARNING;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(1));
     }
 
     public void YouDiedWarning()
     {
         warningMessage.text = YOU_DIED;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(3));
     }
 
     public void YouDoNotHaveAKeyWarning()
     {
         warningMessage.text = NO_KEY;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(1));
     }
 
     public void LevelUp()
     {
         warningMessage.text = LEVEL_UP;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(2));
 
         GameManager.Instance.UIManager.HudManager.UpdateLevelText();
         GameManager.Instance.UIManager.InventoryManager.CharacterPanel.UpdateLevelText();
@@ -112,26 +111,26 @@ public class UIManager
     {
         warningMessage.text = NO_HEALTH_POTIONS;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(1));
     }
 
     public void NoEnergyPotion()
     {
         warningMessage.text = NO_ENGERGY_POTIONS;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(1));
     }
 
     public void NextDungeon()
     {
         warningMessage.text = NEXT_DUNGEON;
         warningMessage.gameObject.SetActive(true);
-        GameManager.Instance.StartCoroutine(ShowWarning());
+        GameManager.Instance.StartCoroutine(ShowWarning(3));
 
         GameManager.Instance.UIManager.HudManager.UpdateFloorText();
     }
 
-    private IEnumerator ShowWarning()
+    private IEnumerator ShowWarning(float showWarningTime)
     {
         float start = Time.time;
         float t = start;
