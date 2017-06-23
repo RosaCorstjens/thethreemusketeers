@@ -1446,7 +1446,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131292}
-  m_LocalRotation: {x: 0.8734484, y: 0.36935067, z: -0.31527615, w: -0.03562139}
+  m_LocalRotation: {x: 0.8734485, y: 0.3693507, z: -0.31527618, w: -0.035621393}
   m_LocalPosition: {x: -0.02596192, y: 0.035041757, z: 0.008405638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1850,7 +1850,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198406}
-  m_LocalRotation: {x: 0.8734484, y: -0.36935067, z: 0.31527615, w: -0.03562139}
+  m_LocalRotation: {x: 0.8734485, y: -0.3693507, z: 0.31527618, w: -0.035621393}
   m_LocalPosition: {x: 0.02596192, y: 0.035041757, z: 0.008405638}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2043,6 +2043,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 
+  gizmoPrefab: {fileID: 1413081004159880, guid: 5a010e360a7943a44b99757d909c08f8,
+    type: 2}
 --- !u!114 &11497858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2213,5 +2215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4998b499a1ed28d4bad97f49239f7ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerDistance: 10
   GizmoPrefab: {fileID: 1413081004159880, guid: d39a336eaacb712499e88cba99c388cc,
     type: 2}

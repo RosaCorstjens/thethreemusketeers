@@ -46,10 +46,19 @@ public class PlayerController : MonoBehaviour
 
     public List<int> keys;
 
+    // variables to manage the trail indicators on the map
+    private float distTraveledSince = 0.0f;
+    private float distBetweenMapIndicators = 5.0f;
+    private Vector3 currentPosition;
+    private Vector3 previousPosition;
+    [SerializeField] private GameObject gizmoPrefab;
+
     // Use this for initialization
     public void Initialize(Vector3 spawnPosition)
     {
         transform.position = spawnPosition;
+        currentPosition = transform.position;
+        previousPosition = currentPosition;
 
         currentHealth = GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth;
 
@@ -62,6 +71,25 @@ public class PlayerController : MonoBehaviour
         CanMove = true;
 
         IsInitialized = true;
+    }
+
+    private void UpdateTraveledDistance()
+    {
+        distTraveledSince += (currentPosition - previousPosition).magnitude;
+
+        Debug.Log("traveled dist: " + distTraveledSince);
+
+        previousPosition = currentPosition;
+        currentPosition = transform.position;
+
+        if (distTraveledSince >= distBetweenMapIndicators)
+        {
+            Debug.Log("instantiating gizmoprefab");
+
+            // spawn new indicator
+            Instantiate(gizmoPrefab, transform.position + new Vector3(0, 90.0f, 0), Quaternion.identity);
+            distTraveledSince = 0;
+        }
     }
 
     private void Update()
@@ -83,6 +111,8 @@ public class PlayerController : MonoBehaviour
             float regen = ((GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MaxHealth) / 100) * GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerSec)) * Time.deltaTime;
             AdjustCurrentHealth(regen);   
         }
+
+        UpdateTraveledDistance();
     }
 
     private void GetInput()
