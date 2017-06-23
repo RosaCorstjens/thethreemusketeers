@@ -60,7 +60,6 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         loottable = new Loottable();
-        loottable.Initialize(2, 5);
 
         spiderWeapon = new SpiderEquipment();
         this.amountOfUpgrades = amountOfUpgrades;
@@ -317,6 +316,7 @@ public class EnemyController : MonoBehaviour
 
         StopCoroutine(HandleMovement());
 
+        loottable.Initialize(2, 5);
         loottable.DropItems(this.transform.position);
 
         this.gameObject.SetActive(false);

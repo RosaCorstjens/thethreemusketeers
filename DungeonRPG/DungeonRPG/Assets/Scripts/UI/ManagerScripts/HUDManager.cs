@@ -35,7 +35,7 @@ public class HUDManager
         levelLabel = hud.transform.FindChild("Anchor_TopLeft/Level/Label").GetComponent<UILabel>();
         floorLabel = hud.transform.FindChild("Anchor_TopLeft/Floor/Label").GetComponent<UILabel>();
 
-        healthPotionsLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.HealthPotionAmount;
+        healthPotionsLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.HealthPotionAmount + " (F)";
         keysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.KeyAmount;
         multiKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.MultiKeyAmount;
         finalKeysLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.FinalKeyAmount;
@@ -46,7 +46,7 @@ public class HUDManager
 
     public void UpdatePotionValue()
     {
-        healthPotionsLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.HealthPotionAmount;
+        healthPotionsLabel.text = "" + GameManager.Instance.UIManager.InventoryManager.HealthPotionAmount + " (F)";
     }
 
     public void UpdateKeyValue(KeyType type)

@@ -23,7 +23,7 @@ public class InventoryManager
     private float fadeTime = 0.5f;
 
     private GameObject slotPrefab;                                      // Prefab of an empty slot in the inventory.
-    private int amountOfSlots = 30;                                     // The amount of slots.                         
+    private int amountOfSlots = 51;                                     // The amount of slots.                         
     private List<InventorySlot> slots;                                  // List of all slots. 
 
     private UILabel keysLabel;
@@ -225,7 +225,7 @@ public class InventoryManager
         healthPotions = new List<PotionInstance>();
 
         // Set the text labels to the correct amount (0). 
-        healthPotionsLabel.text = healthPotions.Count + "";
+        healthPotionsLabel.text = healthPotions.Count + " (F)";
 
         KeyAmount = 0;
         MultiKeyAmount = 0;
@@ -366,7 +366,7 @@ public class InventoryManager
         {
             case PotionType.Health:
                 healthPotions.Add(item);
-                healthPotionsLabel.text = healthPotions.Count + "";
+                healthPotionsLabel.text = healthPotions.Count + " (F)";
 
                 GameManager.Instance.UIManager.HudManager.UpdatePotionValue();
 
@@ -384,11 +384,11 @@ public class InventoryManager
         {
             if (healthPotions.Count != 0)
             {
-                float heal = (float)(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.MaxHealth) / 100) * healthPotions[0].BasePotion.RestoreAmount.GetRandomInRange() ;
+                float heal = (float)(GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth / 100.0f) * healthPotions[0].BasePotion.RestoreAmount.GetRandomInRange();
                 GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(heal);
 
                 healthPotions.Remove(healthPotions[0]);
-                healthPotionsLabel.text = healthPotions.Count + "";
+                healthPotionsLabel.text = healthPotions.Count + " (F)";
 
                 GameManager.Instance.UIManager.HudManager.UpdatePotionValue();
 

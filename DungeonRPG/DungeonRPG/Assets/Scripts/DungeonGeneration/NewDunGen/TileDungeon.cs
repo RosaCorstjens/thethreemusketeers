@@ -23,6 +23,8 @@ public class TileDungeon
     private PortalScript portal;
     private List<GameObject> hudObjects;
 
+    private List<ItemInstance> itemDrops;
+
     private Vector3 startPosition;
 
     public Vector3 StartPosition
@@ -48,6 +50,7 @@ public class TileDungeon
         locks = new List<LockScript>();
         traps = new List<TrapScript>();
         hudObjects = new List<GameObject>();
+        itemDrops = new List<ItemInstance>();
 
         // instantiates all floor tiles
         InstantiateFloors();
@@ -147,7 +150,6 @@ public class TileDungeon
                         keys.Add(keyFinal);
                         break;
 
-                    // TODO: rotate lock according to neighbours (90 degrees)
                     // lock
                     case 'l':
                         GameObject lockObject = GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos, Quaternion.identity) as GameObject;
@@ -257,6 +259,12 @@ public class TileDungeon
         }
     }
 
+    public void AddItem(ItemInstance toAdd)
+    {
+        itemDrops.Add(toAdd);
+        return;
+    }
+
     private void RemoveContent()
     {
         // clear enemies
@@ -288,6 +296,11 @@ public class TileDungeon
         hudObjects.HandleAction(g => GameObject.Destroy(g.gameObject));
         hudObjects.Clear();
         Debug.Log("hudObjects destroyed. " + hudObjects.Count);
+
+        // clear item drops
+        itemDrops.HandleAction(i => GameObject.Destroy(i.gameObject));
+        itemDrops.Clear();
+        Debug.Log("item drops destroyed. " + itemDrops.Count);
     }
 
     public void ClearDungeon()
@@ -462,9 +475,13 @@ public class TileDungeon
         {
             return 2;
         }
+        else if (dist < 150)
+        {
+            return 4;
+        }
         else
         {
-            return 3;
+            return 6;
         }
     }
 

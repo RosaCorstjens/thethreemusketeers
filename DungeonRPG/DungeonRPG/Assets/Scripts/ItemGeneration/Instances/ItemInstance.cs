@@ -54,6 +54,8 @@ public class ItemInstance : MonoBehaviour
 
     public virtual void Drop()
     {
+        GameManager.Instance.DungeonManager.CurrentDungeon.AddItem(this);
+
         dropped = true;
 
         gameObject.SetActive(true);

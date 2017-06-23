@@ -43,8 +43,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 4575f1a8fd9648a41b2a1a329ecaa738, type: 2}
   mSprites:
   - name: amulet_01
-    x: 1595
-    y: 1110
+    x: 1921
+    y: 1119
     width: 49
     height: 56
     borderLeft: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     paddingBottom: 5
   - name: amulet_02
     x: 542
-    y: 649
+    y: 592
     width: 56
     height: 57
     borderLeft: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: amulet_03
     x: 542
-    y: 418
+    y: 305
     width: 56
     height: 56
     borderLeft: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: amulet_04
-    x: 1645
-    y: 1109
+    x: 1073
+    y: 153
     width: 45
     height: 57
     borderLeft: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 2
   - name: belt_03
-    x: 1089
+    x: 1284
     y: 1561
     width: 64
     height: 64
@@ -187,7 +187,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: belt_04
     x: 542
-    y: 592
+    y: 535
     width: 57
     height: 56
     borderLeft: 0
@@ -199,8 +199,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: boots_01
-    x: 693
-    y: 41
+    x: 1202
+    y: 1033
     width: 56
     height: 55
     borderLeft: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: boots_02
     x: 542
-    y: 247
+    y: 362
     width: 56
     height: 56
     borderLeft: 0
@@ -225,8 +225,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: boots_03
-    x: 1338
-    y: 1169
+    x: 1932
+    y: 1372
     width: 53
     height: 56
     borderLeft: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: boots_04
     x: 542
-    y: 765
+    y: 824
     width: 58
     height: 57
     borderLeft: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 4
   - name: border
-    x: 1024
+    x: 1089
     y: 1561
     width: 64
     height: 64
@@ -290,8 +290,8 @@ MonoBehaviour:
     paddingTop: 34
     paddingBottom: 24
   - name: bow_03
-    x: 1121
-    y: 587
+    x: 1122
+    y: 286
     width: 183
     height: 256
     borderLeft: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: bow_04
     x: 865
-    y: 94
+    y: 20
     width: 207
     height: 247
     borderLeft: 0
@@ -316,8 +316,8 @@ MonoBehaviour:
     paddingTop: 9
     paddingBottom: 0
   - name: bracer_01
-    x: 1451
-    y: 1179
+    x: 1986
+    y: 1321
     width: 56
     height: 50
     borderLeft: 0
@@ -329,8 +329,8 @@ MonoBehaviour:
     paddingTop: 9
     paddingBottom: 5
   - name: bracer_02
-    x: 1394
-    y: 1227
+    x: 1932
+    y: 1429
     width: 56
     height: 53
     borderLeft: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: bracer_03
-    x: 1394
-    y: 1119
+    x: 1989
+    y: 1431
     width: 56
     height: 51
     borderLeft: 0
@@ -355,8 +355,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 6
   - name: bracer_04
-    x: 1693
-    y: 1230
+    x: 1958
+    y: 924
     width: 52
     height: 50
     borderLeft: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
     paddingBottom: 6
   - name: CelticHandFontAtlas
     x: 865
-    y: 833
+    y: 513
     width: 255
     height: 255
     borderLeft: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: chest_01
-    x: 451
+    x: 509
     y: 1
     width: 57
     height: 53
@@ -407,7 +407,7 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: chest_02
-    x: 1154
+    x: 1024
     y: 1561
     width: 64
     height: 64
@@ -421,7 +421,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: chest_03
     x: 542
-    y: 304
+    y: 419
     width: 56
     height: 56
     borderLeft: 0
@@ -433,8 +433,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: chest_04
-    x: 1219
-    y: 1561
+    x: 190
+    y: 155
     width: 64
     height: 64
     borderLeft: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: coins
     x: 865
-    y: 342
+    y: 268
     width: 241
     height: 244
     borderLeft: 0
@@ -472,8 +472,8 @@ MonoBehaviour:
     paddingTop: 6
     paddingBottom: 6
   - name: DaPandoraFontAtlas
-    x: 1081
-    y: 1153
+    x: 1513
+    y: 435
     width: 255
     height: 127
     borderLeft: 0
@@ -498,8 +498,8 @@ MonoBehaviour:
     paddingTop: 20
     paddingBottom: 20
   - name: empty_Amulet
-    x: 1595
-    y: 1224
+    x: 1971
+    y: 1119
     width: 49
     height: 56
     borderLeft: 0
@@ -524,8 +524,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 1
   - name: empty_Boots
-    x: 1193
-    y: 1097
+    x: 749
+    y: 41
     width: 56
     height: 55
     borderLeft: 0
@@ -537,7 +537,7 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 4
   - name: empty_Bracers
-    x: 1508
+    x: 1978
     y: 1230
     width: 56
     height: 50
@@ -550,7 +550,7 @@ MonoBehaviour:
     paddingTop: 9
     paddingBottom: 5
   - name: empty_Chest
-    x: 509
+    x: 451
     y: 1
     width: 57
     height: 53
@@ -563,8 +563,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: empty_Gloves
-    x: 1451
-    y: 1125
+    x: 1974
+    y: 1176
     width: 52
     height: 53
     borderLeft: 0
@@ -576,8 +576,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: empty_Hand
-    x: 1856
-    y: 620
+    x: 1715
+    y: 571
     width: 150
     height: 223
     borderLeft: 0
@@ -589,8 +589,8 @@ MonoBehaviour:
     paddingTop: 12
     paddingBottom: 21
   - name: empty_Helmet
-    x: 1137
-    y: 1096
+    x: 693
+    y: 40
     width: 55
     height: 56
     borderLeft: 0
@@ -602,8 +602,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 3
   - name: empty_MainHand
-    x: 1705
-    y: 620
+    x: 1866
+    y: 571
     width: 150
     height: 223
     borderLeft: 0
@@ -628,8 +628,8 @@ MonoBehaviour:
     paddingTop: 14
     paddingBottom: 12
   - name: empty_Pants
-    x: 542
-    y: 882
+    x: 190
+    y: 37
     width: 57
     height: 58
     borderLeft: 0
@@ -641,8 +641,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 3
   - name: empty_Ring
-    x: 1338
-    y: 1113
+    x: 1932
+    y: 1316
     width: 53
     height: 55
     borderLeft: 0
@@ -654,8 +654,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 4
   - name: empty_Shoulders
-    x: 1645
-    y: 1224
+    x: 1971
+    y: 1062
     width: 47
     height: 56
     borderLeft: 0
@@ -667,8 +667,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: finalkey
-    x: 865
-    y: 1089
+    x: 1447
+    y: 1600
     width: 215
     height: 448
     borderLeft: 0
@@ -680,8 +680,8 @@ MonoBehaviour:
     paddingTop: 22
     paddingBottom: 20
   - name: gloves_01
-    x: 1504
-    y: 1125
+    x: 1921
+    y: 1176
     width: 52
     height: 53
     borderLeft: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: gloves_02
     x: 542
-    y: 361
+    y: 248
     width: 56
     height: 56
     borderLeft: 0
@@ -706,7 +706,7 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: gloves_03
-    x: 1451
+    x: 1921
     y: 1230
     width: 56
     height: 50
@@ -719,8 +719,8 @@ MonoBehaviour:
     paddingTop: 10
     paddingBottom: 4
   - name: gloves_04
-    x: 1338
-    y: 1226
+    x: 1932
+    y: 1483
     width: 55
     height: 54
     borderLeft: 0
@@ -745,8 +745,8 @@ MonoBehaviour:
     paddingTop: 57
     paddingBottom: 33
   - name: helmet_01
-    x: 1081
-    y: 1096
+    x: 806
+    y: 40
     width: 55
     height: 56
     borderLeft: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
     paddingBottom: 3
   - name: helmet_02
     x: 542
-    y: 475
+    y: 476
     width: 55
     height: 58
     borderLeft: 0
@@ -771,8 +771,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 3
   - name: helmet_03
-    x: 190
-    y: 155
+    x: 1154
+    y: 1561
     width: 64
     height: 64
     borderLeft: 0
@@ -784,8 +784,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: helmet_04
-    x: 1595
-    y: 1167
+    x: 1921
+    y: 1062
     width: 49
     height: 56
     borderLeft: 0
@@ -797,7 +797,7 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: highlighted
-    x: 1284
+    x: 1219
     y: 1561
     width: 64
     height: 64
@@ -810,8 +810,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: hp
-    x: 1121
-    y: 844
+    x: 1418
+    y: 1036
     width: 256
     height: 244
     borderLeft: 0
@@ -836,8 +836,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: key
-    x: 1663
-    y: 1600
+    x: 1202
+    y: 1089
     width: 215
     height: 448
     borderLeft: 0
@@ -862,7 +862,7 @@ MonoBehaviour:
     paddingTop: 14
     paddingBottom: 12
   - name: mage
-    x: 0
+    x: 271
     y: 220
     width: 270
     height: 720
@@ -888,8 +888,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 0
   - name: mp
-    x: 865
-    y: 587
+    x: 1675
+    y: 1035
     width: 245
     height: 245
     borderLeft: 0
@@ -901,7 +901,7 @@ MonoBehaviour:
     paddingTop: 11
     paddingBottom: 0
   - name: multikey
-    x: 1447
+    x: 1663
     y: 1600
     width: 215
     height: 448
@@ -927,8 +927,8 @@ MonoBehaviour:
     paddingTop: 14
     paddingBottom: 27
   - name: onehanded_02
-    x: 1509
-    y: 614
+    x: 1519
+    y: 565
     width: 195
     height: 229
     borderLeft: 0
@@ -940,8 +940,8 @@ MonoBehaviour:
     paddingTop: 14
     paddingBottom: 13
   - name: onehanded_03
-    x: 1305
-    y: 613
+    x: 1754
+    y: 795
     width: 203
     height: 230
     borderLeft: 0
@@ -953,8 +953,8 @@ MonoBehaviour:
     paddingTop: 13
     paddingBottom: 13
   - name: onehanded_04
-    x: 1804
-    y: 860
+    x: 1548
+    y: 797
     width: 205
     height: 228
     borderLeft: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
     paddingBottom: 14
   - name: pants_01
     x: 542
-    y: 823
+    y: 882
     width: 57
     height: 58
     borderLeft: 0
@@ -1005,8 +1005,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 3
   - name: pants_04
-    x: 190
-    y: 38
+    x: 542
+    y: 766
     width: 58
     height: 57
     borderLeft: 0
@@ -1017,9 +1017,22 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 4
     paddingBottom: 3
+  - name: player
+    x: 865
+    y: 1026
+    width: 336
+    height: 511
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 96
+    paddingRight: 94
+    paddingTop: 28
+    paddingBottom: 37
   - name: ring_01
-    x: 1394
-    y: 1171
+    x: 1986
+    y: 1373
     width: 53
     height: 55
     borderLeft: 0
@@ -1031,8 +1044,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 4
   - name: ring_02
-    x: 1508
-    y: 1179
+    x: 1958
+    y: 975
     width: 52
     height: 50
     borderLeft: 0
@@ -1044,8 +1057,8 @@ MonoBehaviour:
     paddingTop: 6
     paddingBottom: 8
   - name: ring_03
-    x: 807
-    y: 41
+    x: 1316
+    y: 1033
     width: 56
     height: 55
     borderLeft: 0
@@ -1058,7 +1071,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: ring_04
     x: 542
-    y: 534
+    y: 650
     width: 56
     height: 57
     borderLeft: 0
@@ -1083,7 +1096,7 @@ MonoBehaviour:
     paddingTop: 14
     paddingBottom: 12
   - name: shield_02
-    x: 1338
+    x: 1418
     y: 1281
     width: 256
     height: 256
@@ -1096,8 +1109,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shield_03
-    x: 1595
-    y: 1281
+    x: 865
+    y: 769
     width: 256
     height: 256
     borderLeft: 0
@@ -1109,7 +1122,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shield_04
-    x: 1081
+    x: 1675
     y: 1281
     width: 256
     height: 256
@@ -1122,8 +1135,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shoulders_01
-    x: 1645
-    y: 1167
+    x: 1073
+    y: 211
     width: 47
     height: 56
     borderLeft: 0
@@ -1135,8 +1148,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: shoulders_02
-    x: 750
-    y: 41
+    x: 1259
+    y: 1033
     width: 56
     height: 55
     borderLeft: 0
@@ -1148,8 +1161,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 4
   - name: shoulders_03
-    x: 1250
-    y: 1098
+    x: 1988
+    y: 1483
     width: 55
     height: 54
     borderLeft: 0
@@ -1162,7 +1175,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: shoulders_04
     x: 542
-    y: 707
+    y: 708
     width: 57
     height: 57
     borderLeft: 0
@@ -1174,8 +1187,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 3
   - name: staff_01
-    x: 1305
-    y: 147
+    x: 1316
+    y: 329
     width: 196
     height: 233
     borderLeft: 0
@@ -1187,8 +1200,8 @@ MonoBehaviour:
     paddingTop: 6
     paddingBottom: 17
   - name: staff_02
-    x: 1121
-    y: 365
+    x: 1122
+    y: 64
     width: 171
     height: 221
     borderLeft: 0
@@ -1200,8 +1213,8 @@ MonoBehaviour:
     paddingTop: 14
     paddingBottom: 21
   - name: staff_03
-    x: 1852
-    y: 1286
+    x: 1122
+    y: 543
     width: 193
     height: 251
     borderLeft: 0
@@ -1226,8 +1239,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: twohanded_01
-    x: 1121
-    y: 141
+    x: 1316
+    y: 105
     width: 150
     height: 223
     borderLeft: 0
@@ -1239,8 +1252,8 @@ MonoBehaviour:
     paddingTop: 12
     paddingBottom: 21
   - name: twohanded_02
-    x: 1599
-    y: 858
+    x: 1343
+    y: 795
     width: 204
     height: 230
     borderLeft: 0
@@ -1252,8 +1265,8 @@ MonoBehaviour:
     paddingTop: 13
     paddingBottom: 13
   - name: twohanded_03
-    x: 1378
-    y: 858
+    x: 1122
+    y: 795
     width: 220
     height: 230
     borderLeft: 0
@@ -1265,8 +1278,8 @@ MonoBehaviour:
     paddingTop: 13
     paddingBottom: 13
   - name: twohanded_04
-    x: 1305
-    y: 381
+    x: 1316
+    y: 563
     width: 202
     height: 231
     borderLeft: 0
@@ -1278,7 +1291,7 @@ MonoBehaviour:
     paddingTop: 13
     paddingBottom: 12
   - name: warrior
-    x: 271
+    x: 0
     y: 220
     width: 270
     height: 720

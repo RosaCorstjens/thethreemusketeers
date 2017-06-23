@@ -157,8 +157,13 @@ public class PlayerController : MonoBehaviour
             SendMessage("BasicAttack");
         }
 
-        if (!potionOnCooldown && Input.GetKeyDown(KeyCode.Alpha1))
+        if (!potionOnCooldown && Input.GetKeyDown(KeyCode.F))
         {
+            if (currentHealth >= GameManager.Instance.ActiveCharacterInformation.Stats.MaxDeterminedHealth)
+            {
+                return;
+            }
+
             GameManager.Instance.UIManager.InventoryManager.UsePotion(PotionType.Health);
         }
     }

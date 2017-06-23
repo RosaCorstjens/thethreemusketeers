@@ -32,7 +32,6 @@ public class LootChest : MonoBehaviour
         tempListRender.HandleAction(r => materials.AddRange(r.materials));
 
         loottable = new Loottable();
-        loottable.Initialize(10, 15);
     }
 
     public void PlayerInRange()
@@ -71,6 +70,9 @@ public class LootChest : MonoBehaviour
         GameManager.Instance.UIManager.WorldUIManager.HideLabel();
 
         materials.HandleAction(m => m.shader = Shader.Find("Legacy Shaders/Bumped Diffuse"));
+
+        // intialize the loottable at late as possible, so that the items match the player level
+        loottable.Initialize(10, 15);
 
         loottable.DropItems(transform.position + (2.5f * transform.forward));
 
