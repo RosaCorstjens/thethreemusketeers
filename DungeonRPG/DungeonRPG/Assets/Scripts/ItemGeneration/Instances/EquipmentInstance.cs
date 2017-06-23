@@ -8,6 +8,7 @@ public class EquipmentInstance: ItemInstance
     public string GeneratedName { get { return generatedName; } }
 
     protected string statsText;
+    protected string levelText;
 
     private bool equipped;
 
@@ -57,6 +58,7 @@ public class EquipmentInstance: ItemInstance
         this.generatedName = generatedName;
 
         statsText = string.Empty;
+        levelText = string.Empty;
 
         DetermineModifiers();
     }
@@ -93,6 +95,16 @@ public class EquipmentInstance: ItemInstance
         }
 
         return string.Format("{0}", statsText);
+    }
+
+    public string GetTooltipLevelText()
+    {
+        if (levelText == string.Empty)
+        {
+            levelText += "Level " + level;
+        }
+
+        return string.Format("{0}", levelText);
     }
 
     public override void Use()

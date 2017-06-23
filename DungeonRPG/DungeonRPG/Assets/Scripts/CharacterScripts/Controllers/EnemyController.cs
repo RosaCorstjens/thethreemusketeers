@@ -302,7 +302,7 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         anim.SetBool("Dead", true);
-        GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression.GetRandomInRange() * amountOfUpgrades);
+        GameManager.Instance.ActiveCharacterInformation.AddExperiencePoints(baseProgression.GetRandomInRange());
 
         GameManager.Instance.ActiveCharacterInformation.PlayerController.AdjustCurrentHealth(GameManager.Instance.ActiveCharacterInformation.Stats.Get(StatTypes.HealthPerKill));
 

@@ -47,6 +47,7 @@ public class InventoryManager
     private GameObject tooltip;
     private UILabel tooltipText;
     private UILabel tooltipTitle;
+    private UILabel tooltipLevelText;
     private IEnumerator handlePositionToolTip;
     private bool hooverDissabled;
 
@@ -191,6 +192,7 @@ public class InventoryManager
         tooltip.transform.localPosition = Vector3.zero;
 
         tooltipText = tooltip.transform.FindChild("ToolTipTitle/Text").GetComponent<UILabel>();
+        tooltipLevelText = tooltip.transform.FindChild("ToolTipTitle/LevelText").GetComponent<UILabel>();
         tooltipTitle = tooltip.transform.FindChild("ToolTipTitle").GetComponent<UILabel>();
         tooltip.SetActive(false);
 
@@ -493,7 +495,8 @@ public class InventoryManager
 
         tooltipTitle.text = item.GetTitle();
         tooltipText.text = item.GetTooltipText();
-
+        tooltipLevelText.text = item.GetTooltipLevelText();
+        Debug.Log(tooltipLevelText.text);
         tooltip.SetActive(true);
 
         if (handlePositionToolTip != null) GameManager.Instance.StopCoroutine(handlePositionToolTip);
