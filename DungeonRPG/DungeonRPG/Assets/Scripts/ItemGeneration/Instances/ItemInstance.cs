@@ -15,6 +15,8 @@ public class ItemInstance : MonoBehaviour
     protected Quality quality;
     public Quality Quality { get { return quality; } }
 
+    private float attrationSpeed = 5.0f;
+
     public virtual void Initialize(BaseItem itemInfo, Quality quality)
     {
         // TO DO: give potions and gold their own material
@@ -33,17 +35,22 @@ public class ItemInstance : MonoBehaviour
         Debug.Log("Used item.");
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-            if (!AddToInventory())
+            transform.position += (other.transform.position - new Vector3(transform.position.x, transform.position.y - 1, transform.position.z)).normalized * attrationSpeed * Time.deltaTime;
+
+            if ((other.transform.position - transform.position).magnitude < 1.0f)
             {
-                GameManager.Instance.UIManager.InventoryFullWarning();
-                return;
+                if (!AddToInventory())
+                {
+                    GameManager.Instance.UIManager.InventoryFullWarning();
+                    return;
+                }
+                gameObject.SetActive(false);
+                dropped = false;
             }
-            gameObject.SetActive(false);
-            dropped = false;
         }
     }
 
