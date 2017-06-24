@@ -275,16 +275,27 @@ public class GameManager : MonoBehaviour
     private IEnumerator HandleInput()
     {
         bool inventoryOpen = false;
+        bool minimapOpen = false;
 
         while (true)
         {
             // Inventory key. 
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.I) || (inventoryOpen && Input.GetKeyDown(KeyCode.Escape)) && !minimapOpen)
             {
                 inventoryOpen = !inventoryOpen;
                 UIManager.InventoryManager.ToggleMenu(inventoryOpen);
                 activeCharacterInformation.PlayerController.InMenu = inventoryOpen;
                 cameraManager.CameraScript.CanReceiveInput = !inventoryOpen;
+                yield return new WaitForSeconds(0.2f);
+            }
+
+            // mega mini map key
+            if (Input.GetKeyDown(KeyCode.Tab) && !inventoryOpen)
+            {
+                minimapOpen = !minimapOpen;
+                UIManager.MegaMiniMapManager.ToggleMenu(minimapOpen);
+                activeCharacterInformation.PlayerController.InMenu = minimapOpen;
+                cameraManager.CameraScript.CanReceiveInput = !minimapOpen;
                 yield return new WaitForSeconds(0.2f);
             }
 

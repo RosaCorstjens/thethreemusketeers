@@ -476,6 +476,8 @@ public class InventoryManager
 
                 slots[i].AddItem(item);
 
+                slots[i].UpdateColorBasedOnPlayerLevel();
+
                 emptySlots--;
 
                 return true;
@@ -517,7 +519,6 @@ public class InventoryManager
         tooltipTitle.text = item.GetTitle();
         tooltipText.text = item.GetTooltipText();
         tooltipLevelText.text = item.GetTooltipLevelText();
-        Debug.Log(tooltipLevelText.text);
         tooltip.SetActive(true);
 
         if (handlePositionToolTip != null) GameManager.Instance.StopCoroutine(handlePositionToolTip);
@@ -674,5 +675,10 @@ public class InventoryManager
         if(alertOrigin.ThisSlotType == SlotBase.SlotType.Inventory) Reorder(alertOrigin.GetComponent<InventorySlot>());
     }
     
+    public void UpdateSlotColorsBasedOnPlayerLevel()
+    {
+        slots.HandleAction(f => f.UpdateColorBasedOnPlayerLevel());
+    }
+
 }
 

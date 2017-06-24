@@ -77,15 +77,11 @@ public class PlayerController : MonoBehaviour
     {
         distTraveledSince += (currentPosition - previousPosition).magnitude;
 
-        Debug.Log("traveled dist: " + distTraveledSince);
-
         previousPosition = currentPosition;
         currentPosition = transform.position;
 
         if (distTraveledSince >= distBetweenMapIndicators)
         {
-            Debug.Log("instantiating gizmoprefab");
-
             // spawn new indicator
             Instantiate(gizmoPrefab, transform.position + new Vector3(0, 90.0f, 0), Quaternion.identity);
             distTraveledSince = 0;
@@ -95,13 +91,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (!IsInitialized) return;
-
-/*        if (onHitCooldown)
-        {
-            SendMessage("MoveMeForward", 0f);
-            SendMessage("MoveMeSideways", 0f);
-            return;
-        }*/
 
         GetInput();
 

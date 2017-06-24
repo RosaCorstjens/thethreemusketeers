@@ -67,6 +67,8 @@ public class PlayerInformation : BaseCharacterInformation
 
     protected override void LevelUp()
     {
+        if (level >= 60) return;
+
         base.LevelUp();
         xpTillNextLvl = GetXPTillNextLevel(level);
         GameManager.Instance.UIManager.LevelUp();

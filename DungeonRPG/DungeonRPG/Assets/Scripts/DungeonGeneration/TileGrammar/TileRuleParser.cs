@@ -35,7 +35,8 @@ public class TileRuleParser
         { "entrance", 'e'},
         { "portal", 'P'},
         { "hubTile", '2'},
-        { "hubDecoration", '3'}
+        { "hubDecoration", '3'},
+        { "checkpoint", 'c'}
     };
 
     //constructs a tile parser (Wil also read the file already)

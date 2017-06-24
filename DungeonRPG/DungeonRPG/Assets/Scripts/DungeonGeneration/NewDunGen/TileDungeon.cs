@@ -22,6 +22,7 @@ public class TileDungeon
     private List<TrapScript> traps;
     private PortalScript portal;
     private List<GameObject> hudObjects;
+    private List<GameObject> checkpoints;
 
     private List<ItemInstance> itemDrops;
 
@@ -30,6 +31,9 @@ public class TileDungeon
     public Vector3 StartPosition
     {
         get { return startPosition; }
+
+        // this set should only be used by the checkpoints
+        set { startPosition = value; }
     }
 
     private int level;
@@ -251,6 +255,15 @@ public class TileDungeon
                         GetFloor(i, j).SetMaterial(Resources.Load<Material>("Materials/Dungeon/Bricks"));
                         break;
 
+                    case 'c':
+                        GameObject checkpoint = GameObject.Instantiate(dm.CheckpointPrefab, spawnPos, Quaternion.identity);
+                        checkpoint.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        checkpoint.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
+
+                        CheckpointScript checkpointScript = checkpoint.GetComponent<CheckpointScript>();
+                        checkpointScript.Initialize();
+                        break;
+
                     default:
                         Debug.LogError("Undefined type occured in the 2D tile array.");
                         break;
@@ -392,6 +405,7 @@ public class TileDungeon
                             GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos,
                                 Quaternion.identity) as GameObject;
                         lockObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        lockObject.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
 
                         Vector3 lookPos =
                             GameManager.Instance.DungeonManager.GridToWorldPosition(
@@ -410,6 +424,7 @@ public class TileDungeon
                             GameObject.Instantiate(GameManager.Instance.DungeonManager.MultiLockPrefab, spawnPos,
                                 Quaternion.identity) as GameObject;
                         lockMultiObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        lockMultiObject.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
 
                         lookPos =
                             GameManager.Instance.DungeonManager.GridToWorldPosition(
@@ -428,6 +443,7 @@ public class TileDungeon
                             GameObject.Instantiate(GameManager.Instance.DungeonManager.LockPrefab, spawnPos,
                                 Quaternion.identity) as GameObject;
                         lockFinalObject.transform.SetParent(GameManager.Instance.DungeonManager.LevelParent.transform);
+                        lockFinalObject.transform.localScale = new Vector3(GameManager.Instance.DungeonManager.WorldScaleX, GameManager.Instance.DungeonManager.WorldScaleY, GameManager.Instance.DungeonManager.WorldScaleZ);
 
                         lookPos =
                             GameManager.Instance.DungeonManager.GridToWorldPosition(

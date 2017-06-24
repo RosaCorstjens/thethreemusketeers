@@ -27,6 +27,8 @@ public class EnemyController : MonoBehaviour
     private bool onHitCooldown = false;
     private float basicAttackCooldown = 2f;
 
+    private bool playerInRange = false;
+
     private int inBattleRotationSpeed = 4;
     private int wanderRotationSpeed = 1;
     private int currentRotationSpeed { get { return currentTargetPos == targetPosition ? wanderRotationSpeed : inBattleRotationSpeed; } }
@@ -134,7 +136,7 @@ public class EnemyController : MonoBehaviour
                 // speed
                 case 2:
                     float value = 1f * (level / 5f);
-                    value = value >= 5.0f ? 5.0f : value;
+                    value = value >= 3.5f ? 3.5f : value;
                     spiderWeapon = new SpeedUpgrade(spiderWeapon, value);
                     upgrades[2]++;
                     break;
@@ -154,6 +156,7 @@ public class EnemyController : MonoBehaviour
         myTransform = transform;
         onCooldown = false;
         isDead = false;
+        playerInRange = false;
 
         anim.SetTrigger("Revive");
         anim.SetBool("Dead", false);
@@ -183,7 +186,8 @@ public class EnemyController : MonoBehaviour
                 // folow player state
                 if (distanceToPlayer < noticeDistance && distanceToPlayer > spiderWeapon.GetAttackRange())
                 {
-                    currentTargetPos = targetTransform.position;
+                    currentTargetPos = targetTransform.position + targetTransform.forward;
+                    playerInRange = true;
 
                     Rotate();
                     Move();
@@ -202,6 +206,7 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     currentTargetPos = targetPosition;
+                    playerInRange = false;
 
                     float distToPoint = (currentTargetPos - transform.position).magnitude;
                     if (distToPoint < 0.5f)
@@ -238,7 +243,7 @@ public class EnemyController : MonoBehaviour
     private void Move()
     {
         // If target is not reached, move towards target.
-        myTransform.position += myTransform.forward * spiderWeapon.GetSpeed() * Time.deltaTime;
+        myTransform.position += myTransform.forward * (playerInRange ? spiderWeapon.GetSpeed() * 1.5f : spiderWeapon.GetSpeed()) * Time.deltaTime;
         anim.SetFloat("MoveZ", 1f);
     }
 

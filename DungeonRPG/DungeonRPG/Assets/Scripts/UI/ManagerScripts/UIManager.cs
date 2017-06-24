@@ -26,6 +26,9 @@ public class UIManager
     private HUDManager hudManager;
     public HUDManager HudManager { get { return hudManager; } }
 
+    private MegaMiniMapManager megaMiniMapManager;
+    public MegaMiniMapManager MegaMiniMapManager { get { return megaMiniMapManager; } }
+
     // The label that appears when the inventory reached max capicity. 
     private UILabel warningMessage;
     private const string INVENTORY_FULL_WARNING = "Your inventory is full.";
@@ -36,6 +39,7 @@ public class UIManager
     private const string NO_HEALTH_POTIONS = "You have no health potions.";
     private const string NEXT_DUNGEON = "Welcome in the next dungeon ...";
     private const string NO_KEY = "You have no corresponding keys";
+    private const string YOU_REACHED_CHECKPOINT = "You have reached a checkpoint!";
 
     public void Initialize()
     {
@@ -67,6 +71,9 @@ public class UIManager
 
         hudManager = new HUDManager();
         hudManager.Initialize();
+
+        megaMiniMapManager = new MegaMiniMapManager();
+        megaMiniMapManager.Initialize();
     }
 
     public void InventoryFullWarning()
@@ -90,6 +97,13 @@ public class UIManager
         GameManager.Instance.StartCoroutine(ShowWarning(3));
     }
 
+    public void YouReachedCheckpoint()
+    {
+        warningMessage.text = YOU_REACHED_CHECKPOINT;
+        warningMessage.gameObject.SetActive(true);
+        GameManager.Instance.StartCoroutine(ShowWarning(3));
+    }
+
     public void YouDoNotHaveAKeyWarning()
     {
         warningMessage.text = NO_KEY;
@@ -105,6 +119,7 @@ public class UIManager
 
         GameManager.Instance.UIManager.HudManager.UpdateLevelText();
         GameManager.Instance.UIManager.InventoryManager.CharacterPanel.UpdateLevelText();
+        GameManager.Instance.UIManager.InventoryManager.UpdateSlotColorsBasedOnPlayerLevel();
     }
 
     public void NoHealthPotion()
