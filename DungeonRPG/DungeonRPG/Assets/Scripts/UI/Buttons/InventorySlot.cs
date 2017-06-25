@@ -29,7 +29,7 @@ public class InventorySlot : SlotBase
         // Take first item and use it. 
         if (!GameManager.Instance.UIManager.InventoryManager.EquipItem(temp))
         {
-            AddItem(item);
+            AddItem(temp);
             return;
         }
         //GameManager.Instance.UIManager.InventoryManager.AddItem(item);

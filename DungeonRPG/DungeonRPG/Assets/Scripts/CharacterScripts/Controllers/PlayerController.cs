@@ -205,7 +205,10 @@ public class PlayerController : MonoBehaviour
         }
 
         inBattle = false;
-        inHand.WeaponObject.SetActive(false);
+        if (inHand != null)
+        {
+            inHand.WeaponObject.SetActive(false);
+        }
         SendMessage("ToggleBattle", false);
 
         yield break;
