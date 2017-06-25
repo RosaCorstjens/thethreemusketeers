@@ -275,12 +275,14 @@ public class TileDungeon
     public void AddItem(ItemInstance toAdd)
     {
         itemDrops.Add(toAdd);
+        Debug.Log("Added ->" + itemDrops.Count + " items in the world");
         return;
     }
 
     public void RemoveItem(ItemInstance toRemove)
     {
-        itemDrops.Remove(toRemove);
+        itemDrops.Remove(itemDrops.Find(f => f == toRemove));
+        Debug.Log("Removed ->" + itemDrops.Count + " items in the world");
         return;
     }
 
@@ -317,9 +319,9 @@ public class TileDungeon
         Debug.Log("hudObjects destroyed. " + hudObjects.Count);
 
         // clear item drops
+        Debug.Log("item drops destroyed. " + itemDrops.Count);
         itemDrops.HandleAction(i => GameObject.Destroy(i.gameObject));
         itemDrops.Clear();
-        Debug.Log("item drops destroyed. " + itemDrops.Count);
     }
 
     public void ClearDungeon()

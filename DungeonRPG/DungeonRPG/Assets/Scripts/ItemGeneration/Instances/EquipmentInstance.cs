@@ -131,6 +131,8 @@ public class EquipmentInstance: ItemInstance
 
     protected override bool AddToInventory()
     {
+        if (!base.AddToInventory()) return false;
+
         return GameManager.Instance.UIManager.InventoryManager.AddItem(this);
     }
 }
