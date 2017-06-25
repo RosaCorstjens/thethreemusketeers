@@ -278,6 +278,12 @@ public class TileDungeon
         return;
     }
 
+    public void RemoveItem(ItemInstance toRemove)
+    {
+        itemDrops.Remove(toRemove);
+        return;
+    }
+
     private void RemoveContent()
     {
         // clear enemies

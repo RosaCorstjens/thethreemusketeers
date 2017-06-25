@@ -14,7 +14,7 @@ public class ItemInstance : MonoBehaviour
     protected Quality quality;
     public Quality Quality { get { return quality; } }
 
-    private float attrationSpeed = 3.0f;
+    private float attrationSpeed = 4.0f;
 
     private Coroutine fallingRoutine;
 
@@ -97,6 +97,8 @@ public class ItemInstance : MonoBehaviour
 
     protected virtual bool AddToInventory()
     {
+        GameManager.Instance.DungeonManager.CurrentDungeon.RemoveItem(this);
+
         return true;
     }
 

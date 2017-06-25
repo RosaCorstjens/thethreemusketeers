@@ -23,7 +23,7 @@ public class InventoryManager
     private float fadeTime = 0.5f;
 
     private GameObject slotPrefab;                                      // Prefab of an empty slot in the inventory.
-    private int amountOfSlots = 10;                                     // The amount of slots.                         
+    private int amountOfSlots = 60;                                     // The amount of slots.                         
     private List<InventorySlot> slots;                                  // List of all slots. 
 
     private UILabel keysLabel;
