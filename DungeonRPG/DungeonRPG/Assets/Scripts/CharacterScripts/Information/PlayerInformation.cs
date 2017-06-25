@@ -55,7 +55,15 @@ public class PlayerInformation : BaseCharacterInformation
 
     public void AddExperiencePoints(float progress)
     {
-        float amount = (progress/100 * (100+stats.Get(StatTypes.ExperienceBonus))) * xpTillNextLvl;
+        //progress / 100 = 0.01
+        //* (100 + xp bonus)
+        // 1 
+        float xpbon = stats.Get(StatTypes.ExperienceBonus);
+        if (xpbon > 0.0f)
+        {
+            int i = 10;
+        }
+        float amount = ((progress * 100.0f + (stats.Get(StatTypes.ExperienceBonus))) / 100.0f) * xpTillNextLvl;
 
         xp += (int)amount;
 
@@ -71,6 +79,7 @@ public class PlayerInformation : BaseCharacterInformation
 
         base.LevelUp();
         xpTillNextLvl = GetXPTillNextLevel(level);
+        xp = 0;
         GameManager.Instance.UIManager.LevelUp();
     }
 

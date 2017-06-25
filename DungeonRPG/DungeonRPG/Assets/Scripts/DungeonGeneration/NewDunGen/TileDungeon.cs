@@ -55,6 +55,7 @@ public class TileDungeon
         traps = new List<TrapScript>();
         hudObjects = new List<GameObject>();
         itemDrops = new List<ItemInstance>();
+        checkpoints = new List<GameObject>();
 
         // instantiates all floor tiles
         InstantiateFloors();
@@ -262,6 +263,8 @@ public class TileDungeon
 
                         CheckpointScript checkpointScript = checkpoint.GetComponent<CheckpointScript>();
                         checkpointScript.Initialize();
+
+                        checkpoints.Add(checkpoint);
                         break;
 
                     default:
@@ -275,14 +278,12 @@ public class TileDungeon
     public void AddItem(ItemInstance toAdd)
     {
         itemDrops.Add(toAdd);
-        Debug.Log("Added ->" + itemDrops.Count + " items in the world");
         return;
     }
 
     public void RemoveItem(ItemInstance toRemove)
-    {
+    { 
         itemDrops.Remove(itemDrops.Find(f => f == toRemove));
-        Debug.Log("Removed ->" + itemDrops.Count + " items in the world");
         return;
     }
 
@@ -322,6 +323,11 @@ public class TileDungeon
         Debug.Log("item drops destroyed. " + itemDrops.Count);
         itemDrops.HandleAction(i => GameObject.Destroy(i.gameObject));
         itemDrops.Clear();
+
+        // clear checkpoints
+        Debug.Log("checkpoints drops destroyed. " + checkpoints.Count);
+        checkpoints.HandleAction(i => GameObject.Destroy(i.gameObject));
+        checkpoints.Clear();
     }
 
     public void ClearDungeon()
