@@ -25,15 +25,14 @@ public class InventorySlot : SlotBase
         base.Use();
         EquipmentInstance temp = item;
         ClearSlot();
-        
+        GameManager.Instance.UIManager.InventoryManager.Reorder(this);
+
         // Take first item and use it. 
         if (!GameManager.Instance.UIManager.InventoryManager.EquipItem(temp))
         {
-            AddItem(temp);
+            GameManager.Instance.UIManager.InventoryManager.AddItem(temp);
             return;
         }
-        //GameManager.Instance.UIManager.InventoryManager.AddItem(item);
-        GameManager.Instance.UIManager.InventoryManager.Reorder(this);
 
         UpdateColorBasedOnPlayerLevel();
     }
