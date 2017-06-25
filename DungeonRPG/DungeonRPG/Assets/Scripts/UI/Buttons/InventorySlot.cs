@@ -16,16 +16,23 @@ public class InventorySlot : SlotBase
         base.ClearSlot();
 
         GameManager.Instance.UIManager.InventoryManager.EmptySlots++;
+
+        Debug.Log("Item removed: " + GameManager.Instance.UIManager.InventoryManager.EmptySlots + " slots remaining");
     }
 
     public override void Use()
     {
         base.Use();
-
-        // Take first item and use it. 
-        if (!GameManager.Instance.UIManager.InventoryManager.EquipItem(item)) return;
-
+        EquipmentInstance temp = item;
         ClearSlot();
+        
+        // Take first item and use it. 
+        if (!GameManager.Instance.UIManager.InventoryManager.EquipItem(temp))
+        {
+            AddItem(item);
+            return;
+        }
+        //GameManager.Instance.UIManager.InventoryManager.AddItem(item);
         GameManager.Instance.UIManager.InventoryManager.Reorder(this);
 
         UpdateColorBasedOnPlayerLevel();
@@ -50,7 +57,9 @@ public class InventorySlot : SlotBase
     public override void AddItem(EquipmentInstance item)
     {
         base.AddItem(item);
-
+        
+        GameManager.Instance.UIManager.InventoryManager.EmptySlots--;
+        Debug.Log("Item added: " + GameManager.Instance.UIManager.InventoryManager.EmptySlots + " slots remaining");
         UpdateColorBasedOnPlayerLevel();
     }
 }

@@ -137,7 +137,6 @@ public class InventoryManager
 
         // this needs to be done since the player is secretly gonna add the first item
         // else we would have to many empty slots. 
-        emptySlots--;
 
         //AddItem(StartItem);
     }
@@ -466,8 +465,6 @@ public class InventoryManager
 
         if (detailedItemInformation) currentActiveSlot = characterPanel.EquippedItems[itemsType];
 
-        emptySlots++;
-
         return true;
     }
 
@@ -481,8 +478,6 @@ public class InventoryManager
 
                 slots[i].AddItem(item);
 
-                emptySlots--;
-                Debug.Log("Ädded an item, now " + emptySlots + " slots left");
                 return true;
             }
         }
@@ -504,7 +499,6 @@ public class InventoryManager
         {
             if (slots[i].IsEmpty)
             {
-                slots[i - 1].ClearSlot();
                 break;
             }
             // Assign to the slot before i.

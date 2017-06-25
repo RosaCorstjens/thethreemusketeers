@@ -38,11 +38,10 @@ public class EquipmentSlot : SlotBase
     {
         base.Use();
 
+        if (!GameManager.Instance.UIManager.InventoryManager.AddItem(item)) return;
+
         iconSprite.spriteName = "empty_" + equipmentType.ToString().ToLower();
-
         item.Equipped = false;
-
-        GameManager.Instance.UIManager.InventoryManager.AddItem(item);
 
         ClearSlot();
     }
