@@ -153,7 +153,6 @@ GameObject:
   - component: {fileID: 65146439919165136}
   - component: {fileID: 114007165062414280}
   - component: {fileID: 114879882771958176}
-  - component: {fileID: 114571670926313930}
   m_Layer: 5
   m_Name: MegaMinimapButton
   m_TagString: Untagged
@@ -938,22 +937,6 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
---- !u!114 &114571670926313930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372697645507964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9086a220fad70ec4ab96875846fd325f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  del:
-  - mTarget: {fileID: 0}
-    mMethodName: ShowInventory
-    mParameters: []
-    oneShot: 0
 --- !u!114 &114722867792688152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1127,21 +1110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e862f287df53bb64db191162f851a296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHoverOver:
-  - mTarget: {fileID: 114571670926313930}
-    mMethodName: HooverOn
-    mParameters: []
-    oneShot: 0
-  onHoverOut:
-  - mTarget: {fileID: 114571670926313930}
-    mMethodName: HooverOff
-    mParameters: []
-    oneShot: 0
-  onPress:
-  - mTarget: {fileID: 114571670926313930}
-    mMethodName: Click
-    mParameters: []
-    oneShot: 0
+  onHoverOver: []
+  onHoverOut: []
+  onPress: []
   onRelease: []
   onSelect: []
   onDeselect: []

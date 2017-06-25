@@ -33,7 +33,7 @@ public class ItemActionMenu : MonoBehaviour
 
     public void Open(SlotBase slot)
     {
-        equipLabel.text = slot.ThisSlotType == SlotBase.SlotType.Equipment ? "Deequip" : "Equip";
+        equipLabel.text = slot.ThisSlotType == SlotBase.SlotType.Equipment ? "Deequip (E)" : "Equip (E)";
         SetPosition();
 
         gameObject.SetActive(true);

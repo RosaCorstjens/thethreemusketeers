@@ -118,11 +118,11 @@ public class EquipmentInstance: ItemInstance
 
         float angle = UnityEngine.Random.Range(-45, 45);
 
-        Vector3 v = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
+        Vector3 pos = GameManager.Instance.ActiveCharacterInformation.PlayerController.transform.position + (3f * GameManager.Instance.ActiveCharacterInformation.PlayerController.transform.forward);
 
-        v *= 3; 
+        Vector3 v = new Vector3(Random.Range(pos.x - 1f, pos.x + 1f), 0.3f, Random.Range(pos.z - 1f, pos.z + 1f));
 
-        gameObject.transform.position = GameManager.Instance.ActiveCharacterInformation.PlayerController.transform.position - v;
+        gameObject.transform.position = v;
 
         dropped = true;
 

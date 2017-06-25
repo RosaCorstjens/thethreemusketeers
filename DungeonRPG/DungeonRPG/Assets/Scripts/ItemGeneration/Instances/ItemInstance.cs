@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 
-[RequireComponent(typeof(BoxCollider))]
 public class ItemInstance : MonoBehaviour 
 {
     protected BaseItem itemInfo;
@@ -15,7 +14,9 @@ public class ItemInstance : MonoBehaviour
     protected Quality quality;
     public Quality Quality { get { return quality; } }
 
-    private float attrationSpeed = 5.0f;
+    private float attrationSpeed = 3.0f;
+
+    private Coroutine fallingRoutine;
 
     public virtual void Initialize(BaseItem itemInfo, Quality quality)
     {
@@ -28,6 +29,8 @@ public class ItemInstance : MonoBehaviour
         this.quality = quality;
 
         dropped = false;
+
+        fallingRoutine = null;
     }
 
     public virtual void Use()
@@ -35,13 +38,33 @@ public class ItemInstance : MonoBehaviour
         Debug.Log("Used item.");
     }
 
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            if (GameManager.Instance.UIManager.InventoryManager.EmptySlots <= 0)
+            {
+                GameManager.Instance.UIManager.InventoryFullWarning();
+            }
+        }
+    }
+
     protected virtual void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
+            if (GameManager.Instance.UIManager.InventoryManager.EmptySlots <= 0)
+            {
+                if (fallingRoutine == null)
+                {
+                    fallingRoutine = StartCoroutine(FallingDown());
+                }
+                return;
+            }
+
             transform.position += (other.transform.position - new Vector3(transform.position.x, transform.position.y - 1, transform.position.z)).normalized * attrationSpeed * Time.deltaTime;
 
-            if ((other.transform.position - transform.position).magnitude < 1.0f)
+            if ((other.transform.position - new Vector3(transform.position.x, transform.position.y - 1, transform.position.z)).magnitude < 1.0f)
             {
                 if (!AddToInventory())
                 {
@@ -52,6 +75,24 @@ public class ItemInstance : MonoBehaviour
                 dropped = false;
             }
         }
+    }
+
+    private IEnumerator FallingDown()
+    {
+        while (transform.position.y > 0.3f)
+        {
+            transform.position -= new Vector3(0, attrationSpeed / 2 * Time.deltaTime, 0);
+            yield return null;
+        }
+
+        if (transform.position.y <= 0.3f)
+        {
+            transform.position = new Vector3(transform.position.x, 0.3f, transform.position.z);
+        }
+
+        fallingRoutine = null;
+
+        yield break;
     }
 
     protected virtual bool AddToInventory()

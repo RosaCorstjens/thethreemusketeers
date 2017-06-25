@@ -23,7 +23,7 @@ public class InventoryManager
     private float fadeTime = 0.5f;
 
     private GameObject slotPrefab;                                      // Prefab of an empty slot in the inventory.
-    private int amountOfSlots = 60;                                     // The amount of slots.                         
+    private int amountOfSlots = 10;                                     // The amount of slots.                         
     private List<InventorySlot> slots;                                  // List of all slots. 
 
     private UILabel keysLabel;
@@ -134,6 +134,11 @@ public class InventoryManager
         toAdd.AddComponent<WeaponInstance>().Initialize(baseItem, 0, 1, generatedName, baseStats, new List<Affix>());
 
         StartItem = toAdd.GetComponent<WeaponInstance>();
+
+        // this needs to be done since the player is secretly gonna add the first item
+        // else we would have to many empty slots. 
+        emptySlots--;
+
         //AddItem(StartItem);
     }
 
@@ -476,10 +481,8 @@ public class InventoryManager
 
                 slots[i].AddItem(item);
 
-                slots[i].UpdateColorBasedOnPlayerLevel();
-
                 emptySlots--;
-
+                Debug.Log("Ädded an item, now " + emptySlots + " slots left");
                 return true;
             }
         }
